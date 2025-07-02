@@ -32,7 +32,7 @@ const App = () => (
             </Routes>
             <ScrollToTop />
           </div>
-        <HashRouter>
+        </HashRouter>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
