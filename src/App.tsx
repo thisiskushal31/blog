@@ -20,7 +20,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <HashRouter>
+        <BrowserRouter>
+        {/* <HashRouter> */}
           <div className="min-h-screen bg-background">
             <Routes>
               {/* Main blog routes */}
@@ -32,7 +33,8 @@ const App = () => (
             </Routes>
             <ScrollToTop />
           </div>
-        </HashRouter>
+        {/* </HashRouter> */}
+        </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
