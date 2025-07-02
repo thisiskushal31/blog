@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Clock, Calendar, Share2, Twitter, Linkedin, Link2, Sun, Moon } from 'lucide-react';
-import { blogPosts } from '@/content/blog';
+import { blogPosts } from '@/content/blogPostIndex';
 import MarkdownViewer from '@/components/MarkdownViewer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { useToast } from '@/hooks/use-toast';

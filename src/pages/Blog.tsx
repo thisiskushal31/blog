@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Clock, Calendar, Sun, Moon } from 'lucide-react';
-import { blogPosts } from '@/content/blog';
+import { blogPosts } from '@/content/blogPostIndex';
 import { useTheme } from '@/hooks/useTheme';
 
 const Blog = () => {
