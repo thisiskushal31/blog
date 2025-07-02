@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import LinkableHeading from './LinkableHeading';
 
 interface MarkdownViewerProps {
   content: string;
@@ -10,20 +11,72 @@ const MarkdownViewer = ({ content, className = "" }: MarkdownViewerProps) => {
   const [htmlContent, setHtmlContent] = useState<string>('');
 
   useEffect(() => {
-    // Simple markdown to HTML converter
+    // Enhanced markdown to HTML converter with linkable headings
     const convertMarkdownToHtml = (markdown: string) => {
       let html = markdown;
       
-      // Headers
-      html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-semibold mb-4 mt-6">$1</h3>');
-      html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-semibold mb-6 mt-8">$1</h2>');
-      html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mb-8 mt-10">$1</h1>');
+      // First, protect code blocks by temporarily replacing them
+      const codeBlocks: string[] = [];
+      html = html.replace(/```[\s\S]*?```/g, (match) => {
+        const index = codeBlocks.length;
+        codeBlocks.push(match);
+        return `__CODE_BLOCK_${index}__`;
+      });
+
+      // Protect inline code
+      const inlineCode: string[] = [];
+      html = html.replace(/`[^`]+`/g, (match) => {
+        const index = inlineCode.length;
+        inlineCode.push(match);
+        return `__INLINE_CODE_${index}__`;
+      });
       
-      // Code blocks
-      html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-muted p-4 rounded-lg my-4 overflow-x-auto"><code class="text-sm">$2</code></pre>');
+      // Headers with linkable functionality (only process headers outside code blocks now)
+      html = html.replace(/^### (.*$)/gim, (match, title) => {
+        const id = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+        return `<h3 id="${id}" class="text-xl font-semibold mb-4 mt-6 group relative scroll-mt-8">
+          <a href="#${id}" class="no-underline text-current hover:text-current" aria-label="Link to ${title}">
+            ${title}
+            <svg class="ml-2 h-4 w-4 inline-block opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </a>
+        </h3>`;
+      });
       
-      // Inline code
-      html = html.replace(/`([^`]+)`/g, '<code class="bg-muted px-2 py-1 rounded text-sm">$1</code>');
+      html = html.replace(/^## (.*$)/gim, (match, title) => {
+        const id = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+        return `<h2 id="${id}" class="text-2xl font-semibold mb-6 mt-8 group relative scroll-mt-8">
+          <a href="#${id}" class="no-underline text-current hover:text-current" aria-label="Link to ${title}">
+            ${title}
+            <svg class="ml-2 h-4 w-4 inline-block opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </a>
+        </h2>`;
+      });
+      
+      html = html.replace(/^# (.*$)/gim, (match, title) => {
+        const id = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+        return `<h1 id="${id}" class="text-3xl font-bold mb-8 mt-10 group relative scroll-mt-8">
+          <a href="#${id}" class="no-underline text-current hover:text-current" aria-label="Link to ${title}">
+            ${title}
+            <svg class="ml-2 h-4 w-4 inline-block opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </a>
+        </h1>`;
+      });
+      
+      // Restore inline code first
+      inlineCode.forEach((code, index) => {
+        html = html.replace(`__INLINE_CODE_${index}__`, code.replace(/`([^`]+)`/g, '<code class="bg-muted px-2 py-1 rounded text-sm">$1</code>'));
+      });
+      
+      // Code blocks (restore them)
+      codeBlocks.forEach((block, index) => {
+        html = html.replace(`__CODE_BLOCK_${index}__`, block.replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-muted p-4 rounded-lg my-4 overflow-x-auto"><code class="text-sm">$2</code></pre>'));
+      });
       
       // Bold
       html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');

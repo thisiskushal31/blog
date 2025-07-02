@@ -1,18 +1,35 @@
 
+// Example blog post structure
+// Copy this file and modify the content to create new blog posts
 export const blogPost = {
+  // URL slug - should match the filename (without .ts extension)
   slug: 'implementing-gitops-with-argocd',
+  
+  // Main post metadata
   title: 'Implementing GitOps with ArgoCD: A Complete Guide',
   subtitle: 'Learn how to set up continuous deployment using GitOps principles',
   excerpt: 'GitOps has revolutionized how we think about deployments. In this comprehensive guide, we will walk through setting up ArgoCD for automated Kubernetes deployments.',
+  
+  // Publication details
   publishDate: '2024-01-15',
   readTime: '8 min read',
+  
+  // Categories for filtering (can have multiple)
   categories: ['GitOps', 'ArgoCD', 'Kubernetes', 'DevOps'],
+  
+  // Mark as featured to show in featured section
   featured: true,
+  
+  // Images (use placeholder.svg or add your own images to public folder)
   coverImage: '/placeholder.svg',
+  
+  // Author information
   author: {
     name: 'DevOps Engineer',
     avatar: '/placeholder.svg'
   },
+  
+  // Full markdown content - supports headings, code blocks, lists, etc.
   content: `# Implementing GitOps with ArgoCD: A Complete Guide
 
 ## Introduction

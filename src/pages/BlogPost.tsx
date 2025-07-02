@@ -125,8 +125,9 @@ const BlogPost = () => {
               <p className="text-xl text-muted-foreground mb-6">{post.subtitle}</p>
             )}
 
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-6 text-sm text-muted-foreground">
+            {/* Author info and social buttons - improved mobile layout */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <img 
                     src={post.author.avatar} 
@@ -135,14 +136,16 @@ const BlogPost = () => {
                   />
                   <span>{post.author.name}</span>
                 </div>
-                <span className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-1" />
-                  {post.publishDate}
-                </span>
-                <span className="flex items-center">
-                  <Clock className="h-4 w-4 mr-1" />
-                  {post.readTime}
-                </span>
+                <div className="flex items-center gap-4">
+                  <span className="flex items-center">
+                    <Calendar className="h-4 w-4 mr-1" />
+                    {post.publishDate}
+                  </span>
+                  <span className="flex items-center">
+                    <Clock className="h-4 w-4 mr-1" />
+                    {post.readTime}
+                  </span>
+                </div>
               </div>
               
               {/* Social Share */}

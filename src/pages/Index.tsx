@@ -1,9 +1,9 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowDown, Github, Linkedin, ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { portfolioConfig } from '@/config/portfolio';
 
 const Index = () => {
   const currentSkills = [
@@ -13,6 +13,20 @@ const Index = () => {
   const targetRoles = [
     'DevSecOps Engineer', 'SRE', 'Cloud Engineer', 'Platform Engineer', 'Security Engineer'
   ];
+
+  // Portfolio configuration moved inline since config file was removed
+  const portfolioConfig = {
+    personal: {
+      name: "Kushal Gautam",
+      title: "DevOps Engineer",
+      subtitle: "Building Scalable Infrastructure",
+      description: "Passionate about automating workflows, scaling systems, and implementing DevOps best practices to deliver reliable software solutions."
+    },
+    socialLinks: [
+      { name: "GitHub", icon: "Github", url: "https://github.com/thisiskushal31" },
+      { name: "LinkedIn", icon: "Linkedin", url: "https://linkedin.com/in/thisiskushal31" }
+    ]
+  };
 
   return (
     <div className="min-h-screen">

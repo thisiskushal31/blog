@@ -10,6 +10,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
+// Create React Query client for data fetching
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -21,9 +22,11 @@ const App = () => (
         <BrowserRouter>
           <div className="min-h-screen bg-background">
             <Routes>
+              {/* Main blog routes */}
               <Route path="/" element={<Blog />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
+              {/* 404 fallback */}
               <Route path="*" element={<NotFound />} />
             </Routes>
             <ScrollToTop />
