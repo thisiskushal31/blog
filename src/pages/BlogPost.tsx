@@ -14,7 +14,7 @@ const BlogPost = () => {
   const { toast } = useToast();
   const { theme, toggleTheme } = useTheme();
   
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = blogPosts.find(p => p.slug === slug);
 
   if (!post) {
     return (
