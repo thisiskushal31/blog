@@ -6,7 +6,7 @@ import "./index.css";
 
 // Render the React application
 createRoot(document.getElementById("root")!).render(
-<HashRouter>
+{/* <HashRouter> */}
 <App />
-</HashRouter>
+{/* </HashRouter> */}
 );
