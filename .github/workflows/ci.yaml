@@ -18,8 +18,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build portfolio
         run: npm run build
+
+      - name: Build blog
+        run: |
+          cd blog
+          npm ci
+          npm run build
+          cd ..
+          mkdir -p dist/blog
+          cp -r blog/dist/* dist/blog/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
