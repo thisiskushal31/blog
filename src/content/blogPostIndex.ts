@@ -1,10 +1,10 @@
 
 // Blog post imports - Add new blog posts here
-import { blogPost as implementingGitopsWithArgocd } from 'src/content/blog/implementing-gitops-with-argocd';
-import { blogPost as securingCicdPipelineBestPractices } from 'src/content/blog/securing-cicd-pipeline-best-practices';
-import { blogPost as monitoringKubernetesAtScaleWithPrometheus } from 'src/content/blog/monitoring-kubernetes-at-scale-with-prometheus';
-import { blogPost as infrastructureAsCodeTerraformVsPulumi } from 'src/content/blog/infrastructure-as-code-terraform-vs-pulumi';
-import { blogPost as buildingResilientMicroservicesWithIstio } from 'src/content/blog/building-resilient-microservices-with-istio';
+import { blogPost as implementingGitopsWithArgocd } from 'src/content/blog/implementing-gitops-with-argocd.ts';
+import { blogPost as securingCicdPipelineBestPractices } from 'src/content/blog/securing-cicd-pipeline-best-practices.ts';
+import { blogPost as monitoringKubernetesAtScaleWithPrometheus } from 'src/content/blog/monitoring-kubernetes-at-scale-with-prometheus.ts';
+import { blogPost as infrastructureAsCodeTerraformVsPulumi } from 'src/content/blog/infrastructure-as-code-terraform-vs-pulumi.ts';
+import { blogPost as buildingResilientMicroservicesWithIstio } from 'src/content/blog/building-resilient-microservices-with-istio.ts';
 
 // Blog post interface - defines the structure of each blog post
 export interface BlogPost {
