@@ -30,7 +30,7 @@ const BlogPost = () => {
     );
   }
 
-  const shareUrl = `${window.location.origin}/blog/${post.slug}`;
+  const shareUrl = `${window.location.origin}/blog/#/${post.slug}`;
   
   const handleCopyLink = async () => {
     try {
