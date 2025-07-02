@@ -167,7 +167,7 @@ const Blog = () => {
                     </div>
                   </div>
                   <Button asChild variant="outline" className="w-full">
-                    <Link to={`${post.slug}`}>Read More</Link>
+                    <Link to={`/${post.slug}`}>Read More</Link>
                   </Button>
                 </CardContent>
               </Card>
