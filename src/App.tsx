@@ -25,7 +25,7 @@ const App = () => (
             <Routes>
               {/* Main blog routes */}
               <Route path="/" element={<Blog />} />
-              {/* <Route path="/blog" element={<Blog />} /> */}
+              <Route path="/blog" element={<Blog />} />
               <Route path=":slug" element={<BlogPost />} />
               {/* 404 fallback */}
               <Route path="*" element={<NotFound />} />
