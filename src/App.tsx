@@ -17,7 +17,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="light" storageKey="blog-theme">
       <TooltipProvider>
-        <Toaster />
+        <Toaster />ß
         <Sonner />
         <HashRouter>
           <div className="min-h-screen bg-background">
@@ -26,7 +26,6 @@ const App = () => (
               <Route path="/" element={<Blog />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
-              {/* <Route path=":slug" element={<BlogPost />} /> */}
               {/* 404 fallback */}
               <Route path="*" element={<NotFound />} />
             </Routes>
