@@ -17,7 +17,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="light" storageKey="blog-theme">
       <TooltipProvider>
-        <Toaster />ß
+        <Toaster />
         <Sonner />
         <HashRouter>
           <div className="min-h-screen bg-background">
