@@ -1,4 +1,4 @@
-name: Deploy Blog to GitHub Pages
+name: Deploy to GitHub Pages and Generate Sitemap
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -18,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build blog
+      - name: Build
         run: npm run build
 
       - name: Deploy to GitHub Pages
@@ -26,7 +27,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-
 
   generate-sitemap:
     runs-on: ubuntu-latest
@@ -38,10 +38,11 @@ jobs:
         run: |
           npx sitemap-generator-cli https://thisiskushal31.github.io/blog --output ./sitemap.xml --strip-querystring
 
-      - name: Commit Sitemap to Repo
+      - name: Commit Sitemap to gh-pages branch
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          cp sitemap.xml ./sitemap.xml
           git add sitemap.xml
           git commit -m "chore: update sitemap [skip ci]" || echo "No changes to commit"
-          git push
+          git push origin gh-pages
