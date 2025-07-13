@@ -185,7 +185,7 @@ spec:
 
 ## Conclusion
 
-GitOps with ArgoCD provides a robust, secure, and scalable way to manage Kubernetes deployments.`},yC={slug:"securing-cicd-pipeline-best-practices",title:"Securing Your CI/CD Pipeline: Best Practices",subtitle:"Essential security measures for modern deployment pipelines",excerpt:"Security should be built into every stage of your CI/CD pipeline. Here are the key practices that will help you maintain a secure deployment process.",publishDate:"2024-01-08",readTime:"6 min read",categories:["Security","CI/CD","DevSecOps"],coverImage:"/blog/blogImages/blog.png",author:{name:"DevOps Engineer",avatar:"/placeholder.svg"},content:`# Securing Your CI/CD Pipeline: Best Practices
+GitOps with ArgoCD provides a robust, secure, and scalable way to manage Kubernetes deployments.`},yC={slug:"securing-cicd-pipeline-best-practices",title:"Securing Your CI/CD Pipeline: Best Practices",subtitle:"Essential security measures for modern deployment pipelines",excerpt:"Security should be built into every stage of your CI/CD pipeline. Here are the key practices that will help you maintain a secure deployment process.",publishDate:"2024-01-08",readTime:"6 min read",categories:["Security","CI/CD","DevSecOps"],coverImage:"/blog/blogImages/blog.jpg",author:{name:"DevOps Engineer",avatar:"/placeholder.svg"},content:`# Securing Your CI/CD Pipeline: Best Practices
 
 ## Why Pipeline Security Matters
 
