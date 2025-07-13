@@ -7,7 +7,7 @@ export const blogPost = {
   publishDate: '2024-01-08',
   readTime: '6 min read',
   categories: ['Security', 'CI/CD', 'DevSecOps'],
-  coverImage: '/blog/blogImages/blog.png',
+  coverImage: '/blog/blogImages/blog.jpg',
   author: {
     name: 'DevOps Engineer',
     avatar: '/placeholder.svg'
