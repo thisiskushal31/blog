@@ -16,4 +16,4 @@ export const blogPost: BlogPost = {
     name: "Blog Platform",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
   },
-}; 
+};

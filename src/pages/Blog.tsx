@@ -2,7 +2,7 @@
 // This page displays all blog posts, allows filtering by category, and toggling the theme.
 // It is the entry point for browsing and discovering posts.
 // If blog post data or categories fail to load, an error is logged and a fallback UI is shown.
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -11,7 +11,16 @@ import { Clock, Calendar, Sun, Moon } from "lucide-react";
 import { blogPosts } from "@/content/blogPostIndex";
 import { useTheme } from "@/hooks/useTheme";
 import ImageWithFallback from "@/components/ImageWithFallback";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+} from "@/components/ui/pagination";
 
+const POSTS_PER_PAGE = 6;
 const Blog = () => {
   // React Hooks must always be called at the top level, not inside try/catch or conditionals.
   // State for the currently selected category filter
@@ -37,6 +46,19 @@ const Blog = () => {
 
   // Get featured posts
   const featuredPosts = blogPosts.filter((post) => post.featured);
+
+  const [page, setPage] = useState(1);
+
+  // Reset pagination when filter changes
+  useEffect(() => {
+    setPage(1);
+  }, [selectedCategory]);
+
+  const paginatedPosts = useMemo(() => {
+    return filteredPosts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+  }, [filteredPosts, page]);
+
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
   // Only wrap the rendering logic in try/catch for error boundaries
   try {
@@ -159,7 +181,7 @@ const Blog = () => {
           {/* Blog Posts Grid */}
           <section>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredPosts.map((post) => (
+              {paginatedPosts.map((post) => (
                 <Card key={post.slug} className="card-hover">
                   <CardHeader className="p-0">
                     <ImageWithFallback
@@ -205,6 +227,40 @@ const Blog = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+            {/* Classic Pagination Controls */}
+            <div className="flex justify-center mt-8">
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    {page === 1 ? (
+                      <span className="gap-1 pl-2.5 opacity-50 pointer-events-none select-none inline-flex items-center h-10 px-4 rounded-md border border-input bg-background text-muted-foreground">
+                        <svg className="h-4 w-4" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        <span>Previous</span>
+                      </span>
+                    ) : (
+                      <PaginationPrevious onClick={() => setPage(page - 1)} />
+                    )}
+                  </PaginationItem>
+                  {[...Array(totalPages)].map((_, i) => (
+                    <PaginationItem key={i}>
+                      <PaginationLink isActive={page === i + 1} onClick={() => setPage(i + 1)}>
+                        {i + 1}
+                      </PaginationLink>
+                    </PaginationItem>
+                  ))}
+                  <PaginationItem>
+                    {page === totalPages ? (
+                      <span className="gap-1 pr-2.5 opacity-50 pointer-events-none select-none inline-flex items-center h-10 px-4 rounded-md border border-input bg-background text-muted-foreground">
+                        <span>Next</span>
+                        <svg className="h-4 w-4" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </span>
+                    ) : (
+                      <PaginationNext onClick={() => setPage(page + 1)} />
+                    )}
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             </div>
           </section>
         </main>

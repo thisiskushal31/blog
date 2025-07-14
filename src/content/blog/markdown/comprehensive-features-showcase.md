@@ -196,7 +196,7 @@ spec:
 
 ## 🎬 Another Embedded Video
 
-@youtube[jNQXAC9IVRw]
+@youtube[ee7uBc2IZvs]
 
 *Credit: Me at the zoo - First YouTube video ever uploaded*
 

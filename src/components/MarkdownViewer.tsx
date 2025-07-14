@@ -1,7 +1,7 @@
 // MarkdownViewer.tsx - Renders markdown content as sanitized, styled HTML with syntax highlighting and embedded media.
 // Handles custom web components, code highlighting, image captions, tables, and more. All HTML is sanitized for security.
 // If rendering fails, an error is logged and a fallback UI is shown.
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import DOMPurify from "dompurify";
 import Prism from "prismjs";
 import "prismjs/themes/prism.css";
@@ -23,80 +23,48 @@ interface MarkdownViewerProps {
   postSlug?: string;
 }
 
-// Custom web components for embedded media
-class YouTubeEmbed extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
+// Add a React component for YouTube embeds
+const YouTubeEmbedReact = ({ videoId, alt }: { videoId: string; alt?: string }) => {
+  const [visible, setVisible] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
 
-  connectedCallback() {
-    const videoId = this.getAttribute('video-id');
-    const altText = this.getAttribute('alt') || `YouTube video: ${videoId}`;
-    const shadow = this.shadowRoot!;
-    
-    shadow.innerHTML = `
-      <style>
-        :host {
-          display: block;
-          width: 100%;
-          max-width: 100%;
-          margin: 1rem 0;
-        }
-        .youtube-container {
-          position: relative;
-          width: 100%;
-          height: 0;
-          padding-bottom: 56.25%; /* 16:9 aspect ratio */
-          background: #000;
-          border-radius: 8px;
-          overflow: hidden;
-        }
-        .youtube-iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border: none;
-          loading: lazy;
-        }
-        .youtube-placeholder {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #f0f0f0;
-          color: #666;
-          font-family: Arial, sans-serif;
-        }
-        .youtube-alt {
-          margin-top: 0.5rem;
-          font-size: 0.875rem;
-          color: #666;
-          font-style: italic;
-        }
-      </style>
-      <div class="youtube-container">
-        <div class="youtube-placeholder">Loading YouTube video...</div>
-        <iframe 
-          class="youtube-iframe"
-          src="https://www.youtube.com/embed/${videoId}?rel=0"
-          title="${altText}"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
-      <div class="youtube-alt">${altText}</div>
-    `;
-  }
-}
+  React.useEffect(() => {
+    const observer = new window.IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} style={{ minHeight: 300 }} className="embedded-media">
+      {visible && (
+        <>
+          <style>{`
+            .youtube-container { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; }
+            .youtube-iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+            .youtube-alt { margin-top: 0.5rem; font-size: 0.875rem; color: #666; font-style: italic; }
+          `}</style>
+          <div className="youtube-container">
+            <iframe
+              className="youtube-iframe"
+              src={`https://www.youtube.com/embed/${videoId}?rel=0`}
+              title={alt || `YouTube video: ${videoId}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+          <div className="youtube-alt">{alt || `YouTube video: ${videoId}`}</div>
+        </>
+      )}
+    </div>
+  );
+};
 
 class GistEmbed extends HTMLElement {
   constructor() {
@@ -108,65 +76,66 @@ class GistEmbed extends HTMLElement {
     const gistId = this.getAttribute('gist-id');
     const altText = this.getAttribute('alt') || `GitHub Gist: ${gistId}`;
     const shadow = this.shadowRoot!;
-    
-    shadow.innerHTML = `
-      <style>
-        :host {
-          display: block;
-          width: 100%;
-          max-width: 100%;
-          margin: 1rem 0;
-        }
-        .gist-container {
-          width: 100%;
-          border-radius: 8px;
-          overflow: hidden;
-          border: 1px solid #e1e4e8;
-        }
-        .gist-iframe {
-          width: 100%;
-          border: none;
-          loading: lazy;
-        }
-        .gist-alt {
-          margin-top: 0.5rem;
-          font-size: 0.875rem;
-          color: #666;
-          font-style: italic;
-        }
-      </style>
-      <div class="gist-container">
-        <iframe 
-          class="gist-iframe"
-          src="https://gist.github.com/${gistId}.js"
-          title="${altText}"
-          loading="lazy">
-        </iframe>
-      </div>
-      <div class="gist-alt">${altText}</div>
-    `;
+    shadow.innerHTML = `<div id="gist-lazy-root"></div>`;
+    const mount = () => {
+      if (!shadow.getElementById('gist-lazy-root')) return;
+      shadow.getElementById('gist-lazy-root').innerHTML = `
+        <style>
+          :host { display: block; width: 100%; max-width: 100%; margin: 1rem 0; }
+          .gist-container { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #e1e4e8; }
+          .gist-iframe { width: 100%; border: none; loading: lazy; }
+          .gist-alt { margin-top: 0.5rem; font-size: 0.875rem; color: #666; font-style: italic; }
+        </style>
+        <div class="gist-container">
+          <iframe 
+            class="gist-iframe"
+            src="https://gist.github.com/${gistId}.js"
+            title="${altText}"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="gist-alt">${altText}</div>
+      `;
+    };
+    const observer = new window.IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        mount();
+        observer.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(shadow.host);
   }
 }
 
 // Register custom elements
 if (typeof window !== 'undefined') {
-  if (!customElements.get('youtube-embed')) {
-    customElements.define('youtube-embed', YouTubeEmbed);
-  }
   if (!customElements.get('gist-embed')) {
     customElements.define('gist-embed', GistEmbed);
   }
 }
 
+const WORD_LIMIT = Number.MAX_SAFE_INTEGER;
+
 const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerProps) => {
   const [htmlContent, setHtmlContent] = useState<string>("");
+  const [reactEmbeds, setReactEmbeds] = useState<any[]>([]);
+  const [showFull, setShowFull] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Split content for 'Load More' feature
+  const getPartialContent = (markdown: string) => {
+    const words = markdown.split(/\s+/);
+    if (showFull || words.length <= WORD_LIMIT) return markdown;
+    return words.slice(0, WORD_LIMIT).join(" ") + "\n\n<!--LOAD_MORE_MARKER-->";
+  };
 
   useEffect(() => {
     // Enhanced markdown to HTML converter with security and features
     const convertMarkdownToHtml = (markdown: string) => {
       try {
         let html = markdown;
+        const reactEmbeds: any[] = [];
+        let embedIndex = 0;
 
         // First, protect code blocks by temporarily replacing them
         const codeBlocks: string[] = [];
@@ -185,12 +154,13 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
         });
 
         // Process embedded media markers with alt text and credits
-        // YouTube embeds: @youtube[VIDEO_ID]
+        // Replace @youtube[VIDEO_ID] with a React placeholder
         html = html.replace(/@youtube\[([^\]]+)\]/g, (match, videoId) => {
           const altText = `YouTube video: ${videoId}`;
-          return `<div class="embedded-media">
-            <youtube-embed video-id="${videoId}" alt="${altText}"></youtube-embed>
-          </div>`;
+          const placeholder = `<div data-react-embed="youtube" data-index="${embedIndex}"></div>`;
+          reactEmbeds.push({ type: 'youtube', videoId, alt: altText, index: embedIndex });
+          embedIndex++;
+          return placeholder;
         });
         
         // Gist embeds: Handle both @gist[USERNAME/GIST_ID] and script tags
@@ -467,17 +437,21 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
         // Clean up empty paragraphs
         html = html.replace(/<p class="mb-4"><\/p>/g, "");
 
-        return html;
+        return { html, reactEmbeds };
       } catch (err) {
         console.error('Error converting markdown to HTML:', err);
-        return '<div class="text-red-500">Error rendering markdown content.</div>';
+        return { html: '<div class="text-red-500">Error rendering markdown content.</div>', reactEmbeds: [] };
       }
     };
 
     let processedHtml = '';
     let sanitizedHtml = '';
+    let embeds: any[] = [];
     try {
-      processedHtml = convertMarkdownToHtml(content);
+      const partialContent = getPartialContent(content);
+      const result = convertMarkdownToHtml(partialContent);
+      processedHtml = result.html;
+      embeds = result.reactEmbeds;
       sanitizedHtml = DOMPurify.sanitize(processedHtml, {
         ALLOWED_TAGS: [
           'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
@@ -489,18 +463,17 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           'blockquote',
           'div', 'span',
           'svg', 'path', // For link icons in headings
-          'youtube-embed', 'gist-embed', // Allow our custom elements
           'button' // For copy buttons
         ],
         ALLOWED_ATTR: [
           'href', 'src', 'alt', 'title', 'class', 'id',
           'target', 'rel', 'loading',
-          'video-id', 'gist-id', 'alt', // Custom attributes for our web components
           'data-href', 'aria-label',
           'data-original-src', 'onerror', // For image fallback functionality
           'fill', 'viewBox', 'fill-rule', 'clip-rule', 'd', // SVG attributes
           'aria-hidden', // For accessibility
-          'stroke-linecap', 'stroke-linejoin', 'stroke-width', 'stroke' // Added for SVG icons
+          'stroke-linecap', 'stroke-linejoin', 'stroke-width', 'stroke', // Added for SVG icons
+          'data-react-embed', 'data-index'
         ],
         ALLOW_DATA_ATTR: true,
         KEEP_CONTENT: true
@@ -510,7 +483,22 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
       sanitizedHtml = '<div class="text-red-500">Error rendering markdown content.</div>';
     }
     setHtmlContent(sanitizedHtml);
-  }, [content]);
+    setReactEmbeds(embeds);
+  }, [content, showFull]);
+
+  // Auto-load more on scroll near bottom (first time only)
+  useEffect(() => {
+    if (showFull) return;
+    const handler = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      if (rect.bottom < window.innerHeight + 200) {
+        setShowFull(true);
+      }
+    };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, [showFull]);
 
   // Clipboard copy handler using event delegation
   useEffect(() => {
@@ -612,14 +600,49 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
     }
   }, [htmlContent]);
 
+  // After rendering HTML, replace placeholders with React YouTubeEmbedReact
+  useEffect(() => {
+    if (!reactEmbeds.length) return;
+    if (!containerRef.current) return;
+    reactEmbeds.forEach((embed) => {
+      if (embed.type === 'youtube') {
+        const placeholder = containerRef.current!.querySelector(`div[data-react-embed="youtube"][data-index="${embed.index}"]`);
+        if (placeholder && placeholder.parentNode) {
+          const mountPoint = document.createElement('div');
+          placeholder.parentNode.replaceChild(mountPoint, placeholder);
+          // Render the React component into the mount point
+          // @ts-ignore
+          import('react-dom').then(ReactDOM => {
+            ReactDOM.render(
+              <YouTubeEmbedReact videoId={embed.videoId} alt={embed.alt} />, 
+              mountPoint
+            );
+          });
+        }
+      }
+    });
+  }, [htmlContent, reactEmbeds]);
+
   // Only wrap the rendering logic in try/catch for error boundaries
   try {
     return (
-      <div
-        ref={containerRef}
-        className={`prose prose-slate max-w-none ${className}`}
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
+      <div>
+        <div
+          ref={containerRef}
+          className={`prose prose-slate max-w-none ${className}`}
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+        {!showFull && htmlContent.includes('<!--LOAD_MORE_MARKER-->') && (
+          <div className="flex justify-center mt-6">
+            <button
+              className="px-6 py-2 rounded bg-primary text-primary-foreground hover:bg-primary/90 transition"
+              onClick={() => setShowFull(true)}
+            >
+              Load More
+            </button>
+          </div>
+        )}
+      </div>
     );
   } catch (err) {
     // Log the error and show a fallback UI
