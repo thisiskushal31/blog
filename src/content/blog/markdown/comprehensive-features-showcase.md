@@ -1,3 +1,4 @@
+
 # Complete Markdown Features Showcase
 
 This blog post demonstrates all the advanced markdown rendering features implemented in this blog platform.
@@ -193,12 +194,6 @@ spec:
 ![Kubernetes Cluster](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop)
 
 *Credit: Unsplash - Kubernetes cluster management interface*
-
-## 🎬 Another Embedded Video
-
-@youtube[ee7uBc2IZvs]
-
-*Credit: Me at the zoo - First YouTube video ever uploaded*
 
 ## 📊 Markdown Tables
 

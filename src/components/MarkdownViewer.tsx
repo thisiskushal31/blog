@@ -114,19 +114,28 @@ if (typeof window !== 'undefined') {
   }
 }
 
-const WORD_LIMIT = Number.MAX_SAFE_INTEGER;
+// Define a type for React embeds
+interface ReactEmbed {
+  type: 'youtube';
+  videoId: string;
+  alt: string;
+  index: number;
+}
+
+const PARAGRAPH_LIMIT = 5; // Number of paragraphs to show before Load More
 
 const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerProps) => {
   const [htmlContent, setHtmlContent] = useState<string>("");
-  const [reactEmbeds, setReactEmbeds] = useState<any[]>([]);
+  const [reactEmbeds, setReactEmbeds] = useState<ReactEmbed[]>([]);
   const [showFull, setShowFull] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Split content for 'Load More' feature
+  // Split content for 'Load More' feature (by paragraphs)
   const getPartialContent = (markdown: string) => {
-    const words = markdown.split(/\s+/);
-    if (showFull || words.length <= WORD_LIMIT) return markdown;
-    return words.slice(0, WORD_LIMIT).join(" ") + "\n\n<!--LOAD_MORE_MARKER-->";
+    const paragraphs = markdown.split(/\n\s*\n/); // Split by double newlines
+    console.log('Paragraph count:', paragraphs.length, 'Show full:', showFull);
+    if (showFull || paragraphs.length <= PARAGRAPH_LIMIT) return markdown;
+    return paragraphs.slice(0, PARAGRAPH_LIMIT).join('\n\n') + "\n\n<div id=\"load-more-marker\"></div>";
   };
 
   useEffect(() => {
@@ -134,7 +143,7 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
     const convertMarkdownToHtml = (markdown: string) => {
       try {
         let html = markdown;
-        const reactEmbeds: any[] = [];
+        const reactEmbeds: ReactEmbed[] = [];
         let embedIndex = 0;
 
         // First, protect code blocks by temporarily replacing them
@@ -446,7 +455,7 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
 
     let processedHtml = '';
     let sanitizedHtml = '';
-    let embeds: any[] = [];
+    let embeds: ReactEmbed[] = [];
     try {
       const partialContent = getPartialContent(content);
       const result = convertMarkdownToHtml(partialContent);
@@ -487,18 +496,18 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
   }, [content, showFull]);
 
   // Auto-load more on scroll near bottom (first time only)
-  useEffect(() => {
-    if (showFull) return;
-    const handler = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      if (rect.bottom < window.innerHeight + 200) {
-        setShowFull(true);
-      }
-    };
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, [showFull]);
+  // useEffect(() => {
+  //   if (showFull) return;
+  //   const handler = () => {
+  //     if (!containerRef.current) return;
+  //     const rect = containerRef.current.getBoundingClientRect();
+  //     if (rect.bottom < window.innerHeight + 200) {
+  //       setShowFull(true);
+  //     }
+  //   };
+  //   window.addEventListener('scroll', handler);
+  //   return () => window.removeEventListener('scroll', handler);
+  // }, [showFull]);
 
   // Clipboard copy handler using event delegation
   useEffect(() => {
@@ -611,7 +620,6 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           const mountPoint = document.createElement('div');
           placeholder.parentNode.replaceChild(mountPoint, placeholder);
           // Render the React component into the mount point
-          // @ts-ignore
           import('react-dom').then(ReactDOM => {
             ReactDOM.render(
               <YouTubeEmbedReact videoId={embed.videoId} alt={embed.alt} />, 
@@ -625,22 +633,64 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
 
   // Only wrap the rendering logic in try/catch for error boundaries
   try {
+    const showLoadMore = !showFull && htmlContent.includes('id="load-more-marker"');
     return (
-      <div>
+      <div className="relative">
         <div
           ref={containerRef}
           className={`prose prose-slate max-w-none ${className}`}
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
-        {!showFull && htmlContent.includes('<!--LOAD_MORE_MARKER-->') && (
-          <div className="flex justify-center mt-6">
-            <button
-              className="px-6 py-2 rounded bg-primary text-primary-foreground hover:bg-primary/90 transition"
-              onClick={() => setShowFull(true)}
-            >
-              Load More
-            </button>
-          </div>
+        {showLoadMore && (
+          <>
+            {/* Light mode overlay and CTA (default) */}
+            <div
+              className="pointer-events-none absolute left-0 right-0 bottom-16 h-32 z-10 transition-opacity duration-700 rounded-b-xl"
+              style={{
+                opacity: showFull ? 0 : 1,
+                // Use theme background variable for overlay gradient for consistency
+                background: 'linear-gradient(to top, hsl(var(--background), 0.92) 80%, hsl(var(--background), 0))',
+                borderBottomLeftRadius: '1rem',
+                borderBottomRightRadius: '1rem',
+                overflow: 'hidden',
+              }}
+            />
+            <div className="flex flex-col items-center mt-6 relative z-20 dark:hidden">
+              {/* Minimalist CTA: See More – It’s Free! */}
+              <button
+                className="px-6 py-2 rounded border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition shadow-sm"
+                onClick={() => setShowFull(true)}
+              >
+                See More – It’s Free!
+              </button>
+              {/* Warm gesture message below CTA */}
+              <span className="mt-2 text-sm italic text-muted-foreground">I’m glad you’re enjoying this!</span>
+            </div>
+
+            {/* Dark mode overlay and CTA (only visible in dark mode) */}
+            <div
+              className="pointer-events-none absolute left-0 right-0 bottom-16 h-32 z-10 transition-opacity duration-700 rounded-b-xl hidden dark:block"
+              style={{
+                opacity: showFull ? 0 : 1,
+                // Use theme background variable for overlay gradient for consistency
+                background: 'linear-gradient(to top, hsl(var(--background), 0.92) 80%, hsl(var(--background), 0))',
+                borderBottomLeftRadius: '1rem',
+                borderBottomRightRadius: '1rem',
+                overflow: 'hidden',
+              }}
+            />
+            <div className="flex flex-col items-center mt-6 relative z-20 hidden dark:flex">
+              {/* Minimalist CTA: See More – It’s Free! (dark mode) */}
+              <button
+                className="px-6 py-2 rounded border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition shadow-sm"
+                onClick={() => setShowFull(true)}
+              >
+                See More – It’s Free!
+              </button>
+              {/* Warm gesture message below CTA (dark mode) */}
+              <span className="mt-2 text-sm italic text-muted-foreground">I’m glad you’re enjoying this!</span>
+            </div>
+          </>
         )}
       </div>
     );

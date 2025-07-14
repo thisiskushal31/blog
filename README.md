@@ -71,43 +71,33 @@ The built files will be in the \`dist\` directory, ready for deployment.
 
 ### Step 2: Define your blog post
 
-Copy this template and modify it:
+Create a markdown file for your post content (e.g., `src/content/blog/markdown/my-awesome-post.md`).
 
-\`\`\`typescript
-export const blogPost = {
-  slug: 'my-awesome-post', // Must match filename
+Then, in your TypeScript file (e.g., `src/content/blog/my-awesome-post.ts`), import the markdown and define your post like this:
+
+```typescript
+import { BlogPost } from '../blogPostIndex';
+import content from './markdown/my-awesome-post.md?raw';
+
+export const blogPost: BlogPost = {
+  slug: 'my-awesome-post',
   title: 'My Awesome Post',
   subtitle: 'Optional subtitle for context',
   excerpt: 'A brief description of your post that appears on the blog listing page.',
-  publishDate: '2024-01-15', // YYYY-MM-DD format
+  content, // imported markdown
+  publishDate: '2024-01-15',
   readTime: '5 min read',
-  categories: ['DevOps', 'Tutorial'], // Array of category strings
-  featured: true, // Optional: set to true for featured posts
-  coverImage: '/path-to-your-image.jpg', // Or use '/placeholder.svg'
+  categories: ['DevOps', 'Tutorial'],
+  featured: true,
+  coverImage: '/path-to-your-image.jpg',
   author: {
     name: 'Your Name',
-    avatar: '/path-to-avatar.jpg' // Or use '/placeholder.svg'
+    avatar: '/path-to-avatar.jpg',
   },
-  content: \`# Your Blog Post Title
-
-Your markdown content goes here...
-
-## Subheading
-
-- List item 1
-- List item 2
-
-\\\`\\\`\\\`bash
-# Code blocks are supported
-echo "Hello World"
-\\\`\\\`\\\`
-
-**Bold text** and *italic text* are supported.
-
-[Links work too](https://example.com)
-\`
 };
-\`\`\`
+```
+
+> **Note:** Place your markdown file in `src/content/blog/markdown/` and use the `?raw` import suffix.
 
 ### Step 3: Register your blog post
 
@@ -257,5 +247,3 @@ If you have any questions or need help:
 ---
 
 **Happy Blogging! 🎉**
-
-</edits_to_apply>
