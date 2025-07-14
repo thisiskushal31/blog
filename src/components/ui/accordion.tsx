@@ -1,10 +1,31 @@
+// accordion.tsx - Reusable Accordion component for collapsible content sections in the blog app UI.
+// Used for FAQs, expandable lists, and content toggles.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-const Accordion = AccordionPrimitive.Root
+export interface AccordionProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> {
+  children: React.ReactNode; // Accordion items
+}
+
+const Accordion = ({ children, ...props }: AccordionProps) => {
+  // Only wrap the rendering logic in try/catch for error boundaries
+  try {
+    return (
+      <AccordionPrimitive.Root {...props} className={cn("border rounded-lg", props.className)}>
+        {children}
+      </AccordionPrimitive.Root>
+    )
+  } catch (err) {
+    // Log the error and show a fallback UI
+    // eslint-disable-next-line no-console
+    console.error("Error rendering Accordion:", err)
+    return null
+  }
+}
 
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,

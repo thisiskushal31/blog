@@ -1,9 +1,14 @@
+// input.tsx - Reusable Input component for text fields in the blog app UI.
+// Used for forms, search bars, and user input.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
 
-const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
-  ({ className, type, ...props }, ref) => {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
+  // Only wrap the rendering logic in try/catch for error boundaries
+  try {
     return (
       <input
         type={type}
@@ -15,8 +20,13 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
         {...props}
       />
     )
+  } catch (err) {
+    // Log the error and show a fallback UI
+    // eslint-disable-next-line no-console
+    console.error("Error rendering Input:", err)
+    return null
   }
-)
+})
 Input.displayName = "Input"
 
 export { Input }

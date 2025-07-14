@@ -1,3 +1,6 @@
+// ImageWithFallback.tsx - Renders an image with automatic fallback logic for different environments.
+// If the image fails to load, tries alternative paths and finally a placeholder. Used for robust image rendering.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import { useState } from 'react';
 
 interface ImageWithFallbackProps {
@@ -8,9 +11,11 @@ interface ImageWithFallbackProps {
 }
 
 const ImageWithFallback = ({ src, alt, className = '', loading = 'lazy' }: ImageWithFallbackProps) => {
+  // State for the current image source and error tracking
   const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
 
+  // Handler for image load errors
   const handleError = () => {
     if (!hasError) {
       setHasError(true);
@@ -28,15 +33,30 @@ const ImageWithFallback = ({ src, alt, className = '', loading = 'lazy' }: Image
     }
   };
 
-  return (
-    <img
-      src={imgSrc}
-      alt={alt}
-      className={className}
-      loading={loading}
-      onError={handleError}
-    />
-  );
+  // Only wrap the rendering logic in try/catch for error boundaries
+  try {
+    return (
+      <img
+        src={imgSrc}
+        alt={alt}
+        className={className}
+        loading={loading}
+        onError={handleError}
+      />
+    );
+  } catch (err) {
+    // Log the error and show a fallback UI
+    // eslint-disable-next-line no-console
+    console.error("Error rendering ImageWithFallback:", err);
+    return (
+      <img
+        src="/placeholder.svg"
+        alt="Image failed to load"
+        className={className}
+        loading={loading}
+      />
+    );
+  }
 };
 
 export default ImageWithFallback; 

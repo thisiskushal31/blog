@@ -1,8 +1,31 @@
+// menubar.tsx - Reusable Menubar component for navigation and actions in the blog app UI.
+// Used for app menus, navigation bars, and dropdowns.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
 import { Check, ChevronRight, Circle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+
+export interface MenubarProps extends React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Root> {
+  children: React.ReactNode; // Menubar items
+}
+
+const Menubar = ({ children, ...props }: MenubarProps) => {
+  // Only wrap the rendering logic in try/catch for error boundaries
+  try {
+    return (
+      <MenubarPrimitive.Root {...props} className={cn("flex items-center space-x-2", props.className)}>
+        {children}
+      </MenubarPrimitive.Root>
+    )
+  } catch (err) {
+    // Log the error and show a fallback UI
+    // eslint-disable-next-line no-console
+    console.error("Error rendering Menubar:", err)
+    return null
+  }
+}
 
 const MenubarMenu = MenubarPrimitive.Menu
 
@@ -13,21 +36,6 @@ const MenubarPortal = MenubarPrimitive.Portal
 const MenubarSub = MenubarPrimitive.Sub
 
 const MenubarRadioGroup = MenubarPrimitive.RadioGroup
-
-const Menubar = React.forwardRef<
-  React.ElementRef<typeof MenubarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Root>
->(({ className, ...props }, ref) => (
-  <MenubarPrimitive.Root
-    ref={ref}
-    className={cn(
-      "flex h-10 items-center space-x-1 rounded-md border bg-background p-1",
-      className
-    )}
-    {...props}
-  />
-))
-Menubar.displayName = MenubarPrimitive.Root.displayName
 
 const MenubarTrigger = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Trigger>,

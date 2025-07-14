@@ -1,69 +1,74 @@
-import * as React from "react"
-import { OTPInput, OTPInputContext } from "input-otp"
-import { Dot } from "lucide-react"
+// input-otp.tsx - Reusable OTP (One-Time Password) input component for the blog app UI.
+// Used for authentication, verification, and secure input flows.
+// If rendering fails, an error is logged and a fallback UI is shown.
+import * as React from "react";
+import { OTPInput, OTPInputContext } from "input-otp";
+import { Dot } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-import { cn } from "@/lib/utils"
-
-const InputOTP = React.forwardRef<
+const InputOtp = React.forwardRef<
   React.ElementRef<typeof OTPInput>,
   React.ComponentPropsWithoutRef<typeof OTPInput>
->(({ className, containerClassName, ...props }, ref) => (
-  <OTPInput
-    ref={ref}
-    containerClassName={cn(
-      "flex items-center gap-2 has-[:disabled]:opacity-50",
-      containerClassName
-    )}
-    className={cn("disabled:cursor-not-allowed", className)}
-    {...props}
-  />
-))
-InputOTP.displayName = "InputOTP"
+>(({ className, containerClassName, ...props }, ref) => {
+  try {
+    return (
+      <OTPInput
+        ref={ref}
+        containerClassName={cn("flex items-center gap-2 has-[:disabled]:opacity-50", containerClassName)}
+        className={cn("disabled:cursor-not-allowed", className)}
+        {...props}
+      />
+    );
+  } catch (err) {
+    console.error("Error rendering InputOtp:", err);
+    return null;
+  }
+});
+InputOtp.displayName = "InputOtp";
 
-const InputOTPGroup = React.forwardRef<
+const InputOtpGroup = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
 >(({ className, ...props }, ref) => (
   <div ref={ref} className={cn("flex items-center", className)} {...props} />
-))
-InputOTPGroup.displayName = "InputOTPGroup"
+));
+InputOtpGroup.displayName = "InputOtpGroup";
 
-const InputOTPSlot = React.forwardRef<
+const InputOtpSlot = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div"> & { index: number }
 >(({ index, className, ...props }, ref) => {
-  const inputOTPContext = React.useContext(OTPInputContext)
-  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
-
+  const inputOTPContext = React.useContext(OTPInputContext);
+  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index];
   return (
     <div
       ref={ref}
+      data-active={isActive}
       className={cn(
-        "relative flex h-10 w-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
-        isActive && "z-10 ring-2 ring-ring ring-offset-background",
+        "relative flex h-10 w-10 items-center justify-center border-b-2 text-center text-2xl font-mono outline-none transition-all",
+        isActive ? "border-primary" : "border-muted-foreground",
         className
       )}
       {...props}
     >
-      {char}
-      {hasFakeCaret && (
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="h-4 w-px animate-caret-blink bg-foreground duration-1000" />
-        </div>
-      )}
+      {char ? (
+        <span>{char}</span>
+      ) : hasFakeCaret ? (
+        <span className="absolute left-1/2 top-1/2 h-5 w-px -translate-x-1/2 -translate-y-1/2 bg-primary" />
+      ) : null}
     </div>
-  )
-})
-InputOTPSlot.displayName = "InputOTPSlot"
+  );
+});
+InputOtpSlot.displayName = "InputOtpSlot";
 
-const InputOTPSeparator = React.forwardRef<
+const InputOtpSeparator = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
->(({ ...props }, ref) => (
-  <div ref={ref} role="separator" {...props}>
-    <Dot />
+>(({ className, ...props }, ref) => (
+  <div ref={ref} role="separator" className={cn("mx-2 w-2 text-muted-foreground", className)} {...props}>
+    <Dot className="h-4 w-4" />
   </div>
-))
-InputOTPSeparator.displayName = "InputOTPSeparator"
+));
+InputOtpSeparator.displayName = "InputOtpSeparator";
 
-export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
+export { InputOtp, InputOtpGroup, InputOtpSlot, InputOtpSeparator };

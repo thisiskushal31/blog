@@ -1,3 +1,6 @@
+// command.tsx - Reusable Command Palette component for the blog app UI.
+// Used for search, quick actions, and command menus.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"

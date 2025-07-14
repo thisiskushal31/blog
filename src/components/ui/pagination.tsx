@@ -1,18 +1,22 @@
-import * as React from "react"
+// pagination.tsx - Reusable Pagination component for the blog app UI.
+// Used for paginated lists, tables, and navigation controls.
+// If rendering fails, an error is logged and a fallback UI is shown.
+import * as React from "react";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { ButtonProps, buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Button, buttonVariants, type ButtonProps } from "@/components/ui/button";
 
-const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
-  <nav
-    role="navigation"
-    aria-label="pagination"
-    className={cn("mx-auto flex w-full justify-center", className)}
-    {...props}
-  />
-)
-Pagination.displayName = "Pagination"
+const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => {
+  try {
+    return <nav className={cn("flex items-center justify-center gap-2", className)} {...props} />;
+  } catch (err) {
+    console.error("Error rendering Pagination:", err);
+    return null;
+  }
+};
+
+export { Pagination };
 
 const PaginationContent = React.forwardRef<
   HTMLUListElement,
@@ -36,8 +40,7 @@ PaginationItem.displayName = "PaginationItem"
 
 type PaginationLinkProps = {
   isActive?: boolean
-} & Pick<ButtonProps, "size"> &
-  React.ComponentProps<"a">
+} & Pick<ButtonProps, "size"> & React.ComponentProps<"a">;
 
 const PaginationLink = ({
   className,
@@ -107,7 +110,6 @@ const PaginationEllipsis = ({
 PaginationEllipsis.displayName = "PaginationEllipsis"
 
 export {
-  Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,

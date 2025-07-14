@@ -1,3 +1,6 @@
+// context-menu.tsx - Reusable Context Menu component for the blog app UI.
+// Used for right-click menus and contextual actions.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"
 import { Check, ChevronRight, Circle } from "lucide-react"

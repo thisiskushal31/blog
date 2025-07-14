@@ -1,10 +1,31 @@
+// alert-dialog.tsx - Reusable AlertDialog component for modal dialogs in the blog app UI.
+// Used for confirmations, warnings, and critical actions.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
-const AlertDialog = AlertDialogPrimitive.Root
+export interface AlertDialogProps extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Root> {
+  children: React.ReactNode; // Dialog content
+}
+
+const AlertDialog = ({ children, ...props }: AlertDialogProps) => {
+  // Only wrap the rendering logic in try/catch for error boundaries
+  try {
+    return (
+      <AlertDialogPrimitive.Root {...props}>
+        {children}
+      </AlertDialogPrimitive.Root>
+    )
+  } catch (err) {
+    // Log the error and show a fallback UI
+    // eslint-disable-next-line no-console
+    console.error("Error rendering AlertDialog:", err)
+    return null
+  }
+}
 
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 

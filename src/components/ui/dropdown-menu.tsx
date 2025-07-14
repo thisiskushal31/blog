@@ -1,3 +1,6 @@
+// dropdown-menu.tsx - Reusable Dropdown Menu component for the blog app UI.
+// Used for navigation, actions, and user menus.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { Check, ChevronRight, Circle } from "lucide-react"

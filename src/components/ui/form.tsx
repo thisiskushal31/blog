@@ -1,3 +1,6 @@
+// form.tsx - Reusable Form components for the blog app UI.
+// Provides form context, field, label, control, description, and message components for forms.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
@@ -12,8 +15,11 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
+// Remove the incorrect import:
+// import { Form as FormPrimitive } from "radix-ui"
 
-const Form = FormProvider
+// The main Form component is FormProvider from react-hook-form
+const Form = FormProvider;
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -70,99 +76,119 @@ const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 )
 
-const FormItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const id = React.useId()
+const FormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => {
+    try {
+      const id = React.useId()
 
-  return (
-    <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
-    </FormItemContext.Provider>
-  )
-})
+      return (
+        <FormItemContext.Provider value={{ id }}>
+          <div ref={ref} className={cn("space-y-2", className)} {...props} />
+        </FormItemContext.Provider>
+      )
+    } catch (err) {
+      console.error("Error rendering FormItem:", err)
+      return null
+    }
+  }
+)
 FormItem.displayName = "FormItem"
 
-const FormLabel = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
-  const { error, formItemId } = useFormField()
+const FormLabel = React.forwardRef<HTMLLabelElement, React.LabelHTMLAttributes<HTMLLabelElement>>(
+  ({ className, ...props }, ref) => {
+    // useFormField must be called at the top level
+    const { error, formItemId } = useFormField();
+    try {
+      return (
+        <Label
+          ref={ref}
+          className={cn(error && "text-destructive", className)}
+          htmlFor={formItemId}
+          {...props}
+        />
+      );
+    } catch (err) {
+      console.error("Error rendering FormLabel:", err);
+      return null;
+    }
+  }
+);
+FormLabel.displayName = "FormLabel";
 
-  return (
-    <Label
-      ref={ref}
-      className={cn(error && "text-destructive", className)}
-      htmlFor={formItemId}
-      {...props}
-    />
-  )
-})
-FormLabel.displayName = "FormLabel"
+const FormControl = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => {
+    // useFormField must be called at the top level
+    const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
+    try {
+      return (
+        <Slot
+          ref={ref}
+          id={formItemId}
+          aria-describedby={
+            !error
+              ? `${formDescriptionId}`
+              : `${formDescriptionId} ${formMessageId}`
+          }
+          aria-invalid={!!error}
+          {...props}
+        />
+      );
+    } catch (err) {
+      console.error("Error rendering FormControl:", err);
+      return null;
+    }
+  }
+);
+FormControl.displayName = "FormControl";
 
-const FormControl = React.forwardRef<
-  React.ElementRef<typeof Slot>,
-  React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
-  const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
-
-  return (
-    <Slot
-      ref={ref}
-      id={formItemId}
-      aria-describedby={
-        !error
-          ? `${formDescriptionId}`
-          : `${formDescriptionId} ${formMessageId}`
-      }
-      aria-invalid={!!error}
-      {...props}
-    />
-  )
-})
-FormControl.displayName = "FormControl"
-
-const FormDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
-  const { formDescriptionId } = useFormField()
-
-  return (
-    <p
-      ref={ref}
-      id={formDescriptionId}
-      className={cn("text-sm text-muted-foreground", className)}
-      {...props}
-    />
-  )
-})
-FormDescription.displayName = "FormDescription"
+const FormDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
+  ({ className, ...props }, ref) => {
+    // useFormField must be called at the top level
+    const { formDescriptionId } = useFormField();
+    try {
+      return (
+        <p
+          ref={ref}
+          id={formDescriptionId}
+          className={cn("text-sm text-muted-foreground", className)}
+          {...props}
+        />
+      );
+    } catch (err) {
+      console.error("Error rendering FormDescription:", err);
+      return null;
+    }
+  }
+);
+FormDescription.displayName = "FormDescription";
 
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, children, ...props }, ref) => {
-  const { error, formMessageId } = useFormField()
-  const body = error ? String(error?.message) : children
-
+  // useFormField must be called at the top level
+  const { error, formMessageId } = useFormField();
+  const body = error ? String(error?.message) : children;
   if (!body) {
-    return null
+    return null;
   }
-
-  return (
-    <p
-      ref={ref}
-      id={formMessageId}
-      className={cn("text-sm font-medium text-destructive", className)}
-      {...props}
-    >
-      {body}
-    </p>
-  )
-})
-FormMessage.displayName = "FormMessage"
+  try {
+    return (
+      <p
+        ref={ref}
+        id={formMessageId}
+        className={cn("text-sm font-medium text-destructive", className)}
+        {...props}
+      >
+        {body}
+      </p>
+    );
+  } catch (err) {
+    console.error("Error rendering FormMessage:", err);
+    return null;
+  }
+});
+FormMessage.displayName = "FormMessage";
 
 export {
   useFormField,

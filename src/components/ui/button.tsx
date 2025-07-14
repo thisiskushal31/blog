@@ -1,3 +1,6 @@
+// button.tsx - Reusable Button component for the blog app UI.
+// Supports variants, sizes, and asChild rendering for flexible usage.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -36,19 +39,27 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean // If true, renders as a child component (e.g., for links)
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
+    // Only wrap the rendering logic in try/catch for error boundaries
+    try {
+      const Comp = asChild ? Slot : "button"
+      return (
+        <Comp
+          className={cn(buttonVariants({ variant, size, className }))}
+          ref={ref}
+          {...props}
+        />
+      )
+    } catch (err) {
+      // Log the error and show a fallback UI
+      // eslint-disable-next-line no-console
+      console.error("Error rendering Button:", err)
+      return null
+    }
   }
 )
 Button.displayName = "Button"

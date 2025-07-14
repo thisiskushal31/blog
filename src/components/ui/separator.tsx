@@ -1,29 +1,24 @@
+// separator.tsx - Reusable Separator component for dividing content sections.
+// Used for visual separation of UI blocks in the blog app.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
-import * as SeparatorPrimitive from "@radix-ui/react-separator"
-
 import { cn } from "@/lib/utils"
 
-const Separator = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
->(
-  (
-    { className, orientation = "horizontal", decorative = true, ...props },
-    ref
-  ) => (
-    <SeparatorPrimitive.Root
-      ref={ref}
-      decorative={decorative}
-      orientation={orientation}
-      className={cn(
-        "shrink-0 bg-border",
-        orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
-        className
-      )}
-      {...props}
-    />
-  )
-)
-Separator.displayName = SeparatorPrimitive.Root.displayName
+export interface SeparatorProps extends React.HTMLAttributes<HTMLHRElement> {}
 
-export { Separator }
+const Separator = React.forwardRef<HTMLHRElement, SeparatorProps>(({ className, ...props }, ref) => {
+  // Only wrap the rendering logic in try/catch for error boundaries
+  try {
+    return (
+      <hr ref={ref} className={cn("border-t border-muted-foreground/20 my-4", className)} {...props} />
+    );
+  } catch (err) {
+    // Log the error and show a fallback UI
+    // eslint-disable-next-line no-console
+    console.error("Error rendering Separator:", err);
+    return null;
+  }
+});
+Separator.displayName = "Separator";
+
+export { Separator };

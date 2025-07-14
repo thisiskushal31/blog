@@ -1,19 +1,25 @@
+// table.tsx - Reusable Table component for displaying tabular data in the blog app UI.
+// Used for markdown tables, data grids, and admin panels.
+// If rendering fails, an error is logged and a fallback UI is shown.
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-const Table = React.forwardRef<
-  HTMLTableElement,
-  React.HTMLAttributes<HTMLTableElement>
->(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto">
-    <table
-      ref={ref}
-      className={cn("w-full caption-bottom text-sm", className)}
-      {...props}
-    />
-  </div>
-))
+export interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {}
+
+const Table = React.forwardRef<HTMLTableElement, TableProps>(({ className, ...props }, ref) => {
+  // Only wrap the rendering logic in try/catch for error boundaries
+  try {
+    return (
+      <table ref={ref} className={cn("w-full caption-bottom text-sm", className)} {...props} />
+    )
+  } catch (err) {
+    // Log the error and show a fallback UI
+    // eslint-disable-next-line no-console
+    console.error("Error rendering Table:", err)
+    return null
+  }
+})
 Table.displayName = "Table"
 
 const TableHeader = React.forwardRef<

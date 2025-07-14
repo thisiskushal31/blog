@@ -1,4 +1,12 @@
-// Utility to load markdown files dynamically
+// markdownLoader.ts - Utility for loading and providing markdown content for the blog app.
+// Supports dynamic loading from file paths and static content for tutorials/examples.
+// If loading fails, an error is logged and a fallback message is returned.
+
+/**
+ * loadMarkdownContent - Loads markdown content from a file path (async).
+ * @param filePath - The path to the markdown file
+ * @returns The markdown content as a string, or an error message on failure
+ */
 export async function loadMarkdownContent(filePath: string): Promise<string> {
   try {
     // For development, we can use dynamic imports
@@ -8,16 +16,14 @@ export async function loadMarkdownContent(filePath: string): Promise<string> {
     }
     return await response.text();
   } catch (error) {
+    // Log the error and return a fallback message
+    // eslint-disable-next-line no-console
     console.error('Error loading markdown file:', error);
-    return `# Error Loading Content
-
-Could not load the markdown file from: ${filePath}
-
-Please check the file path and try again.`;
+    return `# Error Loading Content\n\nCould not load the markdown file from: ${filePath}\n\nPlease check the file path and try again.`;
   }
 }
 
-// Simple approach: Define markdown content as strings
+// Static markdown content for examples/tutorials
 export const markdownContent = {
   'example-external-content': `# Example External Markdown Content
 
@@ -81,14 +87,22 @@ Continue with the tutorial...`,
   // Add more markdown content here
 };
 
+/**
+ * getMarkdownContent - Retrieves static markdown content by file name.
+ * @param fileName - The key for the markdown content
+ * @returns The markdown content as a string, or an error message on failure
+ */
 export function getMarkdownContent(fileName: string): string {
-  const content = markdownContent[fileName as keyof typeof markdownContent];
-  if (!content) {
-    return `# Error Loading Content
-
-Could not load the markdown file: ${fileName}
-
-Please check the file name and try again.`;
+  try {
+    const content = markdownContent[fileName as keyof typeof markdownContent];
+    if (!content) {
+      throw new Error(`No markdown content found for: ${fileName}`);
+    }
+    return content;
+  } catch (error) {
+    // Log the error and return a fallback message
+    // eslint-disable-next-line no-console
+    console.error('Error getting markdown content:', error);
+    return `# Error Loading Content\n\nCould not load the markdown file: ${fileName}\n\nPlease check the file name and try again.`;
   }
-  return content;
 } 
