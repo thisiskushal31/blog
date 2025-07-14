@@ -46,14 +46,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     // Only wrap the rendering logic in try/catch for error boundaries
     try {
-      const Comp = asChild ? Slot : "button"
-      return (
-        <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-        />
-      )
+    const Comp = asChild ? Slot : "button"
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
     } catch (err) {
       // Log the error and show a fallback UI
       // eslint-disable-next-line no-console

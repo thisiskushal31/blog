@@ -15,18 +15,18 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
   // Only wrap the rendering logic in try/catch for error boundaries
   try {
     return (
-      <SliderPrimitive.Root
-        ref={ref}
+  <SliderPrimitive.Root
+    ref={ref}
         value={value}
         onValueChange={onValueChange}
         className={cn("relative flex w-full touch-none select-none items-center", className)}
-        {...props}
-      >
+    {...props}
+  >
         <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-muted">
-          <SliderPrimitive.Range className="absolute h-full bg-primary" />
-        </SliderPrimitive.Track>
+      <SliderPrimitive.Range className="absolute h-full bg-primary" />
+    </SliderPrimitive.Track>
         {children}
-      </SliderPrimitive.Root>
+  </SliderPrimitive.Root>
     )
   } catch (err) {
     // Log the error and show a fallback UI

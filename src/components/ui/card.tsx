@@ -66,7 +66,7 @@ const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDi
   ({ className, ...props }, ref) => {
     try {
       return (
-        <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
       )
     } catch (err) {
       console.error("Error rendering CardContent:", err)
