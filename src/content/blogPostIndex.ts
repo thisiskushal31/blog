@@ -1,10 +1,6 @@
 
 // Blog post imports - Add new blog posts here
-import { blogPost as implementingGitopsWithArgocd } from './blog/implementing-gitops-with-argocd';
-import { blogPost as securingCicdPipelineBestPractices } from './blog/securing-cicd-pipeline-best-practices';
-import { blogPost as monitoringKubernetesAtScaleWithPrometheus } from './blog/monitoring-kubernetes-at-scale-with-prometheus';
-import { blogPost as infrastructureAsCodeTerraformVsPulumi } from './blog/infrastructure-as-code-terraform-vs-pulumi';
-import { blogPost as buildingResilientMicroservicesWithIstio } from './blog/building-resilient-microservices-with-istio';
+import { blogPost as comprehensiveFeaturesShowcase } from './blog/comprehensive-features-showcase';
 
 // Blog post interface - defines the structure of each blog post
 export interface BlogPost {
@@ -26,9 +22,5 @@ export interface BlogPost {
 
 // Export all blog posts - Add new posts to this array
 export const blogPosts: BlogPost[] = [
-  implementingGitopsWithArgocd,
-  securingCicdPipelineBestPractices,
-  monitoringKubernetesAtScaleWithPrometheus,
-  infrastructureAsCodeTerraformVsPulumi,
-  buildingResilientMicroservicesWithIstio,
+  comprehensiveFeaturesShowcase, // Comprehensive features showcase
 ];

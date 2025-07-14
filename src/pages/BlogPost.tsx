@@ -8,6 +8,7 @@ import MarkdownViewer from '@/components/MarkdownViewer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { useToast } from '@/hooks/use-toast';
 import { useTheme } from '@/hooks/useTheme';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -178,17 +179,18 @@ const BlogPost = () => {
             </div>
 
             {post.coverImage && (
-              <img 
+              <ImageWithFallback 
                 src={post.coverImage} 
                 alt={post.title}
                 className="w-full rounded-lg shadow-lg mb-8"
+                loading="lazy"
               />
             )}
           </header>
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            <MarkdownViewer content={post.content} />
+            <MarkdownViewer content={post.content} postSlug={post.slug} />
           </div>
         </article>
       </main>

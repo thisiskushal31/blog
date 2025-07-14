@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar, Sun, Moon } from "lucide-react";
 import { blogPosts } from "@/content/blogPostIndex";
 import { useTheme } from "@/hooks/useTheme";
+import ImageWithFallback from "@/components/ImageWithFallback";
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -79,10 +80,11 @@ const Blog = () => {
               {featuredPosts.map((post) => (
                 <Card key={post.slug} className="card-hover">
                   <CardHeader className="p-0">
-                    <img
+                    <ImageWithFallback
                       src={post.coverImage}
                       alt={post.title}
                       className="w-full h-48 object-cover rounded-t-lg"
+                      loading="lazy"
                     />
                   </CardHeader>
                   <CardContent className="p-6">
@@ -149,10 +151,11 @@ const Blog = () => {
             {filteredPosts.map((post) => (
               <Card key={post.slug} className="card-hover">
                 <CardHeader className="p-0">
-                  <img
+                  <ImageWithFallback
                     src={post.coverImage}
                     alt={post.title}
                     className="w-full h-48 object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </CardHeader>
                 <CardContent className="p-6">

@@ -9,6 +9,11 @@ A modern, responsive blog website built with React, TypeScript, and Tailwind CSS
 - **Category Filtering**: Filter blog posts by categories
 - **Featured Posts**: Highlight important posts in a dedicated section
 - **Markdown Support**: Write blog posts in Markdown with syntax highlighting
+- **Embedded Media**: Support for YouTube videos and GitHub Gists
+- **Lazy Loading**: All images and iframes load only when needed
+- **HTML Sanitization**: Secure content rendering with DOMPurify
+- **Syntax Highlighting**: Support for multiple programming languages
+- **Web Components**: Custom elements for embedded media
 - **Social Sharing**: Share posts on Twitter, LinkedIn, and copy links
 - **SEO Friendly**: Optimized for search engines
 - **Fast Performance**: Built with Vite for lightning-fast development and builds
@@ -167,8 +172,21 @@ The blog supports rich markdown formatting:
 - **Code**: \`\\\`inline code\\\`\` and \`\\\`\\\`\\\`language\\ncode blocks\\\`\\\`\\\`\`
 - **Lists**: Ordered (\`1. item\`) and unordered (\`- item\`)
 - **Links**: \`[text](url)\`
-- **Images**: \`![alt](url)\`
+- **Images**: \`![alt](url)\` (with lazy loading)
 - **Tables**: Pipe-separated tables
+- **Embedded Media**: \`[youtube_embed id="VIDEO_ID"]\` and \`[gist_embed id="USERNAME/GIST_ID"]\`
+
+### Supported Programming Languages
+
+The blog supports syntax highlighting for:
+- JavaScript/TypeScript
+- Python
+- YAML/JSON
+- Docker
+- Bash/Shell
+- Git
+- Markdown
+- And many more via Prism.js
 
 ## 🎨 Best Practices
 
