@@ -234,10 +234,12 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           <span class="text-foreground">${title}</span>
           <button 
             data-href="${href}"
-            class="copy-link-btn opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-muted hover:bg-muted/80 px-2 py-1 rounded text-muted-foreground hover:text-foreground"
+            class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
             title="Copy link to this section"
           >
-            Copy
+            <svg class="h-4 w-4 inline-block align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
           </button>
         </h3>`;
       });
@@ -251,10 +253,12 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           <span class="text-foreground">${title}</span>
           <button 
             data-href="${href}"
-            class="copy-link-btn opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-muted hover:bg-muted/80 px-2 py-1 rounded text-muted-foreground hover:text-foreground"
+            class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
             title="Copy link to this section"
           >
-            Copy
+            <svg class="h-4 w-4 inline-block align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
           </button>
         </h2>`;
       });
@@ -268,10 +272,12 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           <span class="text-foreground">${title}</span>
           <button 
             data-href="${href}"
-            class="copy-link-btn opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-muted hover:bg-muted/80 px-2 py-1 rounded text-muted-foreground hover:text-foreground"
+            class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
             title="Copy link to this section"
           >
-            Copy
+            <svg class="h-4 w-4 inline-block align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
           </button>
         </h1>`;
       });
@@ -484,7 +490,8 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
         'data-href', 'aria-label',
         'data-original-src', 'onerror', // For image fallback functionality
         'fill', 'viewBox', 'fill-rule', 'clip-rule', 'd', // SVG attributes
-        'aria-hidden' // For accessibility
+        'aria-hidden', // For accessibility
+        'stroke-linecap', 'stroke-linejoin', 'stroke-width', 'stroke' // Added for SVG icons
       ],
       ALLOW_DATA_ATTR: true,
       KEEP_CONTENT: true
@@ -505,14 +512,28 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           // For hash-based routing, construct the URL with the hash prefix
           const fullUrl = `${window.location.origin}/blog/#${href}`;
           navigator.clipboard.writeText(fullUrl).then(() => {
-            button.textContent = 'Copied!';
+            // Change the SVG to a checkmark temporarily
+            const svg = button.querySelector('svg');
+            if (svg) {
+              svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>';
+            }
             setTimeout(() => {
-              button.textContent = 'Copy';
+              // Restore the original link icon
+              if (svg) {
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>';
+              }
             }, 2000);
           }).catch(() => {
-            button.textContent = 'Failed';
+            // Show error state briefly
+            const svg = button.querySelector('svg');
+            if (svg) {
+              svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            }
             setTimeout(() => {
-              button.textContent = 'Copy';
+              // Restore the original link icon
+              if (svg) {
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>';
+              }
             }, 2000);
           });
         }
