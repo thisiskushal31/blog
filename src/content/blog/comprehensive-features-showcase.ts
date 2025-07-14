@@ -12,8 +12,9 @@ export const blogPost: BlogPost = {
   categories: ["Showcase", "Features", "Demo"],
   featured: true,
   coverImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop",
+  coverImageCredit: "Photo by John Doe on Unsplash",
   author: {
     name: "Kushal Gupta",
-    avatar: "/profile.jpeg",
+    avatar: "/blog/profile.jpeg",
   },
 };

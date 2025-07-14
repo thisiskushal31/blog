@@ -191,12 +191,21 @@ const BlogPost = () => {
               </div>
 
               {post.coverImage && (
-                <ImageWithFallback 
-                  src={post.coverImage} 
-                  alt={post.title}
-                  className="w-full rounded-lg shadow-lg mb-8"
-                  loading="lazy"
-                />
+                <div className="relative w-full mb-8">
+                  <ImageWithFallback 
+                    src={post.coverImage} 
+                    alt={post.title}
+                    className="w-full rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                  {post.coverImageCredit && (
+                    <div className="absolute left-0 bottom-2 w-full flex justify-end pr-4">
+                      <span className="bg-background/80 text-xs italic text-muted-foreground px-2 py-1 rounded shadow-sm">
+                        {post.coverImageCredit}
+                      </span>
+                    </div>
+                  )}
+                </div>
               )}
             </header>
 

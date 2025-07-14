@@ -30,6 +30,10 @@ export interface BlogPost {
   categories: string[];
   featured?: boolean;
   coverImage: string;
+  /**
+   * Optional credit for the cover image. Displayed as small text below the image in the markdown render.
+   */
+  coverImageCredit?: string;
   author: {
     name: string;
     avatar: string;
