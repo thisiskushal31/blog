@@ -223,12 +223,7 @@ const BlogPost = () => {
               <MarkdownViewer content={post.content} postSlug={post.slug} />
             </div>
             {/* Conditionally render Load More */}
-            {!hasHash && (
-              <div className="mt-8 flex justify-center">
-                {/* Load More button or feature here */}
-                <Button variant="outline" size="lg">Load More</Button>
-              </div>
-            )}
+            {/* Removed Load More button as MarkdownViewer handles content expansion */}
           </article>
         </main>
 

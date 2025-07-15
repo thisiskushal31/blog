@@ -74,7 +74,7 @@ const Blog = () => {
                     B
                   </span>
                 </div>
-                <h1 className="text-xl font-bold">DevOps Blog</h1>
+                <h1 className="text-xl font-bold">Kushal's Blog</h1>
               </div>
               <div className="flex items-center space-x-4">
                 <Button
