@@ -26,7 +26,7 @@ const NotFound = () => {
             </Button>
             <Button asChild variant="outline">
               <a 
-                href="https://thisiskushal31.github.io/" 
+                href="https://thisiskushal31.github.io/blog/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >

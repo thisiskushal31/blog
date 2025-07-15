@@ -19,7 +19,7 @@ import {
   PaginationPrevious,
   PaginationNext,
 } from "@/components/ui/pagination";
-import { BLOG_BASE_PATH, AUTHOR } from "../config/config";
+import { BLOG_BASE_PATH, AUTHOR, BASE_URL } from "../config/config";
 
 const POSTS_PER_PAGE = 6;
 const Blog = () => {
@@ -92,7 +92,7 @@ const Blog = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <a
-                    href="https://thisiskushal31.github.io/"
+                    href="${BASE_URL}"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center"

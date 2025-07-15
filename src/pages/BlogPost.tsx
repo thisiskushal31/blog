@@ -107,7 +107,7 @@ const BlogPost = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <a 
-                    href="https://thisiskushal31.github.io/" 
+                    href="https://thisiskushal31.github.io/blog/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center"
