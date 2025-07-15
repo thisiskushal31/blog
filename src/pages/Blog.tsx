@@ -19,7 +19,7 @@ import {
   PaginationPrevious,
   PaginationNext,
 } from "@/components/ui/pagination";
-import { BLOG_BASE_PATH } from "../config/config";
+import { BLOG_BASE_PATH, AUTHOR } from "../config/config";
 
 const POSTS_PER_PAGE = 6;
 const Blog = () => {
@@ -182,52 +182,65 @@ const Blog = () => {
           {/* Blog Posts Grid */}
           <section>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {paginatedPosts.map((post) => (
-                <Card key={post.slug} className="card-hover">
-                  <CardHeader className="p-0">
-                    <ImageWithFallback
-                      src={post.coverImage}
-                      alt={post.title}
-                      className="w-full h-48 object-cover rounded-t-lg"
-                      loading="lazy"
-                    />
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {post.categories.map((category) => (
-                        <Badge
-                          key={category}
-                          variant="secondary"
-                          className="text-xs"
-                        >
-                          {category}
-                        </Badge>
-                      ))}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                      <div className="flex items-center space-x-4">
-                        <span className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          {post.publishDate}
-                        </span>
-                        <span className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          {post.readTime}
-                        </span>
+              {paginatedPosts.map((post) => {
+                // Determine which author to use: per-post or global
+                const postAuthor = post.author || AUTHOR;
+                return (
+                  <Card key={post.slug} className="card-hover">
+                    <CardHeader className="p-0">
+                      <ImageWithFallback
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full h-48 object-cover rounded-t-lg"
+                        loading="lazy"
+                      />
+                    </CardHeader>
+                    <CardContent className="p-6">
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {post.categories.map((category) => (
+                          <Badge
+                            key={category}
+                            variant="secondary"
+                            className="text-xs"
+                          >
+                            {category}
+                          </Badge>
+                        ))}
                       </div>
-                    </div>
-                    <Button asChild variant="outline" className="w-full">
-                      <Link to={`${BLOG_BASE_PATH}/${post.slug}`}>Read More</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                      <h3 className="text-xl font-semibold mb-2 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      {/* Author info below excerpt */}
+                      <div className="flex items-center mb-2 text-sm text-muted-foreground">
+                        <img
+                          src={postAuthor.avatar}
+                          alt={postAuthor.name}
+                          className="w-6 h-6 rounded-full mr-2"
+                        />
+                        <span>{postAuthor.name}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                        <div className="flex items-center space-x-4">
+                          <span className="flex items-center">
+                            <Calendar className="h-4 w-4 mr-1" />
+                            {post.publishDate}
+                          </span>
+                          <span className="flex items-center">
+                            <Clock className="h-4 w-4 mr-1" />
+                            {post.readTime}
+                          </span>
+                        </div>
+                      </div>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to={`${BLOG_BASE_PATH}/${post.slug}`}>Read More</Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
             {/* Classic Pagination Controls */}
             <div className="flex justify-center mt-8">

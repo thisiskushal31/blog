@@ -12,7 +12,7 @@ import { BLOG_POST_SLUGS, POST_MAP } from '../config/blogPosts.config';
  * @property excerpt - Short description shown on blog listing page
  * @property content - Full markdown content of the blog post
  * @property publishDate - Publication date (YYYY-MM-DD format)
- * @property readTime - Estimated reading time (e.g., "5 min read")
+ * @property readTime - Estimated reading time (e.g., "5 min read") (automatically calculated)
  * @property categories - Array of category tags for filtering
  * @property featured - Optional flag to mark post as featured
  * @property coverImage - URL or path to cover image
@@ -25,7 +25,6 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   publishDate: string;
-  readTime: string;
   categories: string[];
   featured?: boolean;
   coverImage: string;
@@ -33,7 +32,37 @@ export interface BlogPost {
    * Optional credit for the cover image. Displayed as small text below the image in the markdown render.
    */
   coverImageCredit?: string;
-  // author is now always global
+  /**
+   * Optional author override for this post. If not provided, the global AUTHOR is used.
+   */
+  author?: {
+    name: string;
+    avatar: string;
+  };
+  /**
+   * Automatically calculated read time (minutes read, e.g., "5 min read")
+   */
+  readTime?: string;
 }
 
-export const blogPosts: BlogPost[] = BLOG_POST_SLUGS.map(slug => POST_MAP[slug]).filter(Boolean);
+// Utility to calculate read time from markdown content
+function calculateReadTime(markdown: string): string {
+  // Remove code blocks and HTML tags for a more accurate word count
+  const text = markdown
+    .replace(/```[\s\S]*?```/g, '') // remove code blocks
+    .replace(/<[^>]+>/g, '') // remove HTML tags
+    .replace(/[#$*_\->`~\]]/g, '') // remove markdown symbols (escape only - and ])
+    .replace(/\n/g, ' ');
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  const wordCount = words.length;
+  const minutes = Math.max(1, Math.round(wordCount / 200));
+  return `${minutes} min read`;
+}
+
+export const blogPosts: BlogPost[] = BLOG_POST_SLUGS.map(slug => {
+  const post = POST_MAP[slug];
+  return {
+    ...post,
+    readTime: calculateReadTime(post.content),
+  };
+}).filter(Boolean);

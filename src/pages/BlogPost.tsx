@@ -73,18 +73,8 @@ const BlogPost = () => {
       }
     };
 
-    const handleShare = (platform: 'twitter' | 'linkedin') => {
-      const text = `Check out this blog post: ${post.title}`;
-      const url = shareUrl;
-      
-      if (platform === 'twitter') {
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
-        window.open(twitterUrl, '_blank', 'noopener,noreferrer');
-      } else if (platform === 'linkedin') {
-        const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-        window.open(linkedinUrl, '_blank', 'noopener,noreferrer');
-      }
-    };
+    // Determine which author to use: per-post or global
+    const postAuthor = post.author || AUTHOR;
 
     return (
       <div className="min-h-screen bg-background">
@@ -154,11 +144,11 @@ const BlogPost = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center">
                     <img 
-                      src={AUTHOR.avatar} 
-                      alt={AUTHOR.name}
+                      src={postAuthor.avatar}
+                      alt={postAuthor.name}
                       className="w-8 h-8 rounded-full mr-2"
                     />
-                    <span>{AUTHOR.name}</span>
+                    <span>{postAuthor.name}</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <span className="flex items-center">
@@ -174,22 +164,6 @@ const BlogPost = () => {
                 
                 {/* Social Share */}
                 <div className="flex items-center space-x-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => handleShare('twitter')}
-                    className="p-2"
-                  >
-                    <Twitter className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => handleShare('linkedin')}
-                    className="p-2"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </Button>
                   <Button
                     variant="outline"
                     size="sm"

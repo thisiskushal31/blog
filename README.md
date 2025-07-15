@@ -82,12 +82,16 @@ export const blogPost: BlogPost = {
   excerpt: 'A brief description of your post that appears on the blog listing page.',
   content, // imported markdown
   publishDate: '2024-01-15',
-  readTime: '5 min read',
+  // No need to specify readTime! It is automatically calculated based on the post content.
   categories: ['DevOps', 'Tutorial'],
   featured: true,
   coverImage: '/path-to-your-image.jpg',
   coverImageCredit: 'Photo by ...',
-  // No author field needed! Author is set globally.
+  // Optional: Override the author for this post (otherwise the global author is used)
+  // author: {
+  //   name: "Jane Doe",
+  //   avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  // }
 };
 ```
 
@@ -122,13 +126,14 @@ That's it! Your post will now appear in the blog.
     ```typescript
     export const BLOG_BASE_PATH = "/book-blog";
     ```
-  - To change the author name or avatar (for all posts):
+  - To change the default author name or avatar (used for all posts unless overridden):
     ```typescript
     export const AUTHOR = {
       name: "Your Name",
       avatar: "/blog/profile.jpeg", // or any image path
     };
     ```
+- You can override the author for any individual post by adding an `author` field to the post object (see above). If not specified, the global author is used as a fallback.
 - All posts and author info will update automatically.
 - **All config files are in the `src/config/` folder.**
 
