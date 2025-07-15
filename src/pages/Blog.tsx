@@ -72,7 +72,7 @@ const Blog = () => {
               <div className="flex items-center space-x-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold font-mono text-sm">
-                    B
+                    KG
                   </span>
                 </div>
                 <h1 className="text-xl font-bold">Kushal's Blog</h1>
