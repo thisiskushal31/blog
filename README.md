@@ -200,21 +200,21 @@ This project can be deployed to various platforms:
 To ensure all share/copy links use the correct root (especially for GitHub Pages or custom domains), set the `BASE_URL` in `src/config/config.ts`:
 
 ```typescript
-export const BASE_URL = "https://thisiskushal31.github.io/blog/"; // Use your deployed endpoint, with trailing slash
+export const BASE_URL = "https://thisiskushal31.github.io/demo-blog/"; // Use your deployed endpoint, with trailing slash
 ```
 
-If you deploy to a custom domain, update this value accordingly (e.g., `https://kushalgupta.com/`).
+If you deploy to a custom domain, update this value accordingly (e.g., `https://yourdomain.com/`).
 
 All share/copy links will use this as the root, so links will look like:
 
 ```
-https://thisiskushal31.github.io/blog/#/blog/my-post-slug
+https://thisiskushal31.github.io/demo-blog/#/blog/my-post-slug
 ```
 
 or
 
 ```
-https://kushalgupta.com/#/blog/my-post-slug
+https://yourdomain.com/#/blog/my-post-slug
 ```
 
 You do **not** need to update any other code for the base URL to work with your deployment—just set `BASE_URL` and redeploy.
