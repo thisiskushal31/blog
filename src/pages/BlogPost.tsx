@@ -10,7 +10,7 @@ import { useTheme } from '@/hooks/useTheme';
 import ImageWithFallback from '@/components/ImageWithFallback';
 import { toast as sonnerToast } from "sonner"; // Import Sonner's toast for testing
 import { useEffect } from 'react';
-import { AUTHOR, BLOG_BASE_PATH } from '../config/config';
+import { AUTHOR, BLOG_BASE_PATH, BASE_URL } from '../config/config';
 
 // BlogPost.tsx - Blog post detail page.
 // This page displays a single blog post, handles sharing, copying links, and error states.
@@ -54,9 +54,8 @@ const BlogPost = () => {
       );
     }
 
-    // Construct the share URL for this post
-    // For hash router, share/copy link should be origin + /# + blog path + /slug
-    const shareUrl = `${window.location.origin}/#${BLOG_BASE_PATH}/${post.slug}`;
+    // Construct the share URL for this post using the configured BASE_URL
+    const shareUrl = `${BASE_URL}#/blog/${post.slug}`;
     
     // Handler for copying the post link to clipboard
     const handleCopyLink = async () => {
