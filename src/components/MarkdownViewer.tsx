@@ -27,7 +27,7 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-docker";
 import "prismjs/components/prism-git";
 import "prismjs/components/prism-markdown";
-import { BLOG_BASE_PATH } from '../config/config';
+import { BASE_URL, BLOG_BASE_PATH, AUTHOR } from '../config/config';
 
 interface MarkdownViewerProps {
   content: string;
@@ -548,8 +548,8 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           e.preventDefault();
           const href = button.getAttribute("data-href");
           if (href) {
-            // For hash router, copy/share link should be origin + href (href already starts with #)
-            const fullUrl = `${window.location.origin}${href}`;
+            // Use BASE_URL as the prefix for the copied link
+            const fullUrl = `${BASE_URL.replace(/\/$/, "")}${href}`;
             navigator.clipboard.writeText(fullUrl).then(() => {
               const svg = button.querySelector('svg');
               if (svg) {
