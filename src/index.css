@@ -403,7 +403,10 @@
   }
 }
 
-/* ABSOLUTE FLUSH: Remove all vertical gap between Gist markdown and notice box */
+/* ABSOLUTE FLUSH: Remove all vertical gap between Gist markdown and notice box.
+   These overrides are necessary because markdown and prose styles often add margin/padding to block elements.
+   The goal is to make the Gist notice visually flush with the markdown content above, for a seamless look and improved user experience.
+*/
 .prose .gist-md-html,
 .prose .gist-md-html > * {
   margin-bottom: 0 !important;

@@ -604,6 +604,10 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
               let hasMarkdown = false;
               let rawUrl = '';
               let markdownFilename = '';
+              // --- Gist Markdown Rendering ---
+              // For markdown files in a Gist, we render only the markdown content (no filename/language header above).
+              // A subtle notice box is always rendered directly below the content, with a grey background and no vertical gap.
+              // This is achieved via aggressive CSS overrides in src/index.css to ensure a seamless, flush appearance.
               files.forEach((file) => {
                 if (file.content) {
                   const isMarkdown = /\.md(own)?$/i.test(file.filename);

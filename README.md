@@ -178,6 +178,13 @@ The blog supports syntax highlighting for:
 - Markdown
 - And many more via Prism.js
 
+### GitHub Gist Markdown Rendering
+
+- Markdown files from GitHub Gists are rendered inline, just like local markdown.
+- The filename/language header is omitted for a clean reading experience.
+- A subtle notice box (with a grey background) is always shown directly below the rendered content, indicating the source and providing a 'view raw' link.
+- The integration is styled to ensure there is no visual gap between the content and the notice, for a seamless look.
+
 ## 🎨 Best Practices
 
 ### Content Guidelines
