@@ -195,26 +195,33 @@ This project can be deployed to various platforms:
 3. Add script: `"deploy": "gh-pages -d dist"`
 4. Run: `npm run build && npm run deploy`
 
+## 🌐 Configuring Your Blog Endpoint (BASE_URL)
+
+To ensure all share/copy links use the correct root (especially for GitHub Pages or custom domains), set the `BASE_URL` in `src/config/config.ts`:
+
+```typescript
+export const BASE_URL = "https://thisiskushal31.github.io/blog/"; // Use your deployed endpoint, with trailing slash
+```
+
+If you deploy to a custom domain, update this value accordingly (e.g., `https://kushalgupta.com/`).
+
+All share/copy links will use this as the root, so links will look like:
+
+```
+https://thisiskushal31.github.io/blog/#/blog/my-post-slug
+```
+
+or
+
+```
+https://kushalgupta.com/#/blog/my-post-slug
+```
+
+You do **not** need to update any other code for the base URL to work with your deployment—just set `BASE_URL` and redeploy.
+
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙋‍♂️ Support
-
-If you have any questions or need help:
-1. Check the existing blog posts for examples
-2. Review this README for guidance
-3. Create an issue in the repository
-4. Follow the best practices outlined above
-
----
-
-**Happy Blogging! 🎉**
+4. Push to the branch (`
