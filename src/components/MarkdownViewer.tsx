@@ -1,6 +1,17 @@
 // MarkdownViewer.tsx - Renders markdown content as sanitized, styled HTML with syntax highlighting and embedded media.
 // Handles custom web components, code highlighting, image captions, tables, and more. All HTML is sanitized for security.
 // If rendering fails, an error is logged and a fallback UI is shown.
+//
+// Key features:
+// - Custom YouTube and Gist embedding (with lazy loading)
+// - Syntax highlighting via Prism.js
+// - Secure HTML rendering with DOMPurify
+// - Image fallback and caption support
+// - Table, list, and heading enhancements
+// - 'Load More' for long posts
+// - Robust error boundaries
+//
+// --- Imports ---
 import React, { useState, useEffect, useRef } from "react";
 import DOMPurify from "dompurify";
 import Prism from "prismjs";
@@ -525,20 +536,6 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
     setReactEmbeds(embeds);
   }, [content, showFull, postSlug]);
 
-  // Auto-load more on scroll near bottom (first time only)
-  // useEffect(() => {
-  //   if (showFull) return;
-  //   const handler = () => {
-  //     if (!containerRef.current) return;
-  //     const rect = containerRef.current.getBoundingClientRect();
-  //     if (rect.bottom < window.innerHeight + 200) {
-  //       setShowFull(true);
-  //     }
-  //   };
-  //   window.addEventListener('scroll', handler);
-  //   return () => window.removeEventListener('scroll', handler);
-  // }, [showFull]);
-
   // Clipboard copy handler using event delegation
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -589,6 +586,7 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
     const loadGists = async () => {
       try {
         const gistContainers = document.querySelectorAll('.gist-container');
+        // Remove Set-based deduplication: show notice for every Gist render
         for (const container of gistContainers) {
           const gistId = container.getAttribute('data-gist');
           if (!gistId) continue;
@@ -600,14 +598,20 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
                 filename: string;
                 language: string;
                 content: string;
+                raw_url?: string;
               }>;
               let gistHtml = '<div class="gist-content">';
+              let hasMarkdown = false;
+              let rawUrl = '';
+              let markdownFilename = '';
               files.forEach((file) => {
                 if (file.content) {
                   const isMarkdown = /\.md(own)?$/i.test(file.filename);
                   if (isMarkdown) {
+                    hasMarkdown = true;
+                    if (file.raw_url) rawUrl = file.raw_url;
+                    if (!markdownFilename) markdownFilename = file.filename;
                     // Use the top-level convertMarkdownToHtml
-                    const html = file.content;
                     let rendered = { html: '', reactEmbeds: [] };
                     try {
                       rendered = convertMarkdownToHtml(file.content);
@@ -626,8 +630,7 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
                           'table', 'thead', 'tbody', 'tr', 'th', 'td',
                           'pre', 'code',
                           'blockquote',
-                          'div', 'span',
-                          'svg', 'path', 'button'
+                          'div', 'span', 'svg', 'path', 'button'
                         ],
                         ALLOWED_ATTR: [
                           'href', 'src', 'alt', 'title', 'class', 'id',
@@ -644,17 +647,16 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
                     } catch (err) {
                       sanitized = '<div class="text-red-500">Error rendering markdown gist file.</div>';
                     }
+                    // For markdown files, render only the content (no header above)
                     gistHtml += `
-                      <div class="gist-file">
-                        <div class="gist-file-header">
-                          <span class="gist-filename">${file.filename}</span>
-                          <span class="gist-language">Markdown</span>
+                      <div class="gist-file" style="margin:0;padding:0;">
+                        <div class="gist-md-html" style="margin:0;padding:0;">
+                          ${sanitized}
                         </div>
-                        <div class="gist-md-notice mb-2">This is a GitHub Gist (Markdown file)</div>
-                        <div class="gist-md-html">${sanitized}</div>
                       </div>
                     `;
                   } else {
+                    // For non-markdown files, show filename/language header above code
                     gistHtml += `
                       <div class="gist-file">
                         <div class="gist-file-header">
@@ -669,6 +671,23 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
               });
               gistHtml += '</div>';
               container.innerHTML = gistHtml;
+              let markdownNotice = '';
+              if (hasMarkdown) {
+                markdownNotice = `
+                  <div class="gist-md-notice-box rounded-md bg-muted px-4 py-2 mb-3 mt-4 flex items-center justify-between text-xs text-muted-foreground">
+                    <span>${markdownFilename} hosted with ❤️ by GitHub</span>
+                    ${rawUrl ? `<a href="${rawUrl}" target="_blank" rel="noopener noreferrer" class="ml-2 underline hover:text-primary transition">view raw</a>` : ''}
+                  </div>
+                `;
+              }
+              if (markdownNotice) {
+                // Remove any existing notice immediately after this container
+                const next = container.nextElementSibling;
+                if (next && next.classList.contains('gist-md-notice-box')) {
+                  next.remove();
+                }
+                container.insertAdjacentHTML('afterend', markdownNotice);
+              }
               if (typeof Prism !== 'undefined') {
                 container.querySelectorAll('pre code').forEach((block) => {
                   Prism.highlightElement(block as HTMLElement);
@@ -702,10 +721,9 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           const mountPoint = document.createElement('div');
           placeholder.parentNode.replaceChild(mountPoint, placeholder);
           // Render the React component into the mount point
-          import('react-dom').then(ReactDOM => {
-            ReactDOM.render(
-              <YouTubeEmbedReact videoId={embed.videoId} alt={embed.alt} />, 
-              mountPoint
+          import('react-dom/client').then(({ createRoot }) => {
+            createRoot(mountPoint).render(
+              <YouTubeEmbedReact videoId={embed.videoId} alt={embed.alt} />
             );
           });
         }
