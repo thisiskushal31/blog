@@ -27,6 +27,7 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-docker";
 import "prismjs/components/prism-git";
 import "prismjs/components/prism-markdown";
+import { BLOG_BASE_PATH } from '../config/config';
 
 interface MarkdownViewerProps {
   content: string;
@@ -208,7 +209,8 @@ function convertMarkdownToHtml(markdown: string, postSlug?: string) {
       // Clean the title for ID generation (remove emojis and special chars)
       const cleanTitle = title.replace(/[^\w\s-]/g, "").trim();
       const id = cleanTitle.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
-      const href = postSlug ? `/blog/${postSlug}#${id}` : `#${id}`;
+      // For hash router, anchor should be #/blog/slug#anchor
+      const href = postSlug ? `#${BLOG_BASE_PATH}/${postSlug}#${id}` : `#${id}`;
       return `<h3 id="${id}" class="group relative scroll-mt-8 text-xl font-semibold mb-4 mt-6 flex items-center gap-2">
         <span class="text-foreground">${title}</span>
         <button 
@@ -227,7 +229,7 @@ function convertMarkdownToHtml(markdown: string, postSlug?: string) {
       // Clean the title for ID generation (remove emojis and special chars)
       const cleanTitle = title.replace(/[^\w\s-]/g, "").trim();
       const id = cleanTitle.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
-      const href = postSlug ? `/blog/${postSlug}#${id}` : `#${id}`;
+      const href = postSlug ? `#${BLOG_BASE_PATH}/${postSlug}#${id}` : `#${id}`;
       return `<h2 id="${id}" class="group relative scroll-mt-8 text-2xl font-semibold mb-6 mt-8 flex items-center gap-2">
         <span class="text-foreground">${title}</span>
         <button 
@@ -246,7 +248,7 @@ function convertMarkdownToHtml(markdown: string, postSlug?: string) {
       // Clean the title for ID generation (remove emojis and special chars)
       const cleanTitle = title.replace(/[^\w\s-]/g, "").trim();
       const id = cleanTitle.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
-      const href = postSlug ? `/blog/${postSlug}#${id}` : `#${id}`;
+      const href = postSlug ? `#${BLOG_BASE_PATH}/${postSlug}#${id}` : `#${id}`;
       return `<h1 id="${id}" class="group relative scroll-mt-8 text-3xl font-bold mb-8 mt-10 flex items-center gap-2">
         <span class="text-foreground">${title}</span>
         <button 
@@ -546,7 +548,8 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
           e.preventDefault();
           const href = button.getAttribute("data-href");
           if (href) {
-            const fullUrl = `${window.location.origin}/blog/#${href}`;
+            // For hash router, copy/share link should be origin + href (href already starts with #)
+            const fullUrl = `${window.location.origin}${href}`;
             navigator.clipboard.writeText(fullUrl).then(() => {
               const svg = button.querySelector('svg');
               if (svg) {

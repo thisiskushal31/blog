@@ -10,6 +10,7 @@ import { useTheme } from '@/hooks/useTheme';
 import ImageWithFallback from '@/components/ImageWithFallback';
 import { toast as sonnerToast } from "sonner"; // Import Sonner's toast for testing
 import { useEffect } from 'react';
+import { AUTHOR, BLOG_BASE_PATH } from '../config/config';
 
 // BlogPost.tsx - Blog post detail page.
 // This page displays a single blog post, handles sharing, copying links, and error states.
@@ -46,7 +47,7 @@ const BlogPost = () => {
             <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
             <p className="text-muted-foreground mb-6">The blog post you're looking for doesn't exist.</p>
             <Button asChild>
-              <Link to="/blog">Back to Blog</Link>
+              <Link to={BLOG_BASE_PATH}>Back to Blog</Link>
             </Button>
           </div>
         </div>
@@ -54,7 +55,8 @@ const BlogPost = () => {
     }
 
     // Construct the share URL for this post
-    const shareUrl = `${window.location.origin}/blog/#/${post.slug}`;
+    // For hash router, share/copy link should be origin + /# + blog path + /slug
+    const shareUrl = `${window.location.origin}/#${BLOG_BASE_PATH}/${post.slug}`;
     
     // Handler for copying the post link to clipboard
     const handleCopyLink = async () => {
@@ -110,7 +112,7 @@ const BlogPost = () => {
                   )}
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link to="/blog" className="inline-flex items-center">
+                  <Link to={BLOG_BASE_PATH} className="inline-flex items-center">
                     Back to Blog
                   </Link>
                 </Button>
@@ -152,11 +154,11 @@ const BlogPost = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center">
                     <img 
-                      src={post.author.avatar} 
-                      alt={post.author.name}
+                      src={AUTHOR.avatar} 
+                      alt={AUTHOR.name}
                       className="w-8 h-8 rounded-full mr-2"
                     />
-                    <span>{post.author.name}</span>
+                    <span>{AUTHOR.name}</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <span className="flex items-center">

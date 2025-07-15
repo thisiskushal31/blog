@@ -19,6 +19,7 @@ import {
   PaginationPrevious,
   PaginationNext,
 } from "@/components/ui/pagination";
+import { BLOG_BASE_PATH } from "../config/config";
 
 const POSTS_PER_PAGE = 6;
 const Blog = () => {
@@ -151,7 +152,7 @@ const Blog = () => {
                         </div>
                       </div>
                       <Button asChild className="w-full">
-                        <Link to={`/blog/${post.slug}`}>Read More</Link>
+                        <Link to={`${BLOG_BASE_PATH}/${post.slug}`}>Read More</Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -222,7 +223,7 @@ const Blog = () => {
                       </div>
                     </div>
                     <Button asChild variant="outline" className="w-full">
-                      <Link to={`/blog/${post.slug}`}>Read More</Link>
+                      <Link to={`${BLOG_BASE_PATH}/${post.slug}`}>Read More</Link>
                     </Button>
                   </CardContent>
                 </Card>

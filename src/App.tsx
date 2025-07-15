@@ -12,6 +12,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import { BLOG_BASE_PATH } from "./config/config";
 
 // Create React Query client for data fetching
 const queryClient = new QueryClient();
@@ -33,8 +34,8 @@ try {
               <Routes>
                 {/* Main blog routes */}
                 <Route path="/" element={<Blog />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path={BLOG_BASE_PATH} element={<Blog />} />
+                <Route path={`${BLOG_BASE_PATH}/:slug`} element={<BlogPost />} />
                 {/* 404 fallback */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

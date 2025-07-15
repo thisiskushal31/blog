@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { BLOG_BASE_PATH } from '../config/config';
 
 // NotFound.tsx - 404 Not Found page.
 // This page is shown when a user navigates to a route that does not exist.
@@ -21,7 +22,7 @@ const NotFound = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild>
-              <Link to="/">Go to Blog Home</Link>
+              <Link to={BLOG_BASE_PATH}>Go to Blog Home</Link>
             </Button>
             <Button asChild variant="outline">
               <a 

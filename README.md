@@ -4,6 +4,8 @@ A modern, responsive blog website built with React, TypeScript, and Tailwind CSS
 
 ## 🚀 Features
 
+- **Config-driven base path and author:** Easily change the blog URL and author info in one place (`src/config/config.ts`)
+- **Config-driven post registration:** All blog post registration is managed in one config file (`src/config/blogPosts.config.ts`)
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Dark Mode Support**: Toggle between light and dark themes
 - **Category Filtering**: Filter blog posts by categories
@@ -23,7 +25,7 @@ A modern, responsive blog website built with React, TypeScript, and Tailwind CSS
 - **Frontend**: React 18 + TypeScript
 - **Styling**: Tailwind CSS + shadcn/ui components
 - **Build Tool**: Vite
-- **Routing**: React Router DOM
+- **Routing**: React Router DOM (HashRouter)
 - **State Management**: TanStack Query
 - **Icons**: Lucide React
 - **Theme**: Custom dark/light mode implementation
@@ -31,49 +33,43 @@ A modern, responsive blog website built with React, TypeScript, and Tailwind CSS
 ## 📦 Installation
 
 1. **Clone the repository**
-   \`\`\`bash
+   ```bash
    git clone <your-repo-url>
    cd devops-blog
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Start the development server**
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
-4. **Open your browser** and navigate to \`http://localhost:5173\`
+4. **Open your browser** and navigate to `http://localhost:5173`
 
 ## 🏗️ Build for Production
 
 1. **Create production build**
-   \`\`\`bash
+   ```bash
    npm run build
-   \`\`\`
+   ```
 
 2. **Preview production build locally**
-   \`\`\`bash
+   ```bash
    npm run preview
-   \`\`\`
+   ```
 
-The built files will be in the \`dist\` directory, ready for deployment.
+The built files will be in the `dist` directory, ready for deployment.
 
 ## ✍️ Adding New Blog Posts
 
-### Step 1: Create a new blog post file
+### Step 1: Create your Markdown and TypeScript files
 
-1. Create a new TypeScript file in \`src/content/blog/\` directory
-2. Use kebab-case naming (e.g., \`my-awesome-post.ts\`)
-
-### Step 2: Define your blog post
-
-Create a markdown file for your post content (e.g., `src/content/blog/markdown/my-awesome-post.md`).
-
-Then, in your TypeScript file (e.g., `src/content/blog/my-awesome-post.ts`), import the markdown and define your post like this:
+1. Create a new Markdown file in `src/content/blog/markdown/` (e.g., `my-awesome-post.md`)
+2. Create a new TypeScript file in `src/content/blog/` (e.g., `my-awesome-post.ts`):
 
 ```typescript
 import { BlogPost } from '../blogPostIndex';
@@ -90,81 +86,69 @@ export const blogPost: BlogPost = {
   categories: ['DevOps', 'Tutorial'],
   featured: true,
   coverImage: '/path-to-your-image.jpg',
-  author: {
-    name: 'Your Name',
-    avatar: '/blog/path-to-avatar.jpg',
-  },
+  coverImageCredit: 'Photo by ...',
+  // No author field needed! Author is set globally.
 };
 ```
 
-> **Note:** Place your markdown file in `src/content/blog/markdown/` and use the `?raw` import suffix.
+### Step 2: Register your post in the config-driven index
 
-### Step 3: Register your blog post
+1. In `src/config/blogPosts.config.ts`:
+   - Import your new post at the top:
+     ```typescript
+     import { blogPost as myAwesomePost } from '../content/blog/my-awesome-post';
+     ```
+   - Add your post's slug to the `BLOG_POST_SLUGS` array:
+     ```typescript
+     export const BLOG_POST_SLUGS = [
+       'comprehensive-features-showcase',
+       'my-awesome-post', // Add your new post here
+     ];
+     ```
+   - Add your post to the `POST_MAP`:
+     ```typescript
+     export const POST_MAP: Record<string, BlogPost> = {
+       'comprehensive-features-showcase': comprehensiveFeaturesShowcase,
+       'my-awesome-post': myAwesomePost,
+     };
+     ```
 
-Add your new post to \`src/content/blog/index.ts\`:
+That's it! Your post will now appear in the blog.
 
-\`\`\`typescript
-// 1. Import your new post
-import { blogPost as myAwesomePost } from './my-awesome-post';
+## 🧑‍💻 Changing Blog Base Path and Author
 
-// 2. Add it to the blogPosts array
-export const blogPosts: BlogPost[] = [
-  myAwesomePost, // Add your new post here
-  // ... existing posts
-];
-\`\`\`
+- Open `src/config/config.ts`:
+  - To change the blog's base URL (e.g., `/blog` to `/book-blog`):
+    ```typescript
+    export const BLOG_BASE_PATH = "/book-blog";
+    ```
+  - To change the author name or avatar (for all posts):
+    ```typescript
+    export const AUTHOR = {
+      name: "Your Name",
+      avatar: "/blog/profile.jpeg", // or any image path
+    };
+    ```
+- All posts and author info will update automatically.
+- **All config files are in the `src/config/` folder.**
 
-## 🏷️ Blog Post Configuration Tags
+## 🔗 Anchor, Copy, and Share Links
 
-### Required Fields
-
-| Field | Type | Description | Example |
-|-------|------|-------------|---------|
-| \`slug\` | string | URL-friendly identifier | \`"implementing-gitops"\` |
-| \`title\` | string | Main post title | \`"Implementing GitOps"\` |
-| \`excerpt\` | string | Short description for listings | \`"Learn GitOps basics..."\` |
-| \`content\` | string | Full markdown content | \`"# Title\\n\\nContent..."\` |
-| \`publishDate\` | string | Publication date (YYYY-MM-DD) | \`"2024-01-15"\` |
-| \`readTime\` | string | Estimated reading time | \`"5 min read"\` |
-| \`categories\` | string[] | Category tags for filtering | \`["DevOps", "Tutorial"]\` |
-| \`coverImage\` | string | Cover image path/URL | \`"/images/cover.jpg"\` |
-| \`author.name\` | string | Author's name | \`"John Doe"\` |
-| \`author.avatar\` | string | Author's avatar path/URL | \`"/images/avatar.jpg"\` |
-
-### Optional Fields
-
-| Field | Type | Description | Example |
-|-------|------|-------------|---------|
-| \`subtitle\` | string | Additional context | \`"A beginner's guide"\` |
-| \`featured\` | boolean | Show in featured section | \`true\` |
-
-### Popular Categories
-
-Choose from these common categories or create your own:
-
-- \`"DevOps"\` - General DevOps practices
-- \`"CI/CD"\` - Continuous Integration/Deployment
-- \`"Kubernetes"\` - Container orchestration
-- \`"Docker"\` - Containerization
-- \`"AWS"\` - Amazon Web Services
-- \`"Terraform"\` - Infrastructure as Code
-- \`"Monitoring"\` - System monitoring and observability
-- \`"Security"\` - DevSecOps and security practices
-- \`"Tutorial"\` - Step-by-step guides
-- \`"Best Practices"\` - Industry best practices
+- All anchor links, copy-link buttons, and share buttons generate correct URLs for hash-based routing (e.g., `http://localhost:8080/#/blog/my-awesome-post#section`)
+- No more double paths or broken anchors.
 
 ## 📝 Markdown Features
 
 The blog supports rich markdown formatting:
 
-- **Headings**: \`# H1\`, \`## H2\`, \`### H3\`
-- **Text Formatting**: \`**bold**\`, \`*italic*\`
-- **Code**: \`\\\`inline code\\\`\` and \`\\\`\\\`\\\`language\\ncode blocks\\\`\\\`\\\`\`
-- **Lists**: Ordered (\`1. item\`) and unordered (\`- item\`)
-- **Links**: \`[text](url)\`
-- **Images**: \`![alt](url)\` (with lazy loading)
+- **Headings**: `# H1`, `## H2`, `### H3`
+- **Text Formatting**: `**bold**`, `*italic*`
+- **Code**: ``inline code`` and ```language\ncode blocks```
+- **Lists**: Ordered (`1. item`) and unordered (`- item`)
+- **Links**: `[text](url)`
+- **Images**: `![alt](url)` (with lazy loading)
 - **Tables**: Pipe-separated tables
-- **Embedded Media**: \`[youtube_embed id="VIDEO_ID"]\` and \`[gist_embed id="USERNAME/GIST_ID"]\`
+- **Embedded Media**: `[youtube_embed id="VIDEO_ID"]` and `[gist_embed id="USERNAME/GIST_ID"]`
 
 ### Supported Programming Languages
 
@@ -178,37 +162,13 @@ The blog supports syntax highlighting for:
 - Markdown
 - And many more via Prism.js
 
-### GitHub Gist Markdown Rendering
-
-- Markdown files from GitHub Gists are rendered inline, just like local markdown.
-- The filename/language header is omitted for a clean reading experience.
-- A subtle notice box (with a grey background) is always shown directly below the rendered content, indicating the source and providing a 'view raw' link.
-- The integration is styled to ensure there is no visual gap between the content and the notice, for a seamless look.
-
 ## 🎨 Best Practices
 
-### Content Guidelines
-
-1. **Use descriptive titles** that clearly indicate the post content
-2. **Write compelling excerpts** (150-200 characters) for better engagement
-3. **Choose relevant categories** to help users find your content
-4. **Include code examples** when discussing technical topics
-5. **Use proper heading hierarchy** (H1 for title, H2 for main sections, H3 for subsections)
-
-### Technical Guidelines
-
-1. **Consistent naming**: Use kebab-case for file names and slugs
-2. **Unique slugs**: Ensure each post has a unique slug
-3. **Optimize images**: Use appropriate image sizes and formats
-4. **Test locally**: Always test your posts locally before publishing
-5. **Validate dates**: Use YYYY-MM-DD format for publish dates
-
-### SEO Optimization
-
-1. **Descriptive titles** (50-60 characters)
-2. **Compelling excerpts** that include key terms
-3. **Relevant categories** for better organization
-4. **Alt text for images** (handled automatically for cover images)
+- Use descriptive titles and excerpts
+- Choose relevant categories
+- Optimize images
+- Test locally before publishing
+- Use YYYY-MM-DD format for publish dates
 
 ## 🚀 Deployment
 
@@ -216,8 +176,8 @@ This project can be deployed to various platforms:
 
 ### Netlify
 1. Connect your GitHub repository
-2. Set build command: \`npm run build\`
-3. Set publish directory: \`dist\`
+2. Set build command: `npm run build`
+3. Set publish directory: `dist`
 
 ### Vercel
 1. Import your GitHub repository
@@ -225,17 +185,17 @@ This project can be deployed to various platforms:
 3. Deploy with one click
 
 ### GitHub Pages
-1. Install \`gh-pages\`: \`npm install --save-dev gh-pages\`
-2. Add to package.json: \`"homepage": "https://yourusername.github.io/your-repo"\`
-3. Add script: \`"deploy": "gh-pages -d dist"\`
-4. Run: \`npm run build && npm run deploy\`
+1. Install `gh-pages`: `npm install --save-dev gh-pages`
+2. Add to package.json: `"homepage": "https://yourusername.github.io/your-repo"`
+3. Add script: `"deploy": "gh-pages -d dist"`
+4. Run: `npm run build && npm run deploy`
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create your feature branch (\`git checkout -b feature/amazing-feature\`)
-3. Commit your changes (\`git commit -m 'Add some amazing feature'\`)
-4. Push to the branch (\`git push origin feature/amazing-feature\`)
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ## 📄 License
@@ -245,7 +205,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🙋‍♂️ Support
 
 If you have any questions or need help:
-
 1. Check the existing blog posts for examples
 2. Review this README for guidance
 3. Create an issue in the repository

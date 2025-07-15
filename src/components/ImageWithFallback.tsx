@@ -2,6 +2,7 @@
 // If the image fails to load, tries alternative paths and finally a placeholder. Used for robust image rendering.
 // If rendering fails, an error is logged and a fallback UI is shown.
 import { useState } from 'react';
+import { BLOG_BASE_PATH } from '../config/config';
 
 interface ImageWithFallbackProps {
   src: string;
@@ -20,12 +21,12 @@ const ImageWithFallback = ({ src, alt, className = '', loading = 'lazy' }: Image
     if (!hasError) {
       setHasError(true);
       // Try alternative paths for different environments
-      if (src.startsWith('/blog/')) {
-        // If it's a blog path, try without the /blog prefix (for local dev)
-        setImgSrc(src.replace('/blog/', '/'));
+      if (src.startsWith(BLOG_BASE_PATH + '/')) {
+        // If it's a blog path, try without the BLOG_BASE_PATH prefix (for local dev)
+        setImgSrc(src.replace(BLOG_BASE_PATH + '/', '/'));
       } else if (src.startsWith('/')) {
-        // If it's a root path, try with /blog prefix (for GitHub Pages)
-        setImgSrc(src.replace('/', '/blog/'));
+        // If it's a root path, try with BLOG_BASE_PATH prefix (for GitHub Pages)
+        setImgSrc(src.replace('/', BLOG_BASE_PATH + '/'));
       }
     } else {
       // Final fallback to placeholder
