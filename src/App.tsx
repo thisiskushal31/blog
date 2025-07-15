@@ -3,7 +3,6 @@
 // It is the main entry point for all pages and global UI.
 // If any provider fails to render, an error is logged and a fallback UI is shown.
 import { HashRouter } from "react-router-dom";
-import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -26,9 +25,8 @@ try {
       <ThemeProvider defaultTheme="light" storageKey="blog-theme">
         {/* Tooltip context for the whole app */}
         <TooltipProvider>
-          {/* Toast notifications (shadcn/ui and sonner) */}
-          <Toaster />
-          <Sonner />
+          {/* Toast notifications (Sonner only) */}
+          <Sonner position="bottom-left" />
           {/* HashRouter for client-side routing (GitHub Pages friendly) */}
           <HashRouter>
             <div className="min-h-screen bg-background">

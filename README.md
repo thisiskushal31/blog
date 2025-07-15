@@ -1,4 +1,4 @@
-# DevOps Blog Website
+# Blog Website
 
 A modern, responsive blog website built with React, TypeScript, and Tailwind CSS, specifically designed for sharing DevOps knowledge and experiences.
 
@@ -92,7 +92,7 @@ export const blogPost: BlogPost = {
   coverImage: '/path-to-your-image.jpg',
   author: {
     name: 'Your Name',
-    avatar: '/path-to-avatar.jpg',
+    avatar: '/blog/path-to-avatar.jpg',
   },
 };
 ```

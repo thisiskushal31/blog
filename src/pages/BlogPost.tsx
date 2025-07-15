@@ -6,9 +6,10 @@ import { Clock, Calendar, Share2, Twitter, Linkedin, Link2, Sun, Moon } from 'lu
 import { blogPosts } from '@/content/blogPostIndex';
 import MarkdownViewer from '@/components/MarkdownViewer';
 import ScrollToTop from '@/components/ScrollToTop';
-import { useToast } from '@/hooks/use-toast';
 import { useTheme } from '@/hooks/useTheme';
 import ImageWithFallback from '@/components/ImageWithFallback';
+import { toast as sonnerToast } from "sonner"; // Import Sonner's toast for testing
+import { useEffect } from 'react';
 
 // BlogPost.tsx - Blog post detail page.
 // This page displays a single blog post, handles sharing, copying links, and error states.
@@ -16,12 +17,23 @@ import ImageWithFallback from '@/components/ImageWithFallback';
 // If the post lookup or rendering fails, an error is logged and a fallback UI is shown.
 const BlogPost = () => {
   // React Hooks must always be called at the top level, not inside try/catch or conditionals.
-  // Get the slug from the URL params
   const { slug } = useParams<{ slug: string }>();
-  const { toast } = useToast();
   const { theme, toggleTheme } = useTheme();
 
-  // Only wrap the rendering logic in try/catch for error boundaries
+  // Detect if there is a hash (anchor) in the URL
+  const hasHash = typeof window !== 'undefined' && window.location.hash && window.location.hash.includes('#') && window.location.hash.length > 1;
+
+  // If there is a hash, scroll to the anchor after render
+  useEffect(() => {
+    if (hasHash) {
+      const anchor = window.location.hash.substring(1);
+      const el = document.getElementById(anchor);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [hasHash]);
+
   try {
     // Find the blog post by slug
     const post = blogPosts.find(p => p.slug === slug);
@@ -48,16 +60,13 @@ const BlogPost = () => {
     const handleCopyLink = async () => {
       try {
         await navigator.clipboard.writeText(shareUrl);
-        toast({
-          title: "Link copied!",
+        sonnerToast.success("Link copied!", {
           description: "The blog post link has been copied to your clipboard.",
         });
       } catch (err) {
         console.error('Failed to copy link:', err);
-        toast({
-          title: "Copy failed",
+        sonnerToast.error("Copy failed", {
           description: "Unable to copy link to clipboard. Please try again.",
-          variant: "destructive",
         });
       }
     };
@@ -83,9 +92,9 @@ const BlogPost = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold font-mono text-sm">B</span>
+                  <span className="text-white font-bold font-mono text-sm">KG</span>
                 </div>
-                <h1 className="text-xl font-bold">DevOps Blog</h1>
+                <h1 className="text-xl font-bold">Kushal's Blog</h1>
               </div>
               <div className="flex items-center space-x-2">
                 <Button
@@ -213,6 +222,13 @@ const BlogPost = () => {
             <div className="prose prose-lg max-w-none">
               <MarkdownViewer content={post.content} postSlug={post.slug} />
             </div>
+            {/* Conditionally render Load More */}
+            {!hasHash && (
+              <div className="mt-8 flex justify-center">
+                {/* Load More button or feature here */}
+                <Button variant="outline" size="lg">Load More</Button>
+              </div>
+            )}
           </article>
         </main>
 
@@ -223,6 +239,9 @@ const BlogPost = () => {
     // Log the error and show a fallback UI
     // eslint-disable-next-line no-console
     console.error("Error rendering BlogPost page:", err);
+    sonnerToast.error("Error loading blog post", {
+      description: "An error occurred while loading the blog post. Please try refreshing the page.",
+    });
     return (
       <div style={{ color: 'red', fontFamily: 'monospace', padding: '2rem' }}>
         An error occurred while loading the blog post. Please try refreshing the page.
