@@ -3254,10 +3254,10 @@ If you're currently using managed Elasticsearch and considering self-managed:
 
 Your self-managed infrastructure foundation is now solid. Continue exploring deployment strategies:
 
-- **[Blog 4: Containerized Elasticsearch](link-to-blog-4)** - Master Docker production strategies and container orchestration
-- **[Blog 5: Kubernetes Deep Dive](link-to-blog-5)** - Learn cloud-native deployment with ECK, Helm, and StatefulSets
-- **[Blog 6: Local Development](link-to-blog-6)** - Optimize development workflows for maximum productivity
-- **[Blog 7: Ultimate Decision Matrix](link-to-blog-7)** - Compare all deployment approaches with comprehensive analysis
+- **[Blog 4: Containerized Elasticsearch](https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies)** - Master Docker production strategies and container orchestration
+- **[Blog 5: Kubernetes Deep Dive](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)** - Learn cloud-native deployment with ECK, Helm, and StatefulSets
+- **[Blog 6: Local Development](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start)** - Optimize development workflows for maximum productivity
+- **[Blog 7: Ultimate Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - Compare all deployment approaches with comprehensive analysis
 
 ---
 

@@ -690,9 +690,9 @@ The choice between Elastic Cloud and self-managed Elasticsearch fundamentally co
 
 Now that you understand the strategic framework, dive deeper into specific implementation approaches:
 
-- **[Blog 2: Elastic Cloud Deep Dive](link-to-blog-2)** - Master hosted vs serverless configurations
-- **[Blog 3: Self-Managed Infrastructure](link-to-blog-3)** - VM and bare metal production strategies
-- **[Blog 7: Ultimate Decision Matrix](link-to-blog-7)** - Comprehensive comparison with all deployment methods
+- **[Blog 2: Elastic Cloud Deep Dive](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)** - Master hosted vs serverless configurations
+- **[Blog 3: Self-Managed Infrastructure](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)** - VM and bare metal production strategies
+- **[Blog 7: Ultimate Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - Comprehensive comparison with all deployment methods
 
 ---
 

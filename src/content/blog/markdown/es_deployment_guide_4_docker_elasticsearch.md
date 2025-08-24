@@ -2572,7 +2572,7 @@ Ready to implement your Docker Elasticsearch deployment? Use the provided config
 
 ---
 
-**[Continue to Blog 5: Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML →](link-to-blog-5)**
+**[Continue to Blog 5: Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML →](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)**
 
 ---
 

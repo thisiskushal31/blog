@@ -1636,9 +1636,9 @@ phase_3_optimization:
 
 Your Elastic Cloud foundation is now solid. Continue building your Elasticsearch expertise:
 
-- **[Blog 3: Self-Managed Infrastructure](link-to-blog-3)** - Master VM and bare metal deployments for maximum control
-- **[Blog 5: Kubernetes Deep Dive](link-to-blog-5)** - Learn cloud-native deployment patterns with ECK
-- **[Blog 7: Ultimate Decision Matrix](link-to-blog-7)** - Compare all deployment approaches with quantitative frameworks
+- **[Blog 3: Self-Managed Infrastructure](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)** - Master VM and bare metal deployments for maximum control
+- **[Blog 5: Kubernetes Deep Dive](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)** - Learn cloud-native deployment patterns with ECK
+- **[Blog 7: Ultimate Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - Compare all deployment approaches with quantitative frameworks
 
 ---
 

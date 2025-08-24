@@ -1280,13 +1280,13 @@ This decision matrix represents the culmination of deep analysis across all majo
 ## Series Resources & References
 
 ### Complete Blog Series Access
-- **[Blog 1: Strategic Framework](link-to-blog-1)** - Elastic Cloud vs Self-Managed decision foundation
-- **[Blog 2: Elastic Cloud Deep Dive](link-to-blog-2)** - Hosted vs Serverless comprehensive analysis  
-- **[Blog 3: Self-Managed Infrastructure](link-to-blog-3)** - VM and bare metal production guide
-- **[Blog 4: Container Strategies](link-to-blog-4)** - Docker production deployment patterns
-- **[Blog 5: Kubernetes Deployment](link-to-blog-5)** - ECK vs Helm vs Raw YAML comparison
-- **[Blog 6: Local Development](link-to-blog-6)** - Docker vs Native optimization guide
-- **[Blog 7: Decision Matrix](link-to-blog-7)** - This comprehensive framework
+- **[Blog 1: Strategic Framework](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-vs-self-managed-strategic-decision-framework)** - Elastic Cloud vs Self-Managed decision foundation
+- **[Blog 2: Elastic Cloud Deep Dive](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)** - Hosted vs Serverless comprehensive analysis
+- **[Blog 3: Self-Managed Infrastructure](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)** - VM and bare metal production guide
+- **[Blog 4: Container Strategies](https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies)** - Docker production deployment patterns
+- **[Blog 5: Kubernetes Deployment](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)** - ECK vs Helm vs Raw YAML comparison
+- **[Blog 6: Local Development](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start)** - Docker vs Native optimization guide
+- **[Blog 7: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - This comprehensive framework
 
 ### Additional Resources
 
