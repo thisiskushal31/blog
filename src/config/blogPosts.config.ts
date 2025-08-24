@@ -2,6 +2,8 @@ import { BlogPost } from '../content/blogPostIndex';
 
 // Static imports for all posts (add new imports here)
 // import { blogPost as comprehensiveFeaturesShowcase } from '../content/blog/comprehensive-features-showcase';
+
+// Elasticsearch Deployment Guide
 import { blogPost as es_deployment_guide_0_elasticsearch_hub } from '../content/blog/es_deployment_guide_0_elasticsearch_hub';
 import { blogPost as es_deployment_guide_1_elastic_cloud_vs_self_managed } from '../content/blog/es_deployment_guide_1_elastic_cloud_vs_self_managed';
 import { blogPost as es_deployment_guide_2_elastic_cloud_deep_dive } from '../content/blog/es_deployment_guide_2_elastic_cloud_deep_dive';
@@ -10,6 +12,9 @@ import { blogPost as es_deployment_guide_4_docker_elasticsearch } from '../conte
 import { blogPost as es_deployment_guide_5_kubernetes_elasticsearch } from '../content/blog/es_deployment_guide_5_kubernetes_elasticsearch';
 import { blogPost as es_deployment_guide_6_local_development } from '../content/blog/es_deployment_guide_6_local_development';
 import { blogPost as es_deployment_guide_7_decision_matrix } from '../content/blog/es_deployment_guide_7_decision_matrix';
+
+// Containerization
+
 // Add new imports above
 
 export const BLOG_POST_SLUGS = [
