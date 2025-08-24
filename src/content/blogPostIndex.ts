@@ -13,7 +13,8 @@ import { BLOG_POST_SLUGS, POST_MAP } from '../config/blogPosts.config';
  * @property content - Full markdown content of the blog post
  * @property publishDate - Publication date (YYYY-MM-DD format)
  * @property readTime - Estimated reading time (e.g., "5 min read") (automatically calculated)
- * @property categories - Array of category tags for filtering
+ * @property categories - Array of detailed category tags for SEO and display purposes
+ * @property searchCategories - Array of simplified categories for search and filtering
  * @property featured - Optional flag to mark post as featured
  * @property coverImage - URL or path to cover image
  * @property coverImageCredit - Optional credit for the cover image
@@ -26,6 +27,7 @@ export interface BlogPost {
   content: string;
   publishDate: string;
   categories: string[];
+  searchCategories: string[];
   featured?: boolean;
   coverImage: string;
   /**

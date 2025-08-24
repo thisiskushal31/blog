@@ -6,11 +6,12 @@ import { Clock, Calendar, Share2, Twitter, Linkedin, Link2, Sun, Moon } from 'lu
 import { blogPosts } from '@/content/blogPostIndex';
 import MarkdownViewer from '@/components/MarkdownViewer';
 import ScrollToTop from '@/components/ScrollToTop';
+import Footer from '@/components/Footer';
 import { useTheme } from '@/hooks/useTheme';
 import ImageWithFallback from '@/components/ImageWithFallback';
 import { toast as sonnerToast } from "sonner"; // Import Sonner's toast for testing
-import { useEffect } from 'react';
-import { AUTHOR, BLOG_BASE_PATH, BASE_URL } from '../config/config';
+import { useEffect, useState } from 'react';
+import { AUTHOR, BLOG_BASE_PATH, BASE_URL, PORTFOLIO_URL } from '../config/config';
 
 // BlogPost.tsx - Blog post detail page.
 // This page displays a single blog post, handles sharing, copying links, and error states.
@@ -20,6 +21,7 @@ const BlogPost = () => {
   // React Hooks must always be called at the top level, not inside try/catch or conditionals.
   const { slug } = useParams<{ slug: string }>();
   const { theme, toggleTheme } = useTheme();
+  const [showFooter, setShowFooter] = useState(false);
 
   // Detect if there is a hash (anchor) in the URL
   const hasHash = typeof window !== 'undefined' && window.location.hash && window.location.hash.includes('#') && window.location.hash.length > 1;
@@ -107,7 +109,7 @@ const BlogPost = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <a 
-                    href="https://thisiskushal31.github.io/blog/" 
+                    href="https://thisiskushal31.github.io/"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center"
@@ -125,8 +127,18 @@ const BlogPost = () => {
           <article>
             <header className="mb-8">
               <div className="flex flex-wrap gap-2 mb-4">
+                {/* Search Categories - Primary display (solid grey) */}
+                {post.searchCategories.map((category) => (
+                  <Badge key={`search-${category}`} variant="secondary">
+                    {category}
+                  </Badge>
+                ))}
+                {/* SEO Categories - Secondary display (blue outline) */}
                 {post.categories.map((category) => (
-                  <Badge key={category} variant="secondary">
+                  <Badge 
+                    key={`seo-${category}`} 
+                    variant="default"
+                  >
                     {category}
                   </Badge>
                 ))}
@@ -195,12 +207,19 @@ const BlogPost = () => {
 
             {/* Article Content */}
             <div className="prose prose-lg max-w-none">
-              <MarkdownViewer content={post.content} postSlug={post.slug} />
+              <MarkdownViewer 
+                content={post.content} 
+                postSlug={post.slug} 
+                onContentFullyLoaded={() => setShowFooter(true)}
+              />
             </div>
             {/* Conditionally render Load More */}
             {/* Removed Load More button as MarkdownViewer handles content expansion */}
           </article>
         </main>
+
+        {/* Footer - only show after content is fully loaded */}
+        {showFooter && <Footer />}
 
         <ScrollToTop />
       </div>

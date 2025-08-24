@@ -1,6 +1,4 @@
 
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { BLOG_BASE_PATH } from '../config/config';
 
 // NotFound.tsx - 404 Not Found page.
@@ -10,7 +8,7 @@ import { BLOG_BASE_PATH } from '../config/config';
 const NotFound = () => {
   try {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="bg-background flex-1 flex items-center justify-center min-h-[60vh]">
         <div className="text-center space-y-6">
           <div className="space-y-2">
             <h1 className="text-6xl font-bold text-muted-foreground">404</h1>
@@ -18,21 +16,9 @@ const NotFound = () => {
             <p className="text-muted-foreground max-w-md mx-auto">
               The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
             </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild>
-              <Link to={BLOG_BASE_PATH}>Go to Blog Home</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <a 
-                href="https://thisiskushal31.github.io/blog/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Back to Portfolio
-              </a>
-            </Button>
+            <p className="text-muted-foreground text-sm">
+              Use the navigation links in the footer below to get back on track.
+            </p>
           </div>
         </div>
       </div>

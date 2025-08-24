@@ -33,6 +33,7 @@ interface MarkdownViewerProps {
   content: string;
   className?: string;
   postSlug?: string;
+  onContentFullyLoaded?: () => void;
 }
 
 // Add a React component for YouTube embeds
@@ -451,7 +452,7 @@ function convertMarkdownToHtml(markdown: string, postSlug?: string) {
   }
 }
 
-const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerProps) => {
+const MarkdownViewer = ({ content, className = "", postSlug, onContentFullyLoaded }: MarkdownViewerProps) => {
   const [htmlContent, setHtmlContent] = useState<string>("");
   const [reactEmbeds, setReactEmbeds] = useState<ReactEmbed[]>([]);
   const [showFull, setShowFull] = useState(false);
@@ -756,6 +757,13 @@ const MarkdownViewer = ({ content, className = "", postSlug }: MarkdownViewerPro
       }, 0);
     }
   }, [showFull, htmlContent]);
+
+  // Call callback when content is fully loaded
+  useEffect(() => {
+    if (showFull && onContentFullyLoaded) {
+      onContentFullyLoaded();
+    }
+  }, [showFull, onContentFullyLoaded]);
 
   // Only wrap the rendering logic in try/catch for error boundaries
   try {

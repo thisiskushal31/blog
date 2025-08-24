@@ -6,9 +6,10 @@ import { HashRouter } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/hooks/useTheme";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -16,6 +17,31 @@ import { BLOG_BASE_PATH } from "./config/config";
 
 // Create React Query client for data fetching
 const queryClient = new QueryClient();
+
+// Wrapper component to conditionally show footer
+const AppContent = () => {
+  const location = useLocation();
+  const isBlogPost = location.pathname.includes('/blog/') && location.pathname !== '/blog/';
+  
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      <main className="flex-1">
+        <Routes>
+          {/* Main blog routes */}
+          <Route path="/" element={<Blog />} />
+          <Route path={BLOG_BASE_PATH} element={<Blog />} />
+          <Route path={`${BLOG_BASE_PATH}/:slug`} element={<BlogPost />} />
+          {/* 404 fallback */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      {/* Footer - only show on non-blog-post pages */}
+      {!isBlogPost && <Footer />}
+      {/* Floating scroll-to-top button */}
+      <ScrollToTop />
+    </div>
+  );
+};
 
 let App: React.FC;
 try {
@@ -30,18 +56,7 @@ try {
           <Sonner position="bottom-left" />
           {/* HashRouter for client-side routing (GitHub Pages friendly) */}
           <HashRouter>
-            <div className="min-h-screen bg-background">
-              <Routes>
-                {/* Main blog routes */}
-                <Route path="/" element={<Blog />} />
-                <Route path={BLOG_BASE_PATH} element={<Blog />} />
-                <Route path={`${BLOG_BASE_PATH}/:slug`} element={<BlogPost />} />
-                {/* 404 fallback */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-              {/* Floating scroll-to-top button */}
-              <ScrollToTop />
-            </div>
+            <AppContent />
           </HashRouter>
         </TooltipProvider>
       </ThemeProvider>

@@ -28,10 +28,10 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const { theme, toggleTheme } = useTheme();
 
-  // Compute all unique categories from blog posts
+  // Compute all unique search categories from blog posts (for UI filtering)
   const categories = useMemo(() => {
     const cats = blogPosts.reduce((acc, post) => {
-      post.categories.forEach((cat) => acc.add(cat));
+      post.searchCategories.forEach((cat) => acc.add(cat));
       return acc;
     }, new Set<string>());
     return ["all", ...Array.from(cats)];
@@ -41,7 +41,7 @@ const Blog = () => {
   const filteredPosts = useMemo(() => {
     if (selectedCategory === "all") return blogPosts;
     return blogPosts.filter((post) =>
-      post.categories.includes(selectedCategory)
+      post.searchCategories.includes(selectedCategory)
     );
   }, [selectedCategory]);
 
@@ -92,7 +92,7 @@ const Blog = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <a
-                    href="${PORTFOLIO_URL}"
+                    href="https://thisiskushal31.github.io/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center"
@@ -123,10 +123,21 @@ const Blog = () => {
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="flex flex-wrap gap-2 mb-3">
+                        {/* Search Categories - Primary display (solid grey) */}
+                        {post.searchCategories.map((category) => (
+                          <Badge
+                            key={`search-${category}`}
+                            variant="secondary"
+                            className="text-xs"
+                          >
+                            {category}
+                          </Badge>
+                        ))}
+                        {/* SEO Categories - Secondary display (blue outline) */}
                         {post.categories.map((category) => (
                           <Badge
-                            key={category}
-                            variant="secondary"
+                            key={`seo-${category}`}
+                            variant="default"
                             className="text-xs"
                           >
                             {category}
@@ -197,10 +208,21 @@ const Blog = () => {
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="flex flex-wrap gap-2 mb-3">
+                        {/* Search Categories - Primary display (solid grey) */}
+                        {post.searchCategories.map((category) => (
+                          <Badge
+                            key={`search-${category}`}
+                            variant="secondary"
+                            className="text-xs"
+                          >
+                            {category}
+                          </Badge>
+                        ))}
+                        {/* SEO Categories - Secondary display (blue outline) */}
                         {post.categories.map((category) => (
                           <Badge
-                            key={category}
-                            variant="secondary"
+                            key={`seo-${category}`}
+                            variant="default"
                             className="text-xs"
                           >
                             {category}
