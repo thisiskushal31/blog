@@ -156,25 +156,25 @@ This comprehensive series covers every major Elasticsearch deployment strategy w
 
 ### 🎯 **New to Elasticsearch**
 **Recommended Path:**
-1. [Blog 6: Local Development Setup](#blog-6)
-2. [Blog 2: Elastic Cloud Basics](#blog-2)
-3. [Blog 7: Decision Matrix](#blog-7)
+1. [Blog 6: Local Development Setup](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start)
+2. [Blog 2: Elastic Cloud Basics](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)
+3. [Blog 7: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)
 
 **Why This Order:** Start with hands-on local experience, understand managed options, then make informed production decisions.
 
 ### 🏢 **Planning Production Deployment**
 **Recommended Path:**
-1. [Blog 1: Strategic Overview](#blog-1)
-2. [Blog 7: Decision Matrix](#blog-7)
+1. [Blog 1: Strategic Overview](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-vs-self-managed-strategic-decision-framework)
+2. [Blog 7: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)
 3. Choose specific deployment blog based on your infrastructure choice
 
 **Why This Order:** Understand the big picture first, then dive into implementation details for your chosen approach.
 
 ### ⚙️ **DevOps/SRE Professionals**
 **Recommended Path:**
-1. [Blog 5: Kubernetes Deep Dive](#blog-5)
-2. [Blog 3: Self-Managed Infrastructure](#blog-3)
-3. [Blog 4: Container Strategies](#blog-4)
+1. [Blog 5: Kubernetes Deep Dive](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)
+2. [Blog 3: Self-Managed Infrastructure](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)
+3. [Blog 4: Container Strategies](https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies)
 
 **Why This Order:** Focus on advanced orchestration first, then explore infrastructure optimization patterns.
 
@@ -182,7 +182,7 @@ This comprehensive series covers every major Elasticsearch deployment strategy w
 
 ## Complete Blog Series
 
-### [Blog 1: Elastic Cloud vs Self-Managed - Strategic Decision Framework](link-to-blog-1)
+### [Blog 1: Elastic Cloud vs Self-Managed - Strategic Decision Framework](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-vs-self-managed-strategic-decision-framework)
 **🎯 Focus: Strategic Planning**
 
 Master the fundamental decision between managed services and self-managed infrastructure.
@@ -198,7 +198,7 @@ Master the fundamental decision between managed services and self-managed infras
 
 ---
 
-### [Blog 2: Elastic Cloud Deep Dive - Hosted vs Serverless Architecture](link-to-blog-2)
+### [Blog 2: Elastic Cloud Deep Dive - Hosted vs Serverless Architecture](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)
 **🎯 Focus: Managed Solutions**
 
 Comprehensive analysis of Elastic's cloud offerings with implementation details.
@@ -214,7 +214,7 @@ Comprehensive analysis of Elastic's cloud offerings with implementation details.
 
 ---
 
-### [Blog 3: Self-Managed Elasticsearch - VM and Bare Metal Production Guide](link-to-blog-3)
+### [Blog 3: Self-Managed Elasticsearch - VM and Bare Metal Production Guide](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)
 **🎯 Focus: Maximum Control Infrastructure**
 
 Build production-grade self-managed clusters with advanced optimization techniques.
@@ -230,7 +230,7 @@ Build production-grade self-managed clusters with advanced optimization techniqu
 
 ---
 
-### [Blog 4: Containerized Elasticsearch - Docker Production Strategies](link-to-blog-4)
+### [Blog 4: Containerized Elasticsearch - Docker Production Strategies](https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies)
 **🎯 Focus: Container Orchestration**
 
 Deploy production-ready Elasticsearch using Docker with advanced patterns.
@@ -246,7 +246,7 @@ Deploy production-ready Elasticsearch using Docker with advanced patterns.
 
 ---
 
-### [Blog 5: Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML](link-to-blog-5)
+### [Blog 5: Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)
 **🎯 Focus: Cloud-Native Deployment**
 
 Master Kubernetes-native Elasticsearch with advanced orchestration patterns.
@@ -263,7 +263,7 @@ Master Kubernetes-native Elasticsearch with advanced orchestration patterns.
 
 ---
 
-### [Blog 6: Local Development - Docker vs Native Installation Optimization](link-to-blog-6)
+### [Blog 6: Local Development - Docker vs Native Installation Optimization](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start)
 **🎯 Focus: Development Workflow**
 
 Optimize your development environment for maximum productivity.
@@ -280,7 +280,7 @@ Optimize your development environment for maximum productivity.
 
 ---
 
-### [Blog 7: The Ultimate Elasticsearch Deployment Decision Matrix](link-to-blog-7)
+### [Blog 7: The Ultimate Elasticsearch Deployment Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)
 **🎯 Focus: Comprehensive Decision Framework**
 
 The definitive guide to choosing the right deployment strategy with quantitative analysis.
@@ -302,20 +302,20 @@ The definitive guide to choosing the right deployment strategy with quantitative
 **Answer these questions to get your personalized recommendation:**
 
 ### Team & Expertise Assessment
-- **Small team (<5 engineers)** → Start with [Blog 2: Elastic Cloud](#blog-2)
-- **Medium team (5-15 engineers)** → Start with [Blog 5: Kubernetes](#blog-5)  
-- **Large team (15+ engineers)** → Start with [Blog 3: Self-Managed](#blog-3)
+- **Small team (<5 engineers)** → Start with [Blog 2: Elastic Cloud](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)
+- **Medium team (5-15 engineers)** → Start with [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)  
+- **Large team (15+ engineers)** → Start with [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)
 
 ### Data Scale & Performance Requirements
-- **Development/Testing** → [Blog 6: Local Development](#blog-6)
-- **Small production (<1TB)** → [Blog 4: Containers](#blog-4)
-- **Medium scale (1-50TB)** → [Blog 5: Kubernetes](#blog-5)
-- **Large scale (>50TB)** → [Blog 3: Self-Managed](#blog-3)
+- **Development/Testing** → [Blog 6: Local Development](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start)
+- **Small production (<1TB)** → [Blog 4: Containers](https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies)
+- **Medium scale (1-50TB)** → [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)
+- **Large scale (>50TB)** → [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)
 
 ### Budget & Control Preferences
-- **High budget, minimal ops** → [Blog 2: Elastic Cloud](#blog-2)
-- **Medium budget, automated ops** → [Blog 5: Kubernetes](#blog-5)
-- **Cost-optimized, full control** → [Blog 3: Self-Managed](#blog-3)
+- **High budget, minimal ops** → [Blog 2: Elastic Cloud](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)
+- **Medium budget, automated ops** → [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)
+- **Cost-optimized, full control** → [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)
 
 ---
 
@@ -1070,9 +1070,9 @@ The choice between Elastic Cloud and self-managed Elasticsearch fundamentally co
 
 Now that you understand the strategic framework, dive deeper into specific implementation approaches:
 
-- **[Blog 2: Elastic Cloud Deep Dive](link-to-blog-2)** - Master hosted vs serverless configurations
-- **[Blog 3: Self-Managed Infrastructure](link-to-blog-3)** - VM and bare metal production strategies
-- **[Blog 7: Ultimate Decision Matrix](link-to-blog-7)** - Comprehensive comparison with all deployment methods
+- **[Blog 2: Elastic Cloud Deep Dive](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)** - Master hosted vs serverless configurations
+- **[Blog 3: Self-Managed Infrastructure](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)** - VM and bare metal production strategies
+- **[Blog 7: Ultimate Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - Comprehensive comparison with all deployment methods
 
 ---
 
@@ -2718,9 +2718,9 @@ phase_3_optimization:
 
 Your Elastic Cloud foundation is now solid. Continue building your Elasticsearch expertise:
 
-- **[Blog 3: Self-Managed Infrastructure](link-to-blog-3)** - Master VM and bare metal deployments for maximum control
-- **[Blog 5: Kubernetes Deep Dive](link-to-blog-5)** - Learn cloud-native deployment patterns with ECK
-- **[Blog 7: Ultimate Decision Matrix](link-to-blog-7)** - Compare all deployment approaches with quantitative frameworks
+- **[Blog 3: Self-Managed Infrastructure](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)** - Master VM and bare metal deployments for maximum control
+- **[Blog 5: Kubernetes Deep Dive](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)** - Learn cloud-native deployment patterns with ECK
+- **[Blog 7: Ultimate Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - Compare all deployment approaches with quantitative frameworks
 
 ---
 
@@ -5986,10 +5986,10 @@ If you're currently using managed Elasticsearch and considering self-managed:
 
 Your self-managed infrastructure foundation is now solid. Continue exploring deployment strategies:
 
-- **[Blog 4: Containerized Elasticsearch](link-to-blog-4)** - Master Docker production strategies and container orchestration
-- **[Blog 5: Kubernetes Deep Dive](link-to-blog-5)** - Learn cloud-native deployment with ECK, Helm, and StatefulSets
-- **[Blog 6: Local Development](link-to-blog-6)** - Optimize development workflows for maximum productivity
-- **[Blog 7: Ultimate Decision Matrix](link-to-blog-7)** - Compare all deployment approaches with comprehensive analysis
+- **[Blog 4: Containerized Elasticsearch](https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies)** - Master Docker production strategies and container orchestration
+- **[Blog 5: Kubernetes Deep Dive](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)** - Learn cloud-native deployment with ECK, Helm, and StatefulSets
+- **[Blog 6: Local Development](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start)** - Optimize development workflows for maximum productivity
+- **[Blog 7: Ultimate Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - Compare all deployment approaches with comprehensive analysis
 
 ---
 
@@ -8572,7 +8572,7 @@ Ready to implement your Docker Elasticsearch deployment? Use the provided config
 
 ---
 
-**[Continue to Blog 5: Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML →](link-to-blog-5)**
+**[Continue to Blog 5: Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML →](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)**
 
 ---
 
@@ -14266,13 +14266,13 @@ This decision matrix represents the culmination of deep analysis across all majo
 ## Series Resources & References
 
 ### Complete Blog Series Access
-- **[Blog 1: Strategic Framework](link-to-blog-1)** - Elastic Cloud vs Self-Managed decision foundation
-- **[Blog 2: Elastic Cloud Deep Dive](link-to-blog-2)** - Hosted vs Serverless comprehensive analysis  
-- **[Blog 3: Self-Managed Infrastructure](link-to-blog-3)** - VM and bare metal production guide
-- **[Blog 4: Container Strategies](link-to-blog-4)** - Docker production deployment patterns
-- **[Blog 5: Kubernetes Deployment](link-to-blog-5)** - ECK vs Helm vs Raw YAML comparison
-- **[Blog 6: Local Development](link-to-blog-6)** - Docker vs Native optimization guide
-- **[Blog 7: Decision Matrix](link-to-blog-7)** - This comprehensive framework
+- **[Blog 1: Strategic Framework](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-vs-self-managed-strategic-decision-framework)** - Elastic Cloud vs Self-Managed decision foundation
+- **[Blog 2: Elastic Cloud Deep Dive](https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture)** - Hosted vs Serverless comprehensive analysis
+- **[Blog 3: Self-Managed Infrastructure](https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide)** - VM and bare metal production guide
+- **[Blog 4: Container Strategies](https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies)** - Docker production deployment patterns
+- **[Blog 5: Kubernetes Deployment](https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive)** - ECK vs Helm vs Raw YAML comparison
+- **[Blog 6: Local Development](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start)** - Docker vs Native optimization guide
+- **[Blog 7: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide)** - This comprehensive framework
 
 ### Additional Resources
 
