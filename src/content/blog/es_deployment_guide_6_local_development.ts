@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-08-24",
   categories: ["Elasticsearch", "Deployment", "Local-Development", "Docker", "Quick-Start"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
-  coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-  coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"
+  coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
+  // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"
 }; 
