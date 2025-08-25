@@ -19,6 +19,8 @@ import { blogPost as es_deployment_guide_7_decision_matrix } from '../content/bl
 
 export const BLOG_POST_SLUGS = [
   // 'comprehensive-features-showcase',
+
+  // Elasticsearch Deployment Guide
   'elasticsearch-deployment-guide',
   'elastic-cloud-vs-self-managed-strategic-decision-framework',
   'elastic-cloud-deep-dive-hosted-vs-serverless-architecture',
@@ -27,11 +29,16 @@ export const BLOG_POST_SLUGS = [
   'kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive',
   'elasticsearch-local-development-docker-packages-quick-start',
   'elasticsearch-deployment-decision-matrix-complete-comparison-guide',
+
+  // Containerization
+
   // Add new post slugs here (must match the .ts file in ./blog/)
 ];
 
 export const POST_MAP: Record<string, BlogPost> = {
   // 'comprehensive-features-showcase': comprehensiveFeaturesShowcase,
+
+  // Elasticsearch Deployment Guide
   'elasticsearch-deployment-guide': es_deployment_guide_0_elasticsearch_hub,
   'elastic-cloud-vs-self-managed-strategic-decision-framework': es_deployment_guide_1_elastic_cloud_vs_self_managed,
   'elastic-cloud-deep-dive-hosted-vs-serverless-architecture': es_deployment_guide_2_elastic_cloud_deep_dive,
@@ -40,5 +47,8 @@ export const POST_MAP: Record<string, BlogPost> = {
   'kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive': es_deployment_guide_5_kubernetes_elasticsearch,
   'elasticsearch-local-development-docker-packages-quick-start': es_deployment_guide_6_local_development,
   'elasticsearch-deployment-decision-matrix-complete-comparison-guide': es_deployment_guide_7_decision_matrix,
+
+  // Containerization
+  
   // Add new slug: import pairs here
 }; 
