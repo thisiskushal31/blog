@@ -28,16 +28,16 @@ function generateSitemap() {
     <priority>1.0</priority>
   </url>`;
 
-  // Add all blog post URLs
-  BLOG_POST_SLUGS.forEach(slug => {
-    sitemap += `
+// Add all blog post URLs
+BLOG_POST_SLUGS.forEach(slug => {
+  sitemap += `
   <url>
-    <loc>${baseUrl}/#/blog/${slug}</loc>
+    <loc>${baseUrl}/${slug}</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>`;
-  });
+});
 
   sitemap += `
 </urlset>`;
