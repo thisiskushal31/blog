@@ -16,19 +16,46 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install yarn
+        run: |
+          npm install -g yarn
+
       - name: Install dependencies
         run: |
-          # Use npm ci with legacy peer deps to avoid rollup issues
-          npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+          # Use yarn as primary package manager (better at handling optional dependencies)
+          rm -rf node_modules package-lock.json yarn.lock
+          yarn install
+          
+      - name: Fix rollup binary issue (if needed)
+        run: |
+          # Yarn should handle this automatically, but let's verify
+          echo "Checking rollup installation..."
+          
+          # If rollup binary is missing, try to fix it
+          if [ ! -d "node_modules/@rollup/rollup-linux-x64-gnu" ]; then
+            echo "Rollup binary missing, attempting to fix..."
+            yarn add @rollup/rollup-linux-x64-gnu --optional || true
+          fi
 
       - name: Verify rollup installation
         run: |
           # Check if rollup is properly installed
+          echo "=== Checking rollup installation ==="
           ls -la node_modules/@rollup/ || echo "Rollup not found in @rollup/"
           ls -la node_modules/rollup/ || echo "Rollup not found in rollup/"
+          # Verify the specific binary exists
+          ls -la node_modules/@rollup/rollup-linux-x64-gnu/ || echo "Rollup linux binary not found"
+          
+          # Test if rollup can be required
+          echo "=== Testing rollup require ==="
+          node -e "try { require('rollup'); console.log('Rollup require: SUCCESS'); } catch(e) { console.log('Rollup require: FAILED -', e.message); }" || true
+          
+          # Check vite can find rollup
+          echo "=== Checking vite-rollup integration ==="
+          node -e "try { const vite = require('vite'); console.log('Vite require: SUCCESS'); } catch(e) { console.log('Vite require: FAILED -', e.message); }" || true
 
       - name: Build
-        run: npm run build
+        run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
