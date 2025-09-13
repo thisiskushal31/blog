@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Deep dive into Elastic Cloud Hosted and Serverless solutions with performance testing, cost optimization, and advanced features like cross-cluster search.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Deployment", "Elastic-Cloud", "Serverless"],
+  categories: ["Elastic-Cloud", "Serverless"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"

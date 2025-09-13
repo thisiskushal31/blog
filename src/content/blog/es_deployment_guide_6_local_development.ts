@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Complete guide to local Elasticsearch development including Docker containers, package installations, and quick start configurations for developers.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Deployment", "Local-Development", "Docker", "Quick-Start"],
+  categories: ["Local-Development", "Docker", "Quick-Start"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"

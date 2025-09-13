@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Master Elasticsearch deployment with our comprehensive 8-part series covering everything from local development to production-scale infrastructure decisions.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Database Management", "Deployment Guide", "Overview"],
+  categories: ["Elasticsearch Overview"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   featured: true,
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",

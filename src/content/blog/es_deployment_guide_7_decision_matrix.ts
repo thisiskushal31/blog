@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Master the decision-making process with our comprehensive matrix comparing all Elasticsearch deployment options including cost, performance, complexity, and operational overhead.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Deployment", "Decision-Matrix", "Comparison", "Strategy"],
+  categories: ["Decision-Matrix", "Comparison", "Strategy"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"

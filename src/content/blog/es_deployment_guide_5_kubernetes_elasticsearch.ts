@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Master Elasticsearch on Kubernetes with ECK operator, Helm charts, and raw YAML StatefulSet configurations for production-scale deployments.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Deployment", "Kubernetes", "ECK", "Helm", "DevOps"],
+  categories: ["Kubernetes", "ECK", "Helm"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"

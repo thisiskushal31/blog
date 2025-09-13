@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Comprehensive analysis of Elastic Cloud vs self-managed Elasticsearch with TCO calculations, risk assessment, and performance benchmarks to guide your deployment strategy.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Deployment", "Strategy", "Decision-Matrix"],
+  categories: ["Strategy", "Decision-Matrix"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"

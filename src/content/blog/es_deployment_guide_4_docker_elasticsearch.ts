@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Comprehensive guide to deploying Elasticsearch with Docker including multi-node setups, Docker Compose configurations, production considerations, and best practices.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Deployment", "Docker", "Containers", "DevOps"],
+  categories: ["Docker", "Containers"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"

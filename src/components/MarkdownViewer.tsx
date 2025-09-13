@@ -135,7 +135,7 @@ interface ReactEmbed {
   index: number;
 }
 
-const PARAGRAPH_LIMIT = 5; // Number of paragraphs to show before Load More
+const PARAGRAPH_LIMIT = 30; // Number of paragraphs to show before Load More
 
 // Move convertMarkdownToHtml to top-level scope so it can be reused
 function convertMarkdownToHtml(markdown: string, postSlug?: string) {
@@ -216,7 +216,7 @@ function convertMarkdownToHtml(markdown: string, postSlug?: string) {
         <span class="text-foreground">${title}</span>
         <button 
           data-href="${href}"
-          class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-muted-foreground hover:text-foreground hover:bg-muted/50"
           title="Copy link to this section"
         >
           <svg class="h-4 w-4 inline-block align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -235,7 +235,7 @@ function convertMarkdownToHtml(markdown: string, postSlug?: string) {
         <span class="text-foreground">${title}</span>
         <button 
           data-href="${href}"
-          class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-muted-foreground hover:text-foreground hover:bg-muted/50"
           title="Copy link to this section"
         >
           <svg class="h-4 w-4 inline-block align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,7 +254,7 @@ function convertMarkdownToHtml(markdown: string, postSlug?: string) {
         <span class="text-foreground">${title}</span>
         <button 
           data-href="${href}"
-          class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="copy-link-btn opacity-100 transition-opacity p-1 rounded text-muted-foreground hover:text-foreground hover:bg-muted/50"
           title="Copy link to this section"
         >
           <svg class="h-4 w-4 inline-block align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24">

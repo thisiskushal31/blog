@@ -8,7 +8,7 @@ export const blogPost: BlogPost = {
   excerpt: "Complete guide to self-managed Elasticsearch on VM and bare metal with multi-node automation, performance tuning, hardware sizing, and operational procedures.",
   content,
   publishDate: "2025-08-24",
-  categories: ["Elasticsearch", "Deployment", "Self-Managed", "Infrastructure", "Production"],
+  categories: ["Self-Managed", "Infrastructure"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"
