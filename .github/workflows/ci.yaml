@@ -60,6 +60,7 @@ jobs:
       - name: Copy sitemap and robots.txt to dist
         run: |
           cp sitemap.xml dist/
+          cp sitemap-homepage-only.xml dist/
           cp robots.txt dist/
 
       - name: Deploy to GitHub Pages

@@ -32,7 +32,7 @@ function generateSitemap() {
 BLOG_POST_SLUGS.forEach(slug => {
   sitemap += `
   <url>
-    <loc>${baseUrl}/${slug}</loc>
+    <loc>${baseUrl}/#/blog/${slug}</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
