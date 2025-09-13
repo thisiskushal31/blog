@@ -57,10 +57,11 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Copy sitemap and robots.txt to dist
+      - name: Copy sitemap, robots.txt and Google verification to dist
         run: |
           cp sitemap.xml dist/
           cp robots.txt dist/
+          cp googlecaed600aa1225827.html dist/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -99,13 +100,14 @@ jobs:
         run: |
           git clone --branch gh-pages https://x-access-token:${TOKEN}@github.com/thisiskushal31/blog.git gh-pages-branch
 
-      - name: Copy Sitemap & Push to gh-pages
+      - name: Copy Sitemap, robots.txt, Google verification & Push to gh-pages
         run: |
           cd gh-pages-branch
           cp ../sitemap.xml ./sitemap.xml
           cp ../robots.txt ./robots.txt
+          cp ../googlecaed600aa1225827.html ./googlecaed600aa1225827.html
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add sitemap.xml robots.txt
-          git commit -m "chore: update sitemap and robots.txt [skip ci]" || echo "No changes to commit"
+          git add sitemap.xml robots.txt googlecaed600aa1225827.html
+          git commit -m "chore: update sitemap, robots.txt and Google verification [skip ci]" || echo "No changes to commit"
           git push origin gh-pages
