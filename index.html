@@ -72,8 +72,18 @@
           if (cleanPath) {
             // Store the original URL for the 404.html redirect
             sessionStorage.redirect = window.location.href;
-            // Redirect to hash version
-            window.location.replace('/blog/#' + path);
+            // Redirect to hash version: /blog/#/blog/post-name
+            window.location.replace('/blog/#/blog/' + cleanPath);
+          }
+        }
+        // Handle direct post URLs like /post-name (even cleaner)
+        else if (path !== '/' && !path.startsWith('/blog/') && !hash && path !== '/blog/') {
+          var postSlug = path.substring(1); // Remove leading slash
+          if (postSlug) {
+            // Store the original URL for the 404.html redirect
+            sessionStorage.redirect = window.location.href;
+            // Redirect to hash version: /blog/#/blog/post-name
+            window.location.replace('/blog/#/blog/' + postSlug);
           }
         }
       })();
