@@ -215,7 +215,9 @@ const BlogPost = () => {
                     />
                     <div>
                       <span className="font-medium text-slate-800 dark:text-slate-100">{postAuthor.name}</span>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">Author</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        {postAuthor.title || "Author"}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-6">

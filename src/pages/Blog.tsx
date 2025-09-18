@@ -317,7 +317,14 @@ const Blog = () => {
                           alt={postAuthor.name}
                           className="w-6 h-6 rounded-full mr-2"
                         />
-                        <span>{postAuthor.name}</span>
+                        <div>
+                          <span className="font-medium">{postAuthor.name}</span>
+                          {postAuthor.title && (
+                            <span className="text-xs text-slate-400 dark:text-slate-500 ml-1">
+                              • {postAuthor.title}
+                            </span>
+                          )}
+                        </div>
                       </div>
                       <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-4">
                         <div className="flex items-center space-x-4">

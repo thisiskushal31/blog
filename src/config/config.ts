@@ -8,5 +8,6 @@ export const PORTFOLIO_URL = "https://thisiskushal31.github.io/"; // Change to y
 
 export const AUTHOR = {
   name: "Kushal Gupta",
+  title: "Software Engineer, Platform Engineer & DevOps Engineer",
   avatar: "/blog/profile.jpeg", // Change this path as needed
 };
