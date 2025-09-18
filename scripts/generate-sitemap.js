@@ -28,11 +28,11 @@ function generateSitemap() {
     <priority>1.0</priority>
   </url>`;
 
-// Add all blog post URLs
+// Add all blog post URLs (clean URLs without hash for better SEO)
 BLOG_POST_SLUGS.forEach(slug => {
   sitemap += `
   <url>
-    <loc>${baseUrl}/#/blog/${slug}</loc>
+    <loc>${baseUrl}/blog/${slug}</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

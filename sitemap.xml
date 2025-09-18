@@ -1,55 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thisiskushal31.github.io/blog/</loc>
-    <lastmod>2025-09-13</lastmod>
+    <lastmod>2025-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-guide</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/elasticsearch-deployment-guide</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-vs-self-managed-strategic-decision-framework</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/elastic-cloud-vs-self-managed-strategic-decision-framework</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/elastic-cloud-deep-dive-hosted-vs-serverless-architecture</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/self-managed-elasticsearch-vm-bare-metal-production-guide</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/self-managed-elasticsearch-vm-bare-metal-production-guide</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/docker-elasticsearch-container-deployment-strategies</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/docker-elasticsearch-container-deployment-strategies</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/kubernetes-elasticsearch-eck-helm-raw-yaml-deep-dive</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/elasticsearch-local-development-docker-packages-quick-start</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/elasticsearch-local-development-docker-packages-quick-start</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide</loc>
+    <loc>https://thisiskushal31.github.io/blog/blog/elasticsearch-deployment-decision-matrix-complete-comparison-guide</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
