@@ -9,7 +9,7 @@ export const blogPost: BlogPost = {
   content,
   publishDate: "2025-10-18",
   categories: ["DevSecOps"],
-  searchCategories: ["AI Security", "DevSecOps", "Automation"],
+  searchCategories: ["Security", "DevOps", "Automation"],
   featured: true,
   coverImage: "/blog/blogImages/ai-security-shift-left.png",
   // coverImageCredit: "AI Security concept illustration"
