@@ -7,9 +7,9 @@ export const blogPost: BlogPost = {
   subtitle: "Transform security from a gatekeeper into an accelerator with AI-powered shift-left strategies",
   excerpt: "Traditional security models create bottlenecks that slow down development. AI automation transforms security from a gatekeeper into an accelerator, enabling true shift-left security integration that catches issues early without slowing teams down.",
   content,
-  publishDate: "2025-01-15",
-  categories: ["AI Security", "DevSecOps", "Security Integration", "Shift Left Security"],
-  searchCategories: ["AI", "Security", "DevOps", "Automation", "Development"],
+  publishDate: "2025-10-18",
+  categories: ["DevSecOps"],
+  searchCategories: ["AI Security", "DevSecOps", "Automation"],
   featured: true,
   coverImage: "/blog/blogImages/ai-security-shift-left.png",
   // coverImageCredit: "AI Security concept illustration"
