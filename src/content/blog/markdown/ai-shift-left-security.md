@@ -60,19 +60,21 @@
 ┌─────────────────────────────────────────────────────────────┐
 │                    AI Security Architecture                 │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐      │
-│  │   Wazuh     │    │    Snort    │    │  Suricata   │      │
-│  │  (SIEM)     │◄──►│ (Intrusion) │◄──►│ (Network)   │      │
-│  │ AI/ML Core  │    │ AI Pattern  │    │ AI Deep     │      │
-│  └─────────────┘    └─────────────┘    └─────────────┘      │
-│         │                   │                   │           │
-│         ▼                   ▼                   ▼           │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │              Central AI Security Hub                    ││
-│  │  • Real-time threat correlation                         ││
-│  │  • Automated incident response                          ││
-│  │  • 60-85% false positive reduction                      ││
-│  └─────────────────────────────────────────────────────────┘│
+│                                                             │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
+│  │   Wazuh     │    │    Snort    │    │  Suricata   │     │
+│  │  (SIEM)     │◄──►│ (Intrusion) │◄──►│ (Network)   │     │
+│  │ AI/ML Core  │    │ AI Pattern  │    │ AI Deep     │     │
+│  └─────────────┘    └─────────────┘    └─────────────┘     │
+│         │                   │                   │          │
+│         ▼                   ▼                   ▼          │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │              Central AI Security Hub                   │ │
+│  │  • Real-time threat correlation                        │ │
+│  │  • Automated incident response                         │ │
+│  │  • 60-85% false positive reduction                     │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -93,23 +95,25 @@
 **Implementation Framework:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Shift-Left Security Pipeline             │
+│                    Shift-Left Security Pipeline            │
 ├─────────────────────────────────────────────────────────────┤
-│  Code Commit → AI Security Scan → Threat Analysis → Deploy  │
-│       │              │                │              │      │
-│       ▼              ▼                ▼              ▼      │
+│                                                             │
+│  Code Commit → AI Security Scan → Threat Analysis → Deploy │
+│       │              │                │              │     │
+│       ▼              ▼                ▼              ▼     │
 │  ┌─────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │
 │  │  Dev    │  │   Trivy     │  │   OWASP     │  │  Prod   │ │
 │  │  Push   │  │ (Container) │  │    ZAP      │  │ Deploy  │ │
 │  └─────────┘  └─────────────┘  └─────────────┘  └─────────┘ │
-│       │              │                │              │      │
-│       ▼              ▼                ▼              ▼      │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │              AI Security Dashboard                      ││
-│  │  • Real-time vulnerability detection                    ││
-│  │  • Automated risk scoring                               ││
-│  │  • Instant feedback to developers                       ││
-│  └─────────────────────────────────────────────────────────┘│
+│       │              │                │              │     │
+│       ▼              ▼                ▼              ▼     │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │              AI Security Dashboard                     │ │
+│  │  • Real-time vulnerability detection                   │ │
+│  │  • Automated risk scoring                              │ │
+│  │  • Instant feedback to developers                      │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -124,28 +128,30 @@
 **Implementation Framework:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    AI Threat Modeling Process               │
+│                    AI Threat Modeling Process              │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐      │
-│  │  App Design │    │   AI Engine │    │ Threat Model│      │
-│  │  & Code     │───►│  Analysis   │───►│ Generation  │      │
-│  └─────────────┘    └─────────────┘    └─────────────┘      │
-│         │                   │                   │           │
-│         ▼                   ▼                   ▼           │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │              AI Threat Analysis Engine                  ││
-│  │  • Data flow analysis                                   ││
-│  │  • Trust boundary mapping                               ││
-│  │  • Attack vector identification                         ││
-│  │  • Risk prioritization                                  ││
-│  └─────────────────────────────────────────────────────────┘│
-│         │                   │                   │           │
-│         ▼                   ▼                   ▼           │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐      │
-│  │  Payment    │    │   User      │    │  Network    │      │
-│  │  Gateway    │    │  Database   │    │  Security   │      │
-│  │  Threats    │    │  Threats    │    │  Threats    │      │
-│  └─────────────┘    └─────────────┘    └─────────────┘      │
+│                                                             │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
+│  │  App Design │    │   AI Engine │    │ Threat Model│     │
+│  │  & Code     │───►│  Analysis   │───►│ Generation  │     │
+│  └─────────────┘    └─────────────┘    └─────────────┘     │
+│         │                   │                   │          │
+│         ▼                   ▼                   ▼          │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │              AI Threat Analysis Engine                 │ │
+│  │  • Data flow analysis                                  │ │
+│  │  • Trust boundary mapping                              │ │
+│  │  • Attack vector identification                       │ │
+│  │  • Risk prioritization                                │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│         │                   │                   │          │
+│         ▼                   ▼                   ▼          │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
+│  │  Payment    │    │   User      │    │  Network    │     │
+│  │  Gateway    │    │  Database   │    │  Security   │     │
+│  │  Threats    │    │  Threats    │    │  Threats    │     │
+│  └─────────────┘    └─────────────┘    └─────────────┘     │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -160,29 +166,31 @@
 **Implementation Framework:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Shadow AI Governance                     │
+│                    Shadow AI Governance                    │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐      │
-│  │   Detect    │    │   Monitor   │    │   Control   │      │
-│  │ AI-Generated│    │ AI Tool Use │    │ AI Access   │      │
-│  │    Code     │    │             │    │             │      │
-│  └─────────────┘    └─────────────┘    └─────────────┘      │
-│         │                   │                   │           │
-│         ▼                   ▼                   ▼           │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │              AI Governance Dashboard                    ││
-│  │  • Code pattern detection                               ││
-│  │  • Sensitive data scanning                              ││
-│  │  • Tool usage monitoring                                ││
-│  │  • Access control policies                              ││
-│  └─────────────────────────────────────────────────────────┘│
-│         │                   │                   │           │
-│         ▼                   ▼                   ▼           │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐      │
-│  │   Block     │    │   Alert     │    │   Report    │      │
-│  │ Unauthorized│    │  Security   │    │ Compliance  │      │
-│  │    Tools    │    │  Violations │    │   Status    │      │
-│  └─────────────┘    └─────────────┘    └─────────────┘      │
+│                                                             │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
+│  │   Detect    │    │   Monitor   │    │   Control   │     │
+│  │ AI-Generated│    │ AI Tool Use │    │ AI Access   │     │
+│  │    Code     │    │             │    │             │     │
+│  └─────────────┘    └─────────────┘    └─────────────┘     │
+│         │                   │                   │          │
+│         ▼                   ▼                   ▼          │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │              AI Governance Dashboard                   │ │
+│  │  • Code pattern detection                              │ │
+│  │  • Sensitive data scanning                             │ │
+│  │  • Tool usage monitoring                               │ │
+│  │  • Access control policies                             │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│         │                   │                   │          │
+│         ▼                   ▼                   ▼          │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
+│  │   Block     │    │   Alert     │    │   Report    │     │
+│  │ Unauthorized│    │  Security   │    │ Compliance  │     │
+│  │    Tools    │    │  Violations │    │   Status    │     │
+│  └─────────────┘    └─────────────┘    └─────────────┘     │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -195,8 +203,9 @@
 **Implementation Framework:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Strategic Implementation Roadmap         │
+│                    Strategic Implementation Roadmap        │
 ├─────────────────────────────────────────────────────────────┤
+│                                                             │
 │  Phase 1: Foundation (Weeks 1-2)                           │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
 │  │   Install   │    │   Configure │    │   Train     │     │
@@ -218,6 +227,7 @@
 │  │   Analytics │───►│   Modeling  │───►│   Impact    │     │
 │  │             │    │             │    │  Measurement│     │
 │  └─────────────┘    └─────────────┘    └─────────────┘     │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
