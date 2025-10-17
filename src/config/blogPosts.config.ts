@@ -3,6 +3,9 @@ import { BlogPost } from '../content/blogPostIndex';
 // Static imports for all posts (add new imports here)
 // import { blogPost as comprehensiveFeaturesShowcase } from '../content/blog/comprehensive-features-showcase';
 
+// AI Security
+import { blogPost as ai_shift_left_security } from '../content/blog/ai-shift-left-security';
+
 // Elasticsearch Deployment Guide
 import { blogPost as es_deployment_guide_0_elasticsearch_hub } from '../content/blog/es_deployment_guide_0_elasticsearch_hub';
 import { blogPost as es_deployment_guide_1_elastic_cloud_vs_self_managed } from '../content/blog/es_deployment_guide_1_elastic_cloud_vs_self_managed';
@@ -19,6 +22,9 @@ import { blogPost as es_deployment_guide_7_decision_matrix } from '../content/bl
 
 export const BLOG_POST_SLUGS = [
   // 'comprehensive-features-showcase',
+
+  // AI Security
+  'ai-shift-left-security',
 
   // Elasticsearch Deployment Guide
   'elasticsearch-deployment-guide',
@@ -37,6 +43,9 @@ export const BLOG_POST_SLUGS = [
 
 export const POST_MAP: Record<string, BlogPost> = {
   // 'comprehensive-features-showcase': comprehensiveFeaturesShowcase,
+
+  // AI Security
+  'ai-shift-left-security': ai_shift_left_security,
 
   // Elasticsearch Deployment Guide
   'elasticsearch-deployment-guide': es_deployment_guide_0_elasticsearch_hub,
