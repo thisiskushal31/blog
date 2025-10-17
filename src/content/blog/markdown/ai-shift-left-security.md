@@ -56,27 +56,15 @@
 - **VirusTotal** - AI-powered malware analysis
 
 **Implementation Framework:**
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    AI Security Architecture                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   Wazuh     │    │    Snort    │    │  Suricata   │     │
-│  │  (SIEM)     │◄──►│ (Intrusion) │◄──►│ (Network)   │     │
-│  │ AI/ML Core  │    │ AI Pattern  │    │ AI Deep     │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│         │                   │                   │          │
-│         ▼                   ▼                   ▼          │
-│  ┌─────────────────────────────────────────────────────────┐ │
-│  │              Central AI Security Hub                   │ │
-│  │  • Real-time threat correlation                        │ │
-│  │  • Automated incident response                         │ │
-│  │  • 60-85% false positive reduction                     │ │
-│  └─────────────────────────────────────────────────────────┘ │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+
+**Layer 1: AI Security Tools**
+- Wazuh (SIEM) ◄──► Snort (Intrusion) ◄──► Suricata (Network)
+- AI/ML Core ◄──► AI Pattern ◄──► AI Deep Packet Inspection
+
+**Layer 2: Central AI Security Hub**
+- Real-time threat correlation
+- Automated incident response  
+- 60-85% false positive reduction
 
 **Result:** Detect payment fraud, account takeovers, and network intrusions in real-time.
 
@@ -93,29 +81,17 @@
 - **VirusTotal API** - AI threat intelligence
 
 **Implementation Framework:**
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Shift-Left Security Pipeline            │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Code Commit → AI Security Scan → Threat Analysis → Deploy │
-│       │              │                │              │     │
-│       ▼              ▼                ▼              ▼     │
-│  ┌─────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │
-│  │  Dev    │  │   Trivy     │  │   OWASP     │  │  Prod   │ │
-│  │  Push   │  │ (Container) │  │    ZAP      │  │ Deploy  │ │
-│  └─────────┘  └─────────────┘  └─────────────┘  └─────────┘ │
-│       │              │                │              │     │
-│       ▼              ▼                ▼              ▼     │
-│  ┌─────────────────────────────────────────────────────────┐ │
-│  │              AI Security Dashboard                     │ │
-│  │  • Real-time vulnerability detection                   │ │
-│  │  • Automated risk scoring                              │ │
-│  │  • Instant feedback to developers                      │ │
-│  └─────────────────────────────────────────────────────────┘ │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+
+**Pipeline Flow:**
+Code Commit → AI Security Scan → Threat Analysis → Deploy
+
+**Stage 1: Development**
+- Dev Push → Trivy (Container Scanning) → OWASP ZAP (Dynamic Testing) → Production Deploy
+
+**Stage 2: AI Security Dashboard**
+- Real-time vulnerability detection
+- Automated risk scoring
+- Instant feedback to developers
 
 **Result:** Security checks on every commit without slowing development.
 
@@ -126,34 +102,20 @@
 **AI Solution:** Automated threat models in minutes, not days.
 
 **Implementation Framework:**
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    AI Threat Modeling Process              │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │  App Design │    │   AI Engine │    │ Threat Model│     │
-│  │  & Code     │───►│  Analysis   │───►│ Generation  │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│         │                   │                   │          │
-│         ▼                   ▼                   ▼          │
-│  ┌─────────────────────────────────────────────────────────┐ │
-│  │              AI Threat Analysis Engine                 │ │
-│  │  • Data flow analysis                                  │ │
-│  │  • Trust boundary mapping                              │ │
-│  │  • Attack vector identification                       │ │
-│  │  • Risk prioritization                                │ │
-│  └─────────────────────────────────────────────────────────┘ │
-│         │                   │                   │          │
-│         ▼                   ▼                   ▼          │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │  Payment    │    │   User      │    │  Network    │     │
-│  │  Gateway    │    │  Database   │    │  Security   │     │
-│  │  Threats    │    │  Threats    │    │  Threats    │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+
+**Process Flow:**
+App Design & Code → AI Engine Analysis → Threat Model Generation
+
+**AI Threat Analysis Engine:**
+- Data flow analysis
+- Trust boundary mapping
+- Attack vector identification
+- Risk prioritization
+
+**Output: Threat Categories**
+- Payment Gateway Threats
+- User Database Threats
+- Network Security Threats
 
 **Result:** 70% less security rework, comprehensive attack path analysis.
 
@@ -164,35 +126,22 @@
 **Solution:** AI governance with detection and secure alternatives.
 
 **Implementation Framework:**
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Shadow AI Governance                    │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   Detect    │    │   Monitor   │    │   Control   │     │
-│  │ AI-Generated│    │ AI Tool Use │    │ AI Access   │     │
-│  │    Code     │    │             │    │             │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│         │                   │                   │          │
-│         ▼                   ▼                   ▼          │
-│  ┌─────────────────────────────────────────────────────────┐ │
-│  │              AI Governance Dashboard                   │ │
-│  │  • Code pattern detection                              │ │
-│  │  • Sensitive data scanning                             │ │
-│  │  • Tool usage monitoring                               │ │
-│  │  • Access control policies                             │ │
-│  └─────────────────────────────────────────────────────────┘ │
-│         │                   │                   │          │
-│         ▼                   ▼                   ▼          │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   Block     │    │   Alert     │    │   Report    │     │
-│  │ Unauthorized│    │  Security   │    │ Compliance  │     │
-│  │    Tools    │    │  Violations │    │   Status    │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+
+**Phase 1: Detection & Monitoring**
+- Detect AI-Generated Code
+- Monitor AI Tool Usage
+- Control AI Access
+
+**Phase 2: AI Governance Dashboard**
+- Code pattern detection
+- Sensitive data scanning
+- Tool usage monitoring
+- Access control policies
+
+**Phase 3: Response Actions**
+- Block Unauthorized Tools
+- Alert on Security Violations
+- Report Compliance Status
 
 **Result:** Prevent data leaks, ensure secure AI usage.
 
@@ -201,35 +150,15 @@
 **Start Small, Scale Fast**: Begin with AI-powered static analysis in your CI/CD pipeline.
 
 **Implementation Framework:**
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Strategic Implementation Roadmap        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Phase 1: Foundation (Weeks 1-2)                           │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   Install   │    │   Configure │    │   Train     │     │
-│  │ Free Tools  │───►│ AI Security │───►│ Developers  │     │
-│  │ (Wazuh,     │    │   Pipeline  │    │ on Security │     │
-│  │  Snort)     │    │             │    │  Practices  │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│                                                             │
-│  Phase 2: Integration (Weeks 3-4)                          │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   CI/CD     │    │   Real-time │    │   Monitor   │     │
-│  │ Integration │───►│  Detection  │───►│  & Optimize │     │
-│  │             │    │             │    │             │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│                                                             │
-│  Phase 3: Scale (Weeks 5-8)                                │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   Advanced  │    │   AI Threat │    │   Business  │     │
-│  │   Analytics │───►│   Modeling  │───►│   Impact    │     │
-│  │             │    │             │    │  Measurement│     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+
+**Phase 1: Foundation (Weeks 1-2)**
+- Install Free Tools (Wazuh, Snort) → Configure AI Security Pipeline → Train Developers on Security Practices
+
+**Phase 2: Integration (Weeks 3-4)**
+- CI/CD Integration → Real-time Detection → Monitor & Optimize
+
+**Phase 3: Scale (Weeks 5-8)**
+- Advanced Analytics → AI Threat Modeling → Business Impact Measurement
 
 **Key Metrics:**
 - Time to detect threats: < 5 minutes
