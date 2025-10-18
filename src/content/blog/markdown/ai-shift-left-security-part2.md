@@ -282,24 +282,24 @@ Central Security Hub (Wazuh SIEM)
 
 **The Central Security Dashboard (Wazuh + Custom Integrations):**
 ```
-┌────────────────────────────────────────────────────────────────       ─┐
+┌────────────────────────────────────────────────────────────────────────┐
 │                Enterprise Security Command Center                      │
-├────────────────────────────────────────────────────────────────       ─┤
+├────────────────────────────────────────────────────────────────────────┤
 │  Network Security    │  Application Security  │  Database Security     │
 │  • < 1s detection    │  • 95% OWASP coverage  │  • AES-256 encryption  │
-│  • 8-12% false +     │  • 15K req/s WAF       │  • 100% monitoring    │
-│  • 20+ Gbps throughput│  • < 5min SAST scan    │  • 99.99% backup     │
-├────────────────────────────────────────────────────────────────       ─┤
-│  AI Model Security   │  Data Privacy          │  Compliance           │
-│  • 100% integrity    │  • 98% GDPR coverage   │  • SOC 2 Type II   │
-│  • 90% adversarial   │  • Real-time DLP       │  • PCI DSS Level 1 │
-│  • 99.5% leak prev   │  • Auto classification │  • 100% controls   │
-├─────────────────────────────────────────────────────────────────┤
-│  Threat Intelligence │  Incident Response     │  Business Impact   │
-│  • Real-time IOCs    │  • < 5min response     │  • $2.3M saved     │
-│  • ML correlation    │  • Auto-remediation    │  • 99.9% uptime    │
-│  • Risk scoring      │  • Escalation matrix   │  • ROI: 340%       │
-└─────────────────────────────────────────────────────────────────┘
+│  • 8-12% false +     │  • 15K req/s WAF       │  • 100% monitoring     │
+│  • 20+ Gbps throughput│  • < 5min SAST scan    │  • 99.99% backup      │
+├────────────────────────────────────────────────────────────────────────┤
+│  AI Model Security   │  Data Privacy          │  Compliance            │
+│  • 100% integrity    │  • 98% GDPR coverage   │  • SOC 2 Type II       │
+│  • 90% adversarial   │  • Real-time DLP       │  • PCI DSS Level 1     │
+│  • 99.5% leak prev   │  • Auto classification │  • 100% controls       │
+├────────────────────────────────────────────────────────────────────────┤
+│  Threat Intelligence │  Incident Response     │  Business Impact       │
+│  • Real-time IOCs    │  • < 5min response     │  • $2.3M saved         │
+│  • ML correlation    │  • Auto-remediation    │  • 99.9% uptime        │
+│  • Risk scoring      │  • Escalation matrix   │  • ROI: 340%           │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
 **The Business Impact (Based on Enterprise Case Studies):**
