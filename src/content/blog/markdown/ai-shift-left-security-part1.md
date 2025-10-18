@@ -1,6 +1,6 @@
 # From Bottleneck to Accelerator: How AI Automation Enables True Shift Left Security (Part 1)
 
-**TLDR:** AI automation transforms security from a bottleneck into an accelerator. Result: 60-85% fewer false positives, 6x cheaper vulnerability fixes, and security integrated into every commit—not after deployment.
+**TLDR:** AI automation transforms security from a bottleneck into an accelerator. Result: 60-85% fewer false positives, 6x cheaper fixes when caught early, and security integrated into every commit—not after deployment.
 
 *This is Part 1 of a 3-part series. [Read Part 2: Implementation & Tools](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part2) | [Read Part 3: 2025 Trends & Future](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part3)*
 
