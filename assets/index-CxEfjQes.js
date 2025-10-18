@@ -508,17 +508,17 @@ I've seen too many security teams drowning in data from multiple tools. Wazuh he
 **The Visual Dashboard:**
 \`\`\`
 ┌─────────────────────────────────────────────────────────────┐
-│                    Central Security Dashboard                │
+│                    Central Security Dashboard               │
 ├─────────────────────────────────────────────────────────────┤
-│  Threat Detection     │  Vulnerability    │  Compliance      │
-│  • 0-5 min alerts     │  • Every commit   │  • GDPR 98%      │
-│  • 15-25% false +     │  • Auto-block     │  • PCI DSS       │
-│  • 100% coverage      │  • < 24h fix      │  • SOC 2         │
+│  Threat Detection     │  Vulnerability    │  Compliance     │
+│  • 0-5 min alerts     │  • Every commit   │  • GDPR 98%     │
+│  • 15-25% false +     │  • Auto-block     │  • PCI DSS      │
+│  • 100% coverage      │  • < 24h fix      │  • SOC 2        │
 ├─────────────────────────────────────────────────────────────┤
-│  Performance Metrics  │  AI Security Hub  │  Action Center   │
-│  • 99.9% uptime       │  • ML correlation │  • Auto-remedy   │
-│  • < 2s response      │  • Pattern detect │  • Escalation    │
-│  • 10K+ events/s      │  • Risk scoring   │  • Reporting     │
+│  Performance Metrics  │  AI Security Hub  │  Action Center  │
+│  • 99.9% uptime       │  • ML correlation │  • Auto-remedy  │
+│  • < 2s response      │  • Pattern detect │  • Escalation   │
+│  • 10K+ events/s      │  • Risk scoring   │  • Reporting    │
 └─────────────────────────────────────────────────────────────┘
 \`\`\`
 
@@ -705,22 +705,22 @@ Central Security Hub (Wazuh SIEM)
 **The Central Security Dashboard (Wazuh + Custom Integrations):**
 \`\`\`
 ┌────────────────────────────────────────────────────────────────────────┐
-│                Enterprise Security Command Center                       │
+│                Enterprise Security Command Center                      │
 ├────────────────────────────────────────────────────────────────────────┤
-│  Network Security    │  Application Security  │  Database Security      │
-│  • < 1s detection    │  • 95% OWASP coverage  │  • AES-256 encryption   │
-│  • 8-12% false +     │  • 15K req/s WAF       │  • 100% monitoring      │
-│  • 20+ Gbps throughput│  • < 5min SAST scan    │  • 99.99% backup       │
+│  Network Security    │  Application Security  │  Database Security     │
+│  • < 1s detection    │  • 95% OWASP coverage  │  • AES-256 encryption  │
+│  • 8-12% false +     │  • 15K req/s WAF       │  • 100% monitoring     │
+│  • 20+ Gbps throughput│  • < 5min SAST scan    │  • 99.99% backup      │
 ├────────────────────────────────────────────────────────────────────────┤
-│  AI Model Security   │  Data Privacy          │  Compliance             │
-│  • 100% integrity    │  • 98% GDPR coverage   │  • SOC 2 Type II        │
-│  • 90% adversarial   │  • Real-time DLP       │  • PCI DSS Level 1      │
-│  • 99.5% leak prev   │  • Auto classification │  • 100% controls        │
+│  AI Model Security   │  Data Privacy          │  Compliance            │
+│  • 100% integrity    │  • 98% GDPR coverage   │  • SOC 2 Type II       │
+│  • 90% adversarial   │  • Real-time DLP       │  • PCI DSS Level 1     │
+│  • 99.5% leak prev   │  • Auto classification │  • 100% controls       │
 ├────────────────────────────────────────────────────────────────────────┤
-│  Threat Intelligence │  Incident Response     │  Business Impact        │
-│  • Real-time IOCs    │  • < 5min response     │  • $2.3M saved          │
-│  • ML correlation    │  • Auto-remediation    │  • 99.9% uptime         │
-│  • Risk scoring      │  • Escalation matrix   │  • ROI: 340%            │
+│  Threat Intelligence │  Incident Response     │  Business Impact       │
+│  • Real-time IOCs    │  • < 5min response     │  • $2.3M saved         │
+│  • ML correlation    │  • Auto-remediation    │  • 99.9% uptime        │
+│  • Risk scoring      │  • Escalation matrix   │  • ROI: 340%           │
 └────────────────────────────────────────────────────────────────────────┘
 \`\`\`
 
