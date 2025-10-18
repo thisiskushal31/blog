@@ -5,6 +5,9 @@ import { BlogPost } from '../content/blogPostIndex';
 
 // AI Security
 import { blogPost as ai_shift_left_security } from '../content/blog/ai-shift-left-security';
+import { blogPost as ai_shift_left_security_part1 } from '../content/blog/ai-shift-left-security-part1';
+import { blogPost as ai_shift_left_security_part2 } from '../content/blog/ai-shift-left-security-part2';
+import { blogPost as ai_shift_left_security_part3 } from '../content/blog/ai-shift-left-security-part3';
 
 // Elasticsearch Deployment Guide
 import { blogPost as es_deployment_guide_0_elasticsearch_hub } from '../content/blog/es_deployment_guide_0_elasticsearch_hub';
@@ -25,6 +28,9 @@ export const BLOG_POST_SLUGS = [
 
   // AI Security
   'ai-shift-left-security',
+  'ai-shift-left-security-part1',
+  'ai-shift-left-security-part2',
+  'ai-shift-left-security-part3',
 
   // Elasticsearch Deployment Guide
   'elasticsearch-deployment-guide',
@@ -46,6 +52,9 @@ export const POST_MAP: Record<string, BlogPost> = {
 
   // AI Security
   'ai-shift-left-security': ai_shift_left_security,
+  'ai-shift-left-security-part1': ai_shift_left_security_part1,
+  'ai-shift-left-security-part2': ai_shift_left_security_part2,
+  'ai-shift-left-security-part3': ai_shift_left_security_part3,
 
   // Elasticsearch Deployment Guide
   'elasticsearch-deployment-guide': es_deployment_guide_0_elasticsearch_hub,
