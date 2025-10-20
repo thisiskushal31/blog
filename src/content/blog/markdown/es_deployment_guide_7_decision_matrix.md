@@ -8,6 +8,14 @@
 
 Choosing the right Elasticsearch deployment strategy can make or break your search infrastructure investment. After analyzing hundreds of production deployments across startups to Fortune 500 companies, this comprehensive decision matrix provides a data-driven framework for selecting the optimal approach based on your specific requirements, constraints, and objectives.
 
+## TL;DR
+
+**What:** Data-driven decision matrix for choosing the optimal Elasticsearch deployment strategy
+**When to use:** Before any Elasticsearch deployment or when evaluating migration between approaches
+**Time to implement:** 30-60 minutes to complete the scoring matrix and get your recommendation
+**Key takeaway:** Cost variations up to 400% between strategies—use this framework to avoid expensive mistakes and choose the right approach for your specific context
+**Skip if:** You've already made your deployment choice and it's working well for your needs
+
 **Key Insights from This Analysis:**
 - **Cost variations up to 400%** between deployment strategies for identical workloads
 - **Performance differences of 60%+** based on infrastructure choices

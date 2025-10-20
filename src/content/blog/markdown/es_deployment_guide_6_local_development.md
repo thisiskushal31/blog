@@ -10,6 +10,14 @@ Every Elasticsearch developer faces this choice: quick Docker setup for instant 
 
 After testing both approaches across different development scenarios, this comprehensive guide reveals when to choose each method, how to optimize both approaches, and advanced patterns that combine the best of both worlds.
 
+## TL;DR
+
+**What:** Complete guide to local Elasticsearch development with Docker vs native installation
+**When to use:** When setting up your development environment or optimizing your current local setup
+**Time to implement:** 15 minutes for Docker, 30 minutes for native installation
+**Key takeaway:** Docker for quick setup and isolation, native for performance testing and production parity—use both for different scenarios
+**Skip if:** You're only doing production deployments and don't need local development
+
 **Key Questions We'll Answer:**
 - Which approach gives better development velocity for different use cases?
 - How do performance characteristics compare for development workloads?

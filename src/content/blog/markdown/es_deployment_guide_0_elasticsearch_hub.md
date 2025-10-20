@@ -6,6 +6,14 @@
 
 Building reliable, scalable Elasticsearch infrastructure doesn't have to be overwhelming. I've been there—staring at configuration files at 2 AM, wondering why my cluster keeps crashing. Whether you're a developer setting up your first local cluster or an architect designing petabyte-scale search systems, this series breaks down those complex deployment decisions into clear, actionable guidance that actually works in production.
 
+## TL;DR
+
+**What:** Complete guide to Elasticsearch deployment strategies from local dev to production scale
+**When to use:** Any time you need to deploy, migrate, or optimize Elasticsearch infrastructure
+**Time to complete:** 2-4 hours to read all blogs, 1-2 days to implement your chosen strategy
+**Key takeaway:** No more guessing which deployment approach to use—data-driven decisions with real production configs
+**Skip if:** You already have a working Elasticsearch deployment and don't plan to change it
+
 **What Makes This Series Different:**
 - Real production configurations from my actual VM, Kubernetes, and Docker deployments
 - Performance benchmarks from deployments I've managed (including the failures)

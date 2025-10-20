@@ -10,6 +10,14 @@ Choosing between Elastic Cloud and self-managed Elasticsearch isn't just a techn
 
 This analysis provides the framework to make this decision with confidence, backed by real performance data and cost calculations from deployments I've actually managed (including the expensive mistakes).
 
+## TL;DR
+
+**What:** Strategic framework for choosing between Elastic Cloud and self-managed Elasticsearch
+**When to use:** Before any Elasticsearch deployment or when considering migration between approaches
+**Time to implement:** 30 minutes to read, 1-2 hours to complete the decision matrix
+**Key takeaway:** Elastic Cloud wins for speed and simplicity, self-managed wins for cost and control—choose based on your team's capabilities and scale
+**Skip if:** You're already committed to one approach and it's working well for your use case
+
 **Key Decision Factors:**
 - Total Cost of Ownership across different scales (spoiler: it's usually more expensive than you think)
 - Operational complexity and team requirements (do you have 24/7 on-call engineers?)

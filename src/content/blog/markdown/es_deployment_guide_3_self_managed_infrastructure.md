@@ -8,6 +8,14 @@
 
 Self-managed Elasticsearch deployments represent the pinnacle of infrastructure control, offering unmatched performance optimization, cost efficiency at scale, and complete customization freedom. This comprehensive guide takes you from basic cluster setup to advanced production optimization techniques that can deliver 40-60% cost savings and superior performance compared to managed solutions.
 
+## TL;DR
+
+**What:** Complete guide to self-managed Elasticsearch on VMs and bare metal with production optimizations
+**When to use:** When you need maximum control, have dedicated ops team, or want to minimize costs at scale
+**Time to implement:** 1-2 days for basic setup, 1-2 weeks for production optimization
+**Key takeaway:** 40-60% cost savings vs managed services, but requires significant operational expertise and 24/7 monitoring
+**Skip if:** You're a small team, need quick deployment, or prefer managed services for reliability
+
 **Why Choose Self-Managed:**
 - Complete hardware and software stack control
 - Maximum performance through custom optimization
