@@ -14,7 +14,8 @@ This analysis provides the framework to make this decision with confidence, back
 
 **What:** Strategic framework for choosing between Elastic Cloud and self-managed Elasticsearch
 **When to use:** Before any Elasticsearch deployment or when considering migration between approaches
-**Time to implement:** 30 minutes to read, 1-2 hours to complete the decision matrix
+**Reading time:** 5 minutes
+**Implementation time:** 1-2 hours to complete the decision matrix and make your choice
 **Key takeaway:** Elastic Cloud wins for speed and simplicity, self-managed wins for cost and control—choose based on your team's capabilities and scale
 **Skip if:** You're already committed to one approach and it's working well for your use case
 

@@ -12,7 +12,8 @@ Self-managed Elasticsearch deployments represent the pinnacle of infrastructure 
 
 **What:** Complete guide to self-managed Elasticsearch on VMs and bare metal with production optimizations
 **When to use:** When you need maximum control, have dedicated ops team, or want to minimize costs at scale
-**Time to implement:** 1-2 days for basic setup, 1-2 weeks for production optimization
+**Reading time:** 3 minutes
+**Implementation time:** 1-2 days for basic setup, 1-2 weeks for production optimization
 **Key takeaway:** 40-60% cost savings vs managed services, but requires significant operational expertise and 24/7 monitoring
 **Skip if:** You're a small team, need quick deployment, or prefer managed services for reliability
 
