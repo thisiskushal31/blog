@@ -37,7 +37,7 @@ version: '3.8'
 services:
   # Master-eligible nodes (cluster coordination)
   es-master-1:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es-master-1
     environment:
       - node.name=es-master-1
@@ -77,7 +77,7 @@ services:
       retries: 3
 
   es-master-2:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es-master-2
     environment:
       - node.name=es-master-2
@@ -117,7 +117,7 @@ services:
       retries: 3
 
   es-master-3:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es-master-3
     environment:
       - node.name=es-master-3
@@ -158,7 +158,7 @@ services:
 
   # Data nodes (indexing and search)
   es-data-1:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es-data-1
     environment:
       - node.name=es-data-1
@@ -198,7 +198,7 @@ services:
       retries: 3
 
   es-data-2:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es-data-2
     environment:
       - node.name=es-data-2
@@ -239,7 +239,7 @@ services:
 
   # Coordinating node (load balancer for client requests)
   es-coordinating:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es-coordinating
     environment:
       - node.name=es-coordinating
@@ -283,7 +283,7 @@ services:
 
   # Kibana for cluster management
   kibana:
-    image: docker.elastic.co/kibana/kibana:8.15.0
+    image: docker.elastic.co/kibana/kibana:9.1.5
     container_name: kibana
     environment:
       - ELASTICSEARCH_HOSTS=https://es-coordinating:9200
@@ -344,7 +344,7 @@ version: '3.8'
 
 services:
   elasticsearch-master:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     deploy:
       replicas: 3
       placement:
@@ -379,7 +379,7 @@ services:
       retries: 3
 
   elasticsearch-data:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     deploy:
       replicas: 3
       placement:
@@ -414,7 +414,7 @@ services:
       retries: 3
 
   elasticsearch-coordinating:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     deploy:
       replicas: 2
       placement:
@@ -475,12 +475,12 @@ networks:
 
 # Create certificate authority
 docker run --rm -v $(pwd)/certs:/usr/share/elasticsearch/config/certs \
-  docker.elastic.co/elasticsearch/elasticsearch:8.15.0 \
+  docker.elastic.co/elasticsearch/elasticsearch:9.1.5 \
   bin/elasticsearch-certutil ca --out config/certs/elastic-stack-ca.p12 --pass ""
 
 # Generate node certificates
 docker run --rm -v $(pwd)/certs:/usr/share/elasticsearch/config/certs \
-  docker.elastic.co/elasticsearch/elasticsearch:8.15.0 \
+  docker.elastic.co/elasticsearch/elasticsearch:9.1.5 \
   bin/elasticsearch-certutil cert \
   --ca config/certs/elastic-stack-ca.p12 \
   --ca-pass "" \
@@ -489,7 +489,7 @@ docker run --rm -v $(pwd)/certs:/usr/share/elasticsearch/config/certs \
 
 # Generate HTTP certificates for external access
 docker run --rm -v $(pwd)/certs:/usr/share/elasticsearch/config/certs \
-  docker.elastic.co/elasticsearch/elasticsearch:8.15.0 \
+  docker.elastic.co/elasticsearch/elasticsearch:9.1.5 \
   bin/elasticsearch-certutil http
 
 # Set proper permissions
@@ -1061,7 +1061,7 @@ version: '3.8'
 services:
   # New containerized cluster
   elasticsearch-new:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     environment:
       - cluster.name=migration-cluster
       - node.name=migration-node
@@ -1077,7 +1077,7 @@ services:
 
   # Data migration utility
   elasticsearch-migration:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     depends_on:
       - elasticsearch-new
     volumes:
@@ -1153,7 +1153,7 @@ case $ACTION in
           -e "discovery.seed_hosts=es-master-1,es-master-2,es-master-3" \
           -e "ES_JAVA_OPTS=-Xms8g -Xmx8g" \
           -v "${NODE_NAME}-data:/usr/share/elasticsearch/data" \
-          docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+          docker.elastic.co/elasticsearch/elasticsearch:9.1.5
         
         echo "Started $NODE_NAME"
       done
@@ -1294,7 +1294,7 @@ class ElasticsearchAutoScaler:
             node_name = f"es-data-{new_node_num}"
             
             container = self.docker_client.containers.run(
-                'docker.elastic.co/elasticsearch/elasticsearch:8.15.0',
+                'docker.elastic.co/elasticsearch/elasticsearch:9.1.5',
                 name=node_name,
                 environment={
                     'node.name': node_name,
@@ -2113,7 +2113,7 @@ version: '3.8'
 
 services:
   elasticsearch-search:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     deploy:
       replicas: 3
       resources:
@@ -2183,7 +2183,7 @@ version: '3.8'
 
 services:
   elasticsearch-hot:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     deploy:
       replicas: 4
     environment:
@@ -2194,7 +2194,7 @@ services:
       - hot-data:/usr/share/elasticsearch/data
     
   elasticsearch-warm:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     deploy:
       replicas: 2
     environment:
@@ -2205,7 +2205,7 @@ services:
       - warm-data:/usr/share/elasticsearch/data
     
   logstash:
-    image: docker.elastic.co/logstash/logstash:8.15.0
+    image: docker.elastic.co/logstash/logstash:9.1.5
     deploy:
       replicas: 3
     environment:
@@ -2215,7 +2215,7 @@ services:
         target: /usr/share/logstash/pipeline/logstash.conf
     
   filebeat:
-    image: docker.elastic.co/beats/filebeat:8.15.0
+    image: docker.elastic.co/beats/filebeat:9.1.5
     deploy:
       mode: global
     volumes:
@@ -2258,7 +2258,7 @@ version: '3.8'
 
 services:
   elasticsearch-compliance:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     deploy:
       replicas: 6
       placement:
@@ -2425,7 +2425,7 @@ main
 # rolling-update.sh - Rolling updates with minimal disruption
 
 CLUSTER_URL="http://localhost:9200"
-NEW_IMAGE="docker.elastic.co/elasticsearch/elasticsearch:8.15.1"
+NEW_IMAGE="docker.elastic.co/elasticsearch/elasticsearch:9.1.5"
 
 update_data_nodes() {
     echo "Starting rolling update of data nodes..."

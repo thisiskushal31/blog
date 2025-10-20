@@ -114,7 +114,7 @@ curl -X POST "https://api.elastic-cloud.com/api/v1/deployments" \
             }
           ],
           "elasticsearch": {
-            "version": "9.1.1",
+            "version": "9.1.5",
             "user_settings_yaml": "cluster.routing.allocation.disk.watermark.low: 80%\ncluster.routing.allocation.disk.watermark.high: 85%\ncluster.routing.allocation.disk.watermark.flood_stage: 90%\ncluster.routing.allocation.awareness.attributes: data\nindices.memory.index_buffer_size: 20%"
           }
         }
@@ -132,7 +132,7 @@ curl -X POST "https://api.elastic-cloud.com/api/v1/deployments" \
             "zone_count": 2
           }],
           "kibana": {
-            "version": "9.1.1"
+            "version": "9.1.5"
           }
         }
       }],

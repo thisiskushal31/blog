@@ -100,7 +100,7 @@ hardware_specs:
 
 # Configuration variables
 CLUSTER_NAME="production-es"
-ES_VERSION="9.1.1"
+ES_VERSION="9.1.5"
 NODES=("es-master-01" "es-master-02" "es-master-03" "es-data-01" "es-data-02" "es-data-03")
 VM_SIZES=("Standard_D4s_v3" "Standard_D4s_v3" "Standard_D4s_v3" "Standard_D16s_v3" "Standard_D16s_v3" "Standard_D16s_v3")
 
@@ -219,7 +219,7 @@ echo "deb https://artifacts.elastic.co/packages/9.x/apt stable main" > /etc/apt/
 
 # Install Elasticsearch
 apt-get update
-apt-get install -y elasticsearch=9.1.1
+apt-get install -y elasticsearch=9.1.5
 
 # Create data and logs directories
 mkdir -p /var/lib/elasticsearch/data
@@ -751,7 +751,7 @@ PUT /_index_template/high_performance_logs
   hosts: elasticsearch_nodes
   become: yes
   vars:
-    elasticsearch_version: "9.1.1"
+    elasticsearch_version: "9.1.5"
     cluster_name: "production-cluster"
     data_dir: "/var/lib/elasticsearch"
     log_dir: "/var/log/elasticsearch"
@@ -2232,7 +2232,7 @@ main "$@"
 # elasticsearch_rolling_update.sh
 
 CLUSTER_ENDPOINT="http://localhost:9200"
-NEW_VERSION="9.1.1"
+NEW_VERSION="9.1.5"
 NODES=("es-master-01" "es-master-02" "es-master-03" "es-data-01" "es-data-02" "es-data-03")
 UPDATE_LOG="/var/log/elasticsearch_update.log"
 

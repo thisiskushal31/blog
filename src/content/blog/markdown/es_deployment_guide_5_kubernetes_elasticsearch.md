@@ -77,7 +77,7 @@ metadata:
   name: production-cluster
   namespace: elastic-stack
 spec:
-  version: 8.15.0
+  version: 9.1.5
   
   # HTTP configuration with custom domain
   http:
@@ -204,7 +204,7 @@ metadata:
   name: production-kibana
   namespace: elastic-stack
 spec:
-  version: 8.15.0
+  version: 9.1.5
   count: 2
   elasticsearchRef:
     name: production-cluster
@@ -619,7 +619,7 @@ spec:
       # Main Elasticsearch container
       containers:
       - name: elasticsearch
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+        image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
         ports:
         - containerPort: 9200
           name: http
@@ -1102,7 +1102,7 @@ spec:
       serviceAccountName: metricbeat
       containers:
       - name: metricbeat
-        image: docker.elastic.co/beats/metricbeat:8.15.0
+        image: docker.elastic.co/beats/metricbeat:9.1.5
         env:
         - name: ELASTICSEARCH_HOST
           value: "elasticsearch-coordinating:9200"
@@ -1241,7 +1241,7 @@ kind: Elasticsearch
 metadata:
   name: ecommerce-search
 spec:
-  version: 8.15.0
+  version: 9.1.5
   nodeSets:
   - name: default
     count: 3
@@ -1424,7 +1424,7 @@ spec:
       # Copy exact configuration from running Helm pods
       containers:
       - name: elasticsearch
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+        image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
         # ... rest of configuration matches current deployment
 ```
 

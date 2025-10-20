@@ -46,7 +46,7 @@ version: '3.8'
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es-dev
     environment:
       - node.name=es-dev-node
@@ -81,7 +81,7 @@ services:
       - elastic
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:9.1.1
+    image: docker.elastic.co/kibana/kibana:9.1.5
     container_name: kibana-dev
     ports:
       - "5601:5601"
@@ -107,7 +107,7 @@ services:
 
   # Optional: Logstash for pipeline development
   logstash:
-    image: docker.elastic.co/logstash/logstash:9.1.1
+    image: docker.elastic.co/logstash/logstash:9.1.5
     container_name: logstash-dev
     volumes:
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
@@ -429,7 +429,7 @@ esac
 set -e
 
 # Configuration
-ES_VERSION="9.1.1"
+ES_VERSION="9.1.5"
 ES_HOME="/opt/elasticsearch"
 ES_DATA="/var/lib/elasticsearch"
 ES_LOGS="/var/log/elasticsearch"
@@ -766,7 +766,7 @@ main "$@"
 **Test Environment:**
 - **Hardware:** 16GB RAM, 8-core CPU, SSD storage
 - **Dataset:** 100,000 documents, 1KB average size
-- **Elasticsearch Version:** 9.1.1
+- **Elasticsearch Version:** 9.1.5
 
 | Metric | Docker | Native | Native Advantage |
 |--------|--------|--------|------------------|
@@ -785,10 +785,10 @@ main "$@"
 docker run -d --name es-7 -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:7.17.7
 # Test with v7
 docker stop es-7
-docker run -d --name es-8 -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+docker run -d --name es-8 -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:9.1.5
 # Test with v8
 docker stop es-8
-docker run -d --name es-9 -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:9.1.1
+docker run -d --name es-9 -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:9.1.5
 # Test with v9
 
 # Time to switch versions: ~2 minutes per switch
@@ -834,21 +834,21 @@ docker restart es-dev
 
 ```yaml
 # .env.development
-ES_VERSION=9.1.1
+ES_VERSION=9.1.5
 ES_CLUSTER_NAME=dev-cluster
 ES_NODE_NAME=dev-node-1
 ES_MEMORY=2g
 ES_JAVA_OPTS=-Xms2g -Xmx2g -XX:+UseG1GC
 
 # .env.staging  
-ES_VERSION=9.1.1
+ES_VERSION=9.1.5
 ES_CLUSTER_NAME=staging-cluster
 ES_NODE_NAME=staging-node-1
 ES_MEMORY=4g
 ES_JAVA_OPTS=-Xms4g -Xmx4g -XX:+UseG1GC
 
 # .env.production
-ES_VERSION=9.1.1
+ES_VERSION=9.1.5
 ES_CLUSTER_NAME=prod-cluster
 ES_NODE_NAME=prod-node-1
 ES_MEMORY=16g
@@ -863,7 +863,7 @@ version: '3.8'
 
 services:
   es01:
-    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es01
     environment:
       - node.name=es01
@@ -885,7 +885,7 @@ services:
       - esnet
 
   es02:
-    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es02
     environment:
       - node.name=es02
@@ -905,7 +905,7 @@ services:
       - esnet
 
   es03:
-    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     container_name: es03
     environment:
       - node.name=es03
@@ -1887,7 +1887,7 @@ if __name__ == "__main__":
 version: '3.8'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.1.5
     environment:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
@@ -1940,7 +1940,7 @@ export ES_SECURITY_ENABLED=true
 export ES_SSL_VERIFICATION_MODE=certificate
 
 # Standardized development configuration
-ES_VERSION="9.1.1"
+ES_VERSION="9.1.5"
 ES_HEAP_SIZE="8g"  # Standardized across developer workstations
 ES_DATA_PATH="/data/elasticsearch"  # Corporate SSD mount
 

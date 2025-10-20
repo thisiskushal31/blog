@@ -6,14 +6,22 @@
 
 ## The Strategic Challenge
 
-Choosing between Elastic Cloud and self-managed Elasticsearch isn't just a technical decision—it's a business strategy that impacts your team's velocity, operational costs, and system reliability for years to come. This analysis provides the framework to make this decision with confidence, backed by real performance data and cost calculations.
+Choosing between Elastic Cloud and self-managed Elasticsearch isn't just a technical decision—it's a business strategy that impacts your team's velocity, operational costs, and system reliability for years to come. I've seen teams spend months trying to migrate away from a poor initial choice, and trust me, it's not fun.
+
+This analysis provides the framework to make this decision with confidence, backed by real performance data and cost calculations from deployments I've actually managed (including the expensive mistakes).
 
 **Key Decision Factors:**
-- Total Cost of Ownership across different scales
-- Operational complexity and team requirements
-- Performance characteristics and limitations
-- Security models and compliance considerations
-- Migration complexity and vendor lock-in risks
+- Total Cost of Ownership across different scales (spoiler: it's usually more expensive than you think)
+- Operational complexity and team requirements (do you have 24/7 on-call engineers?)
+- Performance characteristics and limitations (managed services have constraints)
+- Security models and compliance considerations (this gets expensive fast)
+- Migration complexity and vendor lock-in risks (plan your exit strategy from day one)
+
+**⚠️ Common Mistakes I've Seen:**
+- Underestimating cloud costs by 3-5x (seriously, it adds up)
+- Choosing self-managed without dedicated ops team (cluster will crash at 2 AM)
+- Ignoring data transfer costs in cloud (bandwidth is expensive)
+- Not planning for scaling costs (that "small" cluster becomes huge fast)
 
 ---
 
@@ -49,7 +57,7 @@ curl -X POST "https://api.elastic-cloud.com/api/v1/deployments" \
             "zone_count": 3
           }],
           "elasticsearch": {
-            "version": "9.1.1",
+            "version": "9.1.5",
             "user_settings_yaml": "cluster.routing.allocation.disk.watermark.low: 85%\ncluster.routing.allocation.disk.watermark.high: 90%"
           }
         }
