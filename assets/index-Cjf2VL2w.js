@@ -1268,12 +1268,12 @@ Building reliable, scalable Elasticsearch infrastructure doesn't have to be over
 
 ## TL;DR
 
-**What:** Complete guide to Elasticsearch deployment strategies from local dev to production scale
-**When to use:** Any time you need to deploy, migrate, or optimize Elasticsearch infrastructure
-**Reading time:** 2-4 hours to read all 8 blogs in the series
-**Implementation time:** 1-2 days to implement your chosen strategy
-**Key takeaway:** No more guessing which deployment approach to use—data-driven decisions with real production configs
-**Skip if:** You already have a working Elasticsearch deployment and don't plan to change it
+- **What:** Complete guide to Elasticsearch deployment strategies from local dev to production scale
+- **When to use:** Any time you need to deploy, migrate, or optimize Elasticsearch infrastructure
+- **Reading time:** 2-4 hours to read all 8 blogs in the series
+- **Implementation time:** 1-2 days to implement your chosen strategy
+- **Key takeaway:** No more guessing which deployment approach to use—data-driven decisions with real production configs
+- **Skip if:** You already have a working Elasticsearch deployment and don't plan to change it
 
 **What Makes This Series Different:**
 - Real production configurations from my actual VM, Kubernetes, and Docker deployments
@@ -1520,12 +1520,12 @@ This analysis provides the framework to make this decision with confidence, back
 
 ## TL;DR
 
-**What:** Strategic framework for choosing between Elastic Cloud and self-managed Elasticsearch
-**When to use:** Before any Elasticsearch deployment or when considering migration between approaches
-**Reading time:** 5 minutes
-**Implementation time:** 1-2 hours to complete the decision matrix and make your choice
-**Key takeaway:** Elastic Cloud wins for speed and simplicity, self-managed wins for cost and control—choose based on your team's capabilities and scale
-**Skip if:** You're already committed to one approach and it's working well for your use case
+- **What:** Strategic framework for choosing between Elastic Cloud and self-managed Elasticsearch
+- **When to use:** Before any Elasticsearch deployment or when considering migration between approaches
+- **Reading time:** 5 minutes
+- **Implementation time:** 1-2 hours to complete the decision matrix and make your choice
+- **Key takeaway:** Elastic Cloud wins for speed and simplicity, self-managed wins for cost and control—choose based on your team's capabilities and scale
+- **Skip if:** You're already committed to one approach and it's working well for your use case
 
 **Key Decision Factors:**
 - Total Cost of Ownership across different scales (spoiler: it's usually more expensive than you think)
@@ -2239,12 +2239,12 @@ This comprehensive guide provides the technical depth needed to architect produc
 
 ## TL;DR
 
-**What:** Complete guide to Elastic Cloud hosted and serverless architectures with implementation details
-**When to use:** When you've decided on Elastic Cloud and need to choose between hosted vs serverless
-**Reading time:** 6-8 minutes
-**Implementation time:** 2-4 hours to deploy your chosen architecture
-**Key takeaway:** Hosted for predictable workloads, serverless for variable traffic—both scale automatically but with different cost models
-**Skip if:** You're going with self-managed Elasticsearch or need maximum control over infrastructure
+- **What:** Complete guide to Elastic Cloud hosted and serverless architectures with implementation details
+- **When to use:** When you've decided on Elastic Cloud and need to choose between hosted vs serverless
+- **Reading time:** 6-8 minutes
+- **Implementation time:** 2-4 hours to deploy your chosen architecture
+- **Key takeaway:** Hosted for predictable workloads, serverless for variable traffic—both scale automatically but with different cost models
+- **Skip if:** You're going with self-managed Elasticsearch or need maximum control over infrastructure
 
 **What You'll Master:**
 - Hosted cluster architecture and advanced configurations
@@ -3896,12 +3896,12 @@ Self-managed Elasticsearch deployments represent the pinnacle of infrastructure 
 
 ## TL;DR
 
-**What:** Complete guide to self-managed Elasticsearch on VMs and bare metal with production optimizations
-**When to use:** When you need maximum control, have dedicated ops team, or want to minimize costs at scale
-**Reading time:** 3 minutes
-**Implementation time:** 1-2 days for basic setup, 1-2 weeks for production optimization
-**Key takeaway:** 40-60% cost savings vs managed services, but requires significant operational expertise and 24/7 monitoring
-**Skip if:** You're a small team, need quick deployment, or prefer managed services for reliability
+- **What:** Complete guide to self-managed Elasticsearch on VMs and bare metal with production optimizations
+- **When to use:** When you need maximum control, have dedicated ops team, or want to minimize costs at scale
+- **Reading time:** 3 minutes
+- **Implementation time:** 1-2 days for basic setup, 1-2 weeks for production optimization
+- **Key takeaway:** 40-60% cost savings vs managed services, but requires significant operational expertise and 24/7 monitoring
+- **Skip if:** You're a small team, need quick deployment, or prefer managed services for reliability
 
 **Why Choose Self-Managed:**
 - Complete hardware and software stack control
@@ -7173,12 +7173,12 @@ While Kubernetes gets most of the container orchestration attention, Docker-base
 
 ## TL;DR
 
-**What:** Production-ready Elasticsearch with Docker and Docker Compose for single-node and small clusters
-**When to use:** Single-node deployments, development environments, or when you want containers without Kubernetes complexity
-**Reading time:** 6-8 minutes
-**Implementation time:** 30 minutes to 2 hours depending on complexity
-**Key takeaway:** Fastest way to get containerized Elasticsearch running with minimal infrastructure overhead
-**Skip if:** You need high availability, auto-scaling, or are already using Kubernetes
+- **What:** Production-ready Elasticsearch with Docker and Docker Compose for single-node and small clusters
+- **When to use:** Single-node deployments, development environments, or when you want containers without Kubernetes complexity
+- **Reading time:** 6-8 minutes
+- **Implementation time:** 30 minutes to 2 hours depending on complexity
+- **Key takeaway:** Fastest way to get containerized Elasticsearch running with minimal infrastructure overhead
+- **Skip if:** You need high availability, auto-scaling, or are already using Kubernetes
 
 **Key Advantages of Docker-based Elasticsearch:**
 - **Simplified Operations**: Easier to manage than Kubernetes, more flexible than VMs
@@ -9769,12 +9769,12 @@ This comprehensive guide examines all three major Kubernetes deployment strategi
 
 ## TL;DR
 
-**What:** Complete guide to Elasticsearch on Kubernetes using ECK, Helm, or raw YAML
-**When to use:** When you're already using Kubernetes and need scalable, cloud-native Elasticsearch
-**Reading time:** 6-8 minutes
-**Implementation time:** 2-4 hours for ECK, 4-8 hours for Helm, 1-2 days for custom YAML
-**Key takeaway:** ECK is easiest and most reliable, Helm offers flexibility, raw YAML gives maximum control—choose based on your team's Kubernetes expertise
-**Skip if:** You're not using Kubernetes or prefer managed services for simplicity
+- **What:** Complete guide to Elasticsearch on Kubernetes using ECK, Helm, or raw YAML
+- **When to use:** When you're already using Kubernetes and need scalable, cloud-native Elasticsearch
+- **Reading time:** 6-8 minutes
+- **Implementation time:** 2-4 hours for ECK, 4-8 hours for Helm, 1-2 days for custom YAML
+- **Key takeaway:** ECK is easiest and most reliable, Helm offers flexibility, raw YAML gives maximum control—choose based on your team's Kubernetes expertise
+- **Skip if:** You're not using Kubernetes or prefer managed services for simplicity
 
 **What You'll Master:**
 - ECK operator advanced configurations and custom resource patterns
@@ -11724,12 +11724,12 @@ After testing both approaches across different development scenarios, this compr
 
 ## TL;DR
 
-**What:** Complete guide to local Elasticsearch development with Docker vs native installation
-**When to use:** When setting up your development environment or optimizing your current local setup
-**Reading time:** 8 minutes
-**Implementation time:** 15 minutes for Docker, 30 minutes for native installation
-**Key takeaway:** Docker for quick setup and isolation, native for performance testing and production parity—use both for different scenarios
-**Skip if:** You're only doing production deployments and don't need local development
+- **What:** Complete guide to local Elasticsearch development with Docker vs native installation
+- **When to use:** When setting up your development environment or optimizing your current local setup
+- **Reading time:** 8 minutes
+- **Implementation time:** 15 minutes for Docker, 30 minutes for native installation
+- **Key takeaway:** Docker for quick setup and isolation, native for performance testing and production parity—use both for different scenarios
+- **Skip if:** You're only doing production deployments and don't need local development
 
 **Key Questions We'll Answer:**
 - Which approach gives better development velocity for different use cases?
@@ -14186,12 +14186,12 @@ Choosing the right Elasticsearch deployment strategy can make or break your sear
 
 ## TL;DR
 
-**What:** Data-driven decision matrix for choosing the optimal Elasticsearch deployment strategy
-**When to use:** Before any Elasticsearch deployment or when evaluating migration between approaches
-**Reading time:** 6-8 minutes
-**Implementation time:** 30-60 minutes to complete the scoring matrix and get your recommendation
-**Key takeaway:** Cost variations up to 400% between strategies—use this framework to avoid expensive mistakes and choose the right approach for your specific context
-**Skip if:** You've already made your deployment choice and it's working well for your needs
+- **What:** Data-driven decision matrix for choosing the optimal Elasticsearch deployment strategy
+- **When to use:** Before any Elasticsearch deployment or when evaluating migration between approaches
+- **Reading time:** 6-8 minutes
+- **Implementation time:** 30-60 minutes to complete the scoring matrix and get your recommendation
+- **Key takeaway:** Cost variations up to 400% between strategies—use this framework to avoid expensive mistakes and choose the right approach for your specific context
+- **Skip if:** You've already made your deployment choice and it's working well for your needs
 
 **Key Insights from This Analysis:**
 - **Cost variations up to 400%** between deployment strategies for identical workloads
