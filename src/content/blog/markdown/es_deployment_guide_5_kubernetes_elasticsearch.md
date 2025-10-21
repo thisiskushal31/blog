@@ -12,12 +12,12 @@ This comprehensive guide examines all three major Kubernetes deployment strategi
 
 ## TL;DR
 
-**What:** Complete guide to Elasticsearch on Kubernetes using ECK, Helm, or raw YAML
-**When to use:** When you're already using Kubernetes and need scalable, cloud-native Elasticsearch
-**Reading time:** 6-8 minutes
-**Implementation time:** 2-4 hours for ECK, 4-8 hours for Helm, 1-2 days for custom YAML
-**Key takeaway:** ECK is easiest and most reliable, Helm offers flexibility, raw YAML gives maximum control—choose based on your team's Kubernetes expertise
-**Skip if:** You're not using Kubernetes or prefer managed services for simplicity
+- **What:** Complete guide to Elasticsearch on Kubernetes using ECK, Helm, or raw YAML
+- **When to use:** When you're already using Kubernetes and need scalable, cloud-native Elasticsearch
+- **Reading time:** 6-8 minutes
+- **Implementation time:** 2-4 hours for ECK, 4-8 hours for Helm, 1-2 days for custom YAML
+- **Key takeaway:** ECK is easiest and most reliable, Helm offers flexibility, raw YAML gives maximum control—choose based on your team's Kubernetes expertise
+- **Skip if:** You're not using Kubernetes or prefer managed services for simplicity
 
 **What You'll Master:**
 - ECK operator advanced configurations and custom resource patterns

@@ -10,12 +10,12 @@ While Kubernetes gets most of the container orchestration attention, Docker-base
 
 ## TL;DR
 
-**What:** Production-ready Elasticsearch with Docker and Docker Compose for single-node and small clusters
-**When to use:** Single-node deployments, development environments, or when you want containers without Kubernetes complexity
-**Reading time:** 6-8 minutes
-**Implementation time:** 30 minutes to 2 hours depending on complexity
-**Key takeaway:** Fastest way to get containerized Elasticsearch running with minimal infrastructure overhead
-**Skip if:** You need high availability, auto-scaling, or are already using Kubernetes
+- **What:** Production-ready Elasticsearch with Docker and Docker Compose for single-node and small clusters
+- **When to use:** Single-node deployments, development environments, or when you want containers without Kubernetes complexity
+- **Reading time:** 6-8 minutes
+- **Implementation time:** 30 minutes to 2 hours depending on complexity
+- **Key takeaway:** Fastest way to get containerized Elasticsearch running with minimal infrastructure overhead
+- **Skip if:** You need high availability, auto-scaling, or are already using Kubernetes
 
 **Key Advantages of Docker-based Elasticsearch:**
 - **Simplified Operations**: Easier to manage than Kubernetes, more flexible than VMs

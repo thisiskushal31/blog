@@ -12,12 +12,12 @@ This comprehensive guide provides the technical depth needed to architect produc
 
 ## TL;DR
 
-**What:** Complete guide to Elastic Cloud hosted and serverless architectures with implementation details
-**When to use:** When you've decided on Elastic Cloud and need to choose between hosted vs serverless
-**Reading time:** 6-8 minutes
-**Implementation time:** 2-4 hours to deploy your chosen architecture
-**Key takeaway:** Hosted for predictable workloads, serverless for variable traffic—both scale automatically but with different cost models
-**Skip if:** You're going with self-managed Elasticsearch or need maximum control over infrastructure
+- **What:** Complete guide to Elastic Cloud hosted and serverless architectures with implementation details
+- **When to use:** When you've decided on Elastic Cloud and need to choose between hosted vs serverless
+- **Reading time:** 6-8 minutes
+- **Implementation time:** 2-4 hours to deploy your chosen architecture
+- **Key takeaway:** Hosted for predictable workloads, serverless for variable traffic—both scale automatically but with different cost models
+- **Skip if:** You're going with self-managed Elasticsearch or need maximum control over infrastructure
 
 **What You'll Master:**
 - Hosted cluster architecture and advanced configurations
