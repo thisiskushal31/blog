@@ -1,5 +1,5 @@
-import { BlogPost } from '../blogPostIndex';
-import content from './markdown/ai-shift-left-security-part2.md?raw';
+import { BlogPost } from '../index';
+import content from '../markdown/ai-shift-left-security-part2.md?raw';
 
 export const blogPost: BlogPost = {
   slug: "ai-shift-left-security-part2",

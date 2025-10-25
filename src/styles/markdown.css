@@ -1,0 +1,820 @@
+/* GitHub Markdown Styles */
+/* Exact replication of GitHub's markdown rendering */
+
+.markdown {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  color: hsl(0 0% 18%); /* --foreground from link site */
+  word-wrap: break-word;
+}
+
+.markdown.dark {
+  color: hsl(210 40% 98%); /* --foreground from link site dark mode */
+  background: transparent !important;
+}
+
+/* Override any prose styles that might cause black screen */
+.prose .markdown.dark {
+  background: transparent !important;
+  color: hsl(210 40% 98%) !important; /* --foreground from link site dark mode */
+}
+
+.prose.dark .markdown {
+  background: transparent !important;
+  color: hsl(210 40% 98%) !important; /* --foreground from link site dark mode */
+}
+
+/* Ensure prose container doesn't interfere with markdown rendering */
+.prose.prose-lg.max-w-none {
+  background: transparent !important;
+}
+
+.prose.prose-lg.max-w-none.dark {
+  background: transparent !important;
+  color: hsl(210 40% 98%) !important; /* --foreground from link site dark mode */
+}
+
+/* More specific overrides for prose in dark mode */
+html.dark .prose {
+  background: transparent !important;
+  color: hsl(210 40% 98%) !important; /* --foreground from link site dark mode */
+}
+
+html.dark .prose.prose-lg {
+  background: transparent !important;
+  color: hsl(210 40% 98%) !important; /* --foreground from link site dark mode */
+}
+
+/* Headings */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: hsl(168 45% 50%); /* --primary from link site */
+}
+
+.markdown h1 {
+  font-size: 2em;
+  border-bottom: 1px solid hsl(0 0% 85%); /* --border from link site */
+  padding-bottom: 0.3em;
+}
+
+.markdown h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid hsl(0 0% 85%); /* --border from link site */
+  padding-bottom: 0.3em;
+}
+
+.markdown h3 {
+  font-size: 1.25em;
+}
+
+.markdown h4 {
+  font-size: 1em;
+}
+
+.markdown h5 {
+  font-size: 0.875em;
+}
+
+.markdown h6 {
+  font-size: 0.85em;
+  color: hsl(0 0% 42%); /* --muted-foreground from link site */
+}
+
+/* Dark mode headings */
+.markdown.dark h1,
+.markdown.dark h2,
+.markdown.dark h3,
+.markdown.dark h4,
+.markdown.dark h5,
+.markdown.dark h6 {
+  color: hsl(168 50% 70%); /* --primary from link site dark mode */
+}
+
+.markdown.dark h1,
+.markdown.dark h2 {
+  border-bottom-color: hsl(217 32% 25%); /* --border from link site dark mode */
+}
+
+.markdown.dark h6 {
+  color: hsl(215 20% 65%); /* --muted-foreground from link site dark mode */
+}
+
+/* Paragraphs */
+.markdown p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* Code blocks */
+.markdown .highlight {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: auto;
+}
+
+.markdown.dark .highlight {
+  background-color: #161b22;
+}
+
+/* Removed conflicting highlight pre styles - using general pre styles instead */
+
+/* Inline code */
+.markdown code {
+  background-color: hsl(39 20% 92%); /* --muted from link site */
+  color: hsl(168 45% 50%); /* --primary from link site */
+  border-radius: 0.375rem; /* half of --radius from link site */
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
+  font-weight: 500;
+}
+
+.markdown.dark code {
+  background-color: hsl(217 32% 25%); /* --muted from link site dark mode */
+  color: hsl(168 50% 70%); /* --primary from link site dark mode */
+}
+
+/* Tables */
+.markdown .table-wrapper {
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+.markdown table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  overflow: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+.markdown table th,
+.markdown table td {
+  border: 1px solid #d0d7de;
+  padding: 6px 13px;
+  text-align: left;
+}
+
+.markdown table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+.markdown.dark table th,
+.markdown.dark table td {
+  border-color: #30363d;
+}
+
+.markdown.dark table th {
+  background-color: #161b22;
+}
+
+/* Blockquotes */
+.markdown blockquote {
+  border-left: 0.25em solid hsl(168 45% 50%); /* --primary from link site */
+  color: hsl(0 0% 42%); /* --muted-foreground from link site */
+  margin: 0 0 16px 0;
+  padding: 0 1em;
+  background-color: hsl(39 20% 92%); /* --muted from link site */
+  border-radius: 0 0.375rem 0.375rem 0; /* half of --radius from link site */
+}
+
+.markdown.dark blockquote {
+  border-left-color: hsl(168 50% 70%); /* --primary from link site dark mode */
+  color: hsl(215 20% 65%); /* --muted-foreground from link site dark mode */
+  background-color: hsl(217 32% 25%); /* --muted from link site dark mode */
+}
+
+/* Lists */
+.markdown ul,
+.markdown ol {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-left: 2em;
+  list-style-type: disc;
+}
+
+.markdown ul ul,
+.markdown ul ol,
+.markdown ol ol,
+.markdown ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown ul ul {
+  list-style-type: circle;
+}
+
+.markdown ul ul ul {
+  list-style-type: square;
+}
+
+.markdown li {
+  word-wrap: break-all;
+  list-style-type: inherit;
+  margin-bottom: 0.25em;
+}
+
+.markdown li > p {
+  margin-top: 16px;
+}
+
+.markdown li + li {
+  margin-top: 0.25em;
+}
+
+/* Task lists */
+.markdown .task-list-item {
+  list-style-type: none;
+}
+
+.markdown .task-list-item input[type="checkbox"] {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+/* Links */
+.markdown a {
+  color: hsl(168 45% 50%); /* --primary from link site */
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+}
+
+.markdown a:hover {
+  color: hsl(168 35% 56%); /* --accent from link site */
+  text-decoration: underline;
+}
+
+.markdown.dark a {
+  color: hsl(168 50% 70%); /* --primary from link site dark mode */
+}
+
+.markdown.dark a:hover {
+  color: hsl(271 91% 75%); /* --accent from link site dark mode */
+}
+
+/* Images */
+.markdown .image-wrapper {
+  margin-bottom: 16px;
+}
+
+.markdown img {
+  background-color: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown.dark img {
+  background-color: #0d1117;
+  border-color: #30363d;
+}
+
+/* Horizontal rules */
+.markdown hr {
+  background-color: #d0d7de;
+  border: 0;
+  height: 0.25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown.dark hr {
+  background-color: #30363d;
+}
+
+/* Strong and emphasis */
+.markdown strong {
+  font-weight: 600;
+}
+
+.markdown em {
+  font-style: italic;
+}
+
+.markdown del {
+  text-decoration: line-through;
+}
+
+/* Anchor links */
+.markdown .anchor {
+  color: #656d76;
+  text-decoration: none;
+}
+
+.markdown .anchor:hover {
+  color: #0969da;
+}
+
+.markdown.dark .anchor {
+  color: #7d8590;
+}
+
+.markdown.dark .anchor:hover {
+  color: #2f81f7;
+}
+
+/* Code block styling - no syntax highlighting */
+.markdown .highlight pre {
+  background-color: hsl(0 0% 100%) !important; /* --card from link site */
+  border-radius: 0.75rem !important; /* --radius from link site */
+  padding: 16px !important;
+  overflow-x: auto !important;
+  margin: 16px 0 !important;
+  border: 1px solid hsl(0 0% 85%) !important; /* --border from link site */
+  box-shadow: 0 2px 6px hsl(0 0% 0% / 0.04) !important; /* --shadow-card from link site */
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  word-break: normal !important;
+}
+
+/* Force code block formatting with maximum specificity */
+.markdown .highlight pre,
+.markdown pre.highlight,
+pre.markdown {
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  word-break: normal !important;
+  display: block !important;
+}
+
+.markdown.dark .highlight pre {
+  background-color: hsl(217 32% 18%) !important; /* --card from link site dark mode */
+  border-color: hsl(217 32% 25%) !important; /* --border from link site dark mode */
+  box-shadow: 0 2px 6px hsl(0 0% 0% / 0.3) !important; /* --shadow-card from link site dark mode */
+}
+
+.markdown .highlight pre code {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #0d1117 !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  padding: 0 !important;
+  font-weight: 500 !important;
+  text-rendering: geometricPrecision !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  -moz-osx-font-smoothing: auto !important;
+  letter-spacing: 0.025em !important;
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  word-break: normal !important;
+}
+
+/* Force code formatting with maximum specificity */
+.markdown .highlight pre code,
+.markdown pre code,
+code.markdown {
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  word-break: normal !important;
+  display: inline !important;
+}
+
+.markdown.dark .highlight pre code {
+  color: #f0f6fc !important;
+  font-weight: 500 !important;
+  text-rendering: geometricPrecision !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  -moz-osx-font-smoothing: auto !important;
+  letter-spacing: 0.025em !important;
+}
+
+/* Custom Embeds */
+.youtube-embed-wrapper {
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f6f8fa;
+  border: none;
+  position: relative;
+}
+
+.youtube-embed-wrapper iframe,
+.youtube-iframe {
+  border: none !important;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.youtube-placeholder {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+
+.youtube-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.youtube-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.youtube-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff0000;
+  border-radius: 50%;
+  padding: 1rem;
+  transition: background 0.2s ease;
+}
+
+.youtube-play-button:hover {
+  background: #cc0000;
+}
+
+.youtube-info {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.youtube-error {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Dark mode styles for YouTube embeds */
+.markdown.dark .youtube-embed-wrapper,
+html.dark .youtube-embed-wrapper {
+  background: #000000 !important;
+  border: 1px solid #30363d !important;
+}
+
+.markdown.dark .youtube-info p {
+  color: #8b949e;
+}
+
+.gist-embed-wrapper {
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d0d7de;
+  background-color: #f6f8fa;
+}
+
+.markdown.dark .gist-embed-wrapper {
+  border-color: #30363d;
+  background-color: #161b22;
+}
+
+.gist-loading {
+  padding: 2rem;
+  text-align: center;
+  color: #656d76;
+}
+
+.markdown.dark .gist-loading {
+  color: #7d8590;
+}
+
+.gist-content {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.markdown.dark .gist-content {
+  background-color: #0d1117;
+}
+
+.gist-header {
+  padding: 0.75rem 1rem;
+  background-color: #f6f8fa;
+  border-bottom: 1px solid #d0d7de;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.markdown.dark .gist-header {
+  background-color: #161b22;
+  border-bottom-color: #30363d;
+}
+
+.gist-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gist-filename {
+  font-weight: 600;
+  color: #24292f;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.875rem;
+}
+
+.markdown.dark .gist-filename {
+  color: #e6edf3;
+}
+
+.gist-language {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.markdown.dark .gist-language {
+  background-color: #1e3a8a;
+  color: #93c5fd;
+}
+
+.gist-body {
+  padding: 0;
+  overflow-x: auto;
+}
+
+.gist-body pre {
+  margin: 0;
+  padding: 1rem;
+  background-color: #f6f8fa;
+  border: none;
+  border-radius: 0;
+}
+
+.markdown.dark .gist-body pre {
+  background-color: #0d1117;
+}
+
+.gist-body code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.gist-error {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Fix black lines in tables */
+.markdown table {
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+.markdown table th,
+.markdown table td {
+  border: 1px solid #d0d7de !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+.markdown table th:last-child,
+.markdown table td:last-child {
+  border-right: 1px solid #d0d7de !important;
+}
+
+.markdown table tr:last-child th,
+.markdown table tr:last-child td {
+  border-bottom: 1px solid #d0d7de !important;
+}
+
+/* Dark mode table borders */
+.markdown.dark table th,
+.markdown.dark table td {
+  border-color: #30363d !important;
+}
+
+.markdown.dark table th:last-child,
+.markdown.dark table td:last-child {
+  border-right-color: #30363d !important;
+}
+
+.markdown.dark table tr:last-child th,
+.markdown.dark table tr:last-child td {
+  border-bottom-color: #30363d !important;
+}
+
+/* Fix image styling */
+.markdown .image-wrapper {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.markdown .image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Fix blockquote styling */
+.markdown blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #d0d7de;
+  background-color: #f6f8fa;
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.markdown.dark blockquote {
+  border-left-color: #30363d;
+  background-color: #161b22;
+}
+
+/* CRITICAL: Force code block line breaks - highest specificity */
+.markdown .highlight pre,
+.markdown pre.highlight,
+pre.highlight,
+.markdown pre,
+pre {
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  word-break: normal !important;
+  display: block !important;
+}
+
+.markdown .highlight pre code,
+.markdown pre code,
+pre code,
+code {
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  word-break: normal !important;
+  display: inline !important;
+}
+
+/* ULTIMATE FIX: Override any conflicting text-wrap rules */
+.markdown .highlight pre[style*="text-wrap"],
+.markdown pre[style*="text-wrap"],
+pre[style*="text-wrap"] {
+  text-wrap: wrap !important;
+  white-space: pre !important;
+}
+
+/* Force override with maximum specificity */
+html body .markdown .highlight pre,
+html body .markdown pre,
+html body pre {
+  text-wrap: wrap !important;
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* ULTIMATE OVERRIDE - Force pre instead of pre-wrap */
+.markdown .highlight pre[class*="language-"],
+.markdown pre[class*="language-"],
+pre[class*="language-"] {
+  white-space: pre !important;
+  text-wrap: wrap !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* NUCLEAR OPTION - Override everything with maximum specificity */
+html body div#root .markdown .highlight pre,
+html body div#root .markdown pre,
+html body div#root pre {
+  white-space: pre !important;
+  text-wrap: wrap !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* FINAL ATTEMPT - Use CSS custom properties to force override */
+.markdown .highlight pre {
+  --white-space: pre !important;
+  white-space: var(--white-space) !important;
+  text-wrap: wrap !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* ABSOLUTE FINAL OVERRIDE - This MUST work */
+.markdown .highlight pre,
+.markdown pre,
+pre {
+  white-space: pre !important;
+  text-wrap: wrap !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  display: block !important;
+}
+
+.markdown .highlight pre code,
+.markdown pre code,
+pre code,
+code {
+  white-space: pre !important;
+  text-wrap: wrap !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  display: inline !important;
+}
+
+/* NUCLEAR OPTION - Override everything with maximum specificity */
+html body div#root .markdown .highlight pre,
+html body div#root .markdown pre,
+html body div#root pre {
+  white-space: pre !important;
+  text-wrap: wrap !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  display: block !important;
+  line-height: 1.6 !important;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+html body div#root .markdown .highlight pre code,
+html body div#root .markdown pre code,
+html body div#root pre code,
+html body div#root code {
+  white-space: pre !important;
+  text-wrap: wrap !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  display: inline !important;
+}
+
+/* Fix code block styling */
+.markdown .highlight {
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Removed conflicting highlight pre styles - using general pre styles instead */
+
+
+
+/* Fix inline code styling */
+.markdown code:not(.highlight code) {
+  background-color: rgba(175, 184, 193, 0.2);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.markdown.dark code:not(.highlight code) {
+  background-color: rgba(110, 118, 129, 0.4);
+}

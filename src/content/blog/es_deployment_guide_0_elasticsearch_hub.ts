@@ -1,5 +1,5 @@
-import { BlogPost } from '../blogPostIndex';
-import content from './markdown/es_deployment_guide_0_elasticsearch_hub.md?raw';
+import { BlogPost } from '../index';
+import content from '../markdown/es_deployment_guide_0_elasticsearch_hub.md?raw';
 
 export const blogPost: BlogPost = {
   slug: "elasticsearch-deployment-guide",

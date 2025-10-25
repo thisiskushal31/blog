@@ -1,89 +1,139 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Animations for Enhanced Hero Section */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background: 0 0% 98%;
+    --foreground: 0 0% 18%;
+    
+    --primary: 168 45% 50%;
+    --primary-foreground: 39 75% 96%;
+    --secondary: 25 75% 79%;
+    --secondary-foreground: 0 0% 18%;
+    --accent: 168 35% 56%;
+    --accent-foreground: 39 75% 96%;
+    --button-bg: 25 75% 96%;
+    --button-bg-hover: 25 75% 93%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 214 100% 60%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 214 100% 60%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 214 100% 60%;
-
+    --card-foreground: 0 0% 18%;
+    --card-hover: 0 0% 97%;
+    
+    --border: 0 0% 85%;
+    --input: 39 75% 98%;
+    --ring: 168 35% 56%;
+    
+    --muted: 39 20% 92%;
+    --muted-foreground: 0 0% 42%;
+    
+    --popover: 39 75% 98%;
+    --popover-foreground: 0 0% 18%;
+    
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 39 75% 96%;
+    
+    --shadow-subtle: 0 1px 3px hsl(0 0% 0% / 0.06);
+    --shadow-card: 0 2px 6px hsl(0 0% 0% / 0.04);
+    --shadow-elevated: 0 4px 12px hsl(0 0% 0% / 0.08);
+    
+    --transition-fast: all 0.15s ease-out;
+    --transition-smooth: all 0.2s ease-out;
+    
     --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
-
-    --primary: 214 100% 60%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 222.2 84% 4.9%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    
+    --primary: 168 50% 70%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 25 80% 75%;
+    --secondary-foreground: 222 84% 5%;
+    --accent: 271 91% 75%;
+    --accent-foreground: 222 84% 5%;
+    
+    --card: 217 32% 18%;
+    --card-foreground: 210 40% 98%;
+    --card-hover: 217 32% 22%;
+    
+    --border: 217 32% 25%;
+    --input: 217 32% 18%;
+    --ring: 168 50% 70%;
+    
+    --muted: 217 32% 25%;
+    --muted-foreground: 215 20% 65%;
+    
+    --popover: 217 32% 18%;
+    --popover-foreground: 210 40% 98%;
+    
+    --destructive: 0 75% 65%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-    --ring: 214 100% 60%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --shadow-subtle: 0 1px 3px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 2px 6px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 4px 12px hsl(0 0% 0% / 0.5);
   }
 }
 
@@ -91,62 +141,184 @@
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-  }
-
-  code {
-    @apply font-mono text-sm;
+  
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
+  .glass-card {
+    @apply bg-card border border-border rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .minimal-hover {
+    transition: var(--transition-fast);
+  }
+  
+  .minimal-hover:hover {
+    box-shadow: var(--shadow-subtle);
+    transform: translateY(-1px);
+  }
+  
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent;
+    color: hsl(var(--primary));
+  }
+  
+  .blog-card {
+    @apply bg-card rounded-xl p-6 cursor-pointer border border-border;
+    transition: var(--transition-smooth);
+    will-change: transform, box-shadow;
+  }
+  
+  .blog-card:hover {
+    @apply bg-card-hover border-primary/40;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .blog-card:active {
+    transform: translateY(0px);
+    transition: var(--transition-fast);
+  }
+  
+  .nav-link {
+    @apply text-foreground hover:text-primary transition-colors duration-200;
+  }
+  
+  .nav-link.active {
+    @apply text-primary;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-lg transition-colors duration-200;
+  }
+  
+  .search-input {
+    @apply w-full px-4 py-2 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200;
+  }
+  
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted text-muted-foreground border border-border;
+  }
+  
+  .tag:hover {
+    @apply bg-primary/10 text-primary border-primary/20;
+  }
+  
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted));
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 2px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.6);
+    border-radius: 2px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
   }
 
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  .theme-toggle {
+    @apply w-8 h-8 rounded-full bg-card border border-border;
+    @apply hover:bg-card-hover hover:border-primary/40 hover:scale-105;
+    @apply flex items-center justify-center;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-card);
+    will-change: transform, box-shadow;
+  }
+  
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-elevated);
   }
 
-  .tech-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20;
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
   }
 
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+  .fade-in-up {
+    animation: fadeInUp 0.3s ease-out;
   }
 
+  .pulse-hover:hover {
+    animation: pulse 2s infinite;
+  }
+
+  /* Reading progress bar */
+  .reading-progress {
+    @apply fixed top-0 left-0 w-full h-1 bg-primary/20 z-50;
+  }
+  
+  .reading-progress-bar {
+    @apply h-full bg-gradient-to-r from-primary to-accent transition-all duration-300;
+  }
+
+  /* Hero section */
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
+  }
+
+  /* Blog content styling */
   .prose {
-    @apply text-foreground;
+    @apply text-foreground max-w-none;
   }
 
   .prose h1 {
-    @apply text-3xl font-bold mb-6 mt-8 first:mt-0;
+    @apply text-4xl font-bold mb-6 mt-8 first:mt-0;
+    color: hsl(var(--primary));
   }
 
   .prose h2 {
-    @apply text-2xl font-semibold mb-4 mt-8;
+    @apply text-3xl font-semibold mb-4 mt-8;
+    color: hsl(var(--primary));
   }
 
   .prose h3 {
-    @apply text-xl font-semibold mb-3 mt-6;
+    @apply text-2xl font-semibold mb-3 mt-6;
+    color: hsl(var(--primary));
+  }
+
+  .prose h4 {
+    @apply text-xl font-semibold mb-2 mt-4;
+    color: hsl(var(--primary));
   }
 
   .prose p {
@@ -161,27 +333,39 @@
     @apply mb-2;
   }
 
-  .prose pre {
-    @apply bg-muted p-4 rounded-lg my-4 overflow-x-auto;
+  .prose a {
+    @apply text-primary hover:text-accent transition-colors duration-200;
   }
 
-  .prose code {
-    @apply bg-muted px-2 py-1 rounded text-sm;
+  .prose strong {
+    @apply font-semibold;
   }
 
-  .prose pre code {
-    @apply bg-transparent p-0;
+  .prose em {
+    @apply italic;
   }
 
   .prose blockquote {
-    @apply border-l-4 border-primary pl-4 my-4 italic text-muted-foreground;
+    @apply border-l-4 border-primary pl-4 my-4 italic text-muted-foreground bg-muted/50 rounded-r-lg py-2;
+  }
+
+  .prose code {
+    @apply bg-muted px-2 py-1 rounded text-sm font-mono;
+    color: hsl(var(--primary));
+  }
+
+  .prose pre {
+    @apply bg-card border border-border rounded-lg my-4 overflow-x-auto;
+    box-shadow: var(--shadow-card);
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-foreground;
   }
 
   .prose table {
-    @apply w-full border-collapse my-6;
+    @apply w-full border-collapse my-6 rounded-lg overflow-hidden;
     border: 1px solid hsl(var(--border));
-    border-radius: 0.5rem;
-    overflow: hidden;
   }
 
   .prose th, .prose td {
@@ -196,7 +380,6 @@
 
   .prose td {
     @apply text-sm;
-    color: hsl(var(--foreground));
   }
 
   .prose tr:last-child td {
@@ -205,18 +388,6 @@
 
   .prose tr:hover {
     background-color: hsl(var(--muted) / 0.3);
-  }
-
-  .prose a {
-    @apply text-primary hover:underline;
-  }
-
-  .prose strong {
-    @apply font-semibold;
-  }
-
-  .prose em {
-    @apply italic;
   }
 
   /* Responsive iframe and embedded media styles */
@@ -237,11 +408,13 @@
     margin-bottom: 1.5rem;
     text-align: center;
   }
+  
   .prose .image-with-caption {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
   }
+  
   .prose .image-caption {
     font-size: 0.875rem;
     color: hsl(var(--muted-foreground));
@@ -249,97 +422,13 @@
     margin-top: 0.25rem;
   }
 
-  /* Syntax highlighting theme overrides for dark mode */
-  .dark .prose pre,
-  .dark .prose pre[class*="language-"] {
-    background: #09090b !important; /* match page background */
-    color: #f4f4f5 !important;
-    border: 1px solid #23272e !important;
-    box-shadow: none !important;
-    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-    font-size: 1rem;
-    line-height: 1.6;
-    filter: none !important;
-    margin: 0.5rem 0 !important;
-    border-radius: 0.5rem !important;
-  }
-  .dark .prose code,
-  .dark .prose pre code,
-  .dark .prose code[class*="language-"] {
-    background: #23272e !important;
-    color: #f4f4f5 !important;
-    border: none !important;
-    box-shadow: none !important;
-    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-    font-size: 1rem;
-    line-height: 1.6;
-    filter: none !important;
-    text-shadow: none !important;
-  }
-
-  /* Lazy loading placeholder styles */
-  .prose img[loading="lazy"] {
-    @apply transition-opacity duration-300;
-  }
-
-  .prose img[loading="lazy"]:not([src]) {
-    @apply opacity-0;
-  }
-
-  /* Responsive image styles */
-  .prose img {
-    @apply max-w-full h-auto;
-  }
-
-  /* Code block improvements */
-  .prose pre code {
-    @apply text-sm leading-relaxed;
-    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  }
-
-  /* Language-specific syntax highlighting */
-  .prose .language-bash,
-  .prose .language-shell {
-    @apply text-green-400;
-  }
-
-  .prose .language-javascript,
-  .prose .language-js {
-    @apply text-yellow-400;
-  }
-
-  .prose .language-typescript,
-  .prose .language-ts {
-    @apply text-blue-400;
-  }
-
-  .prose .language-yaml,
-  .prose .language-yml {
-    @apply text-purple-400;
-  }
-
-  .prose .language-json {
-    @apply text-orange-400;
-  }
-
-  .prose .language-python {
-    @apply text-blue-500;
-  }
-
-  .prose .language-dockerfile {
-    @apply text-blue-600;
-  }
-
-  .prose .language-git {
-    @apply text-red-500;
-  }
-
   /* Gist container styles */
   .prose .gist-container {
     margin: 1.5rem 0;
     border: 1px solid hsl(var(--border));
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     overflow: hidden;
+    box-shadow: var(--shadow-card);
   }
 
   .prose .gist-loading {
@@ -357,7 +446,7 @@
   }
 
   .prose .gist-content {
-    background: hsl(var(--background));
+    background: hsl(var(--card));
   }
 
   .prose .gist-file {
@@ -401,92 +490,4 @@
     font-size: 0.875rem;
     line-height: 1.5;
   }
-}
-
-/* ABSOLUTE FLUSH: Remove all vertical gap between Gist markdown and notice box.
-   These overrides are necessary because markdown and prose styles often add margin/padding to block elements.
-   The goal is to make the Gist notice visually flush with the markdown content above, for a seamless look and improved user experience.
-*/
-.prose .gist-md-html,
-.prose .gist-md-html > * {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-.prose .gist-md-notice-box {
-  margin-top: 0 !important;
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
-  background: hsl(var(--muted)) !important;
-  border-radius: 0.5rem !important;
-  border-top: none !important;
-  box-shadow: none !important;
-  line-height: 1.4 !important;
-}
-
-/* Fine-tune spacing for Gist markdown content so it is flush with the notice below */
-.prose .gist-md-html {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-.prose .gist-md-html > :first-child {
-  margin-top: 0 !important;
-}
-.prose .gist-md-html > :last-child {
-  margin-bottom: 0 !important;
-}
-/* Gist notice: grey background, flush with content above (no gap) */
-.prose .gist-md-html > :last-child {
-  margin-bottom: 0 !important;
-}
-.prose .gist-md-notice-box {
-  margin-top: 0 !important;
-  background: hsl(var(--muted)) !important;
-  padding: 0.75rem 1rem !important;
-  border-radius: 0.5rem !important;
-}
-
-/* Diagnostic: force all backgrounds to match in dark mode */
-.dark body,
-.dark html,
-.dark .prose {
-  background: #09090b !important;
-}
-
-/* Remove border and margin for code blocks in dark mode */
-.dark .prose pre,
-.dark .prose pre[class*="language-"] {
-  border: none !important;
-  margin: 0 !important;
-  background: #09090b !important;
-}
-
-/* Ultimate flattening: code blocks are visually indistinguishable from the page */
-.dark .prose pre,
-.dark .prose pre[class*="language-"] {
-  background: #09090b !important;
-  color: #f4f4f5 !important;
-  border: none !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
-.dark .prose code,
-.dark .prose pre code,
-.dark .prose code[class*="language-"] {
-  background: #09090b !important;
-  color: #f4f4f5 !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
-
-/* Remove Prism.js token backgrounds in dark mode for a flat look */
-.dark .prose .token,
-.dark .prose code span {
-  background: none !important;
-  box-shadow: none !important;
 }

@@ -1,14 +1,13 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Tag } from 'lucide-react';
-import BlogCard from '@/components/blog/BlogCard';
-import SearchFilter from '@/components/blog/SearchFilter';
-import ScrollToTop from '@/components/common/ScrollToTop';
-import LinkableHeading from '@/components/LinkableHeading';
-import { blogPosts } from '@/content/index';
+import { ArrowRight, BookOpen, Calendar, Clock, Tag } from 'lucide-react';
+import ModernBlogCard from '@/components/blog/ModernBlogCard';
+import ModernSearchFilter from '@/components/blog/ModernSearchFilter';
+import ScrollToTop from '@/components/ScrollToTop';
+import { blogPosts } from '@/content/blogPostIndex';
 import { BLOG_CONFIG, AUTHOR } from '@/config/config';
 
-const Blog: React.FC = () => {
+const ModernBlog: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -55,131 +54,69 @@ const Blog: React.FC = () => {
     setCurrentPage(1);
   }, [searchQuery, selectedTags]);
 
-    return (
-      <div className="min-h-screen bg-background">
-      {/* Personal Hero Section */}
-      <section className="relative hero-gradient py-16 px-4 overflow-hidden">
-        {/* Subtle Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3"></div>
-        <div className="absolute top-8 left-8 w-16 h-16 bg-primary/5 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-8 right-8 w-20 h-20 bg-accent/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
-        
-        <div className="relative max-w-4xl mx-auto text-center">
-          {/* Personal Greeting */}
-          <div className="mb-8 fade-in-up">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                <span className="text-primary font-bold text-lg">KG</span>
-              </div>
-              <div className="text-left">
-                <h1 className="text-2xl font-semibold text-foreground">Hey there! I'm Kushal</h1>
-                <p className="text-muted-foreground text-sm">Welcome to my tech corner</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Title */}
-          <div className="mb-6 fade-in-up" style={{ animationDelay: '100ms' }}>
-            <LinkableHeading level={1} id="tech-blog" className="text-4xl md:text-5xl font-bold text-foreground mb-3 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
-              Tech Blog
-            </LinkableHeading>
-            <p className="text-lg text-primary font-medium">✨ Where Ideas Meet Innovation ✨</p>
-          </div>
-
-          {/* Concise Description */}
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto fade-in-up leading-relaxed" style={{ animationDelay: '200ms' }}>
-            I write about technology, development, and the lessons learned along the way. 
-            <span className="block mt-2 text-base text-primary/80">
-              Let's explore together.
-            </span>
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="hero-gradient py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 fade-in-up">
+            Tech Blog
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto fade-in-up" style={{ animationDelay: '100ms' }}>
+            Insights, tutorials, and thoughts on technology, development, and everything in between.
           </p>
-
-          {/* Simple Stats - Minimal */}
-          <div className="mb-8 fade-in-up" style={{ animationDelay: '300ms' }}>
-            <div className="inline-flex items-center space-x-6 text-sm text-muted-foreground bg-card/30 backdrop-blur-sm rounded-full px-6 py-3 border border-border/30">
-              <div className="flex items-center space-x-1">
-                <BookOpen className="w-4 h-4 text-primary" />
-                <span>{blogPosts.length} Articles</span>
-              </div>
-              <div className="w-px h-4 bg-border"></div>
-              <div className="flex items-center space-x-1">
-                <Tag className="w-4 h-4 text-accent" />
-                <span>{availableTags.length} Topics</span>
-              </div>
+          <div className="flex items-center justify-center space-x-8 text-muted-foreground fade-in-up" style={{ animationDelay: '200ms' }}>
+            <div className="flex items-center space-x-2">
+              <BookOpen className="w-5 h-5" />
+              <span>{blogPosts.length} Articles</span>
             </div>
-          </div>
-
-          {/* Call to Action - Focused on Reading */}
-          <div className="fade-in-up" style={{ animationDelay: '400ms' }}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                to="#featured"
-                className="btn-primary px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center"
-              >
-                <BookOpen className="w-5 h-5 mr-2" />
-                Start Reading
-              </Link>
-              <button
-                onClick={() => document.getElementById('search-filter')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-secondary px-6 py-4 text-base font-medium rounded-full hover:scale-105 transition-all duration-300 flex items-center"
-              >
-                <Tag className="w-4 h-4 mr-2" />
-                Browse Topics
-              </button>
+            <div className="flex items-center space-x-2">
+              <Tag className="w-5 h-5" />
+              <span>{availableTags.length} Topics</span>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              Dive into the latest insights and tutorials
-            </p>
           </div>
         </div>
       </section>
 
       {/* Search and Filter */}
-      <section id="search-filter" className="py-12 px-4">
+      <section className="py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <LinkableHeading level={2} id="search-and-filter" className="text-3xl font-bold text-foreground mb-8 text-center">
-            Search & Filter Articles
-          </LinkableHeading>
-          <SearchFilter
+          <ModernSearchFilter
             onSearch={setSearchQuery}
             onFilter={setSelectedTags}
             availableTags={availableTags}
             searchQuery={searchQuery}
             selectedTags={selectedTags}
           />
-                        </div>
+        </div>
       </section>
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
-        <section id="featured" className="py-12 px-4">
+        <section className="py-12 px-4">
           <div className="max-w-7xl mx-auto">
-            <LinkableHeading level={2} id="featured-articles" className="text-3xl font-bold text-foreground mb-8">
-              Featured Articles
-            </LinkableHeading>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Featured Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPosts.map((post, index) => (
-                <BlogCard
+                <ModernBlogCard
                   key={post.slug}
                   post={post}
                   delay={index * 100}
                 />
-                        ))}
-                      </div>
-              </div>
-            </section>
-          )}
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* All Posts */}
       {paginatedPosts.length > 0 && (
         <section id="all-posts" className="py-12 px-4">
           <div className="max-w-7xl mx-auto">
-            <LinkableHeading level={2} id="all-articles" className="text-3xl font-bold text-foreground mb-8">
-              All Articles
-            </LinkableHeading>
+            <h2 className="text-3xl font-bold text-foreground mb-8">All Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {paginatedPosts.map((post, index) => (
-                <BlogCard
+                <ModernBlogCard
                   key={post.slug}
                   post={post}
                   delay={index * 50}
@@ -189,11 +126,7 @@ const Blog: React.FC = () => {
             
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="mt-12">
-                <LinkableHeading level={3} id="pagination" className="text-xl font-semibold text-foreground mb-6 text-center">
-                  Page Navigation
-                </LinkableHeading>
-                <div className="flex items-center justify-center space-x-2">
+              <div className="flex items-center justify-center mt-12 space-x-2">
                 <button
                   onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                   disabled={currentPage === 1}
@@ -225,7 +158,6 @@ const Blog: React.FC = () => {
                 >
                   Next
                 </button>
-                </div>
               </div>
             )}
           </div>
@@ -239,9 +171,7 @@ const Blog: React.FC = () => {
             <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
               <BookOpen className="w-12 h-12 text-muted-foreground" />
             </div>
-            <LinkableHeading level={3} id="no-articles-found" className="text-2xl font-semibold text-foreground mb-4">
-              No articles found
-            </LinkableHeading>
+            <h3 className="text-2xl font-semibold text-foreground mb-4">No articles found</h3>
             <p className="text-muted-foreground mb-6">
               Try adjusting your search terms or filters to find what you're looking for.
             </p>
@@ -255,16 +185,16 @@ const Blog: React.FC = () => {
               Clear filters
             </button>
           </div>
-          </section>
+        </section>
       )}
 
       {/* Newsletter CTA */}
       {BLOG_CONFIG.enableNewsletter && (
         <section className="py-20 px-4 bg-muted/30">
           <div className="max-w-4xl mx-auto text-center">
-            <LinkableHeading level={2} id="newsletter" className="text-3xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               {BLOG_CONFIG.newsletterTitle}
-            </LinkableHeading>
+            </h2>
             <p className="text-muted-foreground mb-8">
               {BLOG_CONFIG.newsletterDescription}
             </p>
@@ -284,8 +214,8 @@ const Blog: React.FC = () => {
 
       {/* Scroll to top button */}
       <ScrollToTop />
-      </div>
-    );
+    </div>
+  );
 };
 
-export default Blog;
+export default ModernBlog;

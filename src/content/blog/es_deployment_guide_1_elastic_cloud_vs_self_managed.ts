@@ -1,5 +1,5 @@
-import { BlogPost } from '../blogPostIndex';
-import content from './markdown/es_deployment_guide_1_elastic_cloud_vs_self_managed.md?raw';
+import { BlogPost } from '../index';
+import content from '../markdown/es_deployment_guide_1_elastic_cloud_vs_self_managed.md?raw';
 
 export const blogPost: BlogPost = {
   slug: "elastic-cloud-vs-self-managed-strategic-decision-framework",

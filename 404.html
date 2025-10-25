@@ -66,8 +66,15 @@
         var search = window.location.search;
         var hash = window.location.hash;
         
+        // Handle root blog path: /blog/ -> /blog/#/blog
+        if (path === '/blog/' && !hash) {
+          // Store the original URL for the 404.html redirect
+          sessionStorage.redirect = window.location.href;
+          // Redirect to hash version: /blog/#/blog
+          window.location.replace('/blog/#/blog');
+        }
         // If we're on a clean URL (not already a hash URL), redirect to hash version
-        if (path !== '/blog/' && path.startsWith('/blog/') && !hash) {
+        else if (path !== '/blog/' && path.startsWith('/blog/') && !hash) {
           var cleanPath = path.replace('/blog/', '');
           if (cleanPath) {
             // Store the original URL for the 404.html redirect

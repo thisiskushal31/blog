@@ -1,5 +1,5 @@
-import { BlogPost } from '../blogPostIndex';
-import content from './markdown/es_deployment_guide_2_elastic_cloud_deep_dive.md?raw';
+import { BlogPost } from '../index';
+import content from '../markdown/es_deployment_guide_2_elastic_cloud_deep_dive.md?raw';
 
 export const blogPost: BlogPost = {
   slug: "elastic-cloud-deep-dive-hosted-vs-serverless-architecture",

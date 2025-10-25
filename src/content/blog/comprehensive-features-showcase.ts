@@ -1,5 +1,5 @@
-import { BlogPost } from '../blogPostIndex';
-import content from './markdown/comprehensive-features-showcase.md?raw';
+import { BlogPost } from '../index';
+import content from '../markdown/comprehensive-features-showcase.md?raw';
 // import { AUTHOR } from '../../config';
 
 export const blogPost: BlogPost = {

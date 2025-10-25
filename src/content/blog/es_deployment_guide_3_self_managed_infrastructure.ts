@@ -1,5 +1,5 @@
-import { BlogPost } from '../blogPostIndex';
-import content from './markdown/es_deployment_guide_3_self_managed_infrastructure.md?raw';
+import { BlogPost } from '../index';
+import content from '../markdown/es_deployment_guide_3_self_managed_infrastructure.md?raw';
 
 export const blogPost: BlogPost = {
   slug: "self-managed-elasticsearch-vm-bare-metal-production-guide",

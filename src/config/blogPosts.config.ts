@@ -1,7 +1,7 @@
 import { BlogPost } from '../content/blogPostIndex';
 
 // Static imports for all posts (add new imports here)
-// import { blogPost as comprehensiveFeaturesShowcase } from '../content/blog/comprehensive-features-showcase';
+import { blogPost as comprehensiveFeaturesShowcase } from '../content/blog/comprehensive-features-showcase';
 
 // AI Security
 import { blogPost as ai_shift_left_security } from '../content/blog/ai-shift-left-security';
@@ -24,7 +24,7 @@ import { blogPost as es_deployment_guide_7_decision_matrix } from '../content/bl
 // Add new imports above
 
 export const BLOG_POST_SLUGS = [
-  // 'comprehensive-features-showcase',
+  'comprehensive-features-showcase',
 
   // AI Security
   'ai-shift-left-security',
@@ -48,7 +48,7 @@ export const BLOG_POST_SLUGS = [
 ];
 
 export const POST_MAP: Record<string, BlogPost> = {
-  // 'comprehensive-features-showcase': comprehensiveFeaturesShowcase,
+  'comprehensive-features-showcase': comprehensiveFeaturesShowcase,
 
   // AI Security
   'ai-shift-left-security': ai_shift_left_security,

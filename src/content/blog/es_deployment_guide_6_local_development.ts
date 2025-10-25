@@ -1,5 +1,5 @@
-import { BlogPost } from '../blogPostIndex';
-import content from './markdown/es_deployment_guide_6_local_development.md?raw';
+import { BlogPost } from '../index';
+import content from '../markdown/es_deployment_guide_6_local_development.md?raw';
 
 export const blogPost: BlogPost = {
   slug: "elasticsearch-local-development-docker-packages-quick-start",
