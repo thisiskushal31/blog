@@ -1,6 +1,11 @@
+// blogPosts.config.ts
+// Blog post configuration file - maps slugs to blog post imports
+// Add new blog posts here following the existing pattern
+
 import { BlogPost } from '../content/index';
 
-// Static imports for all posts (add new imports here)
+// ===== BLOG POST IMPORTS =====
+// Import all blog post modules here
 import { blogPost as comprehensiveFeaturesShowcase } from '../content/blog/comprehensive-features-showcase';
 
 // AI Security
@@ -21,8 +26,8 @@ import { blogPost as es_deployment_guide_7_decision_matrix } from '../content/bl
 
 // Containerization
 
-// Add new imports above
-
+// ===== BLOG POST SLUGS =====
+// Array of all blog post slugs for routing and navigation
 export const BLOG_POST_SLUGS = [
   'comprehensive-features-showcase',
 
@@ -47,6 +52,8 @@ export const BLOG_POST_SLUGS = [
   // Add new post slugs here (must match the .ts file in ./blog/)
 ];
 
+// ===== BLOG POST MAP =====
+// Maps slugs to their corresponding blog post data
 export const POST_MAP: Record<string, BlogPost> = {
   'comprehensive-features-showcase': comprehensiveFeaturesShowcase,
 

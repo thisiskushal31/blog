@@ -1,7 +1,15 @@
+// ScrollToTop.tsx
+// Floating action button that appears when user scrolls down
+// Provides smooth scroll-to-top functionality
 
 import React, { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 
+/**
+ * ScrollToTop Component
+ * Shows a floating button to scroll back to the top of the page
+ * Only visible after scrolling down 300px
+ */
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 

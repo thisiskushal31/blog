@@ -1,3 +1,7 @@
+// SearchFilter.tsx
+// Blog search and tag filtering component with collapsible filters
+// Features: Real-time search, multi-tag filtering, clear filters
+
 import React, { useState } from 'react';
 import { Search, Filter, X } from 'lucide-react';
 import { BLOG_CONFIG } from '@/config/config';
@@ -10,6 +14,11 @@ interface SearchFilterProps {
   selectedTags: string[];
 }
 
+/**
+ * SearchFilter Component
+ * Provides search input and tag-based filtering for blog posts
+ * Includes clear filters functionality and active filter indicators
+ */
 const SearchFilter: React.FC<SearchFilterProps> = ({
   onSearch,
   onFilter,
@@ -19,20 +28,43 @@ const SearchFilter: React.FC<SearchFilterProps> = ({
 }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+  /**
+   * Handle search input changes
+   * @param e - Input change event
+   */
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onSearch(e.target.value);
+    try {
+      onSearch(e.target.value);
+    } catch (error) {
+      console.error('Error handling search change:', error);
+    }
   };
 
+  /**
+   * Toggle tag selection
+   * @param tag - Tag to toggle
+   */
   const handleTagToggle = (tag: string) => {
-    const newTags = selectedTags.includes(tag)
-      ? selectedTags.filter(t => t !== tag)
-      : [...selectedTags, tag];
-    onFilter(newTags);
+    try {
+      const newTags = selectedTags.includes(tag)
+        ? selectedTags.filter(t => t !== tag)
+        : [...selectedTags, tag];
+      onFilter(newTags);
+    } catch (error) {
+      console.error('Error toggling tag:', error);
+    }
   };
 
+  /**
+   * Clear all active filters
+   */
   const clearFilters = () => {
-    onSearch('');
-    onFilter([]);
+    try {
+      onSearch('');
+      onFilter([]);
+    } catch (error) {
+      console.error('Error clearing filters:', error);
+    }
   };
 
   const hasActiveFilters = searchQuery || selectedTags.length > 0;

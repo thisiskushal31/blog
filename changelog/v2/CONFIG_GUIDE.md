@@ -69,7 +69,7 @@ export const BLOG_CONFIG = {
 ### 5. **THEME CONFIG**
 ```typescript
 export const THEME_CONFIG = {
-  defaultTheme: "system", // "light" | "dark" | "system"
+  defaultTheme: "light", // "light" | "dark" | "system"
   enableThemeToggle: true,
   enableReadingProgress: true,
   enableScrollToTop: true,
@@ -155,3 +155,4 @@ These settings automatically update across the entire blog:
 - SEO metadata
 
 No need to restart the development server - just save and refresh! 🎉
+

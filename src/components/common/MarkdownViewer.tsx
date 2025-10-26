@@ -67,7 +67,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
           'a', 'img', 'iframe',
           'table', 'thead', 'tbody', 'tr', 'th', 'td',
           'pre', 'code',
-          'blockquote',
+          'blockquote', 'hr',
           'div', 'span',
           'svg', 'path',
           'button', 'input',

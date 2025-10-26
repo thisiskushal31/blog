@@ -1,3 +1,7 @@
+// BlogCard.tsx
+// Blog post card component with SEO-friendly structured data
+// Features: Cover images, tags, read time, publish date, responsive design
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
@@ -26,13 +30,27 @@ interface BlogCardProps {
   delay?: number;
 }
 
+/**
+ * BlogCard Component
+ * Displays a blog post card with cover image, metadata, and structured data for SEO
+ */
 const BlogCard: React.FC<BlogCardProps> = ({ post, delay = 0 }) => {
+  /**
+   * Format date string to readable format
+   * @param dateString - ISO date string
+   * @returns Formatted date string
+   */
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
+    try {
+      return new Date(dateString).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return dateString;
+    }
   };
 
   return (

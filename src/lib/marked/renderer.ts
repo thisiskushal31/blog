@@ -1,22 +1,39 @@
 // Markdown Renderer
-// Simple blog markdown renderer
-// Clean implementation for rendering blog post content
+// Blog markdown renderer with GitHub Flavored Markdown (GFM) support
+// Features: Tables, strikethrough, task lists, autolinks, syntax highlighting
+// Includes custom enhancements: YouTube embeds, Gist embeds, linkable headers
 
 import { marked } from 'marked';
 
+/**
+ * Renderer Class
+ * Handles markdown parsing with GFM support and custom enhancements
+ */
 export class Renderer {
   private marked: typeof marked;
   private openLinksInNewTab: boolean;
 
+  /**
+   * Initialize the renderer
+   * @param openLinksInNewTab - Whether to open links in new tab (default: false)
+   */
   constructor(openLinksInNewTab: boolean = false) {
     this.marked = marked;
     this.openLinksInNewTab = openLinksInNewTab;
     this.setupMarked();
   }
 
+  /**
+   * Configure marked with GFM options
+   */
   private setupMarked(): void {
     this.marked.setOptions({
-      gfm: true, // GitHub Flavored Markdown (enables tables, strikethrough, etc.)
+      gfm: true, // GitHub Flavored Markdown - enables:
+      // - Tables (GFM table extension)
+      // - Strikethrough (~~text~~)
+      // - Task lists (checkboxes - [x] and [ ])
+      // - Autolinks
+      // - URL linking
       breaks: false,
       pedantic: false,
       sanitize: false,
@@ -26,6 +43,11 @@ export class Renderer {
     });
   }
 
+  /**
+   * Parse markdown to HTML with error handling
+   * @param markdown - Markdown string to parse
+   * @returns HTML string or error message
+   */
   parse(markdown: string): string {
     try {
       let html = this.marked.parse(markdown);
@@ -40,6 +62,11 @@ export class Renderer {
     }
   }
 
+  /**
+   * Apply custom GitHub-style enhancements to HTML
+   * @param html - Raw HTML from markdown parser
+   * @returns Enhanced HTML with custom styling and embeds
+   */
   private enhanceWithGitHubStyling(html: string): string {
     // Add custom classes and enhancements
     
