@@ -1,65 +1,51 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { BookOpen, Tag } from 'lucide-react';
+import React from 'react';
 import BlogCard from '@/components/blog/BlogCard';
 import SearchFilter from '@/components/blog/SearchFilter';
 import ScrollToTop from '@/components/common/ScrollToTop';
 import LinkableHeading from '@/components/LinkableHeading';
 import DynamicNavbar from '@/components/DynamicNavbar';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
+import AnimatedBackground from '@/components/background/AnimatedBackground';
+import IntroSection from '@/components/sections/IntroSection';
+import StatsSection from '@/components/sections/StatsSection';
+import EmptyState from '@/components/sections/EmptyState';
 import { useNavbarVisibility } from '@/hooks/useNavbarVisibility';
+import { useBlogFilters } from '@/hooks/useBlogFilters';
+import { usePagination } from '@/hooks/usePagination';
 import { blogPosts } from '@/content/index';
-import { BLOG_CONFIG, AUTHOR, SOCIAL_LINKS, NAVIGATION_CONFIG } from '@/config/config';
+import { BLOG_CONFIG, AUTHOR, NAVIGATION_CONFIG } from '@/config/config';
 
 const Blog: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = BLOG_CONFIG.postsPerPage;
-  
   // Navbar visibility and theme management
-  const { showNavbar, isDark, toggleTheme, toggleNavbar } = useNavbarVisibility();
+  const { showNavbar, toggleNavbar } = useNavbarVisibility();
 
-  // Get all unique tags from blog posts
-  const availableTags = useMemo(() => {
-    const tags = new Set<string>();
-    blogPosts.forEach(post => {
-      if (post.categories) {
-        post.categories.forEach(tag => tags.add(tag));
-      }
-    });
-    return Array.from(tags).sort();
-  }, []);
+  // Blog filters (search, tags, featured posts)
+  const {
+    searchQuery,
+    setSearchQuery,
+    selectedTags,
+    setSelectedTags,
+    availableTags,
+    filteredPosts,
+    featuredPosts: allFeaturedPosts,
+    clearFilters,
+  } = useBlogFilters(blogPosts);
 
-  // Filter blog posts based on search query and selected tags
-  const filteredPosts = useMemo(() => {
-    return blogPosts.filter(post => {
-      const matchesSearch = searchQuery === '' || 
-        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesTags = selectedTags.length === 0 || 
-        selectedTags.every(tag => post.categories?.includes(tag));
-      
-      return matchesSearch && matchesTags;
-    });
-  }, [searchQuery, selectedTags]);
+  // Get featured posts (limited to configured count)
+  const featuredPosts = allFeaturedPosts.slice(0, BLOG_CONFIG.featuredPostsCount);
 
-  // Featured posts (only posts with featured: true)
-  const featuredPosts = useMemo(() => {
-    return blogPosts.filter(post => post.featured === true).slice(0, BLOG_CONFIG.featuredPostsCount);
-  }, []);
+  // Pagination
+  const {
+    currentPage,
+    totalPages,
+    startIndex,
+    endIndex,
+    goToNextPage,
+    goToPreviousPage,
+    setCurrentPage,
+  } = usePagination(filteredPosts.length, BLOG_CONFIG.postsPerPage, [searchQuery, selectedTags]);
 
-  // Pagination for all posts
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const endIndex = startIndex + postsPerPage;
   const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
-
-  // Reset to first page when filters change
-  React.useEffect(() => {
-    setCurrentPage(1);
-  }, [searchQuery, selectedTags]);
 
     return (
       <div className="min-h-screen bg-background">
@@ -74,169 +60,11 @@ const Blog: React.FC = () => {
         
        {/* Personal Intro + Blog Section */}
        <section id="intro-section" className="relative py-16 px-4 overflow-hidden">
-         {/* Animated Background */}
-         <div className="absolute inset-0 z-0">
-           <div className="w-full h-full bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-teal-600/10">
-             {/* Animated Line Pattern Background */}
-             <div className="absolute inset-0 opacity-60">
-               <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-                 <defs>
-                   <pattern id="line-pattern" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse">
-                     <line x1="0" y1="0" x2="15" y2="0" stroke="#3b82f6" strokeWidth="1" opacity="0.4">
-                       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite"/>
-                     </line>
-                     <line x1="0" y1="0" x2="0" y2="15" stroke="#3b82f6" strokeWidth="1" opacity="0.4">
-                       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="6s" repeatCount="indefinite"/>
-                     </line>
-                     <circle cx="7.5" cy="7.5" r="1" fill="#3b82f6" opacity="0.3">
-                       <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite"/>
-                     </circle>
-                   </pattern>
-                 </defs>
-                 <rect width="100%" height="100%" fill="url(#line-pattern)"/>
-               </svg>
-             </div>
-             
-            {/* Floating Code Elements with enhanced animations */}
-            <div className="absolute top-10 left-10 text-6xl font-mono text-primary/10 select-none animate-float-rotate" style={{animationDuration: '20s'}}>
-              {'</>'}
-            </div>
-            <div className="absolute bottom-10 right-10 text-4xl font-mono text-accent/10 select-none animate-gentle-bounce" style={{animationDuration: '8s'}}>
-              {'{}'}
-            </div>
-            <div className="absolute top-1/2 left-1/4 text-3xl font-mono text-muted-foreground/10 select-none animate-drift" style={{animationDuration: '15s'}}>
-              {'<div>'}
-            </div>
-            
-            {/* Additional Floating Elements with different animations */}
-            <div className="absolute top-1/3 right-1/4 text-2xl font-mono text-blue-500/30 select-none animate-rotate-slow" style={{animationDuration: '40s'}}>
-              {'React'}
-            </div>
-            <div className="absolute bottom-1/3 left-1/3 text-xl font-mono text-purple-500/30 select-none animate-pulse-slow" style={{animationDelay: '2s', animationDuration: '5s'}}>
-              {'TypeScript'}
-            </div>
-            <div className="absolute top-2/3 right-1/3 text-lg font-mono text-teal-500/30 select-none animate-drift" style={{animationDelay: '1s', animationDuration: '18s'}}>
-              {'Node.js'}
-            </div>
-            
-            {/* Additional tech logos */}
-            <div className="absolute top-1/5 left-1/2 text-xl font-mono text-green-500/30 select-none animate-slide-in-out" style={{animationDelay: '0s', animationDuration: '12s'}}>
-              {'Vue'}
-            </div>
-            <div className="absolute bottom-1/5 right-1/4 text-lg font-mono text-cyan-500/30 select-none animate-drift" style={{animationDelay: '3s', animationDuration: '22s'}}>
-              {'AWS'}
-            </div>
-            <div className="absolute top-4/5 left-1/5 text-base font-mono text-orange-500/30 select-none animate-float-rotate" style={{animationDelay: '2s', animationDuration: '25s'}}>
-              {'Docker'}
-            </div>
-            
-            {/* DevOps & Platform Engineering Logos */}
-            <div className="absolute top-2/3 left-1/4 text-lg font-mono text-blue-400/30 select-none animate-rotate-slow" style={{animationDelay: '5s', animationDuration: '35s'}}>
-              {'K8s'}
-            </div>
-            <div className="absolute top-1/6 right-1/6 text-base font-mono text-purple-400/30 select-none animate-drift" style={{animationDelay: '4s', animationDuration: '20s'}}>
-              {'Helm'}
-            </div>
-            <div className="absolute bottom-1/6 left-3/4 text-sm font-mono text-teal-400/30 select-none animate-pulse-slow" style={{animationDelay: '6s', animationDuration: '6s'}}>
-              {'Terraform'}
-            </div>
-            <div className="absolute top-1/3 left-1/6 text-base font-mono text-orange-400/30 select-none animate-gentle-bounce" style={{animationDelay: '7s', animationDuration: '7s'}}>
-              {'Git'}
-            </div>
-            <div className="absolute top-3/4 right-1/6 text-base font-mono text-green-400/30 select-none animate-float-rotate" style={{animationDelay: '3s', animationDuration: '28s'}}>
-              {'Ansible'}
-            </div>
-            <div className="absolute bottom-2/3 right-1/3 text-sm font-mono text-red-400/30 select-none animate-slide-in-out" style={{animationDelay: '8s', animationDuration: '15s'}}>
-              {'Jenkins'}
-            </div>
-            
-            {/* AI/ML Logos */}
-            <div className="absolute top-1/4 left-3/5 text-base font-mono text-yellow-400/30 select-none animate-drift" style={{animationDelay: '5s', animationDuration: '24s'}}>
-              {'TensorFlow'}
-            </div>
-            <div className="absolute bottom-1/3 left-2/5 text-base font-mono text-red-400/30 select-none animate-rotate-slow" style={{animationDelay: '6s', animationDuration: '32s'}}>
-              {'PyTorch'}
-            </div>
-            <div className="absolute top-1/2 right-2/5 text-sm font-mono text-blue-300/30 select-none animate-pulse-slow" style={{animationDelay: '9s', animationDuration: '5s'}}>
-              {'OpenAI'}
-            </div>
-            <div className="absolute top-1/6 left-1/3 text-xs font-mono text-emerald-400/30 select-none animate-gentle-bounce" style={{animationDelay: '10s', animationDuration: '8s'}}>
-              {'LangChain'}
-            </div>
-            
-            {/* Platform Engineering Logos */}
-            <div className="absolute top-2/5 right-3/5 text-sm font-mono text-orange-300/30 select-none animate-float-rotate" style={{animationDelay: '4s', animationDuration: '30s'}}>
-              {'Prometheus'}
-            </div>
-            <div className="absolute bottom-1/4 right-2/5 text-sm font-mono text-teal-300/30 select-none animate-slide-in-out" style={{animationDelay: '11s', animationDuration: '16s'}}>
-              {'Grafana'}
-            </div>
-            <div className="absolute top-3/5 left-1/2 text-xs font-mono text-blue-300/30 select-none animate-drift" style={{animationDelay: '7s', animationDuration: '26s'}}>
-              {'ArgoCD'}
-            </div>
-            <div className="absolute bottom-1/5 left-4/5 text-xs font-mono text-purple-300/30 select-none animate-rotate-slow" style={{animationDelay: '8s', animationDuration: '38s'}}>
-              {'Istio'}
-            </div>
-            
-            {/* Animated Dots with enhanced effects */}
-            <div className="absolute top-1/4 right-1/5 w-2 h-2 bg-primary/20 rounded-full animate-pulse-slow" style={{animationDelay: '1s', animationDuration: '3s'}}></div>
-            <div className="absolute bottom-1/4 left-1/5 w-1 h-1 bg-accent/20 rounded-full animate-gentle-bounce" style={{animationDelay: '3s', animationDuration: '5s'}}></div>
-            <div className="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-blue-500/20 rounded-full animate-rotate-slow" style={{animationDelay: '2s', animationDuration: '8s'}}></div>
-            <div className="absolute top-1/2 right-1/2 w-1.5 h-1.5 bg-purple-500/20 rounded-full animate-pulse-slow" style={{animationDelay: '4s', animationDuration: '4s'}}></div>
-            <div className="absolute top-1/3 left-1/2 w-1 h-1 bg-green-400/20 rounded-full animate-rotate-slow" style={{animationDelay: '12s', animationDuration: '6s'}}></div>
-            <div className="absolute bottom-1/3 right-1/5 w-1.5 h-1.5 bg-orange-400/20 rounded-full animate-gentle-bounce" style={{animationDelay: '9s', animationDuration: '7s'}}></div>
-           </div>
-           <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/70 to-background/55"></div>
-         </div>
+         <AnimatedBackground />
+         
          <div className="relative z-10 max-w-6xl mx-auto">
-           {/* Personal Introduction */}
-           <div className="mb-12">
-             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-               {/* Photo */}
-               <div className="flex-shrink-0">
-                 <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white/20">
-                   <img 
-                     src={AUTHOR.avatar} 
-                     alt={AUTHOR.name} 
-                     className="w-full h-full object-cover"
-                     onError={(e) => {
-                       // Fallback to initials if image fails to load
-                       const target = e.target as HTMLImageElement;
-                       target.style.display = 'none';
-                       const parent = target.parentElement;
-                       if (parent) {
-                         parent.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-primary to-accent flex items-center justify-center"><span class="text-white font-bold text-3xl">KG</span></div>';
-                       }
-                     }}
-                   />
-                 </div>
-               </div>
-               
-               {/* Bio */}
-               <div className="flex-1 text-center md:text-left">
-                 <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Hi, I'm {AUTHOR.name}</h1>
-                 <p className="text-lg text-muted-foreground mb-4">{AUTHOR.title}</p>
-                 <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
-                   {AUTHOR.bio}
-                 </p>
-               </div>
-             </div>
-           </div>
-
-           {/* Stats */}
-           <div className="text-center mb-6">
-             <div className="inline-flex items-center space-x-4 text-xs text-muted-foreground bg-muted/50 rounded-lg px-4 py-2">
-               <div className="flex items-center space-x-1">
-                 <BookOpen className="w-3 h-3 text-primary" />
-                 <span>{blogPosts.length} Articles</span>
-               </div>
-               <div className="w-px h-3 bg-border"></div>
-               <div className="flex items-center space-x-1">
-                 <Tag className="w-3 h-3 text-accent" />
-                 <span>{availableTags.length} Topics</span>
-               </div>
-             </div>
-           </div>
+           <IntroSection author={AUTHOR} />
+           <StatsSection articleCount={blogPosts.length} topicCount={availableTags.length} />
 
            {/* Public Profile Link */}
            {NAVIGATION_CONFIG.showPublicProfileLink && (
@@ -313,7 +141,7 @@ const Blog: React.FC = () => {
               <div className="mt-12">
                 <div className="flex items-center justify-center space-x-2">
                 <button
-                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  onClick={goToPreviousPage}
                   disabled={currentPage === 1}
                   className="px-4 py-2 rounded-lg border border-border bg-card text-foreground hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
                 >
@@ -337,7 +165,7 @@ const Blog: React.FC = () => {
                 </div>
                 
                 <button
-                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  onClick={goToNextPage}
                   disabled={currentPage === totalPages}
                   className="px-4 py-2 rounded-lg border border-border bg-card text-foreground hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
                 >
@@ -352,28 +180,7 @@ const Blog: React.FC = () => {
 
       {/* No Results */}
       {filteredPosts.length === 0 && (
-        <section className="py-20 px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
-              <BookOpen className="w-12 h-12 text-muted-foreground" />
-            </div>
-            <LinkableHeading level={3} id="no-articles-found" className="text-2xl font-semibold text-foreground mb-4">
-              No articles found
-            </LinkableHeading>
-            <p className="text-muted-foreground mb-6">
-              Try adjusting your search terms or filters to find what you're looking for.
-            </p>
-            <button
-              onClick={() => {
-                setSearchQuery('');
-                setSelectedTags([]);
-              }}
-              className="btn-primary"
-            >
-              Clear filters
-            </button>
-          </div>
-          </section>
+        <EmptyState onClearFilters={clearFilters} />
       )}
 
       {/* Newsletter CTA */}

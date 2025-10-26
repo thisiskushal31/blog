@@ -1,7 +1,7 @@
 /* GitHub Markdown Styles */
 /* Exact replication of GitHub's markdown rendering */
 
-.markdown {
+.github-markdown {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   line-height: 1.5;
@@ -9,18 +9,18 @@
   word-wrap: break-word;
 }
 
-.markdown.dark {
+.github-markdown.dark {
   color: hsl(210 40% 98%); /* --foreground from link site dark mode */
   background: transparent !important;
 }
 
 /* Override any prose styles that might cause black screen */
-.prose .markdown.dark {
+.prose .github-markdown.dark {
   background: transparent !important;
   color: hsl(210 40% 98%) !important; /* --foreground from link site dark mode */
 }
 
-.prose.dark .markdown {
+.prose.dark .github-markdown {
   background: transparent !important;
   color: hsl(210 40% 98%) !important; /* --foreground from link site dark mode */
 }
@@ -47,12 +47,12 @@ html.dark .prose.prose-lg {
 }
 
 /* Headings */
-.markdown h1,
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5,
-.markdown h6 {
+.github-markdown h1,
+.github-markdown h2,
+.github-markdown h3,
+.github-markdown h4,
+.github-markdown h5,
+.github-markdown h6 {
   margin-top: 12px;
   margin-bottom: 8px;
   font-weight: 600;
@@ -60,76 +60,76 @@ html.dark .prose.prose-lg {
   color: hsl(168 45% 50%); /* --primary from link site */
 }
 
-.markdown h1 {
+.github-markdown h1 {
   font-size: 2em;
   border-bottom: 1px solid hsl(0 0% 85%); /* --border from link site */
   padding-bottom: 0.3em;
 }
 
-.markdown h2 {
+.github-markdown h2 {
   font-size: 1.5em;
   border-bottom: 1px solid hsl(0 0% 85%); /* --border from link site */
   padding-bottom: 0.3em;
 }
 
-.markdown h3 {
+.github-markdown h3 {
   font-size: 1.25em;
 }
 
-.markdown h4 {
+.github-markdown h4 {
   font-size: 1em;
 }
 
-.markdown h5 {
+.github-markdown h5 {
   font-size: 0.875em;
 }
 
-.markdown h6 {
+.github-markdown h6 {
   font-size: 0.85em;
   color: hsl(0 0% 42%); /* --muted-foreground from link site */
 }
 
 /* Dark mode headings */
-.markdown.dark h1,
-.markdown.dark h2,
-.markdown.dark h3,
-.markdown.dark h4,
-.markdown.dark h5,
-.markdown.dark h6 {
+.github-markdown.dark h1,
+.github-markdown.dark h2,
+.github-markdown.dark h3,
+.github-markdown.dark h4,
+.github-markdown.dark h5,
+.github-markdown.dark h6 {
   color: hsl(168 50% 70%); /* --primary from link site dark mode */
 }
 
-.markdown.dark h1,
-.markdown.dark h2 {
+.github-markdown.dark h1,
+.github-markdown.dark h2 {
   border-bottom-color: hsl(217 32% 25%); /* --border from link site dark mode */
 }
 
-.markdown.dark h6 {
+.github-markdown.dark h6 {
   color: hsl(215 20% 65%); /* --muted-foreground from link site dark mode */
 }
 
 /* Paragraphs */
-.markdown p {
+.github-markdown p {
   margin-top: 0;
   margin-bottom: 16px;
 }
 
 /* Code blocks */
-.markdown .highlight {
+.github-markdown .highlight {
   background-color: #f6f8fa;
   border-radius: 6px;
   margin-bottom: 16px;
   overflow: auto;
 }
 
-.markdown.dark .highlight {
+.github-markdown.dark .highlight {
   background-color: #161b22;
 }
 
 /* Removed conflicting highlight pre styles - using general pre styles instead */
 
 /* Inline code */
-.markdown code {
+.github-markdown code {
   background-color: hsl(39 20% 92%); /* --muted from link site */
   color: hsl(168 45% 50%); /* --primary from link site */
   border-radius: 0.375rem; /* half of --radius from link site */
@@ -139,18 +139,18 @@ html.dark .prose.prose-lg {
   font-weight: 500;
 }
 
-.markdown.dark code {
+.github-markdown.dark code {
   background-color: hsl(217 32% 25%); /* --muted from link site dark mode */
   color: hsl(168 50% 70%); /* --primary from link site dark mode */
 }
 
 /* Tables */
-.markdown .table-wrapper {
+.github-markdown .table-wrapper {
   overflow: auto;
   margin-bottom: 16px;
 }
 
-.markdown table {
+.github-markdown table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -159,29 +159,29 @@ html.dark .prose.prose-lg {
   white-space: nowrap;
 }
 
-.markdown table th,
-.markdown table td {
+.github-markdown table th,
+.github-markdown table td {
   border: 1px solid #d0d7de;
   padding: 6px 13px;
   text-align: left;
 }
 
-.markdown table th {
+.github-markdown table th {
   background-color: #f6f8fa;
   font-weight: 600;
 }
 
-.markdown.dark table th,
-.markdown.dark table td {
+.github-markdown.dark table th,
+.github-markdown.dark table td {
   border-color: #30363d;
 }
 
-.markdown.dark table th {
+.github-markdown.dark table th {
   background-color: #161b22;
 }
 
 /* Blockquotes */
-.markdown blockquote {
+.github-markdown blockquote {
   border-left: 0.25em solid hsl(168 45% 50%); /* --primary from link site */
   color: hsl(0 0% 42%); /* --muted-foreground from link site */
   margin: 0 0 16px 0;
@@ -190,87 +190,87 @@ html.dark .prose.prose-lg {
   border-radius: 0 0.375rem 0.375rem 0; /* half of --radius from link site */
 }
 
-.markdown.dark blockquote {
+.github-markdown.dark blockquote {
   border-left-color: hsl(168 50% 70%); /* --primary from link site dark mode */
   color: hsl(215 20% 65%); /* --muted-foreground from link site dark mode */
   background-color: hsl(217 32% 25%); /* --muted from link site dark mode */
 }
 
 /* Lists */
-.markdown ul,
-.markdown ol {
+.github-markdown ul,
+.github-markdown ol {
   margin-top: 0;
   margin-bottom: 16px;
   padding-left: 2em;
   list-style-type: disc;
 }
 
-.markdown ul ul,
-.markdown ul ol,
-.markdown ol ol,
-.markdown ol ul {
+.github-markdown ul ul,
+.github-markdown ul ol,
+.github-markdown ol ol,
+.github-markdown ol ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.markdown ul ul {
+.github-markdown ul ul {
   list-style-type: circle;
 }
 
-.markdown ul ul ul {
+.github-markdown ul ul ul {
   list-style-type: square;
 }
 
-.markdown li {
+.github-markdown li {
   word-wrap: break-all;
   list-style-type: inherit;
   margin-bottom: 0.25em;
 }
 
-.markdown li > p {
+.github-markdown li > p {
   margin-top: 16px;
 }
 
-.markdown li + li {
+.github-markdown li + li {
   margin-top: 0.25em;
 }
 
 /* Task lists */
-.markdown .task-list-item {
+.github-markdown .task-list-item {
   list-style-type: none;
 }
 
-.markdown .task-list-item input[type="checkbox"] {
+.github-markdown .task-list-item input[type="checkbox"] {
   margin: 0 0.2em 0.25em -1.6em;
   vertical-align: middle;
 }
 
 /* Links */
-.markdown a {
+.github-markdown a {
   color: hsl(168 45% 50%); /* --primary from link site */
   text-decoration: none;
   transition: all 0.15s ease-out;
 }
 
-.markdown a:hover {
+.github-markdown a:hover {
   color: hsl(168 35% 56%); /* --accent from link site */
   text-decoration: underline;
 }
 
-.markdown.dark a {
+.github-markdown.dark a {
   color: hsl(168 50% 70%); /* --primary from link site dark mode */
 }
 
-.markdown.dark a:hover {
+.github-markdown.dark a:hover {
   color: hsl(271 91% 75%); /* --accent from link site dark mode */
 }
 
 /* Images */
-.markdown .image-wrapper {
+.github-markdown .image-wrapper {
   margin-bottom: 16px;
 }
 
-.markdown img {
+.github-markdown img {
   background-color: var(--code-bg, #f8f9fa);
   border: 1px solid #d0d7de;
   border-radius: 6px;
@@ -279,13 +279,13 @@ html.dark .prose.prose-lg {
   height: auto;
 }
 
-.markdown.dark img {
+.github-markdown.dark img {
   background-color: #0d1117;
   border-color: #30363d;
 }
 
 /* Horizontal rules */
-.markdown hr {
+.github-markdown hr {
   background-color: #d0d7de;
   border: 0;
   height: 0.25em;
@@ -293,43 +293,43 @@ html.dark .prose.prose-lg {
   padding: 0;
 }
 
-.markdown.dark hr {
+.github-markdown.dark hr {
   background-color: #30363d;
 }
 
 /* Strong and emphasis */
-.markdown strong {
+.github-markdown strong {
   font-weight: 600;
 }
 
-.markdown em {
+.github-markdown em {
   font-style: italic;
 }
 
-.markdown del {
+.github-markdown del {
   text-decoration: line-through;
 }
 
 /* Anchor links */
-.markdown .anchor {
+.github-markdown .anchor {
   color: #656d76;
   text-decoration: none;
 }
 
-.markdown .anchor:hover {
+.github-markdown .anchor:hover {
   color: #0969da;
 }
 
-.markdown.dark .anchor {
+.github-markdown.dark .anchor {
   color: #7d8590;
 }
 
-.markdown.dark .anchor:hover {
+.github-markdown.dark .anchor:hover {
   color: #2f81f7;
 }
 
 /* Code block styling - no syntax highlighting */
-.markdown .highlight pre {
+.github-markdown .highlight pre {
   background-color: hsl(0 0% 100%) !important; /* --card from link site */
   border-radius: 0.75rem !important; /* --radius from link site */
   padding: 16px !important;
@@ -345,9 +345,9 @@ html.dark .prose.prose-lg {
 }
 
 /* Force code block formatting with maximum specificity */
-.markdown .highlight pre,
-.markdown pre.highlight,
-pre.markdown {
+.github-markdown .highlight pre,
+.github-markdown pre.highlight,
+pre.github-markdown {
   white-space: pre !important;
   word-wrap: normal !important;
   overflow-wrap: normal !important;
@@ -356,13 +356,13 @@ pre.markdown {
   display: block !important;
 }
 
-.markdown.dark .highlight pre {
+.github-markdown.dark .highlight pre {
   background-color: hsl(217 32% 18%) !important; /* --card from link site dark mode */
   border-color: hsl(217 32% 25%) !important; /* --border from link site dark mode */
   box-shadow: 0 2px 6px hsl(0 0% 0% / 0.3) !important; /* --shadow-card from link site dark mode */
 }
 
-.markdown .highlight pre code {
+.github-markdown .highlight pre code {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
@@ -384,9 +384,9 @@ pre.markdown {
 }
 
 /* Force code formatting with maximum specificity */
-.markdown .highlight pre code,
-.markdown pre code,
-code.markdown {
+.github-markdown .highlight pre code,
+.github-markdown pre code,
+code.github-markdown {
   white-space: pre !important;
   word-wrap: normal !important;
   overflow-wrap: normal !important;
@@ -395,7 +395,7 @@ code.markdown {
   display: inline !important;
 }
 
-.markdown.dark .highlight pre code {
+.github-markdown.dark .highlight pre code {
   color: #f0f6fc !important;
   font-weight: 500 !important;
   text-rendering: geometricPrecision !important;
@@ -482,13 +482,13 @@ code.markdown {
 }
 
 /* Dark mode styles for YouTube embeds */
-.markdown.dark .youtube-embed-wrapper,
+.github-markdown.dark .youtube-embed-wrapper,
 html.dark .youtube-embed-wrapper {
   background: #000000 !important;
   border: 1px solid #30363d !important;
 }
 
-.markdown.dark .youtube-info p {
+.github-markdown.dark .youtube-info p {
   color: #8b949e;
 }
 
@@ -501,7 +501,7 @@ html.dark .youtube-embed-wrapper {
   background-color: #f6f8fa;
 }
 
-.markdown.dark .gist-embed-wrapper {
+.github-markdown.dark .gist-embed-wrapper {
   border-color: #30363d;
   background-color: #161b22;
 }
@@ -512,7 +512,7 @@ html.dark .youtube-embed-wrapper {
   color: #656d76;
 }
 
-.markdown.dark .gist-loading {
+.github-markdown.dark .gist-loading {
   color: #7d8590;
 }
 
@@ -522,7 +522,7 @@ html.dark .youtube-embed-wrapper {
   overflow: hidden;
 }
 
-.markdown.dark .gist-content {
+.github-markdown.dark .gist-content {
   background-color: #0d1117;
 }
 
@@ -535,7 +535,7 @@ html.dark .youtube-embed-wrapper {
   align-items: center;
 }
 
-.markdown.dark .gist-header {
+.github-markdown.dark .gist-header {
   background-color: #161b22;
   border-bottom-color: #30363d;
 }
@@ -553,7 +553,7 @@ html.dark .youtube-embed-wrapper {
   font-size: 0.875rem;
 }
 
-.markdown.dark .gist-filename {
+.github-markdown.dark .gist-filename {
   color: #e6edf3;
 }
 
@@ -566,7 +566,7 @@ html.dark .youtube-embed-wrapper {
   font-weight: 500;
 }
 
-.markdown.dark .gist-language {
+.github-markdown.dark .gist-language {
   background-color: #1e3a8a;
   color: #93c5fd;
 }
@@ -584,7 +584,7 @@ html.dark .youtube-embed-wrapper {
   border-radius: 0;
 }
 
-.markdown.dark .gist-body pre {
+.github-markdown.dark .gist-body pre {
   background-color: #0d1117;
 }
 
@@ -603,51 +603,51 @@ html.dark .youtube-embed-wrapper {
 }
 
 /* Fix black lines in tables */
-.markdown table {
+.github-markdown table {
   border-collapse: separate !important;
   border-spacing: 0;
 }
 
-.markdown table th,
-.markdown table td {
+.github-markdown table th,
+.github-markdown table td {
   border: 1px solid #d0d7de !important;
   border-right: none !important;
   border-bottom: none !important;
 }
 
-.markdown table th:last-child,
-.markdown table td:last-child {
+.github-markdown table th:last-child,
+.github-markdown table td:last-child {
   border-right: 1px solid #d0d7de !important;
 }
 
-.markdown table tr:last-child th,
-.markdown table tr:last-child td {
+.github-markdown table tr:last-child th,
+.github-markdown table tr:last-child td {
   border-bottom: 1px solid #d0d7de !important;
 }
 
 /* Dark mode table borders */
-.markdown.dark table th,
-.markdown.dark table td {
+.github-markdown.dark table th,
+.github-markdown.dark table td {
   border-color: #30363d !important;
 }
 
-.markdown.dark table th:last-child,
-.markdown.dark table td:last-child {
+.github-markdown.dark table th:last-child,
+.github-markdown.dark table td:last-child {
   border-right-color: #30363d !important;
 }
 
-.markdown.dark table tr:last-child th,
-.markdown.dark table tr:last-child td {
+.github-markdown.dark table tr:last-child th,
+.github-markdown.dark table tr:last-child td {
   border-bottom-color: #30363d !important;
 }
 
 /* Fix image styling */
-.markdown .image-wrapper {
+.github-markdown .image-wrapper {
   margin: 1rem 0;
   text-align: center;
 }
 
-.markdown .image-wrapper img {
+.github-markdown .image-wrapper img {
   max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
@@ -655,7 +655,7 @@ html.dark .youtube-embed-wrapper {
 }
 
 /* Fix blockquote styling */
-.markdown blockquote {
+.github-markdown blockquote {
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   border-left: 4px solid #d0d7de;
@@ -663,16 +663,16 @@ html.dark .youtube-embed-wrapper {
   border-radius: 0 0.375rem 0.375rem 0;
 }
 
-.markdown.dark blockquote {
+.github-markdown.dark blockquote {
   border-left-color: #30363d;
   background-color: #161b22;
 }
 
 /* CRITICAL: Force code block line breaks - highest specificity */
-.markdown .highlight pre,
-.markdown pre.highlight,
+.github-markdown .highlight pre,
+.github-markdown pre.highlight,
 pre.highlight,
-.markdown pre,
+.github-markdown pre,
 pre {
   white-space: pre !important;
   word-wrap: normal !important;
@@ -682,8 +682,8 @@ pre {
   display: block !important;
 }
 
-.markdown .highlight pre code,
-.markdown pre code,
+.github-markdown .highlight pre code,
+.github-markdown pre code,
 pre code,
 code {
   white-space: pre !important;
@@ -695,16 +695,16 @@ code {
 }
 
 /* ULTIMATE FIX: Override any conflicting text-wrap rules */
-.markdown .highlight pre[style*="text-wrap"],
-.markdown pre[style*="text-wrap"],
+.github-markdown .highlight pre[style*="text-wrap"],
+.github-markdown pre[style*="text-wrap"],
 pre[style*="text-wrap"] {
   text-wrap: wrap !important;
   white-space: pre !important;
 }
 
 /* Force override with maximum specificity */
-html body .markdown .highlight pre,
-html body .markdown pre,
+html body .github-markdown .highlight pre,
+html body .github-markdown pre,
 html body pre {
   text-wrap: wrap !important;
   white-space: pre !important;
@@ -714,8 +714,8 @@ html body pre {
 }
 
 /* ULTIMATE OVERRIDE - Force pre instead of pre-wrap */
-.markdown .highlight pre[class*="language-"],
-.markdown pre[class*="language-"],
+.github-markdown .highlight pre[class*="language-"],
+.github-markdown pre[class*="language-"],
 pre[class*="language-"] {
   white-space: pre !important;
   text-wrap: wrap !important;
@@ -725,8 +725,8 @@ pre[class*="language-"] {
 }
 
 /* NUCLEAR OPTION - Override everything with maximum specificity */
-html body div#root .markdown .highlight pre,
-html body div#root .markdown pre,
+html body div#root .github-markdown .highlight pre,
+html body div#root .github-markdown pre,
 html body div#root pre {
   white-space: pre !important;
   text-wrap: wrap !important;
@@ -736,7 +736,7 @@ html body div#root pre {
 }
 
 /* FINAL ATTEMPT - Use CSS custom properties to force override */
-.markdown .highlight pre {
+.github-markdown .highlight pre {
   --white-space: pre !important;
   white-space: var(--white-space) !important;
   text-wrap: wrap !important;
@@ -746,8 +746,8 @@ html body div#root pre {
 }
 
 /* ABSOLUTE FINAL OVERRIDE - This MUST work */
-.markdown .highlight pre,
-.markdown pre,
+.github-markdown .highlight pre,
+.github-markdown pre,
 pre {
   white-space: pre !important;
   text-wrap: wrap !important;
@@ -757,8 +757,8 @@ pre {
   display: block !important;
 }
 
-.markdown .highlight pre code,
-.markdown pre code,
+.github-markdown .highlight pre code,
+.github-markdown pre code,
 pre code,
 code {
   white-space: pre !important;
@@ -770,8 +770,8 @@ code {
 }
 
 /* NUCLEAR OPTION - Override everything with maximum specificity */
-html body div#root .markdown .highlight pre,
-html body div#root .markdown pre,
+html body div#root .github-markdown .highlight pre,
+html body div#root .github-markdown pre,
 html body div#root pre {
   white-space: pre !important;
   text-wrap: wrap !important;
@@ -784,8 +784,8 @@ html body div#root pre {
   min-height: auto !important;
 }
 
-html body div#root .markdown .highlight pre code,
-html body div#root .markdown pre code,
+html body div#root .github-markdown .highlight pre code,
+html body div#root .github-markdown pre code,
 html body div#root pre code,
 html body div#root code {
   white-space: pre !important;
@@ -797,7 +797,7 @@ html body div#root code {
 }
 
 /* Fix code block styling */
-.markdown .highlight {
+.github-markdown .highlight {
   margin: 1rem 0;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -808,13 +808,13 @@ html body div#root code {
 
 
 /* Fix inline code styling */
-.markdown code:not(.highlight code) {
+.github-markdown code:not(.highlight code) {
   background-color: rgba(175, 184, 193, 0.2);
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
 }
 
-.markdown.dark code:not(.highlight code) {
+.github-markdown.dark code:not(.highlight code) {
   background-color: rgba(110, 118, 129, 0.4);
 }

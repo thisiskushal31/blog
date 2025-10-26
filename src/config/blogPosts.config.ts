@@ -1,4 +1,4 @@
-import { BlogPost } from '../content/blogPostIndex';
+import { BlogPost } from '../content/index';
 
 // Static imports for all posts (add new imports here)
 import { blogPost as comprehensiveFeaturesShowcase } from '../content/blog/comprehensive-features-showcase';

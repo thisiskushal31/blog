@@ -13,7 +13,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId, className = '' }) 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const handleClick = () => {
     if (isLoaded || isLoading) return;
@@ -68,7 +68,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId, className = '' }) 
       <div className={`youtube-embed-wrapper ${className}`}>
         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
           <iframe
-            ref={containerRef}
+            ref={iframeRef}
             className="youtube-iframe"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=1`}
             title="YouTube video player"

@@ -10,7 +10,18 @@ export const BASE_URL = "https://thisiskushal31.github.io/blog/"; // Change to y
 export const PORTFOLIO_URL = "https://thisiskushal31.github.io/"; // Change to your portfolio URL
 
 // ===== AUTHOR CONFIG =====
-export const AUTHOR = {
+export interface Author {
+  name: string;
+  title: string;
+  avatar: string;
+  bio: string;
+  location: string;
+  website: string;
+  publicProfile: string;
+  email: string;
+}
+
+export const AUTHOR: Author = {
   name: profileData.personal.name,
   title: profileData.personal.title,
   avatar: profileData.personal.avatar,
