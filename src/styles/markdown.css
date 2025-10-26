@@ -5,12 +5,20 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   line-height: 1.5;
-  color: hsl(0 0% 18%); /* --foreground from link site */
+  color: hsl(0 0% 18%); /* Light mode default */
   word-wrap: break-word;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.blog-markdown.dark {
-  color: hsl(210 40% 98%); /* --foreground from link site dark mode */
+/* Dark mode - based on html element */
+html.dark .blog-markdown {
+  color: hsl(210 40% 98%) !important;
+  background: transparent !important;
+}
+
+/* Light mode - explicit override */
+html:not(.dark) .blog-markdown {
+  color: hsl(0 0% 18%) !important;
   background: transparent !important;
 }
 
@@ -146,17 +154,19 @@ html.dark .prose.prose-lg {
 
 /* Tables */
 .blog-markdown .table-wrapper {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: visible;
   margin-bottom: 16px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .blog-markdown table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  overflow: auto;
-  display: block;
-  white-space: nowrap;
+  min-width: 100%;
+  display: table;
 }
 
 .blog-markdown table th,
@@ -169,15 +179,26 @@ html.dark .prose.prose-lg {
 .blog-markdown table th {
   background-color: #f6f8fa;
   font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.blog-markdown.dark table th,
-.blog-markdown.dark table td {
-  border-color: #30363d;
+.blog-markdown table th,
+.blog-markdown table td {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.blog-markdown.dark table th {
-  background-color: #161b22;
+/* Dark mode table styles */
+html.dark .blog-markdown table th,
+html.dark .blog-markdown table td {
+  border-color: #30363d !important;
+}
+
+html.dark .blog-markdown table th {
+  background-color: #161b22 !important;
+}
+
+html.dark .blog-markdown table {
+  background-color: transparent !important;
 }
 
 /* Blockquotes */
@@ -330,18 +351,16 @@ html.dark .prose.prose-lg {
 
 /* Code block styling - no syntax highlighting */
 .blog-markdown .highlight pre {
-  background-color: hsl(0 0% 100%) !important; /* --card from link site */
   border-radius: 0.75rem !important; /* --radius from link site */
   padding: 16px !important;
   overflow-x: auto !important;
   margin: 16px 0 !important;
-  border: 1px solid hsl(0 0% 85%) !important; /* --border from link site */
-  box-shadow: 0 2px 6px hsl(0 0% 0% / 0.04) !important; /* --shadow-card from link site */
   white-space: pre !important;
   word-wrap: normal !important;
   overflow-wrap: normal !important;
   text-wrap: wrap !important;
   word-break: normal !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Force code block formatting with maximum specificity */
@@ -356,10 +375,47 @@ pre.blog-markdown {
   display: block !important;
 }
 
-.blog-markdown.dark .highlight pre {
-  background-color: hsl(217 32% 18%) !important; /* --card from link site dark mode */
-  border-color: hsl(217 32% 25%) !important; /* --border from link site dark mode */
-  box-shadow: 0 2px 6px hsl(0 0% 0% / 0.3) !important; /* --shadow-card from link site dark mode */
+/* Dark mode code blocks */
+html.dark .blog-markdown .highlight pre,
+html.dark .blog-markdown pre.highlight {
+  background-color: hsl(217 32% 18%) !important;
+  border: 1px solid hsl(217 32% 25%) !important;
+  box-shadow: 0 2px 6px hsl(0 0% 0% / 0.3) !important;
+}
+
+html.dark .blog-markdown code {
+  background-color: hsl(217 32% 25%);
+  color: hsl(168 50% 70%);
+}
+
+html.dark .blog-markdown .highlight pre code {
+  color: #f0f6fc !important;
+}
+
+/* Ensure all code elements have transitions */
+.blog-markdown pre {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.blog-markdown code {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode code blocks */
+html:not(.dark) .blog-markdown .highlight pre,
+html:not(.dark) .blog-markdown pre.highlight {
+  background-color: hsl(0 0% 96%) !important;
+  border: 1px solid hsl(0 0% 85%) !important;
+  box-shadow: 0 2px 6px hsl(0 0% 0% / 0.04) !important;
+}
+
+html:not(.dark) .blog-markdown code {
+  background-color: hsl(39 20% 92%);
+  color: hsl(168 45% 50%);
+}
+
+html:not(.dark) .blog-markdown .highlight pre code {
+  color: #0d1117 !important;
 }
 
 .blog-markdown .highlight pre code {

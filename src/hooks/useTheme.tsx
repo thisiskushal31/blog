@@ -26,6 +26,17 @@ const initialState: ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
+// Ensure HTML element has the correct class on page load
+if (typeof document !== 'undefined') {
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('blog-theme');
+  const initialTheme = savedTheme || 'light';
+  
+  // Remove both classes first to avoid conflicts
+  root.classList.remove('light', 'dark');
+  root.classList.add(initialTheme);
+}
+
 /**
  * ThemeProvider - Provides theme context to the app.
  * Handles theme switching and persistence.
@@ -38,9 +49,26 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   // Only wrap the logic in try/catch for error boundaries
   try {
-    const [theme, setTheme] = useState<Theme>(
-      () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-    );
+    const [theme, setTheme] = useState<Theme>(() => {
+      // Apply theme immediately before React renders
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem(storageKey) as Theme;
+      const initialTheme = savedTheme || defaultTheme;
+      
+      // Apply theme to HTML element immediately
+      root.classList.remove('light', 'dark');
+      if (initialTheme === 'system') {
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+          .matches
+          ? 'dark'
+          : 'light';
+        root.classList.add(systemTheme);
+      } else {
+        root.classList.add(initialTheme);
+      }
+      
+      return initialTheme;
+    });
 
     useEffect(() => {
       const root = window.document.documentElement;

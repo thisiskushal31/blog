@@ -3,7 +3,7 @@
 // Maintains all existing functionality while providing a clean, readable look
 
 import React, { useState, useEffect, useRef } from 'react';
-import { SimpleRenderer } from '@/lib/marked/simple-renderer';
+import { Renderer } from '@/lib/marked/renderer';
 import { useTheme } from '@/hooks/useTheme';
 import DOMPurify from 'dompurify';
 import Prism from 'prismjs';
@@ -40,12 +40,12 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   const [htmlContent, setHtmlContent] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
-  const parserRef = useRef<SimpleRenderer | null>(null);
+  const parserRef = useRef<Renderer | null>(null);
 
   // Initialize parser
   useEffect(() => {
     // Always create a new renderer to ensure fresh state
-    parserRef.current = new SimpleRenderer(true); // true = open links in new tab for blog post content
+    parserRef.current = new Renderer(true); // true = open links in new tab for blog post content
   }, []);
 
   // Parse markdown content
@@ -147,7 +147,6 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   useEffect(() => {
     if (htmlContent && containerRef.current) {
       const preElements = containerRef.current.querySelectorAll('.blog-markdown .highlight pre');
-      const isDarkMode = theme === 'dark';
       
       preElements.forEach(pre => {
         // Style the highlight wrapper first
@@ -160,16 +159,16 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
           highlightWrapper.style.setProperty('margin', '0', 'important');
         }
         
-        // Apply design system colors for code blocks
-        pre.style.setProperty('background-color', isDarkMode ? 'hsl(217 32% 18%)' : 'hsl(0 0% 100%)', 'important');
+        // Apply design system colors for code blocks - remove all inline color styles
+        pre.style.removeProperty('background-color');
+        pre.style.removeProperty('border');
+        pre.style.removeProperty('box-shadow');
         pre.style.setProperty('border-radius', '0.75rem', 'important');
         pre.style.setProperty('padding', '16px', 'important');
         pre.style.setProperty('margin', '16px 0', 'important');
-        pre.style.setProperty('border', isDarkMode ? '1px solid hsl(217 32% 25%)' : '1px solid hsl(0 0% 85%)', 'important');
         pre.style.setProperty('overflow-x', 'auto', 'important');
         pre.style.setProperty('font-size', '14px', 'important');
         pre.style.setProperty('line-height', '1.5', 'important');
-        pre.style.setProperty('box-shadow', isDarkMode ? '0 2px 6px hsl(0 0% 0% / 0.3)' : '0 2px 6px hsl(0 0% 0% / 0.04)', 'important');
         pre.style.setProperty('white-space', 'pre', 'important');
         pre.style.setProperty('word-wrap', 'normal', 'important');
         pre.style.setProperty('overflow-wrap', 'normal', 'important');
@@ -184,11 +183,11 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             Prism.highlightElement(code as HTMLElement);
           }, 0);
           
-          // Override Prism styles to work with our design system
+          // Override Prism styles - remove inline color styles
           code.style.setProperty('background', 'transparent', 'important');
           code.style.setProperty('border', 'none', 'important');
           code.style.setProperty('border-radius', '0', 'important');
-          code.style.setProperty('color', isDarkMode ? '#f0f6fc' : '#0d1117', 'important');
+          code.style.removeProperty('color');
           code.style.setProperty('font-family', 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace', 'important');
           code.style.setProperty('font-size', '15px', 'important');
           code.style.setProperty('line-height', '1.6', 'important');
@@ -203,6 +202,16 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
           code.style.setProperty('overflow-wrap', 'normal', 'important');
           code.style.setProperty('text-wrap', 'wrap', 'important');
           code.style.setProperty('word-break', 'normal', 'important');
+        });
+      });
+      
+      // Also remove inline styles from tables
+      const tables = containerRef.current.querySelectorAll('.blog-markdown table');
+      tables.forEach(table => {
+        table.style.removeProperty('background-color');
+        const cells = table.querySelectorAll('th, td');
+        cells.forEach(cell => {
+          cell.style.removeProperty('background-color');
         });
       });
     }
@@ -376,7 +385,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`blog-markdown ${theme === 'dark' ? 'dark' : ''} ${className}`}
+      className={`blog-markdown${className ? ' ' + className : ''}`}
     >
       {processedHtml.split(/(__GIST_EMBED_\d+__|__YOUTUBE_EMBED_\d+__)/).map((part, index) => {
         const gistEmbed = gistEmbeds.find(embed => embed.placeholder === part);

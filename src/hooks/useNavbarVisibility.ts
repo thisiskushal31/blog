@@ -10,8 +10,7 @@ export const useNavbarVisibility = () => {
     // Check initial theme
     const checkTheme = () => {
       const isDarkMode = document.documentElement.classList.contains('dark') ||
-                        (localStorage.getItem('theme') === 'dark') ||
-                        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                        (localStorage.getItem('blog-theme') === 'dark');
       setIsDark(isDarkMode);
     };
 
@@ -78,15 +77,13 @@ export const useNavbarVisibility = () => {
   const toggleTheme = () => {
     const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const root = document.documentElement;
     
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    // Remove both classes first to avoid conflicts
+    root.classList.remove('light', 'dark');
+    root.classList.add(newTheme);
     
+    localStorage.setItem('blog-theme', newTheme);
     setIsDark(newTheme === 'dark');
   };
 

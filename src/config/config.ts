@@ -83,7 +83,7 @@ export const BLOG_CONFIG = {
 
 // ===== THEME CONFIG =====
 export const THEME_CONFIG = {
-  defaultTheme: "system", // "light" | "dark" | "system"
+  defaultTheme: "light", // "light" | "dark" | "system"
   enableThemeToggle: true,
   enableReadingProgress: true,
   enableScrollToTop: true,

@@ -4,7 +4,7 @@
 
 import { marked } from 'marked';
 
-export class SimpleRenderer {
+export class Renderer {
   private marked: typeof marked;
   private openLinksInNewTab: boolean;
 
@@ -16,7 +16,7 @@ export class SimpleRenderer {
 
   private setupMarked(): void {
     this.marked.setOptions({
-      gfm: true, // GitHub Flavored Markdown
+      gfm: true, // GitHub Flavored Markdown (enables tables, strikethrough, etc.)
       breaks: false,
       pedantic: false,
       sanitize: false,
@@ -30,7 +30,7 @@ export class SimpleRenderer {
     try {
       let html = this.marked.parse(markdown);
       
-      // Apply GitHub-style enhancements
+      // Apply custom enhancements
       html = this.enhanceWithGitHubStyling(html);
       
       return html;
@@ -41,7 +41,7 @@ export class SimpleRenderer {
   }
 
   private enhanceWithGitHubStyling(html: string): string {
-    // Add GitHub-style classes and enhancements
+    // Add custom classes and enhancements
     
     // Process custom embeds first
     html = this.processCustomEmbeds(html);
@@ -68,7 +68,7 @@ export class SimpleRenderer {
       `;
     });
 
-    // Code blocks with GitHub styling (with language)
+    // Code blocks with syntax highlighting (with language)
     html = html.replace(/<pre><code class="language-([^"]+)"[^>]*>(.*?)<\/code><\/pre>/gs, (match, lang, code) => {
       // Remove leading whitespace from code content
       const trimmedCode = code.replace(/^\s+/, '');
@@ -98,7 +98,7 @@ export class SimpleRenderer {
     // Inline code
     html = html.replace(/<code>(.*?)<\/code>/g, '<code class="notranslate">$1</code>');
 
-    // Tables with GitHub styling
+    // Tables with custom styling
     html = html.replace(/<table>/g, '<div class="table-wrapper"><table class="highlight tab-size js-file-line-container">');
     html = html.replace(/<\/table>/g, '</table></div>');
 
@@ -124,7 +124,7 @@ export class SimpleRenderer {
       });
     }
 
-    // Images with GitHub styling
+    // Images with custom styling
     html = html.replace(/<img src="([^"]+)" alt="([^"]*)"(?: title="([^"]*)")?>/g, (match, src, alt, title) => {
       const titleAttr = title ? ` title="${title}"` : '';
       return `
@@ -186,4 +186,4 @@ export class SimpleRenderer {
   }
 }
 
-export default SimpleRenderer;
+export default Renderer;

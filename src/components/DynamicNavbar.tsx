@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Sun, Moon, Github, Linkedin, ExternalLink, Copy, Check } from 'lucide-react';
 import { AUTHOR, SOCIAL_LINKS, QUICK_ACTIONS } from '@/config/config';
@@ -9,6 +9,32 @@ interface DynamicNavbarProps {
 }
 
 const DynamicNavbar: React.FC<DynamicNavbarProps> = ({ isVisible, onClose }) => {
+  const [isDark, setIsDark] = useState(false);
+
+  // Check initial theme and listen for changes
+  useEffect(() => {
+    const checkTheme = () => {
+      const isDarkMode = document.documentElement.classList.contains('dark') ||
+                        (localStorage.getItem('blog-theme') === 'dark');
+      setIsDark(isDarkMode);
+    };
+
+    checkTheme();
+
+    // Listen for theme changes
+    const observer = new MutationObserver(() => {
+      checkTheme();
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border shadow-card transition-all duration-300 ease-in-out transform ${
       isVisible 
@@ -97,19 +123,26 @@ const DynamicNavbar: React.FC<DynamicNavbarProps> = ({ isVisible, onClose }) => 
             {/* Theme Toggle - Old style */}
             <button
               onClick={() => {
-                const isDark = document.documentElement.classList.contains('dark');
-                if (isDark) {
-                  document.documentElement.classList.remove('dark');
-                  localStorage.setItem('theme', 'light');
+                const currentIsDark = document.documentElement.classList.contains('dark');
+                const root = document.documentElement;
+                
+                // Remove both classes first
+                root.classList.remove('light', 'dark');
+                
+                if (currentIsDark) {
+                  root.classList.add('light');
+                  localStorage.setItem('blog-theme', 'light');
+                  setIsDark(false);
                 } else {
-                  document.documentElement.classList.add('dark');
-                  localStorage.setItem('theme', 'dark');
+                  root.classList.add('dark');
+                  localStorage.setItem('blog-theme', 'dark');
+                  setIsDark(true);
                 }
               }}
               className="p-2 text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 transition-all duration-200 hover:scale-110 hover:shadow-md"
-              title="Toggle Dark Mode"
+              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              <Moon className="w-4 h-4" />
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
           </div>
         </div>

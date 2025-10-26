@@ -128,7 +128,7 @@ Testing Environment: AWS c5.2xlarge instances, 1TB dataset, realistic query patt
 | **Elastic Cloud Hosted** | 110ms | 2,400 | N/A (managed) | **75/100** |
 | **Elastic Cloud Serverless** | 125ms | 2,200* | N/A (auto-scaling) | **70/100** |
 
-*Serverless performance varies significantly with auto-scaling behavior
+> Note: Serverless performance varies significantly with auto-scaling behavior
 
 **Performance Insights:**
 - **Self-managed deployments** consistently outperform managed services by 15-25%
