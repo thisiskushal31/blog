@@ -146,7 +146,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   // Apply syntax highlighting and code block styling after content is rendered
   useEffect(() => {
     if (htmlContent && containerRef.current) {
-      const preElements = containerRef.current.querySelectorAll('.markdown .highlight pre');
+      const preElements = containerRef.current.querySelectorAll('.blog-markdown .highlight pre');
       const isDarkMode = theme === 'dark';
       
       preElements.forEach(pre => {
@@ -252,7 +252,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
       Prism.highlightAll();
       
       // Also try individual highlighting as fallback
-      const codeElements = containerRef.current.querySelectorAll('.markdown .highlight pre code');
+      const codeElements = containerRef.current.querySelectorAll('.blog-markdown .highlight pre code');
       codeElements.forEach(code => {
         try {
           Prism.highlightElement(code as HTMLElement);
@@ -376,7 +376,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`markdown ${theme === 'dark' ? 'dark' : ''} ${className}`}
+      className={`blog-markdown ${theme === 'dark' ? 'dark' : ''} ${className}`}
     >
       {processedHtml.split(/(__GIST_EMBED_\d+__|__YOUTUBE_EMBED_\d+__)/).map((part, index) => {
         const gistEmbed = gistEmbeds.find(embed => embed.placeholder === part);

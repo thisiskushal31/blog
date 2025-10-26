@@ -1,6 +1,6 @@
-// Simple GitHub-style Markdown Renderer
-// Clean implementation that works with current Marked.js version
-// Maintains GitHub's exact styling and functionality
+// Markdown Renderer
+// Simple blog markdown renderer
+// Clean implementation for rendering blog post content
 
 import { marked } from 'marked';
 

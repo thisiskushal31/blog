@@ -1,5 +1,5 @@
-// GitHubLayout.tsx
-// Complete GitHub-style website layout
+// Layout.tsx
+// Blog layout component with theme support and navigation
 // Clean architecture with proper component separation
 
 import React, { useState } from 'react';
@@ -20,13 +20,13 @@ import {
 import { useTheme } from '@/hooks/useTheme';
 import { BLOG_BASE_PATH, PORTFOLIO_URL, SOCIAL_LINKS } from '@/config/config';
 
-interface GitHubLayoutProps {
+interface LayoutProps {
   children: React.ReactNode;
   variant?: 'blog' | 'post';
   className?: string;
 }
 
-const GitHubLayout: React.FC<GitHubLayoutProps> = ({ 
+const Layout: React.FC<LayoutProps> = ({ 
   children, 
   variant = 'blog',
   className = '' 
@@ -223,4 +223,4 @@ const GitHubLayout: React.FC<GitHubLayoutProps> = ({
   );
 };
 
-export default GitHubLayout;
+export default Layout;
