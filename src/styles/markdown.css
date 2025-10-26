@@ -415,7 +415,7 @@ html:not(.dark) .blog-markdown code {
 }
 
 html:not(.dark) .blog-markdown .highlight pre code {
-  color: #0d1117 !important;
+  color: #4b5563 !important;
 }
 
 .blog-markdown .highlight pre code {
