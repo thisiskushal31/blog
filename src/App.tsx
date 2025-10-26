@@ -1,7 +1,6 @@
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@/hooks/useTheme';
-import Navigation from '@/components/navigation/Navigation';
 import Blog from '@/pages/Blog';
 import BlogPost from '@/pages/BlogPost';
 import NotFound from '@/pages/NotFound';
@@ -11,8 +10,7 @@ const App: React.FC = () => {
     <ThemeProvider defaultTheme="light" storageKey="blog-theme">
       <HashRouter>
         <div className="min-h-screen bg-background">
-          <Navigation />
-          <main className="pt-16">
+          <main>
             <Routes>
               <Route path="/" element={<Blog />} />
               <Route path="/blog" element={<Blog />} />

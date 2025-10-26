@@ -3,6 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, Tag, Share2, BookOpen } from 'lucide-react';
 import MarkdownViewer from '@/components/common/MarkdownViewer';
 import ScrollToTop from '@/components/common/ScrollToTop';
+import DynamicNavbar from '@/components/DynamicNavbar';
+import FloatingActionButtons from '@/components/FloatingActionButtons';
+import { useNavbarVisibility } from '@/hooks/useNavbarVisibility';
 import { blogPosts } from '@/content/index';
 import { BLOG_POST_CONFIG } from '@/config/config';
 
@@ -10,6 +13,9 @@ const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<typeof blogPosts[0] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Navbar visibility and theme management
+  const { showNavbar, isDark, toggleTheme, toggleNavbar } = useNavbarVisibility();
 
   useEffect(() => {
     const foundPost = blogPosts.find(p => p.slug === slug);
@@ -84,6 +90,14 @@ const BlogPost: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Dynamic Navbar */}
+      <DynamicNavbar isVisible={showNavbar} onClose={toggleNavbar} />
+      
+      {/* Floating Action Buttons */}
+      <FloatingActionButtons
+        showNavbar={showNavbar}
+        onToggleNavbar={toggleNavbar}
+      />
       {/* Cover Image - Full width at top */}
       {post.coverImage && (
         <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden -mt-16 pt-16">

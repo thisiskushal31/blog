@@ -9,7 +9,7 @@ import DOMPurify from 'dompurify';
 import Prism from 'prismjs';
 import GistEmbed from './GistEmbed';
 import YouTubeEmbed from './YouTubeEmbed';
-import 'prismjs/themes/prism.css';
+import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';

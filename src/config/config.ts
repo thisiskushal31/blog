@@ -1,5 +1,8 @@
 // Blog global configuration
 // Central place to change all user-specific settings
+// For comprehensive profile management, see profile.json
+
+import profileData from './profile.json';
 
 // ===== DEPLOYMENT CONFIG =====
 export const BLOG_BASE_PATH = "/blog"; // Change this to "/book-blog" or any other base path as needed
@@ -8,21 +11,24 @@ export const PORTFOLIO_URL = "https://thisiskushal31.github.io/"; // Change to y
 
 // ===== AUTHOR CONFIG =====
 export const AUTHOR = {
-  name: "Kushal Gupta",
-  title: "Tech Professional",
-  avatar: "/blog/profile.jpeg", // Change this path as needed
-  bio: "Insights, tutorials, and thoughts on technology, development, and everything in between.",
-  location: "Global",
-  website: "https://thisiskushal31.github.io/",
+  name: profileData.personal.name,
+  title: profileData.personal.title,
+  avatar: profileData.personal.avatar,
+  bio: profileData.personal.bio,
+  location: profileData.personal.location,
+  website: profileData.websites.portfolio,
+  publicProfile: profileData.websites.publicProfile,
+  email: profileData.personal.email,
 };
 
 // ===== SOCIAL LINKS =====
 export const SOCIAL_LINKS = {
-  github: "https://github.com/thisiskushal31",
-  linkedin: "https://www.linkedin.com/in/thisiskushalgupta/",
-  portfolio: "https://thisiskushal31.github.io/",
-  twitter: "", // Add your Twitter URL if you have one
-  email: "", // Add your email if you want to display it
+  github: profileData.social.github,
+  linkedin: profileData.social.linkedin,
+  portfolio: profileData.websites.portfolio,
+  twitter: profileData.social.twitter,
+  email: profileData.personal.email,
+  publicProfile: profileData.websites.publicProfile,
 };
 
 // ===== BLOG CONFIGURATION =====
@@ -78,6 +84,7 @@ export const NAVIGATION_CONFIG = {
   showCopyLinkButton: true,
   showThemeToggle: true,
   enableMobileMenu: false, // Set to true if you add mobile menu back
+  showPublicProfileLink: true, // Show link to public profile
 };
 
 // ===== BLOG POST CONFIG =====
@@ -94,3 +101,16 @@ export const BLOG_POST_CONFIG = {
   enableLinkableHeaders: true,
   enableShareButtons: false, // Set to true if you want to add share buttons
 };
+
+// ===== CENTRALIZED PROFILE EXPORT =====
+// Export the complete profile data for use in other projects
+export const PROFILE_DATA = profileData;
+
+// Export individual profile sections for easy access
+export const PERSONAL_INFO = profileData.personal;
+export const WEBSITE_LINKS = profileData.websites;
+export const SOCIAL_MEDIA = profileData.social;
+export const PROFESSIONAL_INFO = profileData.professional;
+export const PROJECTS = profileData.projects;
+export const CONTACT_INFO = profileData.contact;
+export const QUICK_ACTIONS = profileData.quickActions;

@@ -15,7 +15,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import DOMPurify from "dompurify";
 import Prism from "prismjs";
-import "prismjs/themes/prism.css";
+import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-typescript";
@@ -27,7 +27,7 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-docker";
 import "prismjs/components/prism-git";
 import "prismjs/components/prism-markdown";
-import { BASE_URL, BLOG_BASE_PATH, AUTHOR } from '@/config/config';
+import { BASE_URL, BLOG_BASE_PATH, AUTHOR } from '../config/config';
 
 interface MarkdownViewerProps {
   content: string;
@@ -772,7 +772,7 @@ const MarkdownViewer = ({ content, className = "", postSlug, onContentFullyLoade
       <div className="relative">
         <div
           ref={containerRef}
-          className={`prose prose-slate max-w-none ${className}`}
+          className={`prose prose-slate dark:prose-invert max-w-none ${className}`}
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
         {showLoadMore && (

@@ -301,6 +301,19 @@
     @apply text-foreground max-w-none;
   }
 
+  /* Dark mode prose improvements */
+  .dark .prose {
+    @apply text-gray-100;
+  }
+
+  .dark .prose p {
+    @apply text-gray-200;
+  }
+
+  .dark .prose li {
+    @apply text-gray-200;
+  }
+
   .prose h1 {
     @apply text-4xl font-bold mb-6 mt-8 first:mt-0;
     color: hsl(var(--primary));
@@ -350,8 +363,7 @@
   }
 
   .prose code {
-    @apply bg-muted px-2 py-1 rounded text-sm font-mono;
-    color: hsl(var(--primary));
+    @apply bg-muted px-2 py-1 rounded text-sm font-mono text-foreground;
   }
 
   .prose pre {
@@ -361,6 +373,60 @@
 
   .prose pre code {
     @apply bg-transparent p-0 text-foreground;
+  }
+
+  /* Dark mode code block improvements */
+  .dark .prose pre {
+    @apply bg-gray-900 border-gray-700;
+  }
+
+  .dark .prose pre code {
+    @apply text-gray-100;
+  }
+
+  .dark .prose code {
+    @apply bg-gray-800 text-gray-100;
+  }
+
+  /* CSS variables for code backgrounds */
+  :root {
+    --code-bg: #f8f9fa;
+  }
+
+  .dark {
+    --code-bg: #1f2937;
+  }
+
+  /* Override Prism.js styles for dark mode */
+  .dark .prose pre[class*="language-"] {
+    @apply bg-gray-900 !important;
+  }
+
+  .dark .prose code[class*="language-"] {
+    @apply text-gray-100 !important;
+  }
+
+  .dark .prose pre {
+    @apply bg-gray-900 !important;
+  }
+
+  .dark .prose code {
+    @apply bg-gray-800 text-gray-100 !important;
+  }
+
+  /* Force dark backgrounds for all code elements in dark mode */
+  .dark pre,
+  .dark code,
+  .dark .prose pre,
+  .dark .prose code {
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
+  }
+
+  .dark pre[class*="language-"],
+  .dark code[class*="language-"] {
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
   }
 
   .prose table {

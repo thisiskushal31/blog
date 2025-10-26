@@ -63,8 +63,20 @@ const Navigation = () => {
               to="/blog" 
               className="flex items-center space-x-2 group"
             >
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-                <span className="text-primary-foreground font-bold text-sm">KG</span>
+              <div className="w-8 h-8 rounded-full overflow-hidden bg-teal-500 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                <img
+                  src="/blog/profile.jpeg"
+                  alt="Kushal Gupta"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = '<span class="text-white font-bold text-xs">KG</span>';
+                    }
+                  }}
+                />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-200">

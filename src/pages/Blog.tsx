@@ -5,14 +5,20 @@ import BlogCard from '@/components/blog/BlogCard';
 import SearchFilter from '@/components/blog/SearchFilter';
 import ScrollToTop from '@/components/common/ScrollToTop';
 import LinkableHeading from '@/components/LinkableHeading';
+import DynamicNavbar from '@/components/DynamicNavbar';
+import FloatingActionButtons from '@/components/FloatingActionButtons';
+import { useNavbarVisibility } from '@/hooks/useNavbarVisibility';
 import { blogPosts } from '@/content/index';
-import { BLOG_CONFIG, AUTHOR } from '@/config/config';
+import { BLOG_CONFIG, AUTHOR, SOCIAL_LINKS, NAVIGATION_CONFIG } from '@/config/config';
 
 const Blog: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = BLOG_CONFIG.postsPerPage;
+  
+  // Navbar visibility and theme management
+  const { showNavbar, isDark, toggleTheme, toggleNavbar } = useNavbarVisibility();
 
   // Get all unique tags from blog posts
   const availableTags = useMemo(() => {
@@ -57,82 +63,135 @@ const Blog: React.FC = () => {
 
     return (
       <div className="min-h-screen bg-background">
-      {/* Personal Hero Section */}
-      <section className="relative hero-gradient py-16 px-4 overflow-hidden">
-        {/* Subtle Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3"></div>
-        <div className="absolute top-8 left-8 w-16 h-16 bg-primary/5 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-8 right-8 w-20 h-20 bg-accent/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+        {/* Dynamic Navbar */}
+        <DynamicNavbar isVisible={showNavbar} onClose={toggleNavbar} />
         
-        <div className="relative max-w-4xl mx-auto text-center">
-          {/* Personal Greeting */}
-          <div className="mb-8 fade-in-up">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                <span className="text-primary font-bold text-lg">KG</span>
-              </div>
-              <div className="text-left">
-                <h1 className="text-2xl font-semibold text-foreground">Hey there! I'm Kushal</h1>
-                <p className="text-muted-foreground text-sm">Welcome to my tech corner</p>
-              </div>
-            </div>
-          </div>
+        {/* Floating Action Buttons */}
+        <FloatingActionButtons
+          showNavbar={showNavbar}
+          onToggleNavbar={toggleNavbar}
+        />
+        
+       {/* Personal Intro + Blog Section */}
+       <section id="intro-section" className="relative py-16 px-4 overflow-hidden">
+         {/* Animated Background */}
+         <div className="absolute inset-0 z-0">
+           <div className="w-full h-full bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-teal-600/10">
+             {/* Animated Line Pattern Background */}
+             <div className="absolute inset-0 opacity-60">
+               <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                 <defs>
+                   <pattern id="line-pattern" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse">
+                     <line x1="0" y1="0" x2="15" y2="0" stroke="#3b82f6" strokeWidth="1" opacity="0.4">
+                       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite"/>
+                     </line>
+                     <line x1="0" y1="0" x2="0" y2="15" stroke="#3b82f6" strokeWidth="1" opacity="0.4">
+                       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="6s" repeatCount="indefinite"/>
+                     </line>
+                     <circle cx="7.5" cy="7.5" r="1" fill="#3b82f6" opacity="0.3">
+                       <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite"/>
+                     </circle>
+                   </pattern>
+                 </defs>
+                 <rect width="100%" height="100%" fill="url(#line-pattern)"/>
+               </svg>
+             </div>
+             
+             {/* Floating Code Elements */}
+             <div className="absolute top-10 left-10 text-6xl font-mono text-primary/10 select-none animate-bounce" style={{animationDuration: '6s'}}>
+               {'</>'}
+             </div>
+             <div className="absolute bottom-10 right-10 text-4xl font-mono text-accent/10 select-none animate-pulse" style={{animationDuration: '4s'}}>
+               {'{}'}
+             </div>
+             <div className="absolute top-1/2 left-1/4 text-3xl font-mono text-muted-foreground/10 select-none animate-ping" style={{animationDuration: '8s'}}>
+               {'<div>'}
+             </div>
+             
+             {/* Additional Floating Elements */}
+             <div className="absolute top-1/3 right-1/4 text-2xl font-mono text-blue-500/10 select-none animate-float">
+               {'React'}
+             </div>
+             <div className="absolute bottom-1/3 left-1/3 text-xl font-mono text-purple-500/10 select-none animate-float" style={{animationDelay: '2s'}}>
+               {'TypeScript'}
+             </div>
+             <div className="absolute top-2/3 right-1/3 text-lg font-mono text-teal-500/10 select-none animate-float" style={{animationDelay: '4s'}}>
+               {'Node.js'}
+             </div>
+             
+             {/* Animated Dots */}
+             <div className="absolute top-1/4 right-1/5 w-2 h-2 bg-primary/20 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+             <div className="absolute bottom-1/4 left-1/5 w-1 h-1 bg-accent/20 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+             <div className="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-blue-500/20 rounded-full animate-ping" style={{animationDelay: '5s'}}></div>
+           </div>
+           <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/70 to-background/55"></div>
+         </div>
+         <div className="relative z-10 max-w-6xl mx-auto">
+           {/* Personal Introduction */}
+           <div className="mb-12">
+             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+               {/* Photo */}
+               <div className="flex-shrink-0">
+                 <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white/20">
+                   <img 
+                     src={AUTHOR.avatar} 
+                     alt={AUTHOR.name} 
+                     className="w-full h-full object-cover"
+                     onError={(e) => {
+                       // Fallback to initials if image fails to load
+                       const target = e.target as HTMLImageElement;
+                       target.style.display = 'none';
+                       const parent = target.parentElement;
+                       if (parent) {
+                         parent.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-primary to-accent flex items-center justify-center"><span class="text-white font-bold text-3xl">KG</span></div>';
+                       }
+                     }}
+                   />
+                 </div>
+               </div>
+               
+               {/* Bio */}
+               <div className="flex-1 text-center md:text-left">
+                 <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Hi, I'm {AUTHOR.name}</h1>
+                 <p className="text-lg text-muted-foreground mb-4">{AUTHOR.title}</p>
+                 <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+                   {AUTHOR.bio}
+                 </p>
+               </div>
+             </div>
+           </div>
 
-          {/* Main Title */}
-          <div className="mb-6 fade-in-up" style={{ animationDelay: '100ms' }}>
-            <LinkableHeading level={1} id="tech-blog" className="text-4xl md:text-5xl font-bold text-foreground mb-3 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
-              Tech Blog
-            </LinkableHeading>
-            <p className="text-lg text-primary font-medium">✨ Where Ideas Meet Innovation ✨</p>
-          </div>
+           {/* Stats */}
+           <div className="text-center mb-6">
+             <div className="inline-flex items-center space-x-4 text-xs text-muted-foreground bg-muted/50 rounded-lg px-4 py-2">
+               <div className="flex items-center space-x-1">
+                 <BookOpen className="w-3 h-3 text-primary" />
+                 <span>{blogPosts.length} Articles</span>
+               </div>
+               <div className="w-px h-3 bg-border"></div>
+               <div className="flex items-center space-x-1">
+                 <Tag className="w-3 h-3 text-accent" />
+                 <span>{availableTags.length} Topics</span>
+               </div>
+             </div>
+           </div>
 
-          {/* Concise Description */}
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto fade-in-up leading-relaxed" style={{ animationDelay: '200ms' }}>
-            I write about technology, development, and the lessons learned along the way. 
-            <span className="block mt-2 text-base text-primary/80">
-              Let's explore together.
-            </span>
-          </p>
-
-          {/* Simple Stats - Minimal */}
-          <div className="mb-8 fade-in-up" style={{ animationDelay: '300ms' }}>
-            <div className="inline-flex items-center space-x-6 text-sm text-muted-foreground bg-card/30 backdrop-blur-sm rounded-full px-6 py-3 border border-border/30">
-              <div className="flex items-center space-x-1">
-                <BookOpen className="w-4 h-4 text-primary" />
-                <span>{blogPosts.length} Articles</span>
-              </div>
-              <div className="w-px h-4 bg-border"></div>
-              <div className="flex items-center space-x-1">
-                <Tag className="w-4 h-4 text-accent" />
-                <span>{availableTags.length} Topics</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Call to Action - Focused on Reading */}
-          <div className="fade-in-up" style={{ animationDelay: '400ms' }}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                to="#featured"
-                className="btn-primary px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center"
-              >
-                <BookOpen className="w-5 h-5 mr-2" />
-                Start Reading
-              </Link>
-              <button
-                onClick={() => document.getElementById('search-filter')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-secondary px-6 py-4 text-base font-medium rounded-full hover:scale-105 transition-all duration-300 flex items-center"
-              >
-                <Tag className="w-4 h-4 mr-2" />
-                Browse Topics
-              </button>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              Dive into the latest insights and tutorials
-            </p>
-          </div>
-        </div>
-      </section>
+           {/* Public Profile Link */}
+           {NAVIGATION_CONFIG.showPublicProfileLink && (
+             <div className="text-center">
+               <a
+                 href={AUTHOR.publicProfile}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="inline-flex items-center px-6 py-3 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-full transition-all duration-300 hover:scale-105 text-sm font-medium"
+               >
+                 <span className="mr-2">🔗</span>
+                 View My Public Profile
+               </a>
+             </div>
+           )}
+         </div>
+       </section>
 
       {/* Search and Filter */}
       <section id="search-filter" className="py-12 px-4">
@@ -190,9 +249,6 @@ const Blog: React.FC = () => {
             {/* Pagination */}
             {totalPages > 1 && (
               <div className="mt-12">
-                <LinkableHeading level={3} id="pagination" className="text-xl font-semibold text-foreground mb-6 text-center">
-                  Page Navigation
-                </LinkableHeading>
                 <div className="flex items-center justify-center space-x-2">
                 <button
                   onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
