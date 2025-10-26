@@ -27,7 +27,7 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-docker";
 import "prismjs/components/prism-git";
 import "prismjs/components/prism-markdown";
-import { BASE_URL, BLOG_BASE_PATH, AUTHOR } from '../config/config';
+import { BASE_URL, BLOG_BASE_PATH, AUTHOR } from '@/config/config';
 
 interface MarkdownViewerProps {
   content: string;

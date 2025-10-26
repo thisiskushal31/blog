@@ -2,7 +2,7 @@
 // If the image fails to load, tries alternative paths and finally a placeholder. Used for robust image rendering.
 // If rendering fails, an error is logged and a fallback UI is shown.
 import { useState } from 'react';
-import { BLOG_BASE_PATH } from '../config/config';
+import { BLOG_BASE_PATH } from '@/config/config';
 
 interface ImageWithFallbackProps {
   src: string;
