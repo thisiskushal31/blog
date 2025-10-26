@@ -33,6 +33,7 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-title" content="Kushal Gupta Blog" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
@@ -84,8 +85,8 @@
 
     <!-- Theme color (optional, if PWA or mobile) -->
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/blog/assets/index-Cjf2VL2w.js"></script>
-    <link rel="stylesheet" crossorigin href="/blog/assets/index-BasE8-Gt.css">
+    <script type="module" crossorigin src="/blog/assets/index-Dk_6Ni9j.js"></script>
+    <link rel="stylesheet" crossorigin href="/blog/assets/index-C5Q-iwcz.css">
   </head>
 
   <body style="font-family: 'Inter', sans-serif;">
@@ -98,8 +99,15 @@
         var search = window.location.search;
         var hash = window.location.hash;
         
+        // Handle root blog path: /blog/ -> /blog/#/blog
+        if (path === '/blog/' && !hash) {
+          // Store the original URL for the 404.html redirect
+          sessionStorage.redirect = window.location.href;
+          // Redirect to hash version: /blog/#/blog
+          window.location.replace('/blog/#/blog');
+        }
         // If we're on a clean URL (not already a hash URL), redirect to hash version
-        if (path !== '/blog/' && path.startsWith('/blog/') && !hash) {
+        else if (path !== '/blog/' && path.startsWith('/blog/') && !hash) {
           var cleanPath = path.replace('/blog/', '');
           if (cleanPath) {
             // Store the original URL for the 404.html redirect
