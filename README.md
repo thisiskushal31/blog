@@ -100,4 +100,14 @@ Detailed documentation and changelog available in:
 
 ---
 
+## Copyright and Licensing
+
 © 2025 Kushal Gupta. All Rights Reserved.
+
+The source code and all content within this repository are the exclusive property of Kushal Gupta. This content is not to be used, reproduced, or distributed without explicit permission.
+
+## About
+
+A public repository containing the website code for my personal link hub. All code is for my exclusive use and is not licensed for public distribution.
+
+**Live Site**: [https://thisiskushal31.github.io/blog/](https://thisiskushal31.github.io/blog/)
