@@ -59,7 +59,7 @@ const Blog: React.FC = () => {
         />
         
        {/* Personal Intro + Blog Section */}
-       <section id="intro-section" className="relative py-16 px-4 overflow-hidden">
+       <section id="intro-section" className="relative py-12 px-4 overflow-hidden">
          <AnimatedBackground />
          
          <div className="relative z-10 max-w-6xl mx-auto">
@@ -84,9 +84,9 @@ const Blog: React.FC = () => {
        </section>
 
       {/* Search and Filter */}
-      <section id="search-filter" className="py-12 px-4">
+      <section id="search-filter" className="py-8 px-4">
         <div className="max-w-7xl mx-auto">
-          <LinkableHeading level={2} id="search-and-filter" className="text-3xl font-bold text-foreground mb-8 text-center">
+          <LinkableHeading level={2} id="search-and-filter" className="text-2xl font-bold text-foreground mb-6 text-center">
             Search & Filter Articles
           </LinkableHeading>
           <SearchFilter
@@ -101,12 +101,12 @@ const Blog: React.FC = () => {
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
-        <section id="featured" className="py-12 px-4">
+        <section id="featured" className="py-8 px-4">
           <div className="max-w-7xl mx-auto">
-            <LinkableHeading level={2} id="featured-articles" className="text-3xl font-bold text-foreground mb-8">
+            <LinkableHeading level={2} id="featured-articles" className="text-2xl font-bold text-foreground mb-6">
               Featured Articles
             </LinkableHeading>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="space-y-4">
               {featuredPosts.map((post, index) => (
                 <BlogCard
                   key={post.slug}
@@ -121,12 +121,12 @@ const Blog: React.FC = () => {
 
       {/* All Posts */}
       {paginatedPosts.length > 0 && (
-        <section id="all-posts" className="py-12 px-4">
+        <section id="all-posts" className="py-8 px-4">
           <div className="max-w-7xl mx-auto">
-            <LinkableHeading level={2} id="all-articles" className="text-3xl font-bold text-foreground mb-8">
+            <LinkableHeading level={2} id="all-articles" className="text-2xl font-bold text-foreground mb-6">
               All Articles
             </LinkableHeading>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="space-y-4">
               {paginatedPosts.map((post, index) => (
                 <BlogCard
                   key={post.slug}
@@ -138,7 +138,7 @@ const Blog: React.FC = () => {
             
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="mt-12">
+              <div className="mt-8">
                 <div className="flex items-center justify-center space-x-2">
                 <button
                   onClick={goToPreviousPage}

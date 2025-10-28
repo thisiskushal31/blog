@@ -19,11 +19,11 @@ interface IntroSectionProps {
 
 const IntroSection: React.FC<IntroSectionProps> = ({ author }) => {
   return (
-    <div className="mb-12">
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+    <div className="mb-8">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
         {/* Profile Photo */}
         <div className="flex-shrink-0">
-          <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white/20">
+          <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-white/20">
             <img 
               src={author.avatar} 
               alt={author.name} 
@@ -34,7 +34,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({ author }) => {
                 target.style.display = 'none';
                 const parent = target.parentElement;
                 if (parent) {
-                  parent.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-primary to-accent flex items-center justify-center"><span class="text-white font-bold text-3xl">KG</span></div>';
+                  parent.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-primary to-accent flex items-center justify-center"><span class="text-white font-bold text-xl">KG</span></div>';
                 }
               }}
             />
@@ -43,11 +43,11 @@ const IntroSection: React.FC<IntroSectionProps> = ({ author }) => {
         
         {/* Bio */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
             Hi, I'm {author.name}
           </h1>
-          <p className="text-lg text-muted-foreground mb-4">{author.title}</p>
-          <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="text-base text-muted-foreground mb-3">{author.title}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
             {author.bio}
           </p>
         </div>
