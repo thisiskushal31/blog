@@ -231,5 +231,12 @@ For comprehensive technical details, explore our [MongoDB Technical Deep Dive](h
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains pricing estimates, feature comparisons, and technical specifications based on publicly available documentation and industry research. All pricing information should be verified with official MongoDB Atlas pricing calculators. Feature availability and capabilities may vary by region and provider. For the most current and accurate information, please consult:
+- [MongoDB Atlas Documentation](https://www.mongodb.com/docs/atlas/)
+- [MongoDB Atlas Pricing](https://www.mongodb.com/pricing)
+- [MongoDB Official Documentation](https://www.mongodb.com/docs/manual/)
+
+---
+
 *This is Blog 2 of the MongoDB Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series) to explore all posts.*
 

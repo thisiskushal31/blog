@@ -206,5 +206,12 @@ For comprehensive technical details, explore our [MongoDB Technical Deep Dive](h
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, best practices, and cost estimates based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Technical capabilities and configurations may vary by environment and MongoDB version. For the most current and accurate information, please consult:
+- [MongoDB Official Documentation](https://www.mongodb.com/docs/manual/)
+- [MongoDB Replica Set Documentation](https://www.mongodb.com/docs/manual/replication/)
+- [MongoDB Sharding Documentation](https://www.mongodb.com/docs/manual/sharding/)
+
+---
+
 *This is Blog 3 of the MongoDB Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series) to explore all posts.*
 

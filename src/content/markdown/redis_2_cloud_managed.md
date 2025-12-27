@@ -185,5 +185,12 @@ For comprehensive technical details, explore our [Redis Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains pricing estimates, feature comparisons, and technical specifications based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Feature availability and capabilities may vary by region and provider. For the most current and accurate information, please consult:
+- [AWS ElastiCache Documentation](https://docs.aws.amazon.com/elasticache/)
+- [Google Cloud Memorystore Documentation](https://cloud.google.com/memorystore/docs/redis)
+- [Azure Cache for Redis Documentation](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/)
+
+---
+
 *This is Blog 2 of the Redis Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/redis-mastery-series) to explore all posts.*
 

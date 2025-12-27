@@ -350,5 +350,13 @@ For comprehensive technical details, explore our [MySQL Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains comparison matrices, decision frameworks, and recommendations based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Feature availability and capabilities may vary by region, provider, and MySQL version. For the most current and accurate information, please consult:
+- [AWS RDS MySQL Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html)
+- [Google Cloud SQL MySQL Documentation](https://cloud.google.com/sql/docs/mysql)
+- [Azure Database for MySQL Documentation](https://learn.microsoft.com/en-us/azure/mysql/)
+- [MySQL Official Documentation](https://dev.mysql.com/doc/)
+
+---
+
 *This is Blog 8 of the MySQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series) to explore all posts.*
 

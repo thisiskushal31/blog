@@ -126,5 +126,12 @@ For comprehensive technical details, explore our [Aerospike Technical Deep Dive]
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains performance tuning recommendations, configuration parameters, and optimization strategies based on publicly available documentation and industry research. Performance characteristics and optimal settings may vary significantly by workload, hardware, and Aerospike version. For the most current and accurate information, please consult:
+- [Aerospike Official Documentation](https://docs.aerospike.com/)
+- [Aerospike Performance Tuning Guide](https://docs.aerospike.com/docs/operations/tune/)
+- [Aerospike Benchmarking Guide](https://docs.aerospike.com/docs/operations/benchmark/)
+
+---
+
 *This is Blog 7 of the Aerospike Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series) to explore all posts.*
 

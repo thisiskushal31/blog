@@ -1659,6 +1659,15 @@ Your Elastic Cloud foundation is now solid. Continue building your Elasticsearch
 
 Building production search infrastructure is a journey that combines strategic thinking with deep technical implementation. If this deep dive into Elastic Cloud architectures provided valuable insights, you'll find even more advanced patterns and optimization techniques in my broader technical resource collection.
 
+---
+
+**Fact-Checking & Verification:** This blog post contains pricing estimates, feature comparisons, and technical specifications based on publicly available documentation and industry research. All pricing information should be verified with official Elastic Cloud pricing calculators. Feature availability and capabilities may vary by region and provider. For the most current and accurate information, please consult:
+- [Elastic Cloud Documentation](https://www.elastic.co/guide/en/cloud/current/index.html)
+- [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [Elastic Cloud Pricing](https://www.elastic.co/pricing)
+
+---
+
 **[🔗 Access My Complete Technical Resource Collection](https://thisiskushal31.github.io/link/)**
 
 *From infrastructure automation to performance optimization, database scaling to monitoring strategies - explore battle-tested insights for building robust, scalable systems that power modern applications.*

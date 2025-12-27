@@ -376,5 +376,12 @@ For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains performance tuning recommendations, configuration parameters, and optimization strategies based on publicly available documentation and industry research. Performance characteristics and optimal settings may vary significantly by workload, hardware, and PostgreSQL version. For the most current and accurate information, please consult:
+- [PostgreSQL Official Documentation](https://www.postgresql.org/docs/)
+- [PostgreSQL Performance Tuning Guide](https://wiki.postgresql.org/wiki/Performance_Optimization)
+- [pg_stat_statements Documentation](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+---
+
 *This is Blog 7 of the PostgreSQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/postgresql-mastery-series) to explore all posts.*
 

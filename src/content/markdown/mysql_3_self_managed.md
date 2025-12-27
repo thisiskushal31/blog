@@ -519,5 +519,11 @@ For comprehensive technical details, explore our [MySQL Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, best practices, and cost estimates based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Technical capabilities and configurations may vary by environment and MySQL version. For the most current and accurate information, please consult:
+- [MySQL Official Documentation](https://dev.mysql.com/doc/)
+- [MySQL Performance Schema](https://dev.mysql.com/doc/refman/8.0/en/performance-schema.html)
+
+---
+
 *This is Blog 3 of the MySQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series) to explore all posts.*
 

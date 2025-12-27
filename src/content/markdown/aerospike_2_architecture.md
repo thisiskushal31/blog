@@ -146,5 +146,12 @@ For comprehensive technical details, explore our [Aerospike Technical Deep Dive]
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains architecture details, technical specifications, and best practices based on publicly available documentation and industry research. Technical capabilities and configurations may vary by environment and Aerospike version. For the most current and accurate information, please consult:
+- [Aerospike Official Documentation](https://docs.aerospike.com/)
+- [Aerospike Architecture Guide](https://docs.aerospike.com/docs/architecture/)
+- [Aerospike Hybrid Memory Architecture](https://docs.aerospike.com/docs/architecture/features/hybrid-memory-architecture/)
+
+---
+
 *This is Blog 2 of the Aerospike Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series) to explore all posts.*
 

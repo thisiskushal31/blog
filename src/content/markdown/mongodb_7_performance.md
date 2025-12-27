@@ -223,5 +223,12 @@ For comprehensive technical details, explore our [MongoDB Technical Deep Dive](h
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains performance tuning recommendations, configuration parameters, and optimization strategies based on publicly available documentation and industry research. Performance characteristics and optimal settings may vary significantly by workload, hardware, and MongoDB version. For the most current and accurate information, please consult:
+- [MongoDB Official Documentation](https://www.mongodb.com/docs/manual/)
+- [MongoDB Performance Best Practices](https://www.mongodb.com/docs/manual/administration/production-notes/)
+- [MongoDB Indexing Strategies](https://www.mongodb.com/docs/manual/applications/indexes/)
+
+---
+
 *This is Blog 7 of the MongoDB Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series) to explore all posts.*
 

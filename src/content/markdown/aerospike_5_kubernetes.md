@@ -130,5 +130,12 @@ For comprehensive technical details, explore our [Aerospike Technical Deep Dive]
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains Kubernetes configurations, operator information, and best practices based on publicly available documentation and industry research. Kubernetes manifests and operator capabilities may vary by version and provider. For the most current and accurate information, please consult:
+- [Aerospike Official Documentation](https://docs.aerospike.com/)
+- [Kubernetes Official Documentation](https://kubernetes.io/docs/)
+- [Aerospike Kubernetes Operator](https://github.com/aerospike/aerospike-kubernetes-operator)
+
+---
+
 *This is Blog 5 of the Aerospike Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series) to explore all posts.*
 

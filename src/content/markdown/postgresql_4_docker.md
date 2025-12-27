@@ -363,5 +363,12 @@ For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, Docker configurations, and best practices based on publicly available documentation and industry research. Docker commands and configurations may vary by version and environment. For the most current and accurate information, please consult:
+- [PostgreSQL Official Documentation](https://www.postgresql.org/docs/)
+- [Docker Official Documentation](https://docs.docker.com/)
+- [Docker Hub PostgreSQL Images](https://hub.docker.com/_/postgres)
+
+---
+
 *This is Blog 4 of the PostgreSQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/postgresql-mastery-series) to explore all posts.*
 

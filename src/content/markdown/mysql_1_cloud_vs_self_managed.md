@@ -64,6 +64,8 @@ Choosing between cloud-managed and self-managed MySQL is one of the most critica
 
 ### Cloud-Managed MySQL Costs
 
+> ⚠️ **Pricing Disclaimer:** All pricing information in this blog post is approximate and based on publicly available pricing as of 2025. Actual costs may vary significantly based on region, usage patterns, discounts, and provider-specific pricing changes. Always verify current pricing with official cloud provider documentation before making financial decisions.
+
 **Direct Costs:**
 - Instance costs: $50-$5000+/month depending on size
 - Storage costs: $0.10-$0.30/GB/month
@@ -367,6 +369,14 @@ The choice between cloud-managed and self-managed MySQL isn't about which is bet
 ## Deep Dive Resources
 
 For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+
+---
+
+**Fact-Checking & Verification:** This blog post contains pricing estimates, technical specifications, and best practices based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators and documentation. Technical capabilities and features may vary by region and provider. For the most current and accurate information, please consult:
+- [AWS RDS MySQL Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html)
+- [Google Cloud SQL MySQL Documentation](https://cloud.google.com/sql/docs/mysql)
+- [Azure Database for MySQL Documentation](https://learn.microsoft.com/en-us/azure/mysql/)
+- [MySQL Official Documentation](https://dev.mysql.com/doc/)
 
 ---
 

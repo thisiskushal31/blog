@@ -717,6 +717,13 @@ Now that you understand the strategic framework, dive deeper into specific imple
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains pricing estimates, technical specifications, and best practices based on publicly available documentation and industry research. All pricing information should be verified with official Elastic Cloud pricing calculators and documentation. Technical capabilities and features may vary by region and provider. For the most current and accurate information, please consult:
+- [Elastic Cloud Documentation](https://www.elastic.co/guide/en/cloud/current/index.html)
+- [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [Elastic Cloud Pricing](https://www.elastic.co/pricing)
+
+---
+
 Ready to explore advanced infrastructure patterns and deployment strategies? Connect with a community of engineers sharing production experiences and optimization techniques.
 
 **[🔗 Explore My Complete Technical Resource Collection](https://thisiskushal31.github.io/link/)**

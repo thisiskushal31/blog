@@ -205,5 +205,12 @@ For comprehensive technical details, explore our [MongoDB Technical Deep Dive](h
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains Kubernetes configurations, operator information, and best practices based on publicly available documentation and industry research. Kubernetes manifests and operator capabilities may vary by version and provider. For the most current and accurate information, please consult:
+- [MongoDB Official Documentation](https://www.mongodb.com/docs/manual/)
+- [Kubernetes Official Documentation](https://kubernetes.io/docs/)
+- [MongoDB Kubernetes Operator](https://www.mongodb.com/docs/kubernetes-operator/)
+
+---
+
 *This is Blog 5 of the MongoDB Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series) to explore all posts.*
 

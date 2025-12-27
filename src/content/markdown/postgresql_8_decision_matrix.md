@@ -584,5 +584,13 @@ For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains comparison matrices, decision frameworks, and recommendations based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Feature availability and capabilities may vary by region, provider, and PostgreSQL version. For the most current and accurate information, please consult:
+- [AWS RDS PostgreSQL Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html)
+- [Google Cloud SQL Documentation](https://cloud.google.com/sql/docs/postgres)
+- [Azure Database for PostgreSQL Documentation](https://learn.microsoft.com/en-us/azure/postgresql/)
+- [PostgreSQL Official Documentation](https://www.postgresql.org/docs/)
+
+---
+
 *This is Blog 8 of the PostgreSQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/postgresql-mastery-series) to explore all posts.*
 

@@ -173,5 +173,12 @@ For comprehensive technical details, explore our [MongoDB Technical Deep Dive](h
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains setup instructions, configuration examples, and best practices based on publicly available documentation and industry research. Installation steps and commands may vary by operating system and MongoDB version. For the most current and accurate information, please consult:
+- [MongoDB Official Documentation](https://www.mongodb.com/docs/manual/)
+- [MongoDB Download Page](https://www.mongodb.com/try/download/community)
+- [Docker Official Documentation](https://docs.docker.com/)
+
+---
+
 *This is Blog 6 of the MongoDB Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series) to explore all posts.*
 

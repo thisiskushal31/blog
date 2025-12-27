@@ -468,5 +468,9 @@ For comprehensive technical details, explore our [MySQL Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains pricing estimates, feature comparisons, and technical specifications based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Feature availability and capabilities may vary by region and provider. For the most current and accurate information, please consult the official documentation links above.
+
+---
+
 *This is Blog 2 of the MySQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series) to explore all posts.*
 

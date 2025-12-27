@@ -393,5 +393,13 @@ For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains Kubernetes configurations, operator information, and best practices based on publicly available documentation and industry research. Kubernetes manifests and operator capabilities may vary by version and provider. For the most current and accurate information, please consult:
+- [PostgreSQL Official Documentation](https://www.postgresql.org/docs/)
+- [Kubernetes Official Documentation](https://kubernetes.io/docs/)
+- [CloudNativePG Documentation](https://cloudnative-pg.io/)
+- [Crunchy Data PostgreSQL Operator](https://www.crunchydata.com/products/crunchy-postgresql-for-kubernetes)
+
+---
+
 *This is Blog 5 of the PostgreSQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/postgresql-mastery-series) to explore all posts.*
 

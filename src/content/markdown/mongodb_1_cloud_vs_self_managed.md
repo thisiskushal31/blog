@@ -102,6 +102,8 @@ The wrong decision can cost you hundreds of thousands of dollars over three year
 
 ### MongoDB Atlas Costs
 
+> ⚠️ **Pricing Disclaimer:** All pricing information in this blog post is approximate and based on publicly available pricing as of 2025. Actual costs may vary significantly based on region, usage patterns, discounts, and provider-specific pricing changes. Always verify current pricing with official MongoDB Atlas pricing documentation before making financial decisions.
+
 **Direct Costs:**
 - Instance costs: $57-$7,000+/month depending on tier (M0 free tier to M700)
 - Storage costs: $0.25/GB/month
@@ -413,6 +415,13 @@ For comprehensive technical deep dives on MongoDB and database concepts, explore
 - **[MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md)**: Complete MongoDB architecture, optimization, and operations guide
 - **[Database Concepts](https://thisiskushal31.github.io/dochub/#/databases/concepts/README.md)**: Cross-cutting topics like replication, sharding, consistency, backups, and performance tuning
 - **[Cloud-Managed Databases](https://thisiskushal31.github.io/dochub/#/databases/cloud-managed/README.md)**: Managed services across AWS, GCP, and Azure
+
+---
+
+**Fact-Checking & Verification:** This blog post contains pricing estimates, technical specifications, and best practices based on publicly available documentation and industry research. All pricing information should be verified with official MongoDB Atlas pricing calculators and documentation. Technical capabilities and features may vary by region and provider. For the most current and accurate information, please consult:
+- [MongoDB Atlas Documentation](https://www.mongodb.com/docs/atlas/)
+- [MongoDB Atlas Pricing](https://www.mongodb.com/pricing)
+- [MongoDB Official Documentation](https://www.mongodb.com/docs/manual/)
 
 ---
 

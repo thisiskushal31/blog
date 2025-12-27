@@ -1955,6 +1955,15 @@ This will complete our comprehensive coverage of Elasticsearch deployment strate
 
 **Ready to implement Kubernetes-native Elasticsearch?** Choose your deployment strategy above and start building cloud-native search infrastructure that scales with your organization's growth.
 
+---
+
+**Fact-Checking & Verification:** This blog post contains Kubernetes configurations, operator information, and best practices based on publicly available documentation and industry research. Kubernetes manifests and operator capabilities may vary by version and provider. For the most current and accurate information, please consult:
+- [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [Kubernetes Official Documentation](https://kubernetes.io/docs/)
+- [Elastic Cloud on Kubernetes (ECK)](https://www.elastic.co/guide/en/cloud-on-k8s/current/index.html)
+
+---
+
 **[🔗 Access My Complete Technical Resource Collection](https://thisiskushal31.github.io/link/)**
 
 *Connect with fellow engineers mastering Kubernetes, explore advanced infrastructure patterns, and share your deployment experiences with a community building the next generation of cloud-native applications.*

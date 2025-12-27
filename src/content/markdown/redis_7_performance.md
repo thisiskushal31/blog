@@ -167,5 +167,12 @@ For comprehensive technical details, explore our [Redis Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains performance tuning recommendations, configuration parameters, and optimization strategies based on publicly available documentation and industry research. Performance characteristics and optimal settings may vary significantly by workload, hardware, and Redis version. For the most current and accurate information, please consult:
+- [Redis Official Documentation](https://redis.io/docs/)
+- [Redis Performance Optimization](https://redis.io/docs/management/optimization/)
+- [Redis Memory Optimization](https://redis.io/docs/management/optimization/memory-optimization/)
+
+---
+
 *This is Blog 7 of the Redis Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/redis-mastery-series) to explore all posts.*
 

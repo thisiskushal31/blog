@@ -451,5 +451,12 @@ For comprehensive technical details, explore our [MySQL Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains Kubernetes configurations, operator information, and best practices based on publicly available documentation and industry research. Kubernetes manifests and operator capabilities may vary by version and provider. For the most current and accurate information, please consult:
+- [MySQL Official Documentation](https://dev.mysql.com/doc/)
+- [Kubernetes Official Documentation](https://kubernetes.io/docs/)
+- [MySQL Operator Documentation](https://github.com/mysql/mysql-operator)
+
+---
+
 *This is Blog 5 of the MySQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series) to explore all posts.*
 

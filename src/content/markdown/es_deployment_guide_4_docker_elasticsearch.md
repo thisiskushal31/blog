@@ -2594,4 +2594,11 @@ Ready to implement your Docker Elasticsearch deployment? Use the provided config
 - **[Security Templates](https://github.com/your-repo/elasticsearch-security-configs)**
 - **[Performance Testing Tools](https://github.com/your-repo/elasticsearch-performance-tests)**
 
+---
+
+**Fact-Checking & Verification:** This blog post contains technical specifications, Docker configurations, and best practices based on publicly available documentation and industry research. Docker commands and configurations may vary by version and environment. For the most current and accurate information, please consult:
+- [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [Docker Official Documentation](https://docs.docker.com/)
+- [Elasticsearch Docker Images](https://www.docker.elastic.co/r/elasticsearch)
+
 *This blog is part of the Complete Elasticsearch Deployment Mastery Series. For the full series navigation and additional resources, visit the [series hub](link-to-hub).*

@@ -142,5 +142,12 @@ For comprehensive technical details, explore our [Aerospike Technical Deep Dive]
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains setup instructions, configuration examples, and best practices based on publicly available documentation and industry research. Installation steps and commands may vary by operating system and Aerospike version. For the most current and accurate information, please consult:
+- [Aerospike Official Documentation](https://docs.aerospike.com/)
+- [Aerospike Download Page](https://www.aerospike.com/download/)
+- [Docker Official Documentation](https://docs.docker.com/)
+
+---
+
 *This is Blog 6 of the Aerospike Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series) to explore all posts.*
 

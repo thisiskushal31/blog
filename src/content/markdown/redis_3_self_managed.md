@@ -136,5 +136,12 @@ For comprehensive technical details, explore our [Redis Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, best practices, and cost estimates based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Technical capabilities and configurations may vary by environment and Redis version. For the most current and accurate information, please consult:
+- [Redis Official Documentation](https://redis.io/docs/)
+- [Redis Sentinel Documentation](https://redis.io/docs/management/sentinel/)
+- [Redis Cluster Documentation](https://redis.io/docs/management/scaling/)
+
+---
+
 *This is Blog 3 of the Redis Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/redis-mastery-series) to explore all posts.*
 

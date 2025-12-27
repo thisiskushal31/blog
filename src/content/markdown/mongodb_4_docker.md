@@ -176,5 +176,12 @@ For comprehensive technical details, explore our [MongoDB Technical Deep Dive](h
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, Docker configurations, and best practices based on publicly available documentation and industry research. Docker commands and configurations may vary by version and environment. For the most current and accurate information, please consult:
+- [MongoDB Official Documentation](https://www.mongodb.com/docs/manual/)
+- [Docker Official Documentation](https://docs.docker.com/)
+- [Docker Hub MongoDB Images](https://hub.docker.com/_/mongo)
+
+---
+
 *This is Blog 4 of the MongoDB Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series) to explore all posts.*
 

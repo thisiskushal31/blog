@@ -144,5 +144,11 @@ For comprehensive technical details, explore our [Aerospike Technical Deep Dive]
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains comparison matrices, decision frameworks, and recommendations based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Feature availability and capabilities may vary by region, provider, and Aerospike version. For the most current and accurate information, please consult:
+- [Aerospike Official Documentation](https://docs.aerospike.com/)
+- [Aerospike Architecture Guide](https://docs.aerospike.com/docs/architecture/)
+
+---
+
 *This is Blog 8 of the Aerospike Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series) to explore all posts.*
 

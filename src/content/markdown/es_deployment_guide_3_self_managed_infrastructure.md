@@ -3278,5 +3278,14 @@ Ready to explore advanced infrastructure automation and deployment patterns? Con
 
 **[🔗 Access My Complete Technical Resource Collection](https://thisiskushal31.github.io/link/)**
 
+---
+
+**Fact-Checking & Verification:** This blog post contains technical specifications, best practices, and cost estimates based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Technical capabilities and configurations may vary by environment and Elasticsearch version. For the most current and accurate information, please consult:
+- [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [Elasticsearch Installation Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
+- [Elasticsearch Configuration](https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html)
+
+---
+
 *From infrastructure as code to performance optimization, monitoring strategies to cost management - discover battle-tested insights for building resilient, scalable systems that power modern applications.* 
     

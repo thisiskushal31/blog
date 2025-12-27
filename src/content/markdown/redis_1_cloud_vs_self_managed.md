@@ -101,6 +101,8 @@ The wrong decision can cost you hundreds of thousands of dollars over three year
 
 ### Cloud-Managed Redis Costs
 
+> ⚠️ **Pricing Disclaimer:** All pricing information in this blog post is approximate and based on publicly available pricing as of 2025. Actual costs may vary significantly based on region, usage patterns, discounts, and provider-specific pricing changes. Always verify current pricing with official cloud provider documentation before making financial decisions.
+
 **Direct Costs:**
 - Instance costs: $50-$5,000+/month depending on size and cloud provider
 - Data transfer: $0.09-$0.15/GB (outbound)
@@ -187,6 +189,14 @@ Total: ~$215/month = $2,580/year
 ## Deep Dive Resources
 
 For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+
+---
+
+**Fact-Checking & Verification:** This blog post contains pricing estimates, technical specifications, and best practices based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators and documentation. Technical capabilities and features may vary by region and provider. For the most current and accurate information, please consult:
+- [AWS ElastiCache Documentation](https://docs.aws.amazon.com/elasticache/)
+- [Google Cloud Memorystore Documentation](https://cloud.google.com/memorystore/docs/redis)
+- [Azure Cache for Redis Documentation](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/)
+- [Redis Official Documentation](https://redis.io/docs/)
 
 ---
 

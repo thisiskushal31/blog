@@ -449,5 +449,12 @@ For comprehensive technical details, explore our [MySQL Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains setup instructions, configuration examples, and best practices based on publicly available documentation and industry research. Installation steps and commands may vary by operating system and MySQL version. For the most current and accurate information, please consult:
+- [MySQL Official Documentation](https://dev.mysql.com/doc/)
+- [MySQL Download Page](https://dev.mysql.com/downloads/)
+- [Docker Official Documentation](https://docs.docker.com/)
+
+---
+
 *This is Blog 6 of the MySQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series) to explore all posts.*
 

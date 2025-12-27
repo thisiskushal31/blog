@@ -87,6 +87,8 @@ AWS RDS for PostgreSQL is a fully managed relational database service that makes
 
 ### Pricing Structure
 
+> ⚠️ **Pricing Disclaimer:** All pricing information is approximate and based on publicly available pricing as of 2025. Actual costs may vary significantly based on region, usage patterns, discounts, and provider-specific pricing changes. Always verify current pricing with official cloud provider documentation.
+
 **Example Monthly Cost (db.r5.2xlarge, Multi-AZ, 1TB storage):**
 ```
 Instance (Primary): $500/month
@@ -531,6 +533,13 @@ pg_restore -h target-host -U admin -d mydb \
 ## Deep Dive Resources
 
 For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Cloud-Managed Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/cloud-managed/README.md).
+
+---
+
+**Fact-Checking & Verification:** This blog post contains pricing estimates, feature comparisons, and technical specifications based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Feature availability and capabilities may vary by region and provider. For the most current and accurate information, please consult:
+- [AWS RDS PostgreSQL Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html)
+- [Google Cloud SQL Documentation](https://cloud.google.com/sql/docs/postgres)
+- [Azure Database for PostgreSQL Documentation](https://learn.microsoft.com/en-us/azure/postgresql/)
 
 ---
 

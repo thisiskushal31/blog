@@ -133,5 +133,12 @@ For comprehensive technical details, explore our [Aerospike Technical Deep Dive]
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, Docker configurations, and best practices based on publicly available documentation and industry research. Docker commands and configurations may vary by version and environment. For the most current and accurate information, please consult:
+- [Aerospike Official Documentation](https://docs.aerospike.com/)
+- [Docker Official Documentation](https://docs.docker.com/)
+- [Aerospike Docker Images](https://hub.docker.com/r/aerospike/aerospike-server)
+
+---
+
 *This is Blog 4 of the Aerospike Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series) to explore all posts.*
 

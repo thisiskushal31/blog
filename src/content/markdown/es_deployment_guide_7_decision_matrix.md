@@ -1319,4 +1319,11 @@ This decision matrix represents the culmination of deep analysis across all majo
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains comparison matrices, decision frameworks, and recommendations based on publicly available documentation and industry research. All pricing information should be verified with official Elastic Cloud and cloud provider pricing calculators. Feature availability and capabilities may vary by region, provider, and Elasticsearch version. For the most current and accurate information, please consult:
+- [Elastic Cloud Documentation](https://www.elastic.co/guide/en/cloud/current/index.html)
+- [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [Elastic Cloud Pricing](https://www.elastic.co/pricing)
+
+---
+
 **Ready to make your Elasticsearch deployment decision?** Use this framework to guide your choice, then dive into the specific implementation blog for your selected strategy. Your path to production-ready, scalable search infrastructure starts with the right strategic foundation.

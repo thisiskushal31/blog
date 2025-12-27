@@ -413,5 +413,12 @@ For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, best practices, and cost estimates based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators. Technical capabilities and configurations may vary by environment and PostgreSQL version. For the most current and accurate information, please consult:
+- [PostgreSQL Official Documentation](https://www.postgresql.org/docs/)
+- [Patroni Documentation](https://patroni.readthedocs.io/)
+- [pg_auto_failover Documentation](https://pg-auto-failover.readthedocs.io/)
+
+---
+
 *This is Blog 3 of the PostgreSQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/postgresql-mastery-series) to explore all posts.*
 

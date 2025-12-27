@@ -618,5 +618,12 @@ For comprehensive technical details, explore our [MySQL Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains technical specifications, Docker configurations, and best practices based on publicly available documentation and industry research. Docker commands and configurations may vary by version and environment. For the most current and accurate information, please consult:
+- [MySQL Official Documentation](https://dev.mysql.com/doc/)
+- [Docker Official Documentation](https://docs.docker.com/)
+- [Docker Hub MySQL Images](https://hub.docker.com/_/mysql)
+
+---
+
 *This is Blog 4 of the MySQL Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series) to explore all posts.*
 

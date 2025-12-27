@@ -131,5 +131,12 @@ For comprehensive technical details, explore our [Redis Technical Deep Dive](htt
 
 ---
 
+**Fact-Checking & Verification:** This blog post contains setup instructions, configuration examples, and best practices based on publicly available documentation and industry research. Installation steps and commands may vary by operating system and Redis version. For the most current and accurate information, please consult:
+- [Redis Official Documentation](https://redis.io/docs/)
+- [Redis Download Page](https://redis.io/download/)
+- [Docker Official Documentation](https://docs.docker.com/)
+
+---
+
 *This is Blog 6 of the Redis Mastery Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/redis-mastery-series) to explore all posts.*
 

@@ -103,6 +103,8 @@ Understanding the true cost of PostgreSQL deployment requires looking beyond mon
 
 ### Cloud-Managed PostgreSQL Costs
 
+> ⚠️ **Pricing Disclaimer:** All pricing information in this blog post is approximate and based on publicly available pricing as of 2025. Actual costs may vary significantly based on region, usage patterns, discounts, and provider-specific pricing changes. Always verify current pricing with official cloud provider documentation before making financial decisions.
+
 **Direct Infrastructure Costs:**
 - Instance costs: $100-$10,000+/month depending on size and provider
 - Storage costs: $0.10-$0.30/GB/month
@@ -550,6 +552,14 @@ If you're currently using one approach and considering migration, understanding 
 ## Deep Dive Resources
 
 For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+
+---
+
+**Fact-Checking & Verification:** This blog post contains pricing estimates, technical specifications, and best practices based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators and documentation. Technical capabilities and features may vary by region and provider. For the most current and accurate information, please consult:
+- [AWS RDS PostgreSQL Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html)
+- [Google Cloud SQL Documentation](https://cloud.google.com/sql/docs/postgres)
+- [Azure Database for PostgreSQL Documentation](https://learn.microsoft.com/en-us/azure/postgresql/)
+- [PostgreSQL Official Documentation](https://www.postgresql.org/docs/)
 
 ---
 

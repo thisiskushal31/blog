@@ -61,6 +61,8 @@ The decision to use Aerospike typically centers on whether you need its unique p
 
 ### Self-Managed Aerospike Costs
 
+> ⚠️ **Pricing Disclaimer:** All pricing information in this blog post is approximate and based on publicly available pricing as of 2025. Actual costs may vary significantly based on region, usage patterns, discounts, and provider-specific pricing changes. Always verify current pricing with official cloud provider documentation before making financial decisions.
+
 **Direct Infrastructure Costs:**
 - Server/VM costs: $200-$3,000+/month per node
 - Storage costs: $0.05-$0.20/GB/month (SSD/NVMe)
@@ -206,6 +208,12 @@ Total: ~$1,650/month = $19,800/year
 ## Deep Dive Resources
 
 For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+
+---
+
+**Fact-Checking & Verification:** This blog post contains pricing estimates, technical specifications, and best practices based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators and documentation. Technical capabilities and features may vary by region and provider. For the most current and accurate information, please consult:
+- [Aerospike Official Documentation](https://docs.aerospike.com/)
+- [Aerospike Architecture Guide](https://docs.aerospike.com/docs/architecture/)
 
 ---
 

@@ -2466,4 +2466,11 @@ The investment in setting up both approaches pays dividends in development veloc
 
 With local development mastered, you're ready for the series finale: **Blog 7: The Ultimate Elasticsearch Deployment Decision Matrix**—where we'll synthesize everything from local development through production-scale deployments into a comprehensive decision framework that guides you to the optimal deployment strategy for any scenario.
 
+---
+
+**Fact-Checking & Verification:** This blog post contains setup instructions, configuration examples, and best practices based on publicly available documentation and industry research. Installation steps and commands may vary by operating system and Elasticsearch version. For the most current and accurate information, please consult:
+- [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [Elasticsearch Download Page](https://www.elastic.co/downloads/elasticsearch)
+- [Docker Official Documentation](https://docs.docker.com/)
+
 **Ready to make the definitive deployment decision?** The complete decision matrix awaits in our final blog, bringing together all deployment strategies with quantitative analysis, real-world case studies, and future-proofing guidance.
