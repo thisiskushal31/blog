@@ -47,6 +47,8 @@ After testing both approaches across different development scenarios, this compr
 
 ## Docker Development: The Containerized Advantage
 
+> 💡 **Learning Elasticsearch basics?** Check out our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive setup and document management techniques.
+
 ### Quick Start: Production-Ready Development Stack
 
 ```yaml
@@ -769,6 +771,8 @@ main "$@"
 ```
 
 ## Performance Comparison: Docker vs Native
+
+> 💡 **Need query optimization techniques?** Explore our [Elasticsearch Searching Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#searching) and [Aggregations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#aggregations) for advanced query patterns and analytics.
 
 ### Benchmark Results
 

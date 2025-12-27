@@ -8,6 +8,7 @@ import profileData from './profile.json';
 export const BLOG_BASE_PATH = "/blog"; // Change this to "/book-blog" or any other base path as needed
 export const BASE_URL = "https://thisiskushal31.github.io/blog/"; // Change to your deployed endpoint
 export const PORTFOLIO_URL = "https://thisiskushal31.github.io/"; // Change to your portfolio URL
+export const DOCHUB_BASE_URL = "https://thisiskushal31.github.io/dochub/#/"; // Base URL for deep dive documentation hub
 
 // ===== AUTHOR CONFIG =====
 export interface Author {

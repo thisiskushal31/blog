@@ -30,6 +30,8 @@ This comprehensive guide examines all three major Kubernetes deployment strategi
 
 ## Kubernetes Deployment Strategy Overview
 
+> 💡 **Need Elasticsearch architecture details?** Explore our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for component explanations and configuration options.
+
 ### The Three Paths to Kubernetes Elasticsearch
 
 | Strategy | Complexity | Control | Maintenance | Best For |
@@ -1014,6 +1016,8 @@ spec:
 ---
 
 ## Monitoring and Observability
+
+> 💡 **Want comprehensive monitoring guidance?** See our [Elasticsearch Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md) for detailed operational procedures and troubleshooting guides.
 
 ### 1. Prometheus Integration with ServiceMonitor
 

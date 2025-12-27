@@ -29,6 +29,8 @@ This matrix combines quantitative scoring with qualitative assessment frameworks
 
 ## The Complete Decision Framework
 
+> 💡 **Need comprehensive Elasticsearch guidance?** Explore our [Elasticsearch Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md) for detailed architecture, operations, and optimization documentation.
+
 ### Multi-Dimensional Scoring Matrix
 
 Our decision framework evaluates deployment options across **8 critical dimensions**, each weighted based on typical organizational priorities:

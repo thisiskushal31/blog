@@ -35,6 +35,8 @@ Self-managed Elasticsearch deployments represent the pinnacle of infrastructure 
 
 ## Architecture Foundation
 
+> 💡 **Understanding Elasticsearch architecture?** Check out our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for detailed component explanations and cluster setup.
+
 ### Production Cluster Design Principles
 
 ```yaml
@@ -100,6 +102,8 @@ hardware_specs:
 ---
 
 ## Virtual Machine Deployment
+
+> 💡 **Need detailed configuration guidance?** See our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive setup instructions and cluster configuration.
 
 ### VM Infrastructure Setup
 

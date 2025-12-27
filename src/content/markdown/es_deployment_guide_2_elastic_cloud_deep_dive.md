@@ -30,6 +30,8 @@ This comprehensive guide provides the technical depth needed to architect produc
 
 ## Elastic Cloud Hosted: Traditional Managed Clusters
 
+> 💡 **Understanding Elasticsearch architecture?** Check out our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for detailed component explanations and cluster setup.
+
 ### Architecture Foundation
 
 Elastic Cloud Hosted provides traditional Elasticsearch clusters with managed infrastructure but dedicated resources:
@@ -444,6 +446,8 @@ scaling_behavior:
 ---
 
 ## Performance Analysis: Hosted vs Serverless
+
+> 💡 **Need performance optimization techniques?** Explore our [Elasticsearch Searching Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#searching) and [Improving Search Results Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#improving-results) for query optimization and relevance tuning.
 
 ### Benchmark Configuration
 
