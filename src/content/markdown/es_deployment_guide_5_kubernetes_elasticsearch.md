@@ -1,4 +1,4 @@
-# Blog 5: Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML
+# Kubernetes Elasticsearch - ECK vs Helm vs Raw YAML
 
 *Master cloud-native Elasticsearch deployments with advanced Kubernetes orchestration patterns*
 

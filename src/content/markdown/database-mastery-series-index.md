@@ -31,7 +31,7 @@ This master index provides a comprehensive overview of all our database mastery 
 
 ## Complete Database Mastery Series
 
-### 🐬 [MySQL Mastery Series](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series)
+### 🐬 [MySQL Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-guide)
 
 **The world's most popular open-source relational database**
 
@@ -61,7 +61,7 @@ MySQL is the foundation of countless web applications, from small startups to en
 
 ---
 
-### 🐘 [PostgreSQL Mastery Series](https://thisiskushal31.github.io/blog/#/blog/postgresql-mastery-series)
+### 🐘 [PostgreSQL Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/postgresql-deployment-guide)
 
 **The advanced open-source relational database with enterprise features**
 
@@ -91,7 +91,7 @@ PostgreSQL offers advanced features like JSON support, full-text search, and ext
 
 ---
 
-### 🍃 [MongoDB Mastery Series](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series)
+### 🍃 [MongoDB Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/mongodb-deployment-guide)
 
 **The leading document database for modern applications**
 
@@ -121,7 +121,7 @@ MongoDB's flexible schema and horizontal scaling make it ideal for applications 
 
 ---
 
-### 🔴 [Redis Mastery Series](https://thisiskushal31.github.io/blog/#/blog/redis-mastery-series)
+### 🔴 [Redis Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/redis-deployment-guide)
 
 **The in-memory data structure store for high-performance applications**
 
@@ -151,7 +151,7 @@ Redis powers caching, session management, real-time analytics, and pub/sub messa
 
 ---
 
-### 🚀 [Aerospike Mastery Series](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series)
+### 🚀 [Aerospike Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/aerospike-deployment-guide)
 
 **The high-performance distributed database for real-time applications**
 
@@ -315,13 +315,13 @@ Each mastery series follows a consistent structure, making it easy to compare ap
 ## Quick Reference Links
 
 ### Relational Databases
-- **[MySQL Mastery Series](https://thisiskushal31.github.io/blog/#/blog/mysql-mastery-series)** - Most popular open-source RDBMS
-- **[PostgreSQL Mastery Series](https://thisiskushal31.github.io/blog/#/blog/postgresql-mastery-series)** - Advanced features and extensibility
+- **[MySQL Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-guide)** - Most popular open-source RDBMS
+- **[PostgreSQL Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/postgresql-deployment-guide)** - Advanced features and extensibility
 
 ### NoSQL Databases
-- **[MongoDB Mastery Series](https://thisiskushal31.github.io/blog/#/blog/mongodb-mastery-series)** - Document database leader
-- **[Redis Mastery Series](https://thisiskushal31.github.io/blog/#/blog/redis-mastery-series)** - In-memory data structures
-- **[Aerospike Mastery Series](https://thisiskushal31.github.io/blog/#/blog/aerospike-mastery-series)** - High-performance key-value store
+- **[MongoDB Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/mongodb-deployment-guide)** - Document database leader
+- **[Redis Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/redis-deployment-guide)** - In-memory data structures
+- **[Aerospike Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/aerospike-deployment-guide)** - High-performance key-value store
 
 ### Search & Analytics
 - **[Elasticsearch Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/elasticsearch-deployment-guide)** - Distributed search and analytics

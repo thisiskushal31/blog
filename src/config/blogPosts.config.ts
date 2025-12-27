@@ -28,60 +28,60 @@ import { blogPost as es_deployment_guide_7_decision_matrix } from '../content/bl
 import { blogPost as relational_vs_nosql_databases } from '../content/blog/relational-vs-nosql-databases';
 import { blogPost as database_mastery_series_index } from '../content/blog/database-mastery-series-index';
 
-// MySQL Mastery Series
-import { blogPost as mysql_0_hub } from '../content/blog/mysql_0_hub';
-import { blogPost as mysql_1_cloud_vs_self_managed } from '../content/blog/mysql_1_cloud_vs_self_managed';
-import { blogPost as mysql_2_cloud_managed } from '../content/blog/mysql_2_cloud_managed';
-import { blogPost as mysql_3_self_managed } from '../content/blog/mysql_3_self_managed';
-import { blogPost as mysql_4_docker } from '../content/blog/mysql_4_docker';
-import { blogPost as mysql_5_kubernetes } from '../content/blog/mysql_5_kubernetes';
-import { blogPost as mysql_6_local_dev } from '../content/blog/mysql_6_local_dev';
-import { blogPost as mysql_7_performance } from '../content/blog/mysql_7_performance';
-import { blogPost as mysql_8_decision_matrix } from '../content/blog/mysql_8_decision_matrix';
+// MySQL Deployment Guide Series
+import { blogPost as mysql_deployment_guide_0_hub } from '../content/blog/mysql_deployment_guide_0_hub';
+import { blogPost as mysql_deployment_guide_1_cloud_vs_self_managed } from '../content/blog/mysql_deployment_guide_1_cloud_vs_self_managed';
+import { blogPost as mysql_deployment_guide_2_cloud_managed } from '../content/blog/mysql_deployment_guide_2_cloud_managed';
+import { blogPost as mysql_deployment_guide_3_self_managed } from '../content/blog/mysql_deployment_guide_3_self_managed';
+import { blogPost as mysql_deployment_guide_4_docker } from '../content/blog/mysql_deployment_guide_4_docker';
+import { blogPost as mysql_deployment_guide_5_kubernetes } from '../content/blog/mysql_deployment_guide_5_kubernetes';
+import { blogPost as mysql_deployment_guide_6_local_dev } from '../content/blog/mysql_deployment_guide_6_local_dev';
+import { blogPost as mysql_deployment_guide_7_performance } from '../content/blog/mysql_deployment_guide_7_performance';
+import { blogPost as mysql_deployment_guide_8_decision_matrix } from '../content/blog/mysql_deployment_guide_8_decision_matrix';
 
-// MongoDB Mastery Series
-import { blogPost as mongodb_0_hub } from '../content/blog/mongodb_0_hub';
-import { blogPost as mongodb_1_cloud_vs_self_managed } from '../content/blog/mongodb_1_cloud_vs_self_managed';
-import { blogPost as mongodb_2_cloud_managed } from '../content/blog/mongodb_2_cloud_managed';
-import { blogPost as mongodb_3_self_managed } from '../content/blog/mongodb_3_self_managed';
-import { blogPost as mongodb_4_docker } from '../content/blog/mongodb_4_docker';
-import { blogPost as mongodb_5_kubernetes } from '../content/blog/mongodb_5_kubernetes';
-import { blogPost as mongodb_6_local_dev } from '../content/blog/mongodb_6_local_dev';
-import { blogPost as mongodb_7_performance } from '../content/blog/mongodb_7_performance';
-import { blogPost as mongodb_8_decision_matrix } from '../content/blog/mongodb_8_decision_matrix';
+// MongoDB Deployment Guide Series
+import { blogPost as mongodb_deployment_guide_0_hub } from '../content/blog/mongodb_deployment_guide_0_hub';
+import { blogPost as mongodb_deployment_guide_1_cloud_vs_self_managed } from '../content/blog/mongodb_deployment_guide_1_cloud_vs_self_managed';
+import { blogPost as mongodb_deployment_guide_2_cloud_managed } from '../content/blog/mongodb_deployment_guide_2_cloud_managed';
+import { blogPost as mongodb_deployment_guide_3_self_managed } from '../content/blog/mongodb_deployment_guide_3_self_managed';
+import { blogPost as mongodb_deployment_guide_4_docker } from '../content/blog/mongodb_deployment_guide_4_docker';
+import { blogPost as mongodb_deployment_guide_5_kubernetes } from '../content/blog/mongodb_deployment_guide_5_kubernetes';
+import { blogPost as mongodb_deployment_guide_6_local_dev } from '../content/blog/mongodb_deployment_guide_6_local_dev';
+import { blogPost as mongodb_deployment_guide_7_performance } from '../content/blog/mongodb_deployment_guide_7_performance';
+import { blogPost as mongodb_deployment_guide_8_decision_matrix } from '../content/blog/mongodb_deployment_guide_8_decision_matrix';
 
-// Redis Mastery Series
-import { blogPost as redis_0_hub } from '../content/blog/redis_0_hub';
-import { blogPost as redis_1_cloud_vs_self_managed } from '../content/blog/redis_1_cloud_vs_self_managed';
-import { blogPost as redis_2_cloud_managed } from '../content/blog/redis_2_cloud_managed';
-import { blogPost as redis_3_self_managed } from '../content/blog/redis_3_self_managed';
-import { blogPost as redis_4_docker } from '../content/blog/redis_4_docker';
-import { blogPost as redis_5_kubernetes } from '../content/blog/redis_5_kubernetes';
-import { blogPost as redis_6_local_dev } from '../content/blog/redis_6_local_dev';
-import { blogPost as redis_7_performance } from '../content/blog/redis_7_performance';
-import { blogPost as redis_8_decision_matrix } from '../content/blog/redis_8_decision_matrix';
+// Redis Deployment Guide Series
+import { blogPost as redis_deployment_guide_0_hub } from '../content/blog/redis_deployment_guide_0_hub';
+import { blogPost as redis_deployment_guide_1_cloud_vs_self_managed } from '../content/blog/redis_deployment_guide_1_cloud_vs_self_managed';
+import { blogPost as redis_deployment_guide_2_cloud_managed } from '../content/blog/redis_deployment_guide_2_cloud_managed';
+import { blogPost as redis_deployment_guide_3_self_managed } from '../content/blog/redis_deployment_guide_3_self_managed';
+import { blogPost as redis_deployment_guide_4_docker } from '../content/blog/redis_deployment_guide_4_docker';
+import { blogPost as redis_deployment_guide_5_kubernetes } from '../content/blog/redis_deployment_guide_5_kubernetes';
+import { blogPost as redis_deployment_guide_6_local_dev } from '../content/blog/redis_deployment_guide_6_local_dev';
+import { blogPost as redis_deployment_guide_7_performance } from '../content/blog/redis_deployment_guide_7_performance';
+import { blogPost as redis_deployment_guide_8_decision_matrix } from '../content/blog/redis_deployment_guide_8_decision_matrix';
 
-// Aerospike Mastery Series
-import { blogPost as aerospike_0_hub } from '../content/blog/aerospike_0_hub';
-import { blogPost as aerospike_1_cloud_vs_self_managed } from '../content/blog/aerospike_1_cloud_vs_self_managed';
-import { blogPost as aerospike_2_architecture } from '../content/blog/aerospike_2_architecture';
-import { blogPost as aerospike_3_self_managed } from '../content/blog/aerospike_3_self_managed';
-import { blogPost as aerospike_4_docker } from '../content/blog/aerospike_4_docker';
-import { blogPost as aerospike_5_kubernetes } from '../content/blog/aerospike_5_kubernetes';
-import { blogPost as aerospike_6_local_dev } from '../content/blog/aerospike_6_local_dev';
-import { blogPost as aerospike_7_performance } from '../content/blog/aerospike_7_performance';
-import { blogPost as aerospike_8_decision_matrix } from '../content/blog/aerospike_8_decision_matrix';
+// Aerospike Deployment Guide Series
+import { blogPost as aerospike_deployment_guide_0_hub } from '../content/blog/aerospike_deployment_guide_0_hub';
+import { blogPost as aerospike_deployment_guide_1_cloud_vs_self_managed } from '../content/blog/aerospike_deployment_guide_1_cloud_vs_self_managed';
+import { blogPost as aerospike_deployment_guide_2_architecture } from '../content/blog/aerospike_deployment_guide_2_architecture';
+import { blogPost as aerospike_deployment_guide_3_self_managed } from '../content/blog/aerospike_deployment_guide_3_self_managed';
+import { blogPost as aerospike_deployment_guide_4_docker } from '../content/blog/aerospike_deployment_guide_4_docker';
+import { blogPost as aerospike_deployment_guide_5_kubernetes } from '../content/blog/aerospike_deployment_guide_5_kubernetes';
+import { blogPost as aerospike_deployment_guide_6_local_dev } from '../content/blog/aerospike_deployment_guide_6_local_dev';
+import { blogPost as aerospike_deployment_guide_7_performance } from '../content/blog/aerospike_deployment_guide_7_performance';
+import { blogPost as aerospike_deployment_guide_8_decision_matrix } from '../content/blog/aerospike_deployment_guide_8_decision_matrix';
 
-// PostgreSQL Mastery Series
-import { blogPost as postgresql_0_hub } from '../content/blog/postgresql_0_hub';
-import { blogPost as postgresql_1_cloud_vs_self_managed } from '../content/blog/postgresql_1_cloud_vs_self_managed';
-import { blogPost as postgresql_2_cloud_managed } from '../content/blog/postgresql_2_cloud_managed';
-import { blogPost as postgresql_3_self_managed } from '../content/blog/postgresql_3_self_managed';
-import { blogPost as postgresql_4_docker } from '../content/blog/postgresql_4_docker';
-import { blogPost as postgresql_5_kubernetes } from '../content/blog/postgresql_5_kubernetes';
-import { blogPost as postgresql_6_local_dev } from '../content/blog/postgresql_6_local_dev';
-import { blogPost as postgresql_7_performance } from '../content/blog/postgresql_7_performance';
-import { blogPost as postgresql_8_decision_matrix } from '../content/blog/postgresql_8_decision_matrix';
+// PostgreSQL Deployment Guide Series
+import { blogPost as postgresql_deployment_guide_0_hub } from '../content/blog/postgresql_deployment_guide_0_hub';
+import { blogPost as postgresql_deployment_guide_1_cloud_vs_self_managed } from '../content/blog/postgresql_deployment_guide_1_cloud_vs_self_managed';
+import { blogPost as postgresql_deployment_guide_2_cloud_managed } from '../content/blog/postgresql_deployment_guide_2_cloud_managed';
+import { blogPost as postgresql_deployment_guide_3_self_managed } from '../content/blog/postgresql_deployment_guide_3_self_managed';
+import { blogPost as postgresql_deployment_guide_4_docker } from '../content/blog/postgresql_deployment_guide_4_docker';
+import { blogPost as postgresql_deployment_guide_5_kubernetes } from '../content/blog/postgresql_deployment_guide_5_kubernetes';
+import { blogPost as postgresql_deployment_guide_6_local_dev } from '../content/blog/postgresql_deployment_guide_6_local_dev';
+import { blogPost as postgresql_deployment_guide_7_performance } from '../content/blog/postgresql_deployment_guide_7_performance';
+import { blogPost as postgresql_deployment_guide_8_decision_matrix } from '../content/blog/postgresql_deployment_guide_8_decision_matrix';
 
 // Containerization
 
@@ -110,8 +110,8 @@ export const BLOG_POST_SLUGS = [
   'database-mastery-series-index',
   'relational-vs-nosql-databases-complete-guide',
 
-  // MySQL Mastery Series
-  'mysql-mastery-series',
+  // MySQL Deployment Guide Series
+  'mysql-deployment-guide',
   'mysql-cloud-vs-self-managed-strategic-decision-framework',
   'mysql-cloud-managed-rds-cloud-sql-azure-deep-dive',
   'mysql-self-managed-vm-bare-metal-production-guide',
@@ -121,8 +121,8 @@ export const BLOG_POST_SLUGS = [
   'mysql-performance-optimization-query-tuning-indexing',
   'mysql-deployment-decision-matrix-complete-comparison-guide',
 
-  // MongoDB Mastery Series
-  'mongodb-mastery-series',
+  // MongoDB Deployment Guide Series
+  'mongodb-deployment-guide',
   'mongodb-cloud-vs-self-managed-strategic-decision-framework',
   'mongodb-cloud-managed-atlas-deep-dive',
   'mongodb-self-managed-vm-bare-metal-production-guide',
@@ -132,8 +132,8 @@ export const BLOG_POST_SLUGS = [
   'mongodb-performance-optimization-query-tuning-indexing',
   'mongodb-deployment-decision-matrix-complete-comparison-guide',
 
-  // Redis Mastery Series
-  'redis-mastery-series',
+  // Redis Deployment Guide Series
+  'redis-deployment-guide',
   'redis-cloud-vs-self-managed-strategic-decision-framework',
   'redis-cloud-managed-elasticache-memorystore-deep-dive',
   'redis-self-managed-vm-bare-metal-production-guide',
@@ -143,8 +143,8 @@ export const BLOG_POST_SLUGS = [
   'redis-performance-optimization-memory-management',
   'redis-deployment-decision-matrix-complete-comparison-guide',
 
-  // Aerospike Mastery Series
-  'aerospike-mastery-series',
+  // Aerospike Deployment Guide Series
+  'aerospike-deployment-guide',
   'aerospike-cloud-vs-self-managed-strategic-decision-framework',
   'aerospike-architecture-deep-dive-hybrid-memory',
   'aerospike-self-managed-vm-bare-metal-production-guide',
@@ -154,8 +154,8 @@ export const BLOG_POST_SLUGS = [
   'aerospike-performance-optimization-hma-clustering',
   'aerospike-deployment-decision-matrix-complete-comparison-guide',
 
-  // PostgreSQL Mastery Series
-  'postgresql-mastery-series',
+  // PostgreSQL Deployment Guide Series
+  'postgresql-deployment-guide',
   'postgresql-cloud-vs-self-managed-strategic-decision-framework',
   'postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive',
   'postgresql-self-managed-vm-bare-metal-production-guide',
@@ -195,60 +195,60 @@ export const POST_MAP: Record<string, BlogPost> = {
   'database-mastery-series-index': database_mastery_series_index,
   'relational-vs-nosql-databases-complete-guide': relational_vs_nosql_databases,
 
-  // MySQL Mastery Series
-  'mysql-mastery-series': mysql_0_hub,
-  'mysql-cloud-vs-self-managed-strategic-decision-framework': mysql_1_cloud_vs_self_managed,
-  'mysql-cloud-managed-rds-cloud-sql-azure-deep-dive': mysql_2_cloud_managed,
-  'mysql-self-managed-vm-bare-metal-production-guide': mysql_3_self_managed,
-  'mysql-docker-container-deployment-strategies': mysql_4_docker,
-  'mysql-kubernetes-statefulset-operator-deep-dive': mysql_5_kubernetes,
-  'mysql-local-development-docker-native-quick-start': mysql_6_local_dev,
-  'mysql-performance-optimization-query-tuning-indexing': mysql_7_performance,
-  'mysql-deployment-decision-matrix-complete-comparison-guide': mysql_8_decision_matrix,
+  // MySQL Deployment Guide Series
+  'mysql-deployment-guide': mysql_deployment_guide_0_hub,
+  'mysql-cloud-vs-self-managed-strategic-decision-framework': mysql_deployment_guide_1_cloud_vs_self_managed,
+  'mysql-cloud-managed-rds-cloud-sql-azure-deep-dive': mysql_deployment_guide_2_cloud_managed,
+  'mysql-self-managed-vm-bare-metal-production-guide': mysql_deployment_guide_3_self_managed,
+  'mysql-docker-container-deployment-strategies': mysql_deployment_guide_4_docker,
+  'mysql-kubernetes-statefulset-operator-deep-dive': mysql_deployment_guide_5_kubernetes,
+  'mysql-local-development-docker-native-quick-start': mysql_deployment_guide_6_local_dev,
+  'mysql-performance-optimization-query-tuning-indexing': mysql_deployment_guide_7_performance,
+  'mysql-deployment-decision-matrix-complete-comparison-guide': mysql_deployment_guide_8_decision_matrix,
 
-  // MongoDB Mastery Series
-  'mongodb-mastery-series': mongodb_0_hub,
-  'mongodb-cloud-vs-self-managed-strategic-decision-framework': mongodb_1_cloud_vs_self_managed,
-  'mongodb-cloud-managed-atlas-deep-dive': mongodb_2_cloud_managed,
-  'mongodb-self-managed-vm-bare-metal-production-guide': mongodb_3_self_managed,
-  'mongodb-docker-container-deployment-strategies': mongodb_4_docker,
-  'mongodb-kubernetes-statefulset-operator-deep-dive': mongodb_5_kubernetes,
-  'mongodb-local-development-docker-native-quick-start': mongodb_6_local_dev,
-  'mongodb-performance-optimization-query-tuning-indexing': mongodb_7_performance,
-  'mongodb-deployment-decision-matrix-complete-comparison-guide': mongodb_8_decision_matrix,
+  // MongoDB Deployment Guide Series
+  'mongodb-deployment-guide': mongodb_deployment_guide_0_hub,
+  'mongodb-cloud-vs-self-managed-strategic-decision-framework': mongodb_deployment_guide_1_cloud_vs_self_managed,
+  'mongodb-cloud-managed-atlas-deep-dive': mongodb_deployment_guide_2_cloud_managed,
+  'mongodb-self-managed-vm-bare-metal-production-guide': mongodb_deployment_guide_3_self_managed,
+  'mongodb-docker-container-deployment-strategies': mongodb_deployment_guide_4_docker,
+  'mongodb-kubernetes-statefulset-operator-deep-dive': mongodb_deployment_guide_5_kubernetes,
+  'mongodb-local-development-docker-native-quick-start': mongodb_deployment_guide_6_local_dev,
+  'mongodb-performance-optimization-query-tuning-indexing': mongodb_deployment_guide_7_performance,
+  'mongodb-deployment-decision-matrix-complete-comparison-guide': mongodb_deployment_guide_8_decision_matrix,
 
-  // Redis Mastery Series
-  'redis-mastery-series': redis_0_hub,
-  'redis-cloud-vs-self-managed-strategic-decision-framework': redis_1_cloud_vs_self_managed,
-  'redis-cloud-managed-elasticache-memorystore-deep-dive': redis_2_cloud_managed,
-  'redis-self-managed-vm-bare-metal-production-guide': redis_3_self_managed,
-  'redis-docker-container-deployment-strategies': redis_4_docker,
-  'redis-kubernetes-statefulset-operator-deep-dive': redis_5_kubernetes,
-  'redis-local-development-docker-native-quick-start': redis_6_local_dev,
-  'redis-performance-optimization-memory-management': redis_7_performance,
-  'redis-deployment-decision-matrix-complete-comparison-guide': redis_8_decision_matrix,
+  // Redis Deployment Guide Series
+  'redis-deployment-guide': redis_deployment_guide_0_hub,
+  'redis-cloud-vs-self-managed-strategic-decision-framework': redis_deployment_guide_1_cloud_vs_self_managed,
+  'redis-cloud-managed-elasticache-memorystore-deep-dive': redis_deployment_guide_2_cloud_managed,
+  'redis-self-managed-vm-bare-metal-production-guide': redis_deployment_guide_3_self_managed,
+  'redis-docker-container-deployment-strategies': redis_deployment_guide_4_docker,
+  'redis-kubernetes-statefulset-operator-deep-dive': redis_deployment_guide_5_kubernetes,
+  'redis-local-development-docker-native-quick-start': redis_deployment_guide_6_local_dev,
+  'redis-performance-optimization-memory-management': redis_deployment_guide_7_performance,
+  'redis-deployment-decision-matrix-complete-comparison-guide': redis_deployment_guide_8_decision_matrix,
 
-  // Aerospike Mastery Series
-  'aerospike-mastery-series': aerospike_0_hub,
-  'aerospike-cloud-vs-self-managed-strategic-decision-framework': aerospike_1_cloud_vs_self_managed,
-  'aerospike-architecture-deep-dive-hybrid-memory': aerospike_2_architecture,
-  'aerospike-self-managed-vm-bare-metal-production-guide': aerospike_3_self_managed,
-  'aerospike-docker-container-deployment-strategies': aerospike_4_docker,
-  'aerospike-kubernetes-statefulset-deep-dive': aerospike_5_kubernetes,
-  'aerospike-local-development-docker-native-quick-start': aerospike_6_local_dev,
-  'aerospike-performance-optimization-hma-clustering': aerospike_7_performance,
-  'aerospike-deployment-decision-matrix-complete-comparison-guide': aerospike_8_decision_matrix,
+  // Aerospike Deployment Guide Series
+  'aerospike-deployment-guide': aerospike_deployment_guide_0_hub,
+  'aerospike-cloud-vs-self-managed-strategic-decision-framework': aerospike_deployment_guide_1_cloud_vs_self_managed,
+  'aerospike-architecture-deep-dive-hybrid-memory': aerospike_deployment_guide_2_architecture,
+  'aerospike-self-managed-vm-bare-metal-production-guide': aerospike_deployment_guide_3_self_managed,
+  'aerospike-docker-container-deployment-strategies': aerospike_deployment_guide_4_docker,
+  'aerospike-kubernetes-statefulset-deep-dive': aerospike_deployment_guide_5_kubernetes,
+  'aerospike-local-development-docker-native-quick-start': aerospike_deployment_guide_6_local_dev,
+  'aerospike-performance-optimization-hma-clustering': aerospike_deployment_guide_7_performance,
+  'aerospike-deployment-decision-matrix-complete-comparison-guide': aerospike_deployment_guide_8_decision_matrix,
 
-  // PostgreSQL Mastery Series
-  'postgresql-mastery-series': postgresql_0_hub,
-  'postgresql-cloud-vs-self-managed-strategic-decision-framework': postgresql_1_cloud_vs_self_managed,
-  'postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive': postgresql_2_cloud_managed,
-  'postgresql-self-managed-vm-bare-metal-production-guide': postgresql_3_self_managed,
-  'postgresql-docker-container-deployment-strategies': postgresql_4_docker,
-  'postgresql-kubernetes-statefulset-operator-deep-dive': postgresql_5_kubernetes,
-  'postgresql-local-development-docker-native-quick-start': postgresql_6_local_dev,
-  'postgresql-performance-optimization-query-tuning-indexing': postgresql_7_performance,
-  'postgresql-deployment-decision-matrix-complete-comparison-guide': postgresql_8_decision_matrix,
+  // PostgreSQL Deployment Guide Series
+  'postgresql-deployment-guide': postgresql_deployment_guide_0_hub,
+  'postgresql-cloud-vs-self-managed-strategic-decision-framework': postgresql_deployment_guide_1_cloud_vs_self_managed,
+  'postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive': postgresql_deployment_guide_2_cloud_managed,
+  'postgresql-self-managed-vm-bare-metal-production-guide': postgresql_deployment_guide_3_self_managed,
+  'postgresql-docker-container-deployment-strategies': postgresql_deployment_guide_4_docker,
+  'postgresql-kubernetes-statefulset-operator-deep-dive': postgresql_deployment_guide_5_kubernetes,
+  'postgresql-local-development-docker-native-quick-start': postgresql_deployment_guide_6_local_dev,
+  'postgresql-performance-optimization-query-tuning-indexing': postgresql_deployment_guide_7_performance,
+  'postgresql-deployment-decision-matrix-complete-comparison-guide': postgresql_deployment_guide_8_decision_matrix,
 
   // Containerization
   
