@@ -10,7 +10,7 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-15",
   categories: ["Aerospike", "NoSQL", "Series"],
   searchCategories: ["Aerospike", "NoSQL", "Databases", "Performance", "Series"],
-  featured: true,
+  featured: false,
   coverImage: "/blog/blogImages/aerospike-series.png",
 };
 

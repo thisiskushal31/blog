@@ -10,7 +10,7 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-15",
   categories: ["Redis", "Caching", "Series"],
   searchCategories: ["Redis", "Caching", "NoSQL", "Databases", "Series"],
-  featured: true,
+  featured: false,
   coverImage: "/blog/blogImages/redis-series.png",
 };
 

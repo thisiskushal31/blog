@@ -12,7 +12,7 @@ export const blogPost: BlogPost = {
   readTime: "8 min read",
   categories: ["Showcase", "Features", "Demo"],
   searchCategories: ["Showcase", "Features"],
-  featured: true,
+  featured: false,
   coverImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop",
   coverImageCredit: "Photo by John Doe on Unsplash"
 };

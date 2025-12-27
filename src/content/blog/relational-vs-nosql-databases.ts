@@ -10,7 +10,7 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-15",
   categories: ["Databases", "Architecture", "Fundamentals"],
   searchCategories: ["Databases", "SQL", "NoSQL", "Architecture", "Database Management"],
-  featured: true,
+  featured: false,
   coverImage: "/blog/blogImages/database-comparison.png",
 };
 

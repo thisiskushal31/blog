@@ -26,6 +26,7 @@ import { blogPost as es_deployment_guide_7_decision_matrix } from '../content/bl
 
 // Databases
 import { blogPost as relational_vs_nosql_databases } from '../content/blog/relational-vs-nosql-databases';
+import { blogPost as database_mastery_series_index } from '../content/blog/database-mastery-series-index';
 
 // MySQL Mastery Series
 import { blogPost as mysql_0_hub } from '../content/blog/mysql_0_hub';
@@ -106,6 +107,7 @@ export const BLOG_POST_SLUGS = [
   'elasticsearch-deployment-decision-matrix-complete-comparison-guide',
 
   // Databases
+  'database-mastery-series-index',
   'relational-vs-nosql-databases-complete-guide',
 
   // MySQL Mastery Series
@@ -190,6 +192,7 @@ export const POST_MAP: Record<string, BlogPost> = {
   'elasticsearch-deployment-decision-matrix-complete-comparison-guide': es_deployment_guide_7_decision_matrix,
 
   // Databases
+  'database-mastery-series-index': database_mastery_series_index,
   'relational-vs-nosql-databases-complete-guide': relational_vs_nosql_databases,
 
   // MySQL Mastery Series

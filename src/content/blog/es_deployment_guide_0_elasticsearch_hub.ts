@@ -10,7 +10,7 @@ export const blogPost: BlogPost = {
   publishDate: "2025-08-24",
   categories: ["Elasticsearch Overview"],
   searchCategories: ["Deployment Guide", "Elasticsearch", "Database Management"],
-  featured: true,
+  featured: false,
   coverImage: "/blog/blogImages/elasticsearch-deployment-guide.png",
   // coverImageCredit: "Photo by ThisisEngineering RAEng on Unsplash"
 }; 

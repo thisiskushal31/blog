@@ -10,7 +10,7 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-15",
   categories: ["MySQL", "Databases", "Series"],
   searchCategories: ["MySQL", "Databases", "SQL", "Database Management", "Series"],
-  featured: true,
+  featured: false,
   coverImage: "/blog/blogImages/mysql-series.png",
 };
 
