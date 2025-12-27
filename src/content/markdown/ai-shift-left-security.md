@@ -90,8 +90,11 @@ Advanced analytics → AI threat modeling → Business impact measurement
 **The Numbers Don't Lie:**
 - AI makes security 60-85% more accurate
 - Security fixes cost 6x less when caught early
-- Free tools provide enterprise-grade protection
+- Most security tools are free and provide enterprise-grade protection (Wazuh, ModSecurity, Semgrep, OWASP ZAP, Trivy, Keycloak)
+- CI/CD platforms: GitLab offers a free tier (400 minutes/month), but paid plans start at $29/user/month. Free alternatives: GitHub Actions (2,000 minutes/month) or Bitbucket Pipelines (50 minutes/month)
 - Security becomes an accelerator, not a bottleneck
+
+**Note:** Pricing information may change. Please check official pricing pages ([GitLab](https://about.gitlab.com/pricing), [GitHub](https://github.com/pricing), [Bitbucket](https://www.atlassian.com/software/bitbucket/pricing)) for the most current rates before making decisions.
 
 **Next Steps:**
 1. Install free enterprise security stack (Wazuh, ModSecurity, Semgrep, OWASP ZAP, Trivy, Keycloak)

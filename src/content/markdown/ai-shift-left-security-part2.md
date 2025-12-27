@@ -204,7 +204,7 @@ Here's the reality: Most security implementations focus on one layer and ignore 
 - **Container Security:** CVE scanning, image signing, runtime protection
 - **Dependency Scanning:** 99.9% vulnerability detection (Trivy Security Report 2024)
 
-**Real-World Implementation:** In my work securing distributed infrastructure, I've integrated Trivy container scanning directly into GitLab CI pipelines. This automated vulnerability detection catches issues before deployment, blocking vulnerable containers automatically. Combined with Kubernetes RBAC and Secure Boot, this creates a defense-in-depth approach that hardens container security at multiple layers.
+**Real-World Implementation:** In my work securing distributed infrastructure, I've integrated Trivy container scanning directly into GitLab CI pipelines (note: GitLab offers a free tier with 400 compute minutes/month, but paid plans start at $29/user/month for advanced features - see [GitLab pricing](https://about.gitlab.com/pricing)). This automated vulnerability detection catches issues before deployment, blocking vulnerable containers automatically. Combined with Kubernetes RBAC and Secure Boot, this creates a defense-in-depth approach that hardens container security at multiple layers. **Alternative free CI/CD options:** GitHub Actions (2,000 minutes/month free) or Bitbucket Pipelines (50 minutes/month free). **Note:** Pricing may change - check official pricing pages before making decisions.
 
 ### **Layer 3: Identity & Access Management (IAM)**
 **Tools:** Keycloak, FreeIPA, Wazuh IAM modules
@@ -607,7 +607,7 @@ I've seen too many companies try to implement everything at once and fail. Here'
 **Phase 2: Integration (Weeks 3-4)**
 - CI/CD Integration (SAST/DAST) → WAF Deployment → Real-time Detection → Monitor & Optimize
 
-**Real-World Experience:** I've modernized CI/CD infrastructure by migrating from freestyle bash jobs to scripted pipeline jobs in Jenkins, integrated with Slack for real-time job failure alerts. This improved monitoring and reduced incident response time significantly. By integrating Trivy container scanning into GitLab CI and automating security checks, we caught vulnerabilities before they reached production—exactly the shift-left security approach this series advocates.
+**Real-World Experience:** I've modernized CI/CD infrastructure by migrating from freestyle bash jobs to scripted pipeline jobs in Jenkins, integrated with Slack for real-time job failure alerts. This improved monitoring and reduced incident response time significantly. By integrating Trivy container scanning into GitLab CI (note: GitLab offers a free tier with 400 compute minutes/month, but paid plans start at $29/user/month for advanced features - see [GitLab pricing](https://about.gitlab.com/pricing)) and automating security checks, we caught vulnerabilities before they reached production—exactly the shift-left security approach this series advocates. **Alternative free CI/CD options:** GitHub Actions (2,000 minutes/month free) or Bitbucket Pipelines (50 minutes/month free). **Note:** Pricing may change - check official pricing pages before making decisions.
 
 **Phase 3: Scale (Weeks 5-8)**
 - Advanced Analytics → AI Threat Modeling → Custom WAF Rules → Business Impact Measurement
@@ -675,7 +675,7 @@ You can't ignore compliance, but you also can't let it slow you down. Here's how
 
 In Part 3, we'll dive into the future—the 2025 trends, emerging threats, and new tools that will shape AI security. We'll cover everything from Google's cybersecurity forecast to the latest regulatory changes.
 
-**Ready to implement?** Start with Phase 1. The tools are free, the documentation is comprehensive, and the community is supportive.
+**Ready to implement?** Start with Phase 1. Most tools are free (Wazuh, ModSecurity, Semgrep, OWASP ZAP, Trivy, Keycloak), the documentation is comprehensive, and the community is supportive. **CI/CD platforms:** GitLab offers a free tier (400 compute minutes/month), but paid plans start at $29/user/month for advanced features. Free alternatives include GitHub Actions (2,000 minutes/month) and Bitbucket Pipelines (50 minutes/month). You can integrate these security tools with any CI/CD system. See [GitLab pricing](https://about.gitlab.com/pricing), [GitHub pricing](https://github.com/pricing), and [Bitbucket pricing](https://www.atlassian.com/software/bitbucket/pricing) for details. **Note:** Pricing information may change - always check official pricing pages for the most current rates before making decisions.
 
 *[Continue to Part 3: 2025 Trends & Future →](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part3)*
 
