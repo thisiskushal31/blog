@@ -192,10 +192,36 @@ const BlogPost: React.FC = () => {
             More Articles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts
-              .filter(p => p.slug !== post.slug)
-              .slice(0, 3)
-              .map((relatedPost, index) => (
+            {(() => {
+              // Get posts excluding current and featured posts
+              const availablePosts = blogPosts.filter(p => p.slug !== post.slug && !p.featured);
+              
+              // Get current post's categories/tags
+              const currentCategories = post.categories || [];
+              
+              // First, find posts with matching tags/categories
+              const relatedByTags = availablePosts
+                .map(p => ({
+                  post: p,
+                  matchingTags: (p.categories || []).filter(cat => currentCategories.includes(cat)).length
+                }))
+                .filter(item => item.matchingTags > 0) // Only posts with matching tags
+                .sort((a, b) => b.matchingTags - a.matchingTags) // More matches first
+                .map(item => item.post);
+              
+              // Get posts without matching tags (for random selection)
+              const unrelatedPosts = availablePosts
+                .filter(p => !relatedByTags.includes(p))
+                .sort(() => Math.random() - 0.5); // Randomize
+              
+              // Combine: related posts first, then fill with random posts
+              const finalPosts = [
+                ...relatedByTags.slice(0, 3), // Up to 3 related posts
+                ...unrelatedPosts.slice(0, Math.max(0, 3 - relatedByTags.length)) // Fill remaining slots
+              ];
+              
+              return finalPosts.slice(0, 3); // Ensure we only return 3 posts
+            })().map((relatedPost, index) => (
                 <div
                   key={relatedPost.slug}
                   className="blog-card fade-in-up"
