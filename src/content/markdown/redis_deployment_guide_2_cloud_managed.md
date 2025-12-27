@@ -192,5 +192,5 @@ For comprehensive technical details, explore our [Redis Technical Deep Dive](htt
 
 ---
 
-*This is Blog 2 of the Redis Deployment Guide. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/redis-deployment-guide) to explore all posts.*
+*This post is part of the Redis Deployment Guide Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/redis-deployment-guide) to explore all posts.*
 

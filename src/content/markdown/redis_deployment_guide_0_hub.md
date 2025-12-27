@@ -1,8 +1,8 @@
-# The Complete Redis Deployment Mastery Series
+# The Complete Redis Deployment Guide Series
 
 *Your comprehensive guide from development to production-scale in-memory data infrastructure*
 
-## Welcome to Redis Mastery
+## Welcome to Redis Deployment Guide
 
 Building reliable, scalable Redis infrastructure doesn't have to be overwhelming. I've been there—staring at memory usage at 2 AM, wondering why your cache is evicting everything. Whether you're a developer setting up your first cache or an architect designing high-performance systems, this series breaks down complex Redis deployment and optimization decisions into clear, actionable guidance that actually works in production.
 
@@ -44,7 +44,7 @@ Master the fundamental decision between managed services and self-managed infras
 
 Comprehensive analysis of cloud-managed Redis offerings.
 
-### [Blog 3: Self-Managed Redis - VM and Bare Metal Production Guide](https://thisiskushal31.github.io/blog/#/blog/redis-self-managed-vm-bare-metal-production-guide)
+### [Blog 3: Self-Managed Production Guide](https://thisiskushal31.github.io/blog/#/blog/redis-self-managed-vm-bare-metal-production-guide)
 **🎯 Focus: Maximum Control Infrastructure**
 
 Build production-grade self-managed Redis clusters.
@@ -54,7 +54,7 @@ Build production-grade self-managed Redis clusters.
 
 Deploy production-ready Redis using Docker.
 
-### [Blog 5: Kubernetes Redis - StatefulSet vs Operator Deep Dive](https://thisiskushal31.github.io/blog/#/blog/redis-kubernetes-statefulset-operator-deep-dive)
+### [Blog 5: Kubernetes Deep Dive](https://thisiskushal31.github.io/blog/#/blog/redis-kubernetes-statefulset-operator-deep-dive)
 **🎯 Focus: Cloud-Native Deployment**
 
 Master Kubernetes-native Redis with advanced patterns.

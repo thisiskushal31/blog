@@ -425,5 +425,5 @@ For comprehensive technical deep dives on MongoDB and database concepts, explore
 
 ---
 
-*This is Blog 1 of the MongoDB Deployment Guide. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-deployment-guide) to explore all posts.*
+*This post is part of the MongoDB Deployment Guide Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-deployment-guide) to explore all posts.*
 

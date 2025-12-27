@@ -137,5 +137,5 @@ For comprehensive technical details, explore our [Aerospike Technical Deep Dive]
 
 ---
 
-*This is Blog 5 of the Aerospike Deployment Guide. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-deployment-guide) to explore all posts.*
+*This post is part of the Aerospike Deployment Guide Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/aerospike-deployment-guide) to explore all posts.*
 

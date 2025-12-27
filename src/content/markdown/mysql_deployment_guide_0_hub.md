@@ -1,8 +1,8 @@
-# The Complete MySQL Deployment Mastery Series
+# The Complete MySQL Deployment Guide Series
 
 *Your comprehensive guide from development to production-scale relational database infrastructure*
 
-## Welcome to MySQL Mastery
+## Welcome to MySQL Deployment Guide
 
 Building reliable, scalable MySQL infrastructure doesn't have to be overwhelming. I've been there—staring at slow query logs at 2 AM, wondering why your application is timing out. Whether you're a developer setting up your first database or a DBA architecting multi-terabyte systems, this series breaks down complex MySQL deployment and optimization decisions into clear, actionable guidance that actually works in production.
 
@@ -38,14 +38,14 @@ This comprehensive series covers every major MySQL deployment strategy with hand
 **Recommended Path:**
 1. [Blog 6: Local Development Setup](https://thisiskushal31.github.io/blog/#/blog/mysql-local-development-docker-native-quick-start)
 2. [Blog 2: Cloud-Managed MySQL](https://thisiskushal31.github.io/blog/#/blog/mysql-cloud-managed-rds-cloud-sql-azure-deep-dive)
-3. [Blog 7: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-decision-matrix-complete-comparison-guide)
+3. [Blog 8: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-decision-matrix-complete-comparison-guide)
 
 **Why This Order:** Start with hands-on local experience (trust me, you'll break things), understand managed options (save yourself the headaches), then make informed production decisions (avoid the 3 AM database recovery calls).
 
 ### 🏢 **Planning Production Deployment**
 **Recommended Path:**
 1. [Blog 1: Strategic Overview](https://thisiskushal31.github.io/blog/#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework)
-2. [Blog 7: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-decision-matrix-complete-comparison-guide)
+2. [Blog 8: Decision Matrix](https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-decision-matrix-complete-comparison-guide)
 3. Choose specific deployment blog based on your infrastructure choice
 
 **Why This Order:** Understand the big picture first, then dive into implementation details for your chosen approach.
@@ -193,20 +193,20 @@ The definitive guide to choosing the right MySQL deployment strategy with quanti
 **Answer these questions to get your personalized recommendation:**
 
 ### Team & Expertise Assessment
-- **Small team (<5 engineers)** → Start with [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-cloud-managed-rds-cloud-sql-azure-deep-dive)
-- **Medium team (5-15 engineers)** → Start with [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/mysql-kubernetes-statefulset-operator-deep-dive)  
-- **Large team (15+ engineers)** → Start with [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-self-managed-vm-bare-metal-production-guide)
+- **Small team (<5 engineers)** → Start with [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-cloud-managed-rds-cloud-sql-azure-deep-dive-rds-cloud-sql-azure-deep-dive)
+- **Medium team (5-15 engineers)** → Start with [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/mysql-kubernetes-statefulset-operator-deep-dive-statefulset-operator-deep-dive)  
+- **Large team (15+ engineers)** → Start with [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-self-managed-vm-bare-metal-production-guide-vm-bare-metal-production-guide)
 
 ### Data Scale & Performance Requirements
-- **Development/Testing** → [Blog 6: Local Development](https://thisiskushal31.github.io/blog/#/blog/mysql-local-development-docker-native-quick-start)
-- **Small production (<100GB)** → [Blog 4: Containers](https://thisiskushal31.github.io/blog/#/blog/mysql-docker-container-deployment-strategies)
-- **Medium scale (100GB-1TB)** → [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/mysql-kubernetes-statefulset-operator-deep-dive)
-- **Large scale (>1TB)** → [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-self-managed-vm-bare-metal-production-guide)
+- **Development/Testing** → [Blog 6: Local Development](https://thisiskushal31.github.io/blog/#/blog/mysql-local-development-docker-native-quick-start-docker-native-quick-start)
+- **Small production (<100GB)** → [Blog 4: Containers](https://thisiskushal31.github.io/blog/#/blog/mysql-docker-container-deployment-strategies-container-deployment-strategies)
+- **Medium scale (100GB-1TB)** → [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/mysql-kubernetes-statefulset-operator-deep-dive-statefulset-operator-deep-dive)
+- **Large scale (>1TB)** → [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-self-managed-vm-bare-metal-production-guide-vm-bare-metal-production-guide)
 
 ### Budget & Control Preferences
-- **High budget, minimal ops** → [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-cloud-managed-rds-cloud-sql-azure-deep-dive)
-- **Medium budget, automated ops** → [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/mysql-kubernetes-statefulset-operator-deep-dive)
-- **Cost-optimized, full control** → [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-self-managed-vm-bare-metal-production-guide)
+- **High budget, minimal ops** → [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-cloud-managed-rds-cloud-sql-azure-deep-dive-rds-cloud-sql-azure-deep-dive)
+- **Medium budget, automated ops** → [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/mysql-kubernetes-statefulset-operator-deep-dive-statefulset-operator-deep-dive)
+- **Cost-optimized, full control** → [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/mysql-self-managed-vm-bare-metal-production-guide-vm-bare-metal-production-guide)
 
 ## Technical Prerequisites
 

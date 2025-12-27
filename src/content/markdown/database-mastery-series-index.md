@@ -1,4 +1,4 @@
-# The Complete Database Mastery Series Collection
+# The Complete Database Deployment Guide Series Collection
 
 *Your one-stop guide to mastering database deployment strategies across all major database systems*
 
@@ -8,15 +8,15 @@
 
 Choosing and deploying the right database infrastructure is one of the most critical decisions in modern application architecture. Whether you're working with relational databases like MySQL and PostgreSQL, document stores like MongoDB, in-memory caches like Redis, or high-performance systems like Aerospike and Elasticsearch, making the right deployment decision can save your organization hundreds of thousands of dollars and prevent countless operational headaches.
 
-This master index provides a comprehensive overview of all our database mastery series, helping you quickly find the right resources for your specific database needs. Each series follows a consistent structure, making it easy to compare approaches across different database systems.
+This master index provides a comprehensive overview of all our database deployment guide series, helping you quickly find the right resources for your specific database needs. Each series follows a consistent structure, making it easy to compare approaches across different database systems.
 
 ## TL;DR
 
-- **What:** Master index linking to all database mastery series (MySQL, PostgreSQL, MongoDB, Redis, Aerospike, Elasticsearch)
+- **What:** Master index linking to all database deployment guide series (MySQL, PostgreSQL, MongoDB, Redis, Aerospike, Elasticsearch)
 - **When to use:** When you need to choose or deploy any major database system
 - **Reading time:** 5-10 minutes to explore all series
 - **Implementation time:** Varies by database and deployment strategy
-- **Key takeaway:** Each database has unique characteristics—use the appropriate mastery series for strategic decision-making
+- **Key takeaway:** Each database has unique characteristics—use the appropriate deployment guide series for strategic decision-making
 - **Skip if:** You already know which database you're using and have found the right series
 
 **What You'll Find:**
@@ -29,7 +29,7 @@ This master index provides a comprehensive overview of all our database mastery 
 
 ---
 
-## Complete Database Mastery Series
+## Complete Database Deployment Guide Series
 
 ### 🐬 [MySQL Deployment Guide](https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-guide)
 
@@ -215,7 +215,7 @@ Elasticsearch powers search, logging, and analytics in modern applications. This
 
 ### 🎯 **I Know Which Database I Need**
 
-1. Navigate directly to the relevant mastery series hub
+1. Navigate directly to the relevant deployment guide series hub
 2. Start with Blog 1 (Strategic Decision Framework) for that database
 3. Use Blog 8 (Decision Matrix) to make your deployment choice
 4. Follow the implementation guides for your chosen strategy
@@ -225,12 +225,12 @@ Elasticsearch powers search, logging, and analytics in modern applications. This
 1. Start with our [Relational vs NoSQL Databases Guide](https://thisiskushal31.github.io/blog/#/blog/relational-vs-nosql-databases-complete-guide)
 2. Understand your data model requirements (structured vs flexible)
 3. Evaluate performance needs (latency, throughput, scale)
-4. Review the relevant mastery series for your top candidates
+4. Review the relevant deployment guide series for your top candidates
 5. Use the decision matrices to make final choices
 
 ### 🏢 **I Need to Deploy Multiple Databases**
 
-1. Review each relevant mastery series
+1. Review each relevant deployment guide series
 2. Use consistent decision frameworks across databases
 3. Consider infrastructure patterns (all cloud-managed, all self-managed, hybrid)
 4. Optimize for operational consistency where possible
@@ -260,7 +260,7 @@ Elasticsearch powers search, logging, and analytics in modern applications. This
 
 ## Common Patterns Across All Series
 
-Each mastery series follows a consistent structure, making it easy to compare approaches:
+Each deployment guide series follows a consistent structure, making it easy to compare approaches:
 
 ### 1. Strategic Decision Framework (Blog 1)
 - Cloud-managed vs self-managed comparison
@@ -347,7 +347,7 @@ For comprehensive technical deep dives on database concepts and operations, expl
 
 1. **Identify your database needs** - Review the comparison matrix above
 2. **Choose your database** - Use the [Relational vs NoSQL guide](https://thisiskushal31.github.io/blog/#/blog/relational-vs-nosql-databases-complete-guide) if unsure
-3. **Navigate to the relevant mastery series** - Click the series link above
+3. **Navigate to the relevant deployment guide series** - Click the series link above
 4. **Start with Blog 1** - Strategic Decision Framework for your chosen database
 5. **Use Blog 8** - Decision Matrix to make your deployment choice
 6. **Implement** - Follow the specific deployment guides for your chosen strategy

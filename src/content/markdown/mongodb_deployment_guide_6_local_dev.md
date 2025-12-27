@@ -180,5 +180,5 @@ For comprehensive technical details, explore our [MongoDB Technical Deep Dive](h
 
 ---
 
-*This is Blog 6 of the MongoDB Deployment Guide. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-deployment-guide) to explore all posts.*
+*This post is part of the MongoDB Deployment Guide Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/mongodb-deployment-guide) to explore all posts.*
 

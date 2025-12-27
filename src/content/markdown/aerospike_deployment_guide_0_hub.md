@@ -1,8 +1,8 @@
-# The Complete Aerospike Deployment Mastery Series
+# The Complete Aerospike Deployment Guide Series
 
 *Your comprehensive guide from development to production-scale high-performance key-value infrastructure*
 
-## Welcome to Aerospike Mastery
+## Welcome to Aerospike Deployment Guide
 
 Building reliable, scalable Aerospike infrastructure doesn't have to be overwhelming. I've been there—staring at latency metrics at 2 AM, wondering why your reads are slow. Whether you're a developer setting up your first high-performance database or an architect designing sub-millisecond systems, this series breaks down complex Aerospike deployment and optimization decisions into clear, actionable guidance that actually works in production.
 
@@ -39,27 +39,27 @@ This comprehensive series covers every major Aerospike deployment strategy with 
 
 Master the fundamental decision between managed services and self-managed infrastructure.
 
-### [Blog 2: Self-Managed Aerospike - VM and Bare Metal Production Guide](https://thisiskushal31.github.io/blog/#/blog/aerospike-self-managed-vm-bare-metal-production-guide)
+### [Blog 3: Self-Managed Production Guide](https://thisiskushal31.github.io/blog/#/blog/aerospike-self-managed-vm-bare-metal-production-guide)
 **🎯 Focus: Maximum Control Infrastructure**
 
 Build production-grade self-managed Aerospike clusters.
 
-### [Blog 3: Containerized Aerospike - Docker Production Strategies](https://thisiskushal31.github.io/blog/#/blog/aerospike-docker-container-deployment-strategies)
+### [Blog 4: Containerized Aerospike - Docker Production Strategies](https://thisiskushal31.github.io/blog/#/blog/aerospike-docker-container-deployment-strategies)
 **🎯 Focus: Container Orchestration**
 
 Deploy production-ready Aerospike using Docker.
 
-### [Blog 4: Kubernetes Aerospike - StatefulSet Deep Dive](https://thisiskushal31.github.io/blog/#/blog/aerospike-kubernetes-statefulset-deep-dive)
+### [Blog 5: Kubernetes Deep Dive](https://thisiskushal31.github.io/blog/#/blog/aerospike-kubernetes-statefulset-deep-dive)
 **🎯 Focus: Cloud-Native Deployment**
 
 Master Kubernetes-native Aerospike with advanced patterns.
 
-### [Blog 5: Local Development - Docker vs Native Installation](https://thisiskushal31.github.io/blog/#/blog/aerospike-local-development-docker-native-quick-start)
+### [Blog 6: Local Development - Docker vs Native Installation](https://thisiskushal31.github.io/blog/#/blog/aerospike-local-development-docker-native-quick-start)
 **🎯 Focus: Development Workflow**
 
 Optimize your development environment.
 
-### [Blog 6: Aerospike Performance Optimization - Hybrid Memory Architecture](https://thisiskushal31.github.io/blog/#/blog/aerospike-performance-optimization-hybrid-memory)
+### [Blog 7: Aerospike Performance Optimization - Hybrid Memory Architecture](https://thisiskushal31.github.io/blog/#/blog/aerospike-performance-optimization-hybrid-memory)
 **🎯 Focus: Performance Mastery**
 
 Master Aerospike performance optimization.

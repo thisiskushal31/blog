@@ -1,8 +1,8 @@
-# The Complete PostgreSQL Deployment Mastery Series
+# The Complete PostgreSQL Deployment Guide Series
 
 *Your strategic guide to choosing and deploying PostgreSQL from development to enterprise-scale infrastructure*
 
-## Welcome to PostgreSQL Mastery
+## Welcome to PostgreSQL Deployment Guide
 
 Choosing the right PostgreSQL deployment strategy is one of the most critical infrastructure decisions you'll make. Get it wrong, and you're looking at unexpected costs, operational headaches, and potential downtime. Get it right, and you have a scalable, reliable database foundation that supports your business growth.
 
@@ -288,29 +288,29 @@ The definitive quantitative framework for choosing the right PostgreSQL deployme
 - **Cost Impact:** Higher monthly costs but lower total cost when factoring in engineering time
 
 **Medium Team (5-15 engineers):**
-- **Recommended:** [Blog 5: Kubernetes PostgreSQL](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive) or [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive)
+- **Recommended:** [Blog 5: Kubernetes PostgreSQL](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive) or [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive-rds-cloud-sql-azure-deep-dive)
 - **Why:** Balance between control and operational simplicity
 - **Cost Impact:** Moderate costs with good scalability options
 
 **Large Team (15+ engineers):**
-- **Recommended:** [Blog 3: Self-Managed PostgreSQL](https://thisiskushal31.github.io/blog/#/blog/postgresql-self-managed-vm-bare-metal-production-guide) or [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive)
+- **Recommended:** [Blog 3: Self-Managed PostgreSQL](https://thisiskushal31.github.io/blog/#/blog/postgresql-self-managed-vm-bare-metal-production-guide) or [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive-statefulset-operator-deep-dive)
 - **Why:** Maximum control, cost optimization at scale, dedicated database expertise
 - **Cost Impact:** Lower infrastructure costs but requires database administration expertise
 
 ### By Scale
 
 **Small Scale (<100GB):**
-- **Recommended:** [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive) or [Blog 4: Docker](https://thisiskushal31.github.io/blog/#/blog/postgresql-docker-container-deployment-strategies)
+- **Recommended:** [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive-rds-cloud-sql-azure-deep-dive) or [Blog 4: Docker](https://thisiskushal31.github.io/blog/#/blog/postgresql-docker-container-deployment-strategies-container-deployment-strategies)
 - **Why:** Simple setup, minimal operational overhead
 - **Cost Impact:** Cloud-managed is cost-effective at this scale
 
 **Medium Scale (100GB-1TB):**
-- **Recommended:** [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive) or [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive)
+- **Recommended:** [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive-statefulset-operator-deep-dive) or [Blog 2: Cloud-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-cloud-managed-rds-cloud-sql-azure-deep-dive-rds-cloud-sql-azure-deep-dive)
 - **Why:** Good balance of features, scalability, and cost
 - **Cost Impact:** Self-managed starts becoming more cost-effective
 
 **Large Scale (>1TB):**
-- **Recommended:** [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-self-managed-vm-bare-metal-production-guide) or [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive)
+- **Recommended:** [Blog 3: Self-Managed](https://thisiskushal31.github.io/blog/#/blog/postgresql-self-managed-vm-bare-metal-production-guide-vm-bare-metal-production-guide) or [Blog 5: Kubernetes](https://thisiskushal31.github.io/blog/#/blog/postgresql-kubernetes-statefulset-operator-deep-dive-statefulset-operator-deep-dive)
 - **Why:** Cost optimization becomes critical, maximum control needed
 - **Cost Impact:** Self-managed can save 40-60% vs managed services
 

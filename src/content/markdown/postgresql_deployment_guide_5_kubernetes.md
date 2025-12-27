@@ -401,5 +401,5 @@ For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive
 
 ---
 
-*This is Blog 5 of the PostgreSQL Deployment Guide. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/postgresql-deployment-guide) to explore all posts.*
+*This post is part of the PostgreSQL Deployment Guide Series. Return to the [series hub](https://thisiskushal31.github.io/blog/#/blog/postgresql-deployment-guide) to explore all posts.*
 
