@@ -106,7 +106,9 @@ Stage 2: AI Security Dashboard
 
 ## Real-World Impact: A Case Study
 
-Let me share what I've seen work in practice. A major B2C retail platform was drowning in false positives—99% of their alerts were noise. Security reviews were taking two weeks, and developers were bypassing security to meet deadlines.
+Let me share what I've seen work in practice. In my experience securing distributed infrastructure for retail applications, I've seen how security bottlenecks can slow down critical deployments. When security reviews take too long, teams find workarounds—and that's when vulnerabilities slip through.
+
+A major B2C retail platform was drowning in false positives—99% of their alerts were noise. Security reviews were taking two weeks, and developers were bypassing security to meet deadlines.
 
 They implemented comprehensive application security with Wazuh + Snort + Suricata + ModSecurity, and the results were dramatic:
 - 78% reduction in false positives (verified by their security team)
