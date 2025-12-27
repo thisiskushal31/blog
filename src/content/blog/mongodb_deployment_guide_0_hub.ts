@@ -11,6 +11,6 @@ export const blogPost: BlogPost = {
   categories: ["MongoDB", "NoSQL", "Series"],
   searchCategories: ["MongoDB", "NoSQL", "Databases", "Database Management", "Series"],
   featured: false,
-  coverImage: "/blog/blogImages/mongodb-series.png",
+  coverImage: "/blog/blogImages/mongodb-deployment-guide.png",
 };
 

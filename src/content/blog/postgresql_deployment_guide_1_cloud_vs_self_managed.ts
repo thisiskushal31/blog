@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-20",
   categories: ["PostgreSQL", "Strategy", "Decision Framework"],
   searchCategories: ["PostgreSQL", "Databases", "Cloud", "Strategy", "Decision Framework", "TCO", "Cost Analysis"],
-  coverImage: "/blog/blogImages/postgresql-decision.png",
+  coverImage: "/blog/blogImages/postgresql-deployment-guide.png",
 };
 

@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-07",
   categories: ["Redis", "Self-Managed", "Infrastructure"],
   searchCategories: ["Redis", "Databases", "Self-Managed", "VM", "Bare Metal", "Production", "HA"],
-  coverImage: "/blog/blogImages/redis-self-managed.png",
+  coverImage: "/blog/blogImages/redis-deployment-guide.png",
 };
 

@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-17",
   categories: ["Aerospike", "Kubernetes", "Cloud Native"],
   searchCategories: ["Aerospike", "Databases", "Kubernetes", "StatefulSet", "Cloud Native"],
-  coverImage: "/blog/blogImages/aerospike-kubernetes.png",
+  coverImage: "/blog/blogImages/aerospike-deployment-guide.png",
 };
 

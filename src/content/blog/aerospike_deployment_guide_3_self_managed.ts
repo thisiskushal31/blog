@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-15",
   categories: ["Aerospike", "Self-Managed", "Infrastructure"],
   searchCategories: ["Aerospike", "Databases", "Self-Managed", "VM", "Bare Metal", "Production", "HA"],
-  coverImage: "/blog/blogImages/aerospike-self-managed.png",
+  coverImage: "/blog/blogImages/aerospike-deployment-guide.png",
 };
 

@@ -11,6 +11,6 @@ export const blogPost: BlogPost = {
   categories: ["Redis", "Caching", "Series"],
   searchCategories: ["Redis", "Caching", "NoSQL", "Databases", "Series"],
   featured: false,
-  coverImage: "/blog/blogImages/redis-series.png",
+  coverImage: "/blog/blogImages/redis-deployment-guide.png",
 };
 

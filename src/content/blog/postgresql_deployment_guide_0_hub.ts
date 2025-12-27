@@ -11,6 +11,6 @@ export const blogPost: BlogPost = {
   categories: ["PostgreSQL", "Databases", "Series", "Strategy"],
   searchCategories: ["PostgreSQL", "Databases", "SQL", "Database Management", "Series", "Strategy", "Decision Framework"],
   featured: false,
-  coverImage: "/blog/blogImages/postgresql-series.png",
+  coverImage: "/blog/blogImages/postgresql-deployment-guide.png",
 };
 

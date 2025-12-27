@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-01",
   categories: ["MongoDB", "Kubernetes", "Cloud Native"],
   searchCategories: ["MongoDB", "Databases", "Kubernetes", "StatefulSet", "Operators", "Cloud Native"],
-  coverImage: "/blog/blogImages/mongodb-kubernetes.png",
+  coverImage: "/blog/blogImages/mongodb-deployment-guide.png",
 };
 

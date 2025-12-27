@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-09",
   categories: ["Redis", "Kubernetes", "Cloud Native"],
   searchCategories: ["Redis", "Databases", "Kubernetes", "StatefulSet", "Operators", "Cloud Native"],
-  coverImage: "/blog/blogImages/redis-kubernetes.png",
+  coverImage: "/blog/blogImages/redis-deployment-guide.png",
 };
 

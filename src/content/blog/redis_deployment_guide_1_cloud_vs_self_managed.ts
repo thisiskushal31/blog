@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-05",
   categories: ["Redis", "Strategy", "Decision Framework"],
   searchCategories: ["Redis", "Databases", "Cloud", "Strategy", "Decision Framework", "TCO", "Cost Analysis"],
-  coverImage: "/blog/blogImages/redis-decision.png",
+  coverImage: "/blog/blogImages/redis-deployment-guide.png",
 };
 

@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-15",
   categories: ["MySQL", "Kubernetes", "Cloud-Native"],
   searchCategories: ["MySQL", "Kubernetes", "Cloud-Native", "StatefulSet", "Operators"],
-  coverImage: "/blog/blogImages/mysql-kubernetes.png",
+  coverImage: "/blog/blogImages/mysql-deployment-guide.png",
 };
 

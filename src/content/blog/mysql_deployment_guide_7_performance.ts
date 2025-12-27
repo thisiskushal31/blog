@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-15",
   categories: ["MySQL", "Performance", "Optimization"],
   searchCategories: ["MySQL", "Performance", "Optimization", "Indexing", "Query Tuning"],
-  coverImage: "/blog/blogImages/mysql-performance.png",
+  coverImage: "/blog/blogImages/mysql-deployment-guide.png",
 };
 

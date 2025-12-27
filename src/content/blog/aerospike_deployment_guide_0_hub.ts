@@ -11,6 +11,6 @@ export const blogPost: BlogPost = {
   categories: ["Aerospike", "NoSQL", "Series"],
   searchCategories: ["Aerospike", "NoSQL", "Databases", "Performance", "Series"],
   featured: false,
-  coverImage: "/blog/blogImages/aerospike-series.png",
+  coverImage: "/blog/blogImages/aerospike-deployment-guide.png",
 };
 

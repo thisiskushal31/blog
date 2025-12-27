@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-04",
   categories: ["MongoDB", "Decision Framework", "Strategy"],
   searchCategories: ["MongoDB", "Databases", "Decision Matrix", "Strategy", "ROI", "Comparison"],
-  coverImage: "/blog/blogImages/mongodb-decision-matrix.png",
+  coverImage: "/blog/blogImages/mongodb-deployment-guide.png",
 };
 

@@ -11,6 +11,6 @@ export const blogPost: BlogPost = {
   categories: ["MySQL", "Databases", "Series"],
   searchCategories: ["MySQL", "Databases", "SQL", "Database Management", "Series"],
   featured: false,
-  coverImage: "/blog/blogImages/mysql-series.png",
+  coverImage: "/blog/blogImages/mysql-deployment-guide.png",
 };
 

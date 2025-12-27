@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-16",
   categories: ["Aerospike", "Docker", "Containers"],
   searchCategories: ["Aerospike", "Databases", "Docker", "Containers", "Docker Compose", "Containerization"],
-  coverImage: "/blog/blogImages/aerospike-docker.png",
+  coverImage: "/blog/blogImages/aerospike-deployment-guide.png",
 };
 

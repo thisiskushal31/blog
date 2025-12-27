@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-15",
   categories: ["MySQL", "Cloud", "Managed Services"],
   searchCategories: ["MySQL", "AWS RDS", "Cloud SQL", "Azure", "Cloud", "Managed Services"],
-  coverImage: "/blog/blogImages/mysql-cloud-managed.png",
+  coverImage: "/blog/blogImages/mysql-deployment-guide.png",
 };
 

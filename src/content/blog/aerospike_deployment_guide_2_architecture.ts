@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-02-14",
   categories: ["Aerospike", "Architecture", "Performance"],
   searchCategories: ["Aerospike", "Databases", "Architecture", "HMA", "Hybrid Memory", "Performance"],
-  coverImage: "/blog/blogImages/aerospike-architecture.png",
+  coverImage: "/blog/blogImages/aerospike-deployment-guide.png",
 };
 

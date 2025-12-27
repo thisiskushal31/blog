@@ -10,6 +10,6 @@ export const blogPost: BlogPost = {
   publishDate: "2025-01-23",
   categories: ["PostgreSQL", "Docker", "Containers"],
   searchCategories: ["PostgreSQL", "Databases", "Docker", "Containers", "Docker Compose", "Containerization"],
-  coverImage: "/blog/blogImages/postgresql-docker.png",
+  coverImage: "/blog/blogImages/postgresql-deployment-guide.png",
 };
 
