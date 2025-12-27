@@ -32,7 +32,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Architecture Overview
 
-> 💡 **Understanding Redis architecture?** Check out our [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Understanding Redis architecture?** Check out my [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 ### Production Cluster Design Principles
 
@@ -60,7 +60,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Installation and Initial Setup
 
-> 💡 **Want detailed installation guidance?** See our [Redis Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
+> 💡 **Want detailed installation guidance?** See my [Redis Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
 
 ### System Requirements
 
@@ -80,7 +80,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## High Availability Setup
 
-> 💡 **Need comprehensive HA strategies?** Explore our [Redis Persistence & Replication Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#persistence--replication) for detailed replication, Sentinel, and cluster strategies.
+> 💡 **Need comprehensive HA strategies?** Explore my [Redis Persistence & Replication Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#persistence--replication) for detailed replication, Sentinel, and cluster strategies.
 
 ### Redis Sentinel Setup
 
@@ -132,7 +132,7 @@ maxmemory-policy allkeys-lru
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 

@@ -31,7 +31,7 @@ This guide covers everything from basic memory optimization to advanced data str
 
 ## Memory Management
 
-> 💡 **Want comprehensive memory management techniques?** Explore our [Redis Operations & Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#operations--management) for detailed memory optimization, monitoring, and troubleshooting guidance.
+> 💡 **Want comprehensive memory management techniques?** Explore my [Redis Operations & Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#operations--management) for detailed memory optimization, monitoring, and troubleshooting guidance.
 
 ### maxmemory Configuration
 
@@ -74,7 +74,7 @@ INFO memory
 
 ## Data Structure Optimization
 
-> 💡 **Need detailed data structure guidance?** See our [Redis Data Structures Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#data-structures) for comprehensive data structure operations, use cases, and optimization techniques.
+> 💡 **Need detailed data structure guidance?** See my [Redis Data Structures Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#data-structures) for comprehensive data structure operations, use cases, and optimization techniques.
 
 ### Choosing the Right Data Structure
 
@@ -163,7 +163,7 @@ appendonly no
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 

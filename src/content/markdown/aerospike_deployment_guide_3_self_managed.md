@@ -31,7 +31,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Architecture Overview
 
-> 💡 **Understanding Aerospike architecture?** Check out our [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for detailed component explanations and Hybrid Memory Architecture details.
+> 💡 **Understanding Aerospike architecture?** Check out my [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for detailed component explanations and Hybrid Memory Architecture details.
 
 ### Production Cluster Design Principles
 
@@ -59,7 +59,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Installation and Initial Setup
 
-> 💡 **Want detailed installation guidance?** See our [Aerospike Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
+> 💡 **Want detailed installation guidance?** See my [Aerospike Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
 
 ### System Requirements
 
@@ -79,7 +79,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## High Availability Setup
 
-> 💡 **Need comprehensive HA strategies?** Explore our [Aerospike Clustering & Replication Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#clustering--replication) for detailed clustering, XDR, and failover strategies.
+> 💡 **Need comprehensive HA strategies?** Explore my [Aerospike Clustering & Replication Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#clustering--replication) for detailed clustering, XDR, and failover strategies.
 
 ### Clustering Setup
 
@@ -139,7 +139,7 @@ namespace test {
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+For comprehensive technical details, explore my [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
 
 ---
 

@@ -98,7 +98,7 @@ The wrong decision can cost you hundreds of thousands of dollars over three year
 
 ## Total Cost of Ownership (TCO) Analysis
 
-> 💡 **Exploring MongoDB architecture?** Check out our [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Exploring MongoDB architecture?** Check out my [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 ### MongoDB Atlas Costs
 
@@ -235,7 +235,7 @@ The break-even point where self-managed becomes more cost-effective typically oc
 
 ## Performance Comparison
 
-> 💡 **Want deeper technical details on MongoDB performance?** Explore our [MongoDB Performance & Security Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#performance--security) for query optimization, indexing strategies, and configuration tuning.
+> 💡 **Want deeper technical details on MongoDB performance?** Explore my [MongoDB Performance & Security Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#performance--security) for query optimization, indexing strategies, and configuration tuning.
 
 ### Latency
 
@@ -410,7 +410,7 @@ By leveraging the frameworks and insights in this guide, technical managers can 
 
 ## Related Content
 
-For comprehensive technical deep dives on MongoDB and database concepts, explore our [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
+For comprehensive technical deep dives on MongoDB and database concepts, explore my [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
 
 - **[MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md)**: Complete MongoDB architecture, optimization, and operations guide
 - **[Database Concepts](https://thisiskushal31.github.io/dochub/#/databases/concepts/README.md)**: Cross-cutting topics like replication, sharding, consistency, backups, and performance tuning

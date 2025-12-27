@@ -30,7 +30,7 @@ This guide covers everything from basic HMA optimization to advanced clustering 
 
 ## HMA Optimization
 
-> 💡 **Want comprehensive HMA optimization techniques?** Explore our [Aerospike Operations & Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#operations--management) for detailed performance optimization, monitoring, and troubleshooting guidance.
+> 💡 **Want comprehensive HMA optimization techniques?** Explore my [Aerospike Operations & Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#operations--management) for detailed performance optimization, monitoring, and troubleshooting guidance.
 
 ### Hot/Cold Data Management
 
@@ -62,7 +62,7 @@ namespace test {
 
 ## Clustering Optimization
 
-> 💡 **Need detailed clustering guidance?** See our [Aerospike Clustering & Replication Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#clustering--replication) for comprehensive clustering, data distribution, and XDR strategies.
+> 💡 **Need detailed clustering guidance?** See my [Aerospike Clustering & Replication Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#clustering--replication) for comprehensive clustering, data distribution, and XDR strategies.
 
 ### Cluster Sizing
 
@@ -122,7 +122,7 @@ namespace test {
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+For comprehensive technical details, explore my [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
 
 ---
 

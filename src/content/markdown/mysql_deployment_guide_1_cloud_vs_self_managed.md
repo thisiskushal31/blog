@@ -60,7 +60,7 @@ Choosing between cloud-managed and self-managed MySQL is one of the most critica
 
 ## Total Cost of Ownership (TCO) Analysis
 
-> 💡 **Exploring MySQL architecture?** Check out our [MySQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for detailed component explanations and storage engine comparisons.
+> 💡 **Exploring MySQL architecture?** Check out my [MySQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for detailed component explanations and storage engine comparisons.
 
 ### Cloud-Managed MySQL Costs
 
@@ -188,7 +188,7 @@ Total: ~$250/month = $3,000/year
 
 ## Performance Comparison
 
-> 💡 **Want deeper technical details?** Explore our [MySQL Performance Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#performance--operations) for query optimization, indexing strategies, and configuration tuning.
+> 💡 **Want deeper technical details?** Explore my [MySQL Performance Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#performance--operations) for query optimization, indexing strategies, and configuration tuning.
 
 ### Latency
 
@@ -230,7 +230,7 @@ Total: ~$250/month = $3,000/year
 
 ## Security & Compliance
 
-> 💡 **Need comprehensive security guidance?** See our [MySQL Security Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#security--maintenance) for user management, encryption, and access control best practices.
+> 💡 **Need comprehensive security guidance?** See my [MySQL Security Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#security--maintenance) for user management, encryption, and access control best practices.
 
 ### Cloud-Managed Security
 
@@ -368,7 +368,7 @@ The choice between cloud-managed and self-managed MySQL isn't about which is bet
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 ---
 

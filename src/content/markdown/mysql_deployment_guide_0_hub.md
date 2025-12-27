@@ -261,7 +261,7 @@ This series is actively maintained with the latest MySQL releases, platform upda
 
 ## Deep Dive Technical Resources
 
-For comprehensive technical deep dives on MySQL and database concepts, explore our [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
+For comprehensive technical deep dives on MySQL and database concepts, explore my [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
 
 - **[Relational Databases Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md)**: SQL fundamentals, schema design, indexing, transactions, and HA/DR
 - **[MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md)**: Complete MySQL architecture, optimization, and operations guide

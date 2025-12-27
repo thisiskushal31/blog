@@ -32,7 +32,7 @@ This comprehensive guide examines all three major cloud-managed PostgreSQL offer
 
 ## AWS RDS for PostgreSQL
 
-> 💡 **Understanding PostgreSQL fundamentals?** Check out our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) for comprehensive architecture, operations, and optimization guidance.
+> 💡 **Understanding PostgreSQL fundamentals?** Check out my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) for comprehensive architecture, operations, and optimization guidance.
 
 ### Overview
 
@@ -532,7 +532,7 @@ pg_restore -h target-host -U admin -d mydb \
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Cloud-Managed Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/cloud-managed/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Cloud-Managed Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/cloud-managed/README.md).
 
 ---
 

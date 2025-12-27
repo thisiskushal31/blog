@@ -28,7 +28,7 @@ Kubernetes has become the de facto standard for container orchestration, and run
 
 ## StatefulSet Basics
 
-> 💡 **Need MySQL architecture details?** Explore our [MySQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for component explanations and configuration options.
+> 💡 **Need MySQL architecture details?** Explore my [MySQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for component explanations and configuration options.
 
 ### Why StatefulSets?
 
@@ -442,7 +442,7 @@ Kubernetes provides powerful orchestration for MySQL, but requires understanding
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md).
 
 **Official Documentation:**
 - [Kubernetes StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)

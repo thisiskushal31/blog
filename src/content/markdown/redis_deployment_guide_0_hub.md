@@ -76,7 +76,7 @@ The definitive guide to choosing the right Redis deployment strategy.
 
 ## Deep Dive Technical Resources
 
-For comprehensive technical deep dives on Redis and database concepts, explore our [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
+For comprehensive technical deep dives on Redis and database concepts, explore my [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
 
 - **[NoSQL Databases Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/README.md)**: Key-value stores, data structures
 - **[Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md)**: Complete Redis architecture, optimization, and operations guide

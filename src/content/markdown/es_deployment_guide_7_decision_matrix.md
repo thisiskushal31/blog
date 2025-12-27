@@ -29,7 +29,7 @@ This matrix combines quantitative scoring with qualitative assessment frameworks
 
 ## The Complete Decision Framework
 
-> 💡 **Need comprehensive Elasticsearch guidance?** Explore our [Elasticsearch Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md) for detailed architecture, operations, and optimization documentation.
+> 💡 **Need comprehensive Elasticsearch guidance?** Explore my [Elasticsearch Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md) for detailed architecture, operations, and optimization documentation.
 
 ### Multi-Dimensional Scoring Matrix
 

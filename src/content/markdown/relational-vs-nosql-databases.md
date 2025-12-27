@@ -291,7 +291,7 @@ The choice between relational and non-relational databases isn't about which is 
 
 ## Deep Dive Resources
 
-For comprehensive technical deep dives on specific databases and concepts, explore our [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
+For comprehensive technical deep dives on specific databases and concepts, explore my [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
 
 - **[Relational Databases Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md)**: SQL fundamentals, schema design, indexing, transactions, and HA/DR
 - **[NoSQL Databases Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/README.md)**: Document stores, key-value stores, wide-column stores, and graph databases

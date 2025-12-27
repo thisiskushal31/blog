@@ -2,7 +2,7 @@
 
 **TLDR:** AI automation transforms security from a bottleneck into an accelerator. Result: 60-85% fewer false positives, 6x cheaper fixes when caught early, and security integrated into every commit—not after deployment.
 
-*This is the overview blog. For detailed implementation guides, read our 3-part series: [Part 1: The Problem & Solution](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part1) | [Part 2: Implementation & Tools](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part2) | [Part 3: 2025 Trends & Future](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part3)*
+*This is the overview blog. For detailed implementation guides, check out my 3-part series: [Part 1: The Problem & Solution](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part1) | [Part 2: Implementation & Tools](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part2) | [Part 3: 2025 Trends & Future](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part3)*
 
 ## The Strategic Problem: Security vs. Innovation
 
@@ -105,7 +105,7 @@ Advanced analytics → AI threat modeling → Business impact measurement
 
 ---
 
-**Ready for the deep dive?** Read our comprehensive 3-part series:
+**Ready for the deep dive?** Check out my comprehensive 3-part series:
 - **[Part 1: The Problem & Solution](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part1)** - Strategic problem, AI solution, real-world case studies
 - **[Part 2: Implementation & Tools](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part2)** - 6-layer enterprise security, global compliance, database & AI model protection
 - **[Part 3: 2025 Trends & Future](https://thisiskushal31.github.io/blog/#/blog/ai-shift-left-security-part3)** - Global regulations, emerging threats, future-proof strategies

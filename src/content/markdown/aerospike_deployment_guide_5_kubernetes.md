@@ -30,7 +30,7 @@ For technical managers, this guide helps you understand when Kubernetes makes se
 
 ## Kubernetes Deployment Strategy Overview
 
-> 💡 **Need Aerospike architecture details?** Explore our [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for component explanations and Hybrid Memory Architecture details.
+> 💡 **Need Aerospike architecture details?** Explore my [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for component explanations and Hybrid Memory Architecture details.
 
 ### Kubernetes StatefulSets for Aerospike
 
@@ -126,7 +126,7 @@ spec:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+For comprehensive technical details, explore my [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
 
 ---
 

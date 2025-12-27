@@ -70,7 +70,7 @@ The [MySQL Group Replication documentation](https://dev.mysql.com/doc/refman/8.0
 
 ## Installation and Initial Setup
 
-> 💡 **Want detailed installation guidance?** See our [MySQL Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
+> 💡 **Want detailed installation guidance?** See my [MySQL Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
 
 ### Installation Methods
 
@@ -340,7 +340,7 @@ OPTIMIZE TABLE users;
 
 ## High Availability
 
-> 💡 **Need comprehensive HA strategies?** Explore our [MySQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#performance--operations) for detailed replication, failover, and backup strategies.
+> 💡 **Need comprehensive HA strategies?** Explore my [MySQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#performance--operations) for detailed replication, failover, and backup strategies.
 
 ### Automatic Failover with MySQL Router
 
@@ -509,7 +509,7 @@ Self-managed MySQL provides maximum control and flexibility, but requires signif
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 **Official Documentation:**
 - [MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/)

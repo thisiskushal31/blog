@@ -30,7 +30,7 @@ For technical managers, this matrix helps you make data-driven decisions by scor
 
 ## Decision Matrix Framework
 
-> 💡 **Need comprehensive PostgreSQL guidance?** Explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) for detailed architecture, operations, performance, and security documentation.
+> 💡 **Need comprehensive PostgreSQL guidance?** Explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) for detailed architecture, operations, performance, and security documentation.
 
 ### Multi-Dimensional Scoring Matrix
 
@@ -580,7 +580,7 @@ The right PostgreSQL deployment strategy depends on your specific context. Use t
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 ---
 

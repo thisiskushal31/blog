@@ -31,7 +31,7 @@ This comprehensive guide examines all three major cloud-managed MySQL offerings 
 
 ## AWS RDS for MySQL
 
-> 💡 **Understanding MySQL fundamentals?** Check out our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) for comprehensive architecture, operations, and optimization guidance.
+> 💡 **Understanding MySQL fundamentals?** Check out my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) for comprehensive architecture, operations, and optimization guidance.
 
 ### Overview
 
@@ -459,7 +459,7 @@ Cloud-managed MySQL services provide significant operational benefits, but each 
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Cloud-Managed Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/cloud-managed/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Cloud-Managed Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/cloud-managed/README.md).
 
 **Official Documentation:**
 - [AWS RDS for MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html)

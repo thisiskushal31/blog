@@ -31,7 +31,7 @@ This guide covers everything from basic query optimization to advanced indexing 
 
 ## Query Optimization
 
-> 💡 **Want comprehensive query optimization techniques?** Explore our [MongoDB Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#operations) for advanced query patterns, aggregation pipelines, and data manipulation techniques.
+> 💡 **Want comprehensive query optimization techniques?** Explore my [MongoDB Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#operations) for advanced query patterns, aggregation pipelines, and data manipulation techniques.
 
 ### explain() and explain("executionStats")
 
@@ -99,7 +99,7 @@ db.orders.aggregate([
 
 ## Indexing Strategies
 
-> 💡 **Need detailed indexing guidance?** See our [MongoDB Data Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#data-management) for comprehensive indexing strategies, compound indexes, and index optimization techniques.
+> 💡 **Need detailed indexing guidance?** See my [MongoDB Data Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#data-management) for comprehensive indexing strategies, compound indexes, and index optimization techniques.
 
 ### Index Types
 
@@ -219,7 +219,7 @@ db.system.profile.find().sort({ ts: -1 }).limit(10)
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
+For comprehensive technical details, explore my [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
 
 ---
 

@@ -235,7 +235,7 @@ By the end of this series, you will:
 
 ## Deep Dive Technical Resources
 
-For comprehensive technical deep dives on MongoDB and database concepts, explore our [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
+For comprehensive technical deep dives on MongoDB and database concepts, explore my [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
 
 - **[NoSQL Databases Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/README.md)**: Document stores, key-value stores, data modeling
 - **[MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md)**: Complete MongoDB architecture, optimization, and operations guide

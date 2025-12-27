@@ -30,7 +30,7 @@ For technical managers, this guide helps you understand the trade-offs between D
 
 ## Docker Development Setup
 
-> 💡 **Learning MongoDB basics?** Check out our [MongoDB Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#operations) for comprehensive querying, data manipulation, and operations techniques.
+> 💡 **Learning MongoDB basics?** Check out my [MongoDB Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#operations) for comprehensive querying, data manipulation, and operations techniques.
 
 ### Quick Start with Docker
 
@@ -169,7 +169,7 @@ sudo systemctl start mongod
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
+For comprehensive technical details, explore my [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
 
 ---
 

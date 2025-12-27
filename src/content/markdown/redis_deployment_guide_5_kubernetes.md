@@ -31,7 +31,7 @@ For technical managers, this guide helps you understand when Kubernetes makes se
 
 ## Kubernetes Deployment Strategy Overview
 
-> 💡 **Need Redis architecture details?** Explore our [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for component explanations and configuration options.
+> 💡 **Need Redis architecture details?** Explore my [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for component explanations and configuration options.
 
 ### The Three Paths to Kubernetes Redis
 
@@ -122,7 +122,7 @@ spec:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 

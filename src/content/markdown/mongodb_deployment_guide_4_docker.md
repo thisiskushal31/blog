@@ -31,7 +31,7 @@ This comprehensive guide covers production-ready MongoDB containerization strate
 
 ## Docker Basics for MongoDB
 
-> 💡 **Learning MongoDB basics?** Check out our [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for comprehensive cluster setup and configuration guidance.
+> 💡 **Learning MongoDB basics?** Check out my [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for comprehensive cluster setup and configuration guidance.
 
 ### Official MongoDB Docker Image
 
@@ -172,7 +172,7 @@ networks:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
+For comprehensive technical details, explore my [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
 
 ---
 

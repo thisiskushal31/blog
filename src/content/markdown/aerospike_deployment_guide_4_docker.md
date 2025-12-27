@@ -30,7 +30,7 @@ This comprehensive guide covers production-ready Aerospike containerization stra
 
 ## Docker Basics for Aerospike
 
-> 💡 **Learning Aerospike basics?** Check out our [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for comprehensive cluster setup and Hybrid Memory Architecture guidance.
+> 💡 **Learning Aerospike basics?** Check out my [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for comprehensive cluster setup and Hybrid Memory Architecture guidance.
 
 ### Official Aerospike Docker Image
 
@@ -129,7 +129,7 @@ networks:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+For comprehensive technical details, explore my [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
 
 ---
 

@@ -30,7 +30,7 @@ For technical managers, this guide helps you understand the trade-offs between D
 
 ## Docker Development Setup
 
-> 💡 **Learning PostgreSQL basics?** Check out our [PostgreSQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#sql-fundamentals) for comprehensive SQL commands, queries, and data manipulation techniques.
+> 💡 **Learning PostgreSQL basics?** Check out my [PostgreSQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#sql-fundamentals) for comprehensive SQL commands, queries, and data manipulation techniques.
 
 ### Quick Start with Docker
 
@@ -316,7 +316,7 @@ services:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md).
 
 ---
 

@@ -97,7 +97,7 @@ The wrong decision can cost you hundreds of thousands of dollars over three year
 
 ## Total Cost of Ownership (TCO) Analysis
 
-> 💡 **Exploring PostgreSQL architecture?** Check out our [PostgreSQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Exploring PostgreSQL architecture?** Check out my [PostgreSQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 Understanding the true cost of PostgreSQL deployment requires looking beyond monthly infrastructure bills. The real cost includes operational overhead, downtime, training, and opportunity costs. This section provides a comprehensive TCO framework to help you make informed financial decisions.
 
@@ -281,7 +281,7 @@ Understanding and managing risk is crucial for making informed infrastructure de
 
 ## Performance Comparison
 
-> 💡 **Want deeper technical details?** Explore our [PostgreSQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#performance--operations) for query optimization, indexing strategies, and configuration tuning.
+> 💡 **Want deeper technical details?** Explore my [PostgreSQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#performance--operations) for query optimization, indexing strategies, and configuration tuning.
 
 Performance characteristics differ significantly between cloud-managed and self-managed PostgreSQL. Understanding these differences helps you set realistic expectations and make informed decisions.
 
@@ -346,7 +346,7 @@ Performance characteristics differ significantly between cloud-managed and self-
 
 ## Security & Compliance
 
-> 💡 **Need comprehensive security guidance?** See our [PostgreSQL Infrastructure & Security Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#infrastructure--security) for user management, encryption, and access control best practices.
+> 💡 **Need comprehensive security guidance?** See my [PostgreSQL Infrastructure & Security Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#infrastructure--security) for user management, encryption, and access control best practices.
 
 Security and compliance requirements vary significantly across industries and use cases. This section helps you evaluate security considerations for both deployment approaches.
 
@@ -551,7 +551,7 @@ If you're currently using one approach and considering migration, understanding 
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 ---
 

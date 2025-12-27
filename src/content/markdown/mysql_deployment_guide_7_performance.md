@@ -28,7 +28,7 @@ MySQL performance optimization is both an art and a science. Understanding query
 
 ## Query Optimization
 
-> 💡 **Want comprehensive query optimization techniques?** Explore our [MySQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#sql-fundamentals) for advanced query patterns, subqueries, and window functions.
+> 💡 **Want comprehensive query optimization techniques?** Explore my [MySQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#sql-fundamentals) for advanced query patterns, subqueries, and window functions.
 
 ### EXPLAIN Statement
 
@@ -110,7 +110,7 @@ SELECT * FROM users WHERE username = 'user';
 
 ## Indexing Strategies
 
-> 💡 **Need detailed indexing guidance?** See our [MySQL Data Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#data-management) for comprehensive indexing strategies, composite indexes, and index optimization techniques.
+> 💡 **Need detailed indexing guidance?** See my [MySQL Data Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#data-management) for comprehensive indexing strategies, composite indexes, and index optimization techniques.
 
 ### Index Types
 
@@ -386,7 +386,7 @@ MySQL performance optimization requires understanding query execution, indexing,
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 **Official Documentation:**
 - [MySQL EXPLAIN](https://dev.mysql.com/doc/refman/8.0/en/explain.html)

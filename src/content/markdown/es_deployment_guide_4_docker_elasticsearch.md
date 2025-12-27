@@ -35,7 +35,7 @@ While Kubernetes gets most of the container orchestration attention, Docker-base
 
 ## Production Docker Architecture Patterns
 
-> 💡 **Learning Elasticsearch basics?** Check out our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive cluster setup and configuration guidance.
+> 💡 **Learning Elasticsearch basics?** Check out my [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive cluster setup and configuration guidance.
 
 ### Pattern 1: Docker Compose Multi-Node Cluster
 

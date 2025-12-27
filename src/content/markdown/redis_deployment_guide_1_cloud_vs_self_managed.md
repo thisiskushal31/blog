@@ -97,7 +97,7 @@ The wrong decision can cost you hundreds of thousands of dollars over three year
 
 ## Total Cost of Ownership (TCO) Analysis
 
-> 💡 **Exploring Redis architecture?** Check out our [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Exploring Redis architecture?** Check out my [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 ### Cloud-Managed Redis Costs
 
@@ -188,7 +188,7 @@ Total: ~$215/month = $2,580/year
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 

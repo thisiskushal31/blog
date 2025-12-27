@@ -30,7 +30,7 @@ This comprehensive guide covers production-ready MySQL containerization strategi
 
 ## Docker Basics for MySQL
 
-> 💡 **Understanding MySQL architecture?** Check out our [MySQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Understanding MySQL architecture?** Check out my [MySQL Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 ### Official MySQL Docker Image
 
@@ -181,7 +181,7 @@ networks:
 
 ## Data Persistence Strategies
 
-> 💡 **Need backup and recovery strategies?** Explore our [MySQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#performance--operations) for comprehensive backup, recovery, and replication guidance.
+> 💡 **Need backup and recovery strategies?** Explore my [MySQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#performance--operations) for comprehensive backup, recovery, and replication guidance.
 
 ### Named Volumes
 
@@ -609,7 +609,7 @@ Docker provides excellent consistency and portability for MySQL deployments, but
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md).
 
 **Official Documentation:**
 - [MySQL Docker Hub](https://hub.docker.com/_/mysql)

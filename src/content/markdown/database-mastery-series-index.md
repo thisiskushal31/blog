@@ -333,7 +333,7 @@ Each deployment guide series follows a consistent structure, making it easy to c
 
 ## Deep Dive Technical Resources
 
-For comprehensive technical deep dives on database concepts and operations, explore our [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
+For comprehensive technical deep dives on database concepts and operations, explore my [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
 
 - **[Relational Databases](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md)**: MySQL, PostgreSQL deep dives
 - **[NoSQL Databases](https://thisiskushal31.github.io/dochub/#/databases/nosql/README.md)**: MongoDB, Redis, Aerospike, Elasticsearch deep dives

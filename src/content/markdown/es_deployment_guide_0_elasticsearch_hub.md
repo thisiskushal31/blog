@@ -240,7 +240,7 @@ This series is actively maintained with the latest Elasticsearch releases, platf
 
 ## Deep Dive Technical Resources
 
-For comprehensive technical deep dives on Elasticsearch and database concepts, explore our [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
+For comprehensive technical deep dives on Elasticsearch and database concepts, explore my [Databases Deep Dive documentation](https://thisiskushal31.github.io/dochub/#/databases/README.md):
 
 - **[NoSQL Databases Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/README.md)**: Document stores, key-value stores, search engines including Elasticsearch architecture, data modeling, querying, and operations
 - **[Database Concepts](https://thisiskushal31.github.io/dochub/#/databases/concepts/README.md)**: Cross-cutting topics like replication, sharding, consistency, backups, and performance tuning

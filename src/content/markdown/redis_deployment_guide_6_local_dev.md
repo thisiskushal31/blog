@@ -30,7 +30,7 @@ For technical managers, this guide helps you understand the trade-offs between D
 
 ## Docker Development Setup
 
-> 💡 **Learning Redis basics?** Check out our [Redis Data Structures Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#data-structures) for comprehensive data structure operations and use cases.
+> 💡 **Learning Redis basics?** Check out my [Redis Data Structures Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#data-structures) for comprehensive data structure operations and use cases.
 
 ### Quick Start with Docker
 
@@ -127,7 +127,7 @@ sudo systemctl start redis
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 

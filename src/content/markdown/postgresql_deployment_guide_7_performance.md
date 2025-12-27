@@ -31,7 +31,7 @@ This guide covers everything from basic query optimization to advanced indexing 
 
 ## Query Optimization
 
-> 💡 **Want comprehensive query optimization techniques?** Explore our [PostgreSQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#sql-fundamentals) for advanced query patterns, subqueries, and window functions.
+> 💡 **Want comprehensive query optimization techniques?** Explore my [PostgreSQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#sql-fundamentals) for advanced query patterns, subqueries, and window functions.
 
 ### EXPLAIN and EXPLAIN ANALYZE
 
@@ -106,7 +106,7 @@ SELECT id, name, email FROM users WHERE id = 123;
 
 ## Indexing Strategies
 
-> 💡 **Need detailed indexing guidance?** See our [PostgreSQL Data Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#data-management) for comprehensive indexing strategies, composite indexes, and index optimization techniques.
+> 💡 **Need detailed indexing guidance?** See my [PostgreSQL Data Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#data-management) for comprehensive indexing strategies, composite indexes, and index optimization techniques.
 
 ### Index Types
 
@@ -372,7 +372,7 @@ db.query("""
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 ---
 

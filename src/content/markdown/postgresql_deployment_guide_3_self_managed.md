@@ -32,7 +32,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Architecture Overview
 
-> 💡 **Understanding PostgreSQL architecture?** Check out our [PostgreSQL Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Understanding PostgreSQL architecture?** Check out my [PostgreSQL Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 ### Production Cluster Design Principles
 
@@ -71,7 +71,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Installation and Initial Setup
 
-> 💡 **Want detailed installation guidance?** See our [PostgreSQL Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
+> 💡 **Want detailed installation guidance?** See my [PostgreSQL Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
 
 ### System Requirements
 
@@ -142,7 +142,7 @@ checkpoint_completion_target = 0.9
 
 ## High Availability Setup
 
-> 💡 **Need comprehensive HA strategies?** Explore our [PostgreSQL High Availability Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#high-availability) for detailed replication, failover, and backup strategies.
+> 💡 **Need comprehensive HA strategies?** Explore my [PostgreSQL High Availability Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#high-availability) for detailed replication, failover, and backup strategies.
 
 ### Patroni-based HA Setup
 
@@ -409,7 +409,7 @@ effective_io_concurrency = 200  # For SSD
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 ---
 

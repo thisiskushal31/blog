@@ -118,9 +118,9 @@ But here's what really matters: Their developers started trusting security again
 
 ## What's Next?
 
-This is just the beginning. In Part 2, I'll dive deep into the implementation details—the specific tools, configurations, and strategies that make this work in practice. We'll cover AI-powered threat modeling, shadow AI security challenges, and the compliance frameworks you need to know about.
+This is just the beginning. In Part 2, I'll dive deep into the implementation details—the specific tools, configurations, and strategies that make this work in practice. I'll cover AI-powered threat modeling, shadow AI security challenges, and the compliance frameworks you need to know about.
 
-In Part 3, we'll look at what's coming in 2025—the emerging threats, regulatory changes, and new tools that will shape the future of AI security.
+In Part 3, I'll look at what's coming in 2025—the emerging threats, regulatory changes, and new tools that will shape the future of AI security.
 
 **Ready to transform your security from a bottleneck into an accelerator?** The tools are free, the implementation is straightforward, and the results speak for themselves.
 

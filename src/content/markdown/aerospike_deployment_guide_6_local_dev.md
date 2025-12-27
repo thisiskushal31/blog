@@ -30,7 +30,7 @@ For technical managers, this guide helps you understand the trade-offs between D
 
 ## Docker Development Setup
 
-> 💡 **Learning Aerospike basics?** Check out our [Aerospike Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#operations) for comprehensive operations, queries, and data manipulation techniques.
+> 💡 **Learning Aerospike basics?** Check out my [Aerospike Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#operations) for comprehensive operations, queries, and data manipulation techniques.
 
 ### Quick Start with Docker
 
@@ -138,7 +138,7 @@ sudo systemctl start aerospike
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+For comprehensive technical details, explore my [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
 
 ---
 

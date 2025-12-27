@@ -30,7 +30,7 @@ For technical managers, this matrix helps you make data-driven decisions by scor
 
 ## Decision Matrix Framework
 
-> 💡 **Need comprehensive Redis guidance?** Explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md) for detailed architecture, operations, performance, and security documentation.
+> 💡 **Need comprehensive Redis guidance?** Explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md) for detailed architecture, operations, performance, and security documentation.
 
 ### Multi-Dimensional Scoring Matrix
 
@@ -156,7 +156,7 @@ Self-Managed VM (Score: 80/100) OR Kubernetes (Score: 75/100)
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 

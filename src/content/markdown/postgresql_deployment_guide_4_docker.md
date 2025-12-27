@@ -31,7 +31,7 @@ This comprehensive guide covers production-ready PostgreSQL containerization str
 
 ## Docker Basics for PostgreSQL
 
-> 💡 **Learning PostgreSQL basics?** Check out our [PostgreSQL Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for comprehensive cluster setup and configuration guidance.
+> 💡 **Learning PostgreSQL basics?** Check out my [PostgreSQL Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for comprehensive cluster setup and configuration guidance.
 
 ### Official PostgreSQL Docker Image
 
@@ -185,7 +185,7 @@ networks:
 
 ## Data Persistence Strategies
 
-> 💡 **Need backup and recovery strategies?** Explore our [PostgreSQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#performance--operations) for comprehensive backup, recovery, and replication guidance.
+> 💡 **Need backup and recovery strategies?** Explore my [PostgreSQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#performance--operations) for comprehensive backup, recovery, and replication guidance.
 
 ### Volume Types
 
@@ -359,7 +359,7 @@ services:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md).
 
 ---
 

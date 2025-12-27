@@ -31,7 +31,7 @@ For technical managers, this guide helps you understand when Kubernetes makes se
 
 ## Kubernetes Deployment Strategy Overview
 
-> 💡 **Need PostgreSQL architecture details?** Explore our [PostgreSQL Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for component explanations and configuration options.
+> 💡 **Need PostgreSQL architecture details?** Explore my [PostgreSQL Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#overview--architecture) for component explanations and configuration options.
 
 ### The Three Paths to Kubernetes PostgreSQL
 
@@ -324,7 +324,7 @@ spec:
 
 ## Monitoring and Observability
 
-> 💡 **Want comprehensive monitoring guidance?** See our [PostgreSQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#performance--operations) for detailed operational procedures and troubleshooting guides.
+> 💡 **Want comprehensive monitoring guidance?** See my [PostgreSQL Performance & Operations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md#performance--operations) for detailed operational procedures and troubleshooting guides.
 
 ### Operator Monitoring
 
@@ -389,7 +389,7 @@ spec:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md).
+For comprehensive technical details, explore my [PostgreSQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/postgresql/README.md).
 
 ---
 

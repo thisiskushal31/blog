@@ -19,7 +19,7 @@ After testing both approaches across different development scenarios, this compr
 - **Key takeaway:** Docker for quick setup and isolation, native for performance testing and production parity—use both for different scenarios
 - **Skip if:** You're only doing production deployments and don't need local development
 
-**Key Questions We'll Answer:**
+**Key Questions I'll Answer:**
 - Which approach gives better development velocity for different use cases?
 - How do performance characteristics compare for development workloads?
 - What are the hidden productivity costs and benefits of each method?
@@ -47,7 +47,7 @@ After testing both approaches across different development scenarios, this compr
 
 ## Docker Development: The Containerized Advantage
 
-> 💡 **Learning Elasticsearch basics?** Check out our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive setup and document management techniques.
+> 💡 **Learning Elasticsearch basics?** Check out my [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive setup and document management techniques.
 
 ### Quick Start: Production-Ready Development Stack
 
@@ -772,7 +772,7 @@ main "$@"
 
 ## Performance Comparison: Docker vs Native
 
-> 💡 **Need query optimization techniques?** Explore our [Elasticsearch Searching Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#searching) and [Aggregations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#aggregations) for advanced query patterns and analytics.
+> 💡 **Need query optimization techniques?** Explore my [Elasticsearch Searching Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#searching) and [Aggregations Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#aggregations) for advanced query patterns and analytics.
 
 ### Benchmark Results
 
@@ -1799,7 +1799,7 @@ class DevDataManager:
         print(f"Creating backup: {backup_name}")
         
         # In a real implementation, you would use Elasticsearch snapshot/restore
-        # For development, we'll export to JSON files
+        # For development, I'll export to JSON files
         import os
         
         backup_dir = f"./backups/{backup_name}"
@@ -2464,7 +2464,7 @@ The investment in setting up both approaches pays dividends in development veloc
 
 ## Next Steps
 
-With local development mastered, you're ready for the series finale: **Blog 7: The Ultimate Elasticsearch Deployment Decision Matrix**—where we'll synthesize everything from local development through production-scale deployments into a comprehensive decision framework that guides you to the optimal deployment strategy for any scenario.
+With local development mastered, you're ready for the series finale: **Blog 7: The Ultimate Elasticsearch Deployment Decision Matrix**—where I'll synthesize everything from local development through production-scale deployments into a comprehensive decision framework that guides you to the optimal deployment strategy for any scenario.
 
 ---
 

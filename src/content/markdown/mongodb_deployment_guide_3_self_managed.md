@@ -32,7 +32,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Architecture Overview
 
-> 💡 **Understanding MongoDB architecture?** Check out our [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Understanding MongoDB architecture?** Check out my [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 ### Production Cluster Design Principles
 
@@ -65,7 +65,7 @@ This comprehensive guide covers everything from initial setup to advanced optimi
 
 ## Installation and Initial Setup
 
-> 💡 **Want detailed installation guidance?** See our [MongoDB Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
+> 💡 **Want detailed installation guidance?** See my [MongoDB Installation & Configuration Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for comprehensive setup instructions and configuration tuning.
 
 ### System Requirements
 
@@ -108,7 +108,7 @@ sudo yum install -y mongodb-org
 
 ## High Availability Setup
 
-> 💡 **Need comprehensive HA strategies?** Explore our [MongoDB Advanced Features Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#advanced-features) for detailed replication, sharding, and failover strategies.
+> 💡 **Need comprehensive HA strategies?** Explore my [MongoDB Advanced Features Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#advanced-features) for detailed replication, sharding, and failover strategies.
 
 ### Replica Set Setup
 
@@ -202,7 +202,7 @@ sudo yum install -y mongodb-org
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
+For comprehensive technical details, explore my [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
 
 ---
 

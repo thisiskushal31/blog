@@ -28,7 +28,7 @@ Choosing the right MySQL deployment strategy is one of the most critical decisio
 
 ## Decision Matrix Framework
 
-> 💡 **Need comprehensive MySQL guidance?** Explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) for detailed architecture, operations, performance, and security documentation.
+> 💡 **Need comprehensive MySQL guidance?** Explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) for detailed architecture, operations, performance, and security documentation.
 
 ### Scoring Criteria
 
@@ -346,7 +346,7 @@ The right MySQL deployment strategy depends on your specific requirements, team,
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md) and [Relational Databases Overview](https://thisiskushal31.github.io/dochub/#/databases/relational/README.md).
 
 ---
 

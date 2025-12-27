@@ -31,7 +31,7 @@ This comprehensive guide examines MongoDB Atlas through business-focused analysi
 
 ## MongoDB Atlas Overview
 
-> 💡 **Understanding MongoDB fundamentals?** Check out our [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md) for comprehensive architecture, operations, and optimization guidance.
+> 💡 **Understanding MongoDB fundamentals?** Check out my [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md) for comprehensive architecture, operations, and optimization guidance.
 
 ### What is MongoDB Atlas?
 
@@ -227,7 +227,7 @@ MongoDB Atlas is the fully managed cloud database service for MongoDB. It provid
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
+For comprehensive technical details, explore my [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
 
 ---
 

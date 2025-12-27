@@ -28,7 +28,7 @@ Setting up MySQL for local development shouldn't be complicated, but choosing be
 
 ## Docker Development Setup
 
-> 💡 **Learning MySQL basics?** Check out our [MySQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#sql-fundamentals) for comprehensive SQL commands, queries, and data manipulation techniques.
+> 💡 **Learning MySQL basics?** Check out my [MySQL SQL Fundamentals Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#sql-fundamentals) for comprehensive SQL commands, queries, and data manipulation techniques.
 
 ### Quick Start with Docker
 
@@ -440,7 +440,7 @@ Both Docker and native installation have their place in development. Docker prov
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md).
+For comprehensive technical details, explore my [MySQL Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md).
 
 **Official Documentation:**
 - [MySQL Docker Hub](https://hub.docker.com/_/mysql)

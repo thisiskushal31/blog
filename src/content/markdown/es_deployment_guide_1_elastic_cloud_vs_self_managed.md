@@ -258,7 +258,7 @@ echo '1' > /sys/block/nvme0n1/queue/nomerges
 
 ## Quantitative Comparison Framework
 
-> 💡 **Want comprehensive Elasticsearch guidance?** Explore our [Elasticsearch Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md) for detailed architecture, operations, and optimization documentation.
+> 💡 **Want comprehensive Elasticsearch guidance?** Explore my [Elasticsearch Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md) for detailed architecture, operations, and optimization documentation.
 
 ### Total Cost of Ownership Analysis
 
@@ -354,7 +354,7 @@ Operational Maturity:
 
 ## Security and Compliance Considerations
 
-> 💡 **Need security best practices?** See our [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive security configuration and best practices.
+> 💡 **Need security best practices?** See my [Elasticsearch Overview & Getting Started Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/elasticsearch/README.md#overview--getting-started) for comprehensive security configuration and best practices.
 
 ### Elastic Cloud Security Model
 ```yaml

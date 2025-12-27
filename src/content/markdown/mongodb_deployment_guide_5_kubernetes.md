@@ -31,7 +31,7 @@ For technical managers, this guide helps you understand when Kubernetes makes se
 
 ## Kubernetes Deployment Strategy Overview
 
-> 💡 **Need MongoDB architecture details?** Explore our [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for component explanations and configuration options.
+> 💡 **Need MongoDB architecture details?** Explore my [MongoDB Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md#overview--architecture) for component explanations and configuration options.
 
 ### The Three Paths to Kubernetes MongoDB
 
@@ -201,7 +201,7 @@ spec:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
+For comprehensive technical details, explore my [MongoDB Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/mongodb/README.md).
 
 ---
 

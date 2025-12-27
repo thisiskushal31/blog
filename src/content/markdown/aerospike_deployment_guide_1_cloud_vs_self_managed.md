@@ -57,7 +57,7 @@ The decision to use Aerospike typically centers on whether you need its unique p
 
 ## Total Cost of Ownership (TCO) Analysis
 
-> 💡 **Exploring Aerospike architecture?** Check out our [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for detailed component explanations and Hybrid Memory Architecture details.
+> 💡 **Exploring Aerospike architecture?** Check out my [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for detailed component explanations and Hybrid Memory Architecture details.
 
 ### Self-Managed Aerospike Costs
 
@@ -139,7 +139,7 @@ Total: ~$1,650/month = $19,800/year
 
 ## Performance Comparison
 
-> 💡 **Want deeper technical details on Aerospike performance?** Explore our [Aerospike Operations & Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#operations--management) for performance optimization, monitoring, and troubleshooting guidance.
+> 💡 **Want deeper technical details on Aerospike performance?** Explore my [Aerospike Operations & Management Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#operations--management) for performance optimization, monitoring, and troubleshooting guidance.
 
 ### Latency
 
@@ -207,7 +207,7 @@ Total: ~$1,650/month = $19,800/year
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+For comprehensive technical details, explore my [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
 
 ---
 

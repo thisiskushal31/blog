@@ -30,7 +30,7 @@ This comprehensive guide examines Aerospike's architecture through business-focu
 
 ## Hybrid Memory Architecture (HMA)
 
-> 💡 **Understanding Aerospike fundamentals?** Check out our [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for detailed component explanations and configuration options.
+> 💡 **Understanding Aerospike fundamentals?** Check out my [Aerospike Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md#overview--architecture) for detailed component explanations and configuration options.
 
 ### What is HMA?
 
@@ -142,7 +142,7 @@ This comprehensive guide examines Aerospike's architecture through business-focu
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
+For comprehensive technical details, explore my [Aerospike Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/aerospike/README.md).
 
 ---
 

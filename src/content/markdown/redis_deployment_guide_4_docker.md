@@ -30,7 +30,7 @@ This comprehensive guide covers production-ready Redis containerization strategi
 
 ## Docker Basics for Redis
 
-> 💡 **Learning Redis basics?** Check out our [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for comprehensive cluster setup and configuration guidance.
+> 💡 **Learning Redis basics?** Check out my [Redis Overview & Architecture Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md#overview--architecture) for comprehensive cluster setup and configuration guidance.
 
 ### Official Redis Docker Image
 
@@ -117,7 +117,7 @@ networks:
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 

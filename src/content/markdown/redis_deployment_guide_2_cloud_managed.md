@@ -31,7 +31,7 @@ This comprehensive guide examines all three major cloud-managed Redis offerings 
 
 ## AWS ElastiCache for Redis
 
-> 💡 **Understanding Redis fundamentals?** Check out our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md) for comprehensive architecture, operations, and optimization guidance.
+> 💡 **Understanding Redis fundamentals?** Check out my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md) for comprehensive architecture, operations, and optimization guidance.
 
 ### Overview
 
@@ -181,7 +181,7 @@ Total: ~$500/month = $6,000/year
 
 ## Deep Dive Resources
 
-For comprehensive technical details, explore our [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
+For comprehensive technical details, explore my [Redis Technical Deep Dive](https://thisiskushal31.github.io/dochub/#/databases/nosql/redis/README.md).
 
 ---
 
