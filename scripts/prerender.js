@@ -188,6 +188,35 @@ async function prerenderRoute(browser, route) {
     // Wait for React Router to process the route change
     await new Promise(resolve => setTimeout(resolve, 1500));
     
+    // Debug: Check what React Router actually rendered
+    if (route.startsWith('/blog/') && route !== '/blog') {
+      const slug = route.replace('/blog/', '');
+      const debugInfo = await page.evaluate((expectedSlug) => {
+        const article = document.querySelector('article');
+        const h1 = document.querySelector('h1');
+        const bodyText = document.body.textContent || '';
+        // Extract slug from hash
+        const hashParts = window.location.hash.split('/');
+        const actualSlug = hashParts[hashParts.length - 1] || '';
+        return {
+          expectedSlug,
+          actualSlug,
+          hash: window.location.hash,
+          hasArticle: !!article,
+          articleLength: article?.textContent?.length || 0,
+          h1Text: h1?.textContent || '',
+          has404: bodyText.includes('Article not found') || bodyText.includes("doesn't exist"),
+          bodySnippet: bodyText.substring(0, 200)
+        };
+      }, slug);
+      console.log(`[DEBUG] ${route}:`, JSON.stringify(debugInfo, null, 2));
+      
+      // If slug mismatch, log it
+      if (debugInfo.expectedSlug !== debugInfo.actualSlug) {
+        console.log(`⚠️  Slug mismatch! Expected: ${debugInfo.expectedSlug}, Got: ${debugInfo.actualSlug}`);
+      }
+    }
+    
     // Wait for React Router to process the hash change and render
     // For blog posts, wait specifically for the post content, not 404
     if (route.startsWith('/blog/') && route !== '/blog') {
