@@ -48,13 +48,19 @@ function getRoutesFromSitemap() {
       const urlObj = new URL(url);
       let route = urlObj.pathname;
       
-      // Remove base path if present
+      // Remove base path if present, but keep the structure
+      // Sitemap URLs: https://thisiskushal31.github.io/blog/post-name
+      // We want routes: /blog/post-name (for HashRouter)
       if (route.startsWith(BASE_PATH)) {
-        route = route.substring(BASE_PATH.length);
+        // Keep the /blog/ prefix for HashRouter
+        route = route; // Keep as-is: /blog/post-name
+      } else if (route !== '/' && route !== BASE_PATH) {
+        // Route doesn't have /blog/ prefix, add it
+        route = `${BASE_PATH}${route.startsWith('/') ? route : '/' + route}`;
       }
       
       // Only add blog post routes (not homepage)
-      if (route && route !== '/' && route.startsWith('/')) {
+      if (route && route !== '/' && route !== BASE_PATH && route.startsWith('/')) {
         routes.push(route);
       }
     } catch (e) {
@@ -131,25 +137,70 @@ async function prerenderRoute(browser, route) {
   const page = await browser.newPage();
   
   try {
-    const url = `${BASE_URL}${BASE_PATH}/#${route}`;
-    console.log(`📄 Pre-rendering: ${route}`);
+    // Construct the hash URL for HashRouter
+    // Routes should be: /blog/post-name (from sitemap)
+    // HashRouter expects: /blog/#/blog/post-name
+    const hashRoute = route.startsWith('/blog/') ? route : `/blog${route}`;
+    const url = `${BASE_URL}${BASE_PATH}/#${hashRoute}`;
+    console.log(`📄 Pre-rendering: ${route} (visiting: ${url})`);
     
     await page.goto(url, {
       waitUntil: 'networkidle0',
       timeout: 30000,
     });
 
-    // Wait for React to render content
-    await page.waitForSelector('article, .blog-card, h1', { timeout: 10000 }).catch(() => {
-      console.log(`⚠️  Content selector not found for ${route}, continuing...`);
+    // Wait for React to mount
+    await page.waitForSelector('#root', { timeout: 10000 });
+    
+    // Wait for React Router to process the hash route
+    // Trigger a small navigation to ensure hash is processed
+    await page.evaluate(() => {
+      // Small delay to let React Router initialize
+      return new Promise(resolve => setTimeout(resolve, 300));
     });
+    
+    // Wait for React to fully hydrate and render content
+    // For blog posts, wait for article tag or blog listing
+    if (route.startsWith('/blog/') && route !== '/blog') {
+      // This is a blog post - wait for article content
+      try {
+        await page.waitForSelector('article', { timeout: 15000 });
+        // Wait for actual content inside article (not 404 page)
+        await page.waitForFunction(
+          () => {
+            const article = document.querySelector('article');
+            const h1 = document.querySelector('h1');
+            // Check if we have article with content, not 404 page
+            return article && h1 && !h1.textContent.includes('404') && !h1.textContent.includes('Page Not Found');
+          },
+          { timeout: 15000 }
+        );
+      } catch (e) {
+        console.log(`⚠️  Blog post content not found for ${route}, might be 404...`);
+      }
+    } else {
+      // This is homepage or blog listing - wait for blog cards
+      try {
+        await page.waitForSelector('.blog-card, article, h1', { timeout: 15000 });
+      } catch (e) {
+        console.log(`⚠️  Content selector not found for ${route}, continuing...`);
+      }
+    }
 
-    // Wait a bit more for any lazy-loaded content
+    // Wait a bit more for any lazy-loaded content and React hydration
     // Note: page.waitForTimeout() was removed in Puppeteer v24+
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Verify we didn't get a 404 page
+    const pageContent = await page.content();
+    const has404 = pageContent.includes('Page Not Found') || pageContent.includes('404');
+    
+    if (has404 && route !== '/' && route !== '/blog') {
+      console.log(`⚠️  Warning: ${route} appears to be a 404 page, but continuing...`);
+    }
 
     // Get the rendered HTML
-    const html = await page.content();
+    const html = pageContent;
 
     // Determine output path
     // For GitHub Pages, we need to create directories for each route
