@@ -145,7 +145,8 @@ async function prerenderRoute(browser, route) {
     });
 
     // Wait a bit more for any lazy-loaded content
-    await page.waitForTimeout(1000);
+    // Note: page.waitForTimeout() was removed in Puppeteer v24+
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
     // Get the rendered HTML
     const html = await page.content();
