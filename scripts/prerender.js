@@ -229,19 +229,66 @@ async function prerender() {
     // Close browser
     await browser.close();
     console.log('\n✅ Pre-rendering complete!');
+    
+    // Stop preview server immediately after pre-rendering completes
+    await cleanupPreviewServer();
 
   } catch (error) {
     console.error('❌ Pre-rendering failed:', error);
-    process.exit(1);
-  } finally {
-    // Clean up preview server
-    if (previewServer && !previewServer.killed) {
-      console.log('🛑 Stopping preview server...');
-      previewServer.kill();
-    }
+    // Still try to cleanup on error
+    await cleanupPreviewServer();
+  }
+}
+
+async function cleanupPreviewServer() {
+  if (previewServer && !previewServer.killed) {
+    console.log('🛑 Stopping preview server...');
+    
+    return new Promise((resolve) => {
+      let resolved = false;
+      
+      // Try graceful shutdown first
+      previewServer.kill('SIGTERM');
+      
+      // Set up exit handler
+      const exitHandler = () => {
+        if (!resolved) {
+          resolved = true;
+          console.log('✅ Preview server stopped');
+          resolve();
+        }
+      };
+      
+      previewServer.on('exit', exitHandler);
+      
+      // Force kill after 1 second if still running
+      setTimeout(() => {
+        if (previewServer && !previewServer.killed && !resolved) {
+          console.log('⚠️  Force killing preview server...');
+          previewServer.kill('SIGKILL');
+        }
+      }, 1000);
+      
+      // Force resolve after 3 seconds max (timeout)
+      setTimeout(() => {
+        if (!resolved) {
+          resolved = true;
+          console.log('✅ Cleanup complete');
+          resolve();
+        }
+      }, 3000);
+    });
   }
 }
 
 // Run pre-rendering
-prerender().catch(console.error);
+prerender()
+  .then(() => {
+    console.log('✅ All done!');
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error('❌ Fatal error:', error);
+    process.exit(1);
+  });
 
