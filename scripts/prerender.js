@@ -151,12 +151,12 @@ async function prerenderRoute(browser, route) {
       hashRoute = `/blog/${route.replace(/^\//, '')}`;
     }
     
-    // Navigate directly to the hash URL
-    const url = `${BASE_URL}${BASE_PATH}/#${hashRoute}`;
-    console.log(`📄 Pre-rendering: ${route} (visiting: ${url})`);
+    // Navigate to base URL first to let React Router initialize
+    const baseUrl = `${BASE_URL}${BASE_PATH}/`;
+    console.log(`📄 Pre-rendering: ${route} (hash: #${hashRoute})`);
     
-    // Navigate to the hash URL directly
-    await page.goto(url, {
+    // First, load the base page (this lets the redirect script run and React initialize)
+    await page.goto(baseUrl, {
       waitUntil: 'networkidle0',
       timeout: 30000,
     });
@@ -164,14 +164,29 @@ async function prerenderRoute(browser, route) {
     // Wait for React to mount
     await page.waitForSelector('#root', { timeout: 10000 });
     
-    // Wait for React Router to initialize and process the hash
+    // Wait for any redirect scripts to complete
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Verify the hash is set correctly
-    const currentHash = await page.evaluate(() => window.location.hash);
-    if (!currentHash.includes(hashRoute.replace(/^#?/, ''))) {
-      console.log(`⚠️  Hash mismatch: expected ${hashRoute}, got ${currentHash}`);
-    }
+    // Now set the hash route - this will trigger React Router
+    await page.evaluate((hash) => {
+      // Remove leading # if present
+      const cleanHash = hash.startsWith('#') ? hash.substring(1) : hash;
+      window.location.hash = `#${cleanHash}`;
+    }, hashRoute);
+    
+    // Wait for hash to be set and React Router to process it
+    await page.waitForFunction(
+      (expectedHash) => {
+        const currentHash = window.location.hash;
+        const cleanExpected = expectedHash.startsWith('#') ? expectedHash.substring(1) : expectedHash;
+        return currentHash === `#${cleanExpected}` || currentHash.includes(cleanExpected);
+      },
+      { timeout: 5000 },
+      hashRoute
+    );
+    
+    // Wait for React Router to process the route change
+    await new Promise(resolve => setTimeout(resolve, 1500));
     
     // Wait for React Router to process the hash change and render
     // For blog posts, wait specifically for the post content, not 404
@@ -189,8 +204,12 @@ async function prerenderRoute(browser, route) {
           { timeout: 10000 }
         );
         
-        // Wait for the article to appear
-        await page.waitForSelector('article', { timeout: 10000 });
+        // Wait for React Router to match the route and BlogPost component to mount
+        // The BlogPost component uses useEffect to find the post, so wait for that
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Wait for the article to appear (either real post or 404)
+        await page.waitForSelector('article, h1', { timeout: 10000 });
         
         // Wait for actual blog post content (not 404)
         // Check for specific indicators that it's a real post
@@ -234,11 +253,12 @@ async function prerenderRoute(browser, route) {
             // Check for blog post specific elements (date, read time, etc.)
             const hasPostMeta = document.querySelector('[class*="Calendar"]') || 
                                document.querySelector('[class*="Clock"]') ||
-                               bodyText.includes('min read');
+                               bodyText.includes('min read') ||
+                               bodyText.includes('Back to Blog'); // This appears in both, but 404 is already filtered
             
             return hasContent && hasMarkdownContent && hasPostMeta;
           },
-          { timeout: 20000, polling: 500 },
+          { timeout: 25000, polling: 1000 },
           slug
         );
       } catch (e) {
