@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en" class="light"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kushal Gupta | Tech Blog</title>
-    <meta name="description" content="Kushal Gupta's tech blog with articles on software development, cloud computing, and DevOps. Practical guides for developers and engineers.">
+    <title>Cloud-Managed vs Self-Managed MySQL - Strategic Decision Framework | Kushal Gupta Tech Blog</title>
+    <meta name="description" content="Strategic framework for choosing between cloud-managed and self-managed MySQL. Complete TCO analysis, risk assessment, performance comparison, and decision framework to make the right choice for your organization.">
     <meta name="author" content="Kushal Gupta">
     <meta name="keywords" content="Kushal Gupta, Kushal Gupta Platform Engineer, Kushal Gupta Software Engineer, Kushal Gupta DevOps Engineer, Kushal Gupta MLOps Engineer, Kushal Gupta AI Engineer, Kushal Gupta Engineer, Kushal Gupta Developer, Kushal Gupta Programmer, Kushal Gupta Tech, Kushal Gupta Blog, Kushal Gupta Professional, Kushal Gupta India, Platform Engineer India, Software Engineer India, DevOps Engineer India, MLOps Engineer India, AI Engineer India, Machine Learning Engineer India, Engineer India, Developer India, Programmer India, Tech Professional India, Technology Expert India, Full Stack Engineer India, Backend Engineer India, Frontend Engineer India, System Architect India, Software Architect India, Cloud Architect India, Solutions Architect India, Production Engineer India, Platform Engineer, Software Engineer, DevOps Engineer, MLOps Engineer, AI Engineer, Machine Learning Engineer, Engineer, Developer, Programmer, Tech Professional, Technology Expert, Full Stack Engineer, Backend Engineer, Frontend Engineer, System Architect, Software Architect, Cloud Architect, Solutions Architect, Production Engineer, Production Systems Engineer, Platform Development, Software Development, Cloud Computing, Infrastructure, Automation, Kubernetes, AWS, GCP, Azure, CI/CD, Terraform, GitOps, DevSecOps, MLOps, AI/ML, Machine Learning, Deep Learning, Artificial Intelligence, Data Science, Data Engineering, Platform Engineering, Infrastructure as Code, Microservices, Cloud-Native, Site Reliability Engineering, SRE, Tech Blog, Technology Blog, Programming Blog, Developer Blog, Engineering Blog, Technical Writing, Tech Articles, Software Articles, Programming Articles, Engineering Articles, Technology Content, Tech Content, Software Content, Programming Content, Engineering Content, Technology Insights, Tech Insights, Software Insights, Programming Insights, Engineering Insights, Technology Tutorials, Tech Tutorials, Software Tutorials, Programming Tutorials, Engineering Tutorials, Technology Guides, Tech Guides, Software Guides, Programming Guides, Engineering Guides">
     
@@ -12,7 +12,7 @@
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
-    <link rel="canonical" href="https://thisiskushal31.github.io/blog/">
+    <link rel="canonical" href="https://thisiskushal31.github.io/blog/mysql-cloud-vs-self-managed-strategic-decision-framework">
     
     <!-- Professional Keywords for Search -->
     <meta name="subject" content="Kushal Gupta - Engineer, Developer &amp; Tech Professional">
@@ -36,11 +36,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Kushal Gupta | Tech Blog">
-    <meta property="og:description" content="Tech blog with articles on software development, cloud computing, and DevOps. Practical guides for developers.">
-    <meta property="og:image" content="https://thisiskushal31.github.io/og.png">
-    <meta property="og:url" content="https://thisiskushal31.github.io/blog/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cloud-Managed vs Self-Managed MySQL - Strategic Decision Framework">
+    <meta property="og:description" content="Strategic framework for choosing between cloud-managed and self-managed MySQL. Complete TCO analysis, risk assessment, performance comparison, and decision framework to make the right choice for your organization.">
+    <meta property="og:image" content="https://thisiskushal31.github.io/blog/blog/blogImages/mysql-deployment-guide.png">
+    <meta property="og:url" content="https://thisiskushal31.github.io/blog/mysql-cloud-vs-self-managed-strategic-decision-framework">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -88,10 +88,705 @@
   <style type="text/css">:where(html[dir="ltr"]),:where([data-sonner-toaster][dir="ltr"]){--toast-icon-margin-start: -3px;--toast-icon-margin-end: 4px;--toast-svg-margin-start: -1px;--toast-svg-margin-end: 0px;--toast-button-margin-start: auto;--toast-button-margin-end: 0;--toast-close-button-start: 0;--toast-close-button-end: unset;--toast-close-button-transform: translate(-35%, -35%)}:where(html[dir="rtl"]),:where([data-sonner-toaster][dir="rtl"]){--toast-icon-margin-start: 4px;--toast-icon-margin-end: -3px;--toast-svg-margin-start: 0px;--toast-svg-margin-end: -1px;--toast-button-margin-start: 0;--toast-button-margin-end: auto;--toast-close-button-start: unset;--toast-close-button-end: 0;--toast-close-button-transform: translate(35%, -35%)}:where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1: hsl(0, 0%, 99%);--gray2: hsl(0, 0%, 97.3%);--gray3: hsl(0, 0%, 95.1%);--gray4: hsl(0, 0%, 93%);--gray5: hsl(0, 0%, 90.9%);--gray6: hsl(0, 0%, 88.7%);--gray7: hsl(0, 0%, 85.8%);--gray8: hsl(0, 0%, 78%);--gray9: hsl(0, 0%, 56.1%);--gray10: hsl(0, 0%, 52.3%);--gray11: hsl(0, 0%, 43.5%);--gray12: hsl(0, 0%, 9%);--border-radius: 8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999;transition:transform .4s ease}:where([data-sonner-toaster][data-lifted="true"]){transform:translateY(-10px)}@media (hover: none) and (pointer: coarse){:where([data-sonner-toaster][data-lifted="true"]){transform:none}}:where([data-sonner-toaster][data-x-position="right"]){right:var(--offset-right)}:where([data-sonner-toaster][data-x-position="left"]){left:var(--offset-left)}:where([data-sonner-toaster][data-x-position="center"]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position="top"]){top:var(--offset-top)}:where([data-sonner-toaster][data-y-position="bottom"]){bottom:var(--offset-bottom)}:where([data-sonner-toast]){--y: translateY(100%);--lift-amount: calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);filter:blur(0);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:none;overflow-wrap:anywhere}:where([data-sonner-toast][data-styled="true"]){padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px #0000001a;width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}:where([data-sonner-toast]:focus-visible){box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast][data-y-position="top"]){top:0;--y: translateY(-100%);--lift: 1;--lift-amount: calc(1 * var(--gap))}:where([data-sonner-toast][data-y-position="bottom"]){bottom:0;--y: translateY(100%);--lift: -1;--lift-amount: calc(var(--lift) * var(--gap))}:where([data-sonner-toast]) :where([data-description]){font-weight:400;line-height:1.4;color:inherit}:where([data-sonner-toast]) :where([data-title]){font-weight:500;line-height:1.5;color:inherit}:where([data-sonner-toast]) :where([data-icon]){display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}:where([data-sonner-toast]) :where([data-icon])>*{flex-shrink:0}:where([data-sonner-toast]) :where([data-icon]) svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}:where([data-sonner-toast]) :where([data-content]){display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;cursor:pointer;outline:none;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}:where([data-sonner-toast]) :where([data-button]):focus-visible{box-shadow:0 0 0 2px #0006}:where([data-sonner-toast]) :where([data-button]):first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}:where([data-sonner-toast]) :where([data-cancel]){color:var(--normal-text);background:rgba(0,0,0,.08)}:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]){background:rgba(255,255,255,.3)}:where([data-sonner-toast]) :where([data-close-button]){position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;color:var(--gray12);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}[data-sonner-toast] [data-close-button]{background:var(--gray1)}:where([data-sonner-toast]) :where([data-close-button]):focus-visible{box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast]) :where([data-disabled="true"]){cursor:not-allowed}:where([data-sonner-toast]):hover :where([data-close-button]):hover{background:var(--gray2);border-color:var(--gray5)}:where([data-sonner-toast][data-swiping="true"]):before{content:"";position:absolute;left:-50%;right:-50%;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before{content:"";position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:"";position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted="true"]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded="false"][data-front="false"]){--scale: var(--toasts-before) * .05 + 1;--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}:where([data-sonner-toast])>*{transition:opacity .4s}:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>*{opacity:0}:where([data-sonner-toast][data-visible="false"]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]){--y: translateY(calc(var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed="true"][data-front="false"]):before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount-y, 0px)) translate(var(--swipe-amount-x, 0px));transition:none}[data-sonner-toast][data-swiped=true]{user-select:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation-duration:.2s;animation-timing-function:ease-out;animation-fill-mode:forwards}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left]{animation-name:swipe-out-left}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right]{animation-name:swipe-out-right}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up]{animation-name:swipe-out-up}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down]{animation-name:swipe-out-down}@keyframes swipe-out-left{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) - 100%));opacity:0}}@keyframes swipe-out-right{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) + 100%));opacity:0}}@keyframes swipe-out-up{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) - 100%));opacity:0}}@keyframes swipe-out-down{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) + 100%));opacity:0}}@media (max-width: 600px){[data-sonner-toaster]{position:fixed;right:var(--mobile-offset-right);left:var(--mobile-offset-left);width:100%}[data-sonner-toaster][dir=rtl]{left:calc(var(--mobile-offset-left) * -1)}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset-left) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset-left)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--mobile-offset-bottom)}[data-sonner-toaster][data-y-position=top]{top:var(--mobile-offset-top)}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset-left);right:var(--mobile-offset-right);transform:none}}[data-sonner-toaster][data-theme=light]{--normal-bg: #fff;--normal-border: var(--gray4);--normal-text: var(--gray12);--success-bg: hsl(143, 85%, 96%);--success-border: hsl(145, 92%, 91%);--success-text: hsl(140, 100%, 27%);--info-bg: hsl(208, 100%, 97%);--info-border: hsl(221, 91%, 91%);--info-text: hsl(210, 92%, 45%);--warning-bg: hsl(49, 100%, 97%);--warning-border: hsl(49, 91%, 91%);--warning-text: hsl(31, 92%, 45%);--error-bg: hsl(359, 100%, 97%);--error-border: hsl(359, 100%, 94%);--error-text: hsl(360, 100%, 45%)}[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg: #fff;--normal-border: var(--gray3);--normal-text: var(--gray12)}[data-sonner-toaster][data-theme=dark]{--normal-bg: #000;--normal-bg-hover: hsl(0, 0%, 12%);--normal-border: hsl(0, 0%, 20%);--normal-border-hover: hsl(0, 0%, 25%);--normal-text: var(--gray1);--success-bg: hsl(150, 100%, 6%);--success-border: hsl(147, 100%, 12%);--success-text: hsl(150, 86%, 65%);--info-bg: hsl(215, 100%, 6%);--info-border: hsl(223, 100%, 12%);--info-text: hsl(216, 87%, 65%);--warning-bg: hsl(64, 100%, 6%);--warning-border: hsl(60, 100%, 12%);--warning-text: hsl(46, 87%, 65%);--error-bg: hsl(358, 76%, 10%);--error-border: hsl(357, 89%, 16%);--error-text: hsl(358, 100%, 81%)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]{background:var(--normal-bg);border-color:var(--normal-border);color:var(--normal-text)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]:hover{background:var(--normal-bg-hover);border-color:var(--normal-border-hover)}[data-rich-colors=true][data-sonner-toast][data-type=success],[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info],[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning],[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error],[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size: 16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:nth-child(1){animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}to{opacity:.15}}@media (prefers-reduced-motion){[data-sonner-toast],[data-sonner-toast]>*,.sonner-loading-bar{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
 </style><style type="text/css">:where(html[dir="ltr"]),:where([data-sonner-toaster][dir="ltr"]){--toast-icon-margin-start: -3px;--toast-icon-margin-end: 4px;--toast-svg-margin-start: -1px;--toast-svg-margin-end: 0px;--toast-button-margin-start: auto;--toast-button-margin-end: 0;--toast-close-button-start: 0;--toast-close-button-end: unset;--toast-close-button-transform: translate(-35%, -35%)}:where(html[dir="rtl"]),:where([data-sonner-toaster][dir="rtl"]){--toast-icon-margin-start: 4px;--toast-icon-margin-end: -3px;--toast-svg-margin-start: 0px;--toast-svg-margin-end: -1px;--toast-button-margin-start: 0;--toast-button-margin-end: auto;--toast-close-button-start: unset;--toast-close-button-end: 0;--toast-close-button-transform: translate(35%, -35%)}:where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1: hsl(0, 0%, 99%);--gray2: hsl(0, 0%, 97.3%);--gray3: hsl(0, 0%, 95.1%);--gray4: hsl(0, 0%, 93%);--gray5: hsl(0, 0%, 90.9%);--gray6: hsl(0, 0%, 88.7%);--gray7: hsl(0, 0%, 85.8%);--gray8: hsl(0, 0%, 78%);--gray9: hsl(0, 0%, 56.1%);--gray10: hsl(0, 0%, 52.3%);--gray11: hsl(0, 0%, 43.5%);--gray12: hsl(0, 0%, 9%);--border-radius: 8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999;transition:transform .4s ease}:where([data-sonner-toaster][data-lifted="true"]){transform:translateY(-10px)}@media (hover: none) and (pointer: coarse){:where([data-sonner-toaster][data-lifted="true"]){transform:none}}:where([data-sonner-toaster][data-x-position="right"]){right:var(--offset-right)}:where([data-sonner-toaster][data-x-position="left"]){left:var(--offset-left)}:where([data-sonner-toaster][data-x-position="center"]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position="top"]){top:var(--offset-top)}:where([data-sonner-toaster][data-y-position="bottom"]){bottom:var(--offset-bottom)}:where([data-sonner-toast]){--y: translateY(100%);--lift-amount: calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);filter:blur(0);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:none;overflow-wrap:anywhere}:where([data-sonner-toast][data-styled="true"]){padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px #0000001a;width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}:where([data-sonner-toast]:focus-visible){box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast][data-y-position="top"]){top:0;--y: translateY(-100%);--lift: 1;--lift-amount: calc(1 * var(--gap))}:where([data-sonner-toast][data-y-position="bottom"]){bottom:0;--y: translateY(100%);--lift: -1;--lift-amount: calc(var(--lift) * var(--gap))}:where([data-sonner-toast]) :where([data-description]){font-weight:400;line-height:1.4;color:inherit}:where([data-sonner-toast]) :where([data-title]){font-weight:500;line-height:1.5;color:inherit}:where([data-sonner-toast]) :where([data-icon]){display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}:where([data-sonner-toast]) :where([data-icon])>*{flex-shrink:0}:where([data-sonner-toast]) :where([data-icon]) svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}:where([data-sonner-toast]) :where([data-content]){display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;cursor:pointer;outline:none;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}:where([data-sonner-toast]) :where([data-button]):focus-visible{box-shadow:0 0 0 2px #0006}:where([data-sonner-toast]) :where([data-button]):first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}:where([data-sonner-toast]) :where([data-cancel]){color:var(--normal-text);background:rgba(0,0,0,.08)}:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]){background:rgba(255,255,255,.3)}:where([data-sonner-toast]) :where([data-close-button]){position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;color:var(--gray12);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}[data-sonner-toast] [data-close-button]{background:var(--gray1)}:where([data-sonner-toast]) :where([data-close-button]):focus-visible{box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast]) :where([data-disabled="true"]){cursor:not-allowed}:where([data-sonner-toast]):hover :where([data-close-button]):hover{background:var(--gray2);border-color:var(--gray5)}:where([data-sonner-toast][data-swiping="true"]):before{content:"";position:absolute;left:-50%;right:-50%;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before{content:"";position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:"";position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted="true"]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded="false"][data-front="false"]){--scale: var(--toasts-before) * .05 + 1;--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}:where([data-sonner-toast])>*{transition:opacity .4s}:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>*{opacity:0}:where([data-sonner-toast][data-visible="false"]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]){--y: translateY(calc(var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed="true"][data-front="false"]):before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount-y, 0px)) translate(var(--swipe-amount-x, 0px));transition:none}[data-sonner-toast][data-swiped=true]{user-select:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation-duration:.2s;animation-timing-function:ease-out;animation-fill-mode:forwards}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left]{animation-name:swipe-out-left}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right]{animation-name:swipe-out-right}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up]{animation-name:swipe-out-up}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down]{animation-name:swipe-out-down}@keyframes swipe-out-left{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) - 100%));opacity:0}}@keyframes swipe-out-right{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) + 100%));opacity:0}}@keyframes swipe-out-up{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) - 100%));opacity:0}}@keyframes swipe-out-down{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) + 100%));opacity:0}}@media (max-width: 600px){[data-sonner-toaster]{position:fixed;right:var(--mobile-offset-right);left:var(--mobile-offset-left);width:100%}[data-sonner-toaster][dir=rtl]{left:calc(var(--mobile-offset-left) * -1)}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset-left) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset-left)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--mobile-offset-bottom)}[data-sonner-toaster][data-y-position=top]{top:var(--mobile-offset-top)}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset-left);right:var(--mobile-offset-right);transform:none}}[data-sonner-toaster][data-theme=light]{--normal-bg: #fff;--normal-border: var(--gray4);--normal-text: var(--gray12);--success-bg: hsl(143, 85%, 96%);--success-border: hsl(145, 92%, 91%);--success-text: hsl(140, 100%, 27%);--info-bg: hsl(208, 100%, 97%);--info-border: hsl(221, 91%, 91%);--info-text: hsl(210, 92%, 45%);--warning-bg: hsl(49, 100%, 97%);--warning-border: hsl(49, 91%, 91%);--warning-text: hsl(31, 92%, 45%);--error-bg: hsl(359, 100%, 97%);--error-border: hsl(359, 100%, 94%);--error-text: hsl(360, 100%, 45%)}[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg: #fff;--normal-border: var(--gray3);--normal-text: var(--gray12)}[data-sonner-toaster][data-theme=dark]{--normal-bg: #000;--normal-bg-hover: hsl(0, 0%, 12%);--normal-border: hsl(0, 0%, 20%);--normal-border-hover: hsl(0, 0%, 25%);--normal-text: var(--gray1);--success-bg: hsl(150, 100%, 6%);--success-border: hsl(147, 100%, 12%);--success-text: hsl(150, 86%, 65%);--info-bg: hsl(215, 100%, 6%);--info-border: hsl(223, 100%, 12%);--info-text: hsl(216, 87%, 65%);--warning-bg: hsl(64, 100%, 6%);--warning-border: hsl(60, 100%, 12%);--warning-text: hsl(46, 87%, 65%);--error-bg: hsl(358, 76%, 10%);--error-border: hsl(357, 89%, 16%);--error-text: hsl(358, 100%, 81%)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]{background:var(--normal-bg);border-color:var(--normal-border);color:var(--normal-text)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]:hover{background:var(--normal-bg-hover);border-color:var(--normal-border-hover)}[data-rich-colors=true][data-sonner-toast][data-type=success],[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info],[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning],[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error],[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size: 16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:nth-child(1){animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}to{opacity:.15}}@media (prefers-reduced-motion){[data-sonner-toast],[data-sonner-toast]>*,.sonner-loading-bar{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
 </style><style type="text/css">:where(html[dir="ltr"]),:where([data-sonner-toaster][dir="ltr"]){--toast-icon-margin-start: -3px;--toast-icon-margin-end: 4px;--toast-svg-margin-start: -1px;--toast-svg-margin-end: 0px;--toast-button-margin-start: auto;--toast-button-margin-end: 0;--toast-close-button-start: 0;--toast-close-button-end: unset;--toast-close-button-transform: translate(-35%, -35%)}:where(html[dir="rtl"]),:where([data-sonner-toaster][dir="rtl"]){--toast-icon-margin-start: 4px;--toast-icon-margin-end: -3px;--toast-svg-margin-start: 0px;--toast-svg-margin-end: -1px;--toast-button-margin-start: 0;--toast-button-margin-end: auto;--toast-close-button-start: unset;--toast-close-button-end: 0;--toast-close-button-transform: translate(35%, -35%)}:where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1: hsl(0, 0%, 99%);--gray2: hsl(0, 0%, 97.3%);--gray3: hsl(0, 0%, 95.1%);--gray4: hsl(0, 0%, 93%);--gray5: hsl(0, 0%, 90.9%);--gray6: hsl(0, 0%, 88.7%);--gray7: hsl(0, 0%, 85.8%);--gray8: hsl(0, 0%, 78%);--gray9: hsl(0, 0%, 56.1%);--gray10: hsl(0, 0%, 52.3%);--gray11: hsl(0, 0%, 43.5%);--gray12: hsl(0, 0%, 9%);--border-radius: 8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999;transition:transform .4s ease}:where([data-sonner-toaster][data-lifted="true"]){transform:translateY(-10px)}@media (hover: none) and (pointer: coarse){:where([data-sonner-toaster][data-lifted="true"]){transform:none}}:where([data-sonner-toaster][data-x-position="right"]){right:var(--offset-right)}:where([data-sonner-toaster][data-x-position="left"]){left:var(--offset-left)}:where([data-sonner-toaster][data-x-position="center"]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position="top"]){top:var(--offset-top)}:where([data-sonner-toaster][data-y-position="bottom"]){bottom:var(--offset-bottom)}:where([data-sonner-toast]){--y: translateY(100%);--lift-amount: calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);filter:blur(0);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:none;overflow-wrap:anywhere}:where([data-sonner-toast][data-styled="true"]){padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px #0000001a;width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}:where([data-sonner-toast]:focus-visible){box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast][data-y-position="top"]){top:0;--y: translateY(-100%);--lift: 1;--lift-amount: calc(1 * var(--gap))}:where([data-sonner-toast][data-y-position="bottom"]){bottom:0;--y: translateY(100%);--lift: -1;--lift-amount: calc(var(--lift) * var(--gap))}:where([data-sonner-toast]) :where([data-description]){font-weight:400;line-height:1.4;color:inherit}:where([data-sonner-toast]) :where([data-title]){font-weight:500;line-height:1.5;color:inherit}:where([data-sonner-toast]) :where([data-icon]){display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}:where([data-sonner-toast]) :where([data-icon])>*{flex-shrink:0}:where([data-sonner-toast]) :where([data-icon]) svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}:where([data-sonner-toast]) :where([data-content]){display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;cursor:pointer;outline:none;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}:where([data-sonner-toast]) :where([data-button]):focus-visible{box-shadow:0 0 0 2px #0006}:where([data-sonner-toast]) :where([data-button]):first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}:where([data-sonner-toast]) :where([data-cancel]){color:var(--normal-text);background:rgba(0,0,0,.08)}:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]){background:rgba(255,255,255,.3)}:where([data-sonner-toast]) :where([data-close-button]){position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;color:var(--gray12);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}[data-sonner-toast] [data-close-button]{background:var(--gray1)}:where([data-sonner-toast]) :where([data-close-button]):focus-visible{box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast]) :where([data-disabled="true"]){cursor:not-allowed}:where([data-sonner-toast]):hover :where([data-close-button]):hover{background:var(--gray2);border-color:var(--gray5)}:where([data-sonner-toast][data-swiping="true"]):before{content:"";position:absolute;left:-50%;right:-50%;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before{content:"";position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:"";position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted="true"]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded="false"][data-front="false"]){--scale: var(--toasts-before) * .05 + 1;--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}:where([data-sonner-toast])>*{transition:opacity .4s}:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>*{opacity:0}:where([data-sonner-toast][data-visible="false"]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]){--y: translateY(calc(var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed="true"][data-front="false"]):before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount-y, 0px)) translate(var(--swipe-amount-x, 0px));transition:none}[data-sonner-toast][data-swiped=true]{user-select:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation-duration:.2s;animation-timing-function:ease-out;animation-fill-mode:forwards}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left]{animation-name:swipe-out-left}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right]{animation-name:swipe-out-right}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up]{animation-name:swipe-out-up}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down]{animation-name:swipe-out-down}@keyframes swipe-out-left{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) - 100%));opacity:0}}@keyframes swipe-out-right{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) + 100%));opacity:0}}@keyframes swipe-out-up{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) - 100%));opacity:0}}@keyframes swipe-out-down{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) + 100%));opacity:0}}@media (max-width: 600px){[data-sonner-toaster]{position:fixed;right:var(--mobile-offset-right);left:var(--mobile-offset-left);width:100%}[data-sonner-toaster][dir=rtl]{left:calc(var(--mobile-offset-left) * -1)}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset-left) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset-left)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--mobile-offset-bottom)}[data-sonner-toaster][data-y-position=top]{top:var(--mobile-offset-top)}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset-left);right:var(--mobile-offset-right);transform:none}}[data-sonner-toaster][data-theme=light]{--normal-bg: #fff;--normal-border: var(--gray4);--normal-text: var(--gray12);--success-bg: hsl(143, 85%, 96%);--success-border: hsl(145, 92%, 91%);--success-text: hsl(140, 100%, 27%);--info-bg: hsl(208, 100%, 97%);--info-border: hsl(221, 91%, 91%);--info-text: hsl(210, 92%, 45%);--warning-bg: hsl(49, 100%, 97%);--warning-border: hsl(49, 91%, 91%);--warning-text: hsl(31, 92%, 45%);--error-bg: hsl(359, 100%, 97%);--error-border: hsl(359, 100%, 94%);--error-text: hsl(360, 100%, 45%)}[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg: #fff;--normal-border: var(--gray3);--normal-text: var(--gray12)}[data-sonner-toaster][data-theme=dark]{--normal-bg: #000;--normal-bg-hover: hsl(0, 0%, 12%);--normal-border: hsl(0, 0%, 20%);--normal-border-hover: hsl(0, 0%, 25%);--normal-text: var(--gray1);--success-bg: hsl(150, 100%, 6%);--success-border: hsl(147, 100%, 12%);--success-text: hsl(150, 86%, 65%);--info-bg: hsl(215, 100%, 6%);--info-border: hsl(223, 100%, 12%);--info-text: hsl(216, 87%, 65%);--warning-bg: hsl(64, 100%, 6%);--warning-border: hsl(60, 100%, 12%);--warning-text: hsl(46, 87%, 65%);--error-bg: hsl(358, 76%, 10%);--error-border: hsl(357, 89%, 16%);--error-text: hsl(358, 100%, 81%)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]{background:var(--normal-bg);border-color:var(--normal-border);color:var(--normal-text)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]:hover{background:var(--normal-bg-hover);border-color:var(--normal-border-hover)}[data-rich-colors=true][data-sonner-toast][data-type=success],[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info],[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning],[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error],[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size: 16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:nth-child(1){animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}to{opacity:.15}}@media (prefers-reduced-motion){[data-sonner-toast],[data-sonner-toast]>*,.sonner-loading-bar{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
-</style></head>
+</style><style type="text/css">:where(html[dir="ltr"]),:where([data-sonner-toaster][dir="ltr"]){--toast-icon-margin-start: -3px;--toast-icon-margin-end: 4px;--toast-svg-margin-start: -1px;--toast-svg-margin-end: 0px;--toast-button-margin-start: auto;--toast-button-margin-end: 0;--toast-close-button-start: 0;--toast-close-button-end: unset;--toast-close-button-transform: translate(-35%, -35%)}:where(html[dir="rtl"]),:where([data-sonner-toaster][dir="rtl"]){--toast-icon-margin-start: 4px;--toast-icon-margin-end: -3px;--toast-svg-margin-start: 0px;--toast-svg-margin-end: -1px;--toast-button-margin-start: 0;--toast-button-margin-end: auto;--toast-close-button-start: unset;--toast-close-button-end: 0;--toast-close-button-transform: translate(35%, -35%)}:where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1: hsl(0, 0%, 99%);--gray2: hsl(0, 0%, 97.3%);--gray3: hsl(0, 0%, 95.1%);--gray4: hsl(0, 0%, 93%);--gray5: hsl(0, 0%, 90.9%);--gray6: hsl(0, 0%, 88.7%);--gray7: hsl(0, 0%, 85.8%);--gray8: hsl(0, 0%, 78%);--gray9: hsl(0, 0%, 56.1%);--gray10: hsl(0, 0%, 52.3%);--gray11: hsl(0, 0%, 43.5%);--gray12: hsl(0, 0%, 9%);--border-radius: 8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999;transition:transform .4s ease}:where([data-sonner-toaster][data-lifted="true"]){transform:translateY(-10px)}@media (hover: none) and (pointer: coarse){:where([data-sonner-toaster][data-lifted="true"]){transform:none}}:where([data-sonner-toaster][data-x-position="right"]){right:var(--offset-right)}:where([data-sonner-toaster][data-x-position="left"]){left:var(--offset-left)}:where([data-sonner-toaster][data-x-position="center"]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position="top"]){top:var(--offset-top)}:where([data-sonner-toaster][data-y-position="bottom"]){bottom:var(--offset-bottom)}:where([data-sonner-toast]){--y: translateY(100%);--lift-amount: calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);filter:blur(0);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:none;overflow-wrap:anywhere}:where([data-sonner-toast][data-styled="true"]){padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px #0000001a;width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}:where([data-sonner-toast]:focus-visible){box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast][data-y-position="top"]){top:0;--y: translateY(-100%);--lift: 1;--lift-amount: calc(1 * var(--gap))}:where([data-sonner-toast][data-y-position="bottom"]){bottom:0;--y: translateY(100%);--lift: -1;--lift-amount: calc(var(--lift) * var(--gap))}:where([data-sonner-toast]) :where([data-description]){font-weight:400;line-height:1.4;color:inherit}:where([data-sonner-toast]) :where([data-title]){font-weight:500;line-height:1.5;color:inherit}:where([data-sonner-toast]) :where([data-icon]){display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}:where([data-sonner-toast]) :where([data-icon])>*{flex-shrink:0}:where([data-sonner-toast]) :where([data-icon]) svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}:where([data-sonner-toast]) :where([data-content]){display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;cursor:pointer;outline:none;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}:where([data-sonner-toast]) :where([data-button]):focus-visible{box-shadow:0 0 0 2px #0006}:where([data-sonner-toast]) :where([data-button]):first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}:where([data-sonner-toast]) :where([data-cancel]){color:var(--normal-text);background:rgba(0,0,0,.08)}:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]){background:rgba(255,255,255,.3)}:where([data-sonner-toast]) :where([data-close-button]){position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;color:var(--gray12);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}[data-sonner-toast] [data-close-button]{background:var(--gray1)}:where([data-sonner-toast]) :where([data-close-button]):focus-visible{box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast]) :where([data-disabled="true"]){cursor:not-allowed}:where([data-sonner-toast]):hover :where([data-close-button]):hover{background:var(--gray2);border-color:var(--gray5)}:where([data-sonner-toast][data-swiping="true"]):before{content:"";position:absolute;left:-50%;right:-50%;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before{content:"";position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:"";position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted="true"]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded="false"][data-front="false"]){--scale: var(--toasts-before) * .05 + 1;--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}:where([data-sonner-toast])>*{transition:opacity .4s}:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>*{opacity:0}:where([data-sonner-toast][data-visible="false"]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]){--y: translateY(calc(var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed="true"][data-front="false"]):before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount-y, 0px)) translate(var(--swipe-amount-x, 0px));transition:none}[data-sonner-toast][data-swiped=true]{user-select:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation-duration:.2s;animation-timing-function:ease-out;animation-fill-mode:forwards}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left]{animation-name:swipe-out-left}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right]{animation-name:swipe-out-right}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up]{animation-name:swipe-out-up}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down]{animation-name:swipe-out-down}@keyframes swipe-out-left{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) - 100%));opacity:0}}@keyframes swipe-out-right{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) + 100%));opacity:0}}@keyframes swipe-out-up{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) - 100%));opacity:0}}@keyframes swipe-out-down{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) + 100%));opacity:0}}@media (max-width: 600px){[data-sonner-toaster]{position:fixed;right:var(--mobile-offset-right);left:var(--mobile-offset-left);width:100%}[data-sonner-toaster][dir=rtl]{left:calc(var(--mobile-offset-left) * -1)}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset-left) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset-left)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--mobile-offset-bottom)}[data-sonner-toaster][data-y-position=top]{top:var(--mobile-offset-top)}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset-left);right:var(--mobile-offset-right);transform:none}}[data-sonner-toaster][data-theme=light]{--normal-bg: #fff;--normal-border: var(--gray4);--normal-text: var(--gray12);--success-bg: hsl(143, 85%, 96%);--success-border: hsl(145, 92%, 91%);--success-text: hsl(140, 100%, 27%);--info-bg: hsl(208, 100%, 97%);--info-border: hsl(221, 91%, 91%);--info-text: hsl(210, 92%, 45%);--warning-bg: hsl(49, 100%, 97%);--warning-border: hsl(49, 91%, 91%);--warning-text: hsl(31, 92%, 45%);--error-bg: hsl(359, 100%, 97%);--error-border: hsl(359, 100%, 94%);--error-text: hsl(360, 100%, 45%)}[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg: #fff;--normal-border: var(--gray3);--normal-text: var(--gray12)}[data-sonner-toaster][data-theme=dark]{--normal-bg: #000;--normal-bg-hover: hsl(0, 0%, 12%);--normal-border: hsl(0, 0%, 20%);--normal-border-hover: hsl(0, 0%, 25%);--normal-text: var(--gray1);--success-bg: hsl(150, 100%, 6%);--success-border: hsl(147, 100%, 12%);--success-text: hsl(150, 86%, 65%);--info-bg: hsl(215, 100%, 6%);--info-border: hsl(223, 100%, 12%);--info-text: hsl(216, 87%, 65%);--warning-bg: hsl(64, 100%, 6%);--warning-border: hsl(60, 100%, 12%);--warning-text: hsl(46, 87%, 65%);--error-bg: hsl(358, 76%, 10%);--error-border: hsl(357, 89%, 16%);--error-text: hsl(358, 100%, 81%)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]{background:var(--normal-bg);border-color:var(--normal-border);color:var(--normal-text)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]:hover{background:var(--normal-bg-hover);border-color:var(--normal-border-hover)}[data-rich-colors=true][data-sonner-toast][data-type=success],[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info],[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning],[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error],[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size: 16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:nth-child(1){animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}to{opacity:.15}}@media (prefers-reduced-motion){[data-sonner-toast],[data-sonner-toast]>*,.sonner-loading-bar{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
+</style><script type="application/ld+json" data-blog-post="true">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cloud-Managed vs Self-Managed MySQL - Strategic Decision Framework","description":"Strategic framework for choosing between cloud-managed and self-managed MySQL. Complete TCO analysis, risk assessment, performance comparison, and decision framework to make the right choice for your organization.","url":"https://thisiskushal31.github.io/blog/mysql-cloud-vs-self-managed-strategic-decision-framework","datePublished":"2025-01-15","author":{"@type":"Person","name":"Kushal Gupta","url":"https://thisiskushal31.github.io"},"publisher":{"@type":"Person","name":"Kushal Gupta"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thisiskushal31.github.io/blog/mysql-cloud-vs-self-managed-strategic-decision-framework"}}</script></head>
 
   <body style="font-family: 'Inter', sans-serif;">
-    <div id="root"><div class="min-h-screen bg-background"><main><div class="min-h-screen bg-background flex items-center justify-center"><div class="text-center space-y-8 max-w-2xl mx-auto px-4"><div class="space-y-4"><h1 class="text-8xl font-bold text-primary">404</h1><h2 class="text-3xl font-semibold text-foreground">Page Not Found</h2><p class="text-muted-foreground text-lg">The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.</p></div><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="btn-primary inline-flex items-center justify-center" href="#/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house w-4 h-4 mr-2"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Go Home</a><a class="btn-secondary inline-flex items-center justify-center" href="#/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-4 h-4 mr-2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>Browse Articles</a></div></div></div></main></div></div>
+    <div id="root"><div class="min-h-screen bg-background"><main><div class="min-h-screen bg-background"><div class="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border shadow-card transition-all duration-300 ease-in-out transform translate-y-0 opacity-100"><div class="max-w-7xl mx-auto px-3 py-2"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><a class="flex items-center gap-2 hover:opacity-80 transition-opacity" href="#/"><div class="w-8 h-8 rounded-full overflow-hidden bg-teal-500 flex items-center justify-center"><img src="/blog/profile.jpeg" alt="Kushal Gupta" class="w-full h-full object-cover"></div><div class="flex flex-col"><span class="font-bold text-sm text-foreground">Kushal Gupta</span><span class="text-xs text-muted-foreground">Tech Blog</span></div></a></div><div class="flex items-center space-x-3"><a href="https://github.com/thisiskushal31" target="_blank" rel="noopener noreferrer" class="p-2 text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 transition-all duration-200 hover:scale-110 hover:shadow-md" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a><a href="https://www.linkedin.com/in/thisiskushalgupta/" target="_blank" rel="noopener noreferrer" class="p-2 text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 dark:text-blue-400 dark:hover:text-blue-300 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 rounded-lg border border-blue-200 hover:border-blue-300 dark:border-blue-800 dark:hover:border-blue-700 transition-all duration-200 hover:scale-110 hover:shadow-md" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin w-4 h-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://thisiskushal31.github.io/link/" target="_blank" rel="noopener noreferrer" class="p-2 text-purple-600 hover:text-purple-700 bg-purple-50 hover:bg-purple-100 dark:text-purple-400 dark:hover:text-purple-300 dark:bg-purple-900/20 dark:hover:bg-purple-900/30 rounded-lg border border-purple-200 hover:border-purple-300 dark:border-purple-800 dark:hover:border-purple-700 transition-all duration-200 hover:scale-110 hover:shadow-md" title="My Profile &amp; Links"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><a href="#" class="p-2 text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 transition-all duration-200 hover:scale-110 hover:shadow-md" title="Copy Link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy w-4 h-4"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></a><button class="p-2 text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 transition-all duration-200 hover:scale-110 hover:shadow-md" title="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon w-4 h-4"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button></div></div></div></div><div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3"><button class="w-12 h-12 bg-teal-600 hover:bg-teal-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center border border-teal-500" title="Go to Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house w-5 h-5"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button></div><div class="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden -mt-16 pt-16"><img src="/blog/blogImages/mysql-deployment-guide.png" alt="Cloud-Managed vs Self-Managed MySQL - Strategic Decision Framework" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div></div><header class="py-12 px-4 hero-gradient "><div class="max-w-4xl mx-auto"><a class="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200 mb-8 group" href="#/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a><div class="space-y-6"><div class="flex flex-wrap gap-2"><span class="tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag w-3 h-3 mr-1"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>MySQL</span><span class="tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag w-3 h-3 mr-1"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>Strategy</span><span class="tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag w-3 h-3 mr-1"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>Decision Framework</span></div><h1 class="text-4xl md:text-5xl font-bold text-foreground leading-tight">Cloud-Managed vs Self-Managed MySQL - Strategic Decision Framework</h1><p class="text-xl text-muted-foreground leading-relaxed">Strategic framework for choosing between cloud-managed and self-managed MySQL. Complete TCO analysis, risk assessment, performance comparison, and decision framework to make the right choice for your organization.</p><div class="flex flex-wrap items-center gap-6 text-muted-foreground"><div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg><span>January 15, 2025</span></div><div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>7 min read</span></div><button class="flex items-center space-x-2 hover:text-primary transition-colors duration-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2 w-4 h-4"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg><span>Share</span></button></div></div></div></header><article class="py-12 px-4"><div class="max-w-4xl mx-auto"><div class="glass-card p-8 md:p-12"><div class="blog-markdown"><div>
+        <h1 id="cloud-managed-vs-self-managed-mysql-the-strategic-decision-framework" class="group relative scroll-mt-20 text-3xl font-bold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#cloud-managed-vs-self-managed-mysql-the-strategic-decision-framework">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Cloud-Managed vs Self-Managed MySQL: The Strategic Decision Framework</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#cloud-managed-vs-self-managed-mysql-the-strategic-decision-framework" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h1>
+      
+<p><em>Master the fundamental decision between managed services and self-managed infrastructure</em></p>
+<hr>
+
+        <h2 id="introduction" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#introduction">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Introduction</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#introduction" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<p>Choosing between cloud-managed and self-managed MySQL is one of the most critical decisions you'll make for your database infrastructure. This decision impacts everything from operational overhead to cost, from performance to security. Whether you're a startup trying to move fast or an enterprise requiring maximum control, this guide provides the strategic framework to make the right choice.</p>
+
+        <h2 id="tl-dr" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#tldr">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>TL;DR</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#tl-dr" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<ul>
+<li><strong>What:</strong> Strategic framework for choosing between cloud-managed and self-managed MySQL</li>
+<li><strong>When to use:</strong> Before making any MySQL deployment decision</li>
+<li><strong>Reading time:</strong> 8-10 minutes</li>
+<li><strong>Implementation time:</strong> N/A (decision framework)</li>
+<li><strong>Key takeaway:</strong> Cloud-managed reduces ops overhead but costs more; self-managed gives control but requires expertise</li>
+<li><strong>Skip if:</strong> You've already decided on your deployment strategy</li>
+</ul>
+<p><strong>What You'll Master:</strong></p>
+<ul>
+<li>Total Cost of Ownership (TCO) analysis framework</li>
+<li>Risk assessment for different team sizes</li>
+<li>Performance comparison: managed vs self-managed</li>
+<li>Security and compliance considerations</li>
+<li>Operational overhead evaluation</li>
+</ul>
+<hr>
+
+        <h2 id="the-fundamental-trade-off" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#the-fundamental-trade-off">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>The Fundamental Trade-off</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#the-fundamental-trade-off" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+
+        <h3 id="cloud-managed-mysql-convenience-at-a-cost" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#cloud-managed-mysql-convenience-at-a-cost">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Cloud-Managed MySQL: Convenience at a Cost</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#cloud-managed-mysql-convenience-at-a-cost" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>What it is:</strong></p>
+<ul>
+<li>Fully managed MySQL service (AWS RDS, Google Cloud SQL, Azure Database)</li>
+<li>Automatic backups, patching, and monitoring</li>
+<li>Built-in high availability and scaling</li>
+<li>Pay-as-you-go pricing model</li>
+</ul>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Small to medium teams without dedicated DBAs</li>
+<li>Applications requiring rapid scaling</li>
+<li>Organizations prioritizing time-to-market</li>
+<li>Teams wanting to focus on application development</li>
+</ul>
+
+        <h3 id="self-managed-mysql-control-with-responsibility" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#self-managed-mysql-control-with-responsibility">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Self-Managed MySQL: Control with Responsibility</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#self-managed-mysql-control-with-responsibility" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>What it is:</strong></p>
+<ul>
+<li>MySQL installed and managed on your infrastructure</li>
+<li>Full control over configuration and optimization</li>
+<li>Requires database administration expertise</li>
+<li>Lower ongoing costs but higher operational overhead</li>
+</ul>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Large teams with database expertise</li>
+<li>Applications with specific performance requirements</li>
+<li>Organizations with compliance/regulatory needs</li>
+<li>Cost-optimized deployments at scale</li>
+</ul>
+<hr>
+
+        <h2 id="total-cost-of-ownership-tco-analysis" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#total-cost-of-ownership-tco-analysis">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Total Cost of Ownership (TCO) Analysis</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#total-cost-of-ownership-tco-analysis" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<blockquote class="border-l-4 border-gray-300 dark:border-gray-600 pl-4 my-4 text-gray-600 dark:text-gray-400">
+<p>💡 <strong>Exploring MySQL architecture?</strong> Check out my <a href="https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#overview--architecture" target="_blank" rel="noopener noreferrer">MySQL Architecture Deep Dive</a> for detailed component explanations and storage engine comparisons.</p>
+</blockquote>
+
+        <h3 id="cloud-managed-mysql-costs" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#cloud-managed-mysql-costs">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Cloud-Managed MySQL Costs</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#cloud-managed-mysql-costs" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<blockquote class="border-l-4 border-gray-300 dark:border-gray-600 pl-4 my-4 text-gray-600 dark:text-gray-400">
+<p>⚠️ <strong>Pricing Disclaimer:</strong> All pricing information in this blog post is approximate and based on publicly available pricing as of 2025. Actual costs may vary significantly based on region, usage patterns, discounts, and provider-specific pricing changes. Always verify current pricing with official cloud provider documentation before making financial decisions.</p>
+</blockquote>
+<p><strong>Direct Costs:</strong></p>
+<ul>
+<li>Instance costs: $50-$5000+/month depending on size</li>
+<li>Storage costs: $0.10-$0.30/GB/month</li>
+<li>I/O costs: $0.10-$0.20 per million I/O requests</li>
+<li>Backup storage: $0.10-$0.20/GB/month</li>
+<li>Data transfer: $0.09-$0.12/GB (outbound)</li>
+</ul>
+<p><strong>Example Calculation (Medium Production):</strong></p>
+<div class="highlight notranslate" style="background-color: transparent !important; border: none !important; border-radius: 0px !important; padding: 0px !important; margin: 0px !important;">
+<pre class="notranslate language-none" tabindex="0" style="border-radius: 0.75rem !important; padding: 16px !important; margin: 16px 0px !important; overflow-x: auto !important; font-size: 14px !important; line-height: 1.5 !important; white-space: pre-wrap !important; overflow-wrap: normal !important; text-wrap-style: initial !important; word-break: normal !important;"><code class="language-none" style="background: transparent !important; border: none !important; border-radius: 0px !important; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace !important; font-size: 15px !important; line-height: 1.6 !important; padding: 0px !important; font-weight: 500 !important; text-rendering: geometricprecision !important; -webkit-font-smoothing: subpixel-antialiased !important; letter-spacing: 0.025em !important; white-space: pre-wrap !important; overflow-wrap: normal !important; text-wrap-style: initial !important; word-break: normal !important;">Instance (db.r5.xlarge): $300/month
+Storage (500GB): $50/month
+I/O (10M requests): $1/month
+Backups (500GB): $50/month
+Total: ~$400/month = $4,800/year
+</code></pre>
+</div>
+<p><strong>Hidden Costs:</strong></p>
+<ul>
+<li>Vendor lock-in (migration costs)</li>
+<li>Limited configuration options</li>
+<li>Potential over-provisioning</li>
+<li>Data transfer costs</li>
+</ul>
+
+        <h3 id="self-managed-mysql-costs" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#self-managed-mysql-costs">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Self-Managed MySQL Costs</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#self-managed-mysql-costs" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Direct Costs:</strong></p>
+<ul>
+<li>Server/VM costs: $50-$1000+/month</li>
+<li>Storage costs: $0.05-$0.15/GB/month</li>
+<li>Backup storage: $0.05-$0.15/GB/month</li>
+<li>Monitoring tools: $0-$200/month</li>
+</ul>
+<p><strong>Example Calculation (Medium Production):</strong></p>
+<div class="highlight notranslate" style="background-color: transparent !important; border: none !important; border-radius: 0px !important; padding: 0px !important; margin: 0px !important;">
+<pre class="notranslate language-none" tabindex="0" style="border-radius: 0.75rem !important; padding: 16px !important; margin: 16px 0px !important; overflow-x: auto !important; font-size: 14px !important; line-height: 1.5 !important; white-space: pre-wrap !important; overflow-wrap: normal !important; text-wrap-style: initial !important; word-break: normal !important;"><code class="language-none" style="background: transparent !important; border: none !important; border-radius: 0px !important; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace !important; font-size: 15px !important; line-height: 1.6 !important; padding: 0px !important; font-weight: 500 !important; text-rendering: geometricprecision !important; -webkit-font-smoothing: subpixel-antialiased !important; letter-spacing: 0.025em !important; white-space: pre-wrap !important; overflow-wrap: normal !important; text-wrap-style: initial !important; word-break: normal !important;">VM (8 vCPU, 32GB RAM): $150/month
+Storage (500GB): $25/month
+Backups (500GB): $25/month
+Monitoring: $50/month
+Total: ~$250/month = $3,000/year
+</code></pre>
+</div>
+<p><strong>Hidden Costs:</strong></p>
+<ul>
+<li>DBA time: 20-40 hours/month = $2,000-$4,000/month</li>
+<li>On-call rotation: $500-$1,000/month</li>
+<li>Training and certification: $1,000-$5,000/year</li>
+<li>Downtime costs: Variable (can be significant)</li>
+</ul>
+
+        <h3 id="tco-comparison-framework" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#tco-comparison-framework">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>TCO Comparison Framework</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#tco-comparison-framework" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>3-Year TCO Calculation:</strong></p>
+<div class="table-wrapper"><table class="highlight tab-size js-file-line-container">
+<thead>
+<tr>
+<th>Component</th>
+<th>Cloud-Managed</th>
+<th>Self-Managed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Infrastructure</td>
+<td>$14,400</td>
+<td>$9,000</td>
+</tr>
+<tr>
+<td>DBA Time (20hrs/mo)</td>
+<td>$0</td>
+<td>$72,000</td>
+</tr>
+<tr>
+<td>On-call</td>
+<td>$0</td>
+<td>$18,000</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>$0</td>
+<td>$3,000</td>
+</tr>
+<tr>
+<td>Downtime (0.1% vs 0.5%)</td>
+<td>$500</td>
+<td>$2,500</td>
+</tr>
+<tr>
+<td><strong>Total 3-Year TCO</strong></td>
+<td><strong>$14,900</strong></td>
+<td><strong>$104,500</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>Key Insight:</strong> For teams without dedicated DBAs, cloud-managed is significantly cheaper when factoring in operational overhead.</p>
+<hr>
+
+        <h2 id="risk-assessment-framework" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#risk-assessment-framework">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Risk Assessment Framework</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#risk-assessment-framework" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+
+        <h3 id="technical-risk" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#technical-risk">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Technical Risk</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#technical-risk" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Cloud-Managed:</strong></p>
+<ul>
+<li>✅ Lower risk of misconfiguration</li>
+<li>✅ Automatic security patches</li>
+<li>✅ Built-in disaster recovery</li>
+<li>❌ Limited customization</li>
+<li>❌ Vendor dependency</li>
+<li>❌ Potential performance limitations</li>
+</ul>
+<p><strong>Self-Managed:</strong></p>
+<ul>
+<li>✅ Full control and customization</li>
+<li>✅ No vendor lock-in</li>
+<li>✅ Optimize for specific workloads</li>
+<li>❌ Higher risk of misconfiguration</li>
+<li>❌ Manual security patching</li>
+<li>❌ Requires disaster recovery planning</li>
+</ul>
+
+        <h3 id="operational-risk" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#operational-risk">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Operational Risk</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#operational-risk" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Cloud-Managed:</strong></p>
+<ul>
+<li>✅ Reduced operational burden</li>
+<li>✅ 24/7 monitoring and support</li>
+<li>✅ Automatic scaling</li>
+<li>❌ Less visibility into infrastructure</li>
+<li>❌ Limited troubleshooting options</li>
+<li>❌ Potential service limitations</li>
+</ul>
+<p><strong>Self-Managed:</strong></p>
+<ul>
+<li>✅ Full visibility and control</li>
+<li>✅ Custom monitoring and alerting</li>
+<li>✅ Flexible scaling options</li>
+<li>❌ Higher operational burden</li>
+<li>❌ Requires 24/7 on-call</li>
+<li>❌ Manual scaling processes</li>
+</ul>
+
+        <h3 id="business-risk" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#business-risk">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Business Risk</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#business-risk" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Cloud-Managed:</strong></p>
+<ul>
+<li>✅ Faster time-to-market</li>
+<li>✅ Reduced hiring requirements</li>
+<li>✅ Predictable costs</li>
+<li>❌ Vendor lock-in</li>
+<li>❌ Less competitive differentiation</li>
+<li>❌ Potential cost overruns</li>
+</ul>
+<p><strong>Self-Managed:</strong></p>
+<ul>
+<li>✅ Competitive advantage through optimization</li>
+<li>✅ No vendor dependencies</li>
+<li>✅ Lower long-term costs at scale</li>
+<li>❌ Slower time-to-market</li>
+<li>❌ Requires specialized hiring</li>
+<li>❌ Unpredictable operational costs</li>
+</ul>
+<hr>
+
+        <h2 id="performance-comparison" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#performance-comparison">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Performance Comparison</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#performance-comparison" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<blockquote class="border-l-4 border-gray-300 dark:border-gray-600 pl-4 my-4 text-gray-600 dark:text-gray-400">
+<p>💡 <strong>Want deeper technical details?</strong> Explore my <a href="https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#performance--operations" target="_blank" rel="noopener noreferrer">MySQL Performance Deep Dive</a> for query optimization, indexing strategies, and configuration tuning.</p>
+</blockquote>
+
+        <h3 id="latency" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#latency">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Latency</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#latency" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Cloud-Managed:</strong></p>
+<ul>
+<li>Network latency: 1-5ms additional (depending on region)</li>
+<li>Consistent performance with SLA guarantees</li>
+<li>Automatic performance optimization</li>
+</ul>
+<p><strong>Self-Managed:</strong></p>
+<ul>
+<li>Minimal network latency (on-premises)</li>
+<li>Variable performance (depends on configuration)</li>
+<li>Manual optimization required</li>
+</ul>
+
+        <h3 id="throughput" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#throughput">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Throughput</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#throughput" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Cloud-Managed:</strong></p>
+<ul>
+<li>Pre-configured instance types</li>
+<li>Automatic scaling capabilities</li>
+<li>May have throughput limits</li>
+</ul>
+<p><strong>Self-Managed:</strong></p>
+<ul>
+<li>Custom hardware configuration</li>
+<li>Manual scaling</li>
+<li>No artificial limits</li>
+</ul>
+
+        <h3 id="scalability" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#scalability">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Scalability</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#scalability" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Cloud-Managed:</strong></p>
+<ul>
+<li>Vertical scaling: Minutes to hours</li>
+<li>Horizontal scaling: Read replicas (automatic)</li>
+<li>Storage scaling: Automatic</li>
+</ul>
+<p><strong>Self-Managed:</strong></p>
+<ul>
+<li>Vertical scaling: Hours to days</li>
+<li>Horizontal scaling: Manual replication setup</li>
+<li>Storage scaling: Manual planning required</li>
+</ul>
+<hr>
+
+        <h2 id="security-compliance" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#security-amp-compliance">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Security &amp; Compliance</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#security-compliance" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<blockquote class="border-l-4 border-gray-300 dark:border-gray-600 pl-4 my-4 text-gray-600 dark:text-gray-400">
+<p>💡 <strong>Need comprehensive security guidance?</strong> See my <a href="https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md#security--maintenance" target="_blank" rel="noopener noreferrer">MySQL Security Deep Dive</a> for user management, encryption, and access control best practices.</p>
+</blockquote>
+
+        <h3 id="cloud-managed-security" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#cloud-managed-security">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Cloud-Managed Security</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#cloud-managed-security" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ Automatic security patches</li>
+<li>✅ Built-in encryption at rest and in transit</li>
+<li>✅ Compliance certifications (SOC 2, ISO 27001, etc.)</li>
+<li>✅ Managed access controls</li>
+<li>✅ Automated backup encryption</li>
+</ul>
+<p><strong>Considerations:</strong></p>
+<ul>
+<li>Shared responsibility model</li>
+<li>Limited security customization</li>
+<li>Compliance with cloud provider's standards</li>
+</ul>
+
+        <h3 id="self-managed-security" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#self-managed-security">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Self-Managed Security</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#self-managed-security" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ Full control over security policies</li>
+<li>✅ Custom security configurations</li>
+<li>✅ On-premises data residency</li>
+<li>✅ Custom compliance implementations</li>
+<li>✅ Full audit trail control</li>
+</ul>
+<p><strong>Considerations:</strong></p>
+<ul>
+<li>Manual security patching required</li>
+<li>Need security expertise</li>
+<li>Compliance certification costs</li>
+<li>Ongoing security monitoring</li>
+</ul>
+<hr>
+
+        <h2 id="decision-framework" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#decision-framework">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Decision Framework</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#decision-framework" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+
+        <h3 id="choose-cloud-managed-if" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#choose-cloud-managed-if">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Choose Cloud-Managed If:</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#choose-cloud-managed-if" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<ol>
+<li><strong>Team Size:</strong> &lt; 15 engineers, no dedicated DBA</li>
+<li><strong>Budget:</strong> Can afford 2-3x infrastructure costs</li>
+<li><strong>Time-to-Market:</strong> Need to deploy quickly</li>
+<li><strong>Expertise:</strong> Limited MySQL administration experience</li>
+<li><strong>Scale:</strong> Moderate scale (&lt; 10TB)</li>
+<li><strong>Compliance:</strong> Cloud provider certifications sufficient</li>
+</ol>
+
+        <h3 id="choose-self-managed-if" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#choose-self-managed-if">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Choose Self-Managed If:</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#choose-self-managed-if" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<ol>
+<li><strong>Team Size:</strong> &gt; 15 engineers, dedicated DBA team</li>
+<li><strong>Budget:</strong> Cost optimization critical at scale</li>
+<li><strong>Time-to-Market:</strong> Can invest in infrastructure setup</li>
+<li><strong>Expertise:</strong> Strong MySQL administration team</li>
+<li><strong>Scale:</strong> Large scale (&gt; 10TB) or specific requirements</li>
+<li><strong>Compliance:</strong> Custom compliance requirements</li>
+</ol>
+<hr>
+
+        <h2 id="migration-considerations" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#migration-considerations">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Migration Considerations</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#migration-considerations" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+
+        <h3 id="cloud-managed-to-self-managed" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#cloud-managed-to-self-managed">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Cloud-Managed to Self-Managed</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#cloud-managed-to-self-managed" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>When to Consider:</strong></p>
+<ul>
+<li>Cost optimization at scale</li>
+<li>Custom performance requirements</li>
+<li>Compliance requirements</li>
+<li>Vendor lock-in concerns</li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>Infrastructure setup</li>
+<li>Team training</li>
+<li>Operational processes</li>
+<li>Downtime during migration</li>
+</ul>
+
+        <h3 id="self-managed-to-cloud-managed" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#self-managed-to-cloud-managed">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Self-Managed to Cloud-Managed</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#self-managed-to-cloud-managed" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>When to Consider:</strong></p>
+<ul>
+<li>Reducing operational overhead</li>
+<li>Scaling challenges</li>
+<li>Lack of expertise</li>
+<li>Cost of maintaining team</li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>Data migration</li>
+<li>Application changes</li>
+<li>Vendor lock-in</li>
+<li>Cost increase</li>
+</ul>
+<hr>
+
+        <h2 id="real-world-case-studies" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#real-world-case-studies">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Real-World Case Studies</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#real-world-case-studies" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+
+        <h3 id="startup-case-cloud-managed" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#startup-case-cloud-managed">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Startup Case: Cloud-Managed</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#startup-case-cloud-managed" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Scenario:</strong> 10-person team, rapid growth, limited database expertise</p>
+<p><strong>Decision:</strong> AWS RDS MySQL</p>
+<p><strong>Results:</strong></p>
+<ul>
+<li>Deployed in 1 day vs 2 weeks</li>
+<li>Zero downtime during scaling events</li>
+<li>Focused on product development</li>
+<li>Cost: $500/month (acceptable for stage)</li>
+</ul>
+<p><strong>Key Takeaway:</strong> For startups, cloud-managed enables focus on product, not infrastructure.</p>
+
+        <h3 id="enterprise-case-self-managed" class="group relative scroll-mt-20 text-xl font-semibold mb-3 mt-5">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#enterprise-case-self-managed">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Enterprise Case: Self-Managed</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#enterprise-case-self-managed" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h3>
+      
+<p><strong>Scenario:</strong> 100-person team, 50TB database, dedicated DBA team</p>
+<p><strong>Decision:</strong> Self-managed on-premises MySQL</p>
+<p><strong>Results:</strong></p>
+<ul>
+<li>60% cost savings vs cloud-managed</li>
+<li>Custom optimizations for workload</li>
+<li>Full control over security and compliance</li>
+<li>Cost: $5,000/month vs $15,000/month cloud</li>
+</ul>
+<p><strong>Key Takeaway:</strong> At scale with expertise, self-managed provides significant cost savings and control.</p>
+<hr>
+
+        <h2 id="conclusion" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#conclusion">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Conclusion</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#conclusion" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<p>The choice between cloud-managed and self-managed MySQL isn't about which is better—it's about which is better for your specific situation. Consider your team size, expertise, budget, scale, and requirements when making this critical decision.</p>
+<p><strong>Key Takeaways:</strong></p>
+<ul>
+<li>Cloud-managed reduces operational overhead but costs more</li>
+<li>Self-managed provides control but requires expertise</li>
+<li>TCO analysis must include operational costs, not just infrastructure</li>
+<li>Consider migration paths and vendor lock-in</li>
+<li>Start with cloud-managed, migrate to self-managed if needed at scale</li>
+</ul>
+
+        <h2 id="next-steps" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#next-steps">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Next Steps</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#next-steps" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<ul>
+<li><strong>Chose Cloud-Managed?</strong> → Read <a href="https://thisiskushal31.github.io/blog/#/blog/mysql-cloud-managed-rds-cloud-sql-azure-deep-dive" target="_blank" rel="noopener noreferrer">Blog 2: Cloud-Managed MySQL Deep Dive</a></li>
+<li><strong>Chose Self-Managed?</strong> → Read <a href="https://thisiskushal31.github.io/blog/#/blog/mysql-self-managed-vm-bare-metal-production-guide" target="_blank" rel="noopener noreferrer">Blog 3: Self-Managed MySQL Production Guide</a></li>
+<li><strong>Still Deciding?</strong> → Read <a href="https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-decision-matrix-complete-comparison-guide" target="_blank" rel="noopener noreferrer">Blog 8: MySQL Deployment Decision Matrix</a></li>
+</ul>
+
+        <h2 id="deep-dive-resources" class="group relative scroll-mt-20 text-2xl font-semibold mb-4 mt-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <a class="anchor absolute -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-label="Link to this section" href="#deep-dive-resources">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+            </svg>
+          </a>
+          <span>Deep Dive Resources</span>
+        <a href="#/blog/mysql-cloud-vs-self-managed-strategic-decision-framework#deep-dive-resources" class="header-link" style="opacity: 0; margin-left: 8px; text-decoration: none; color: rgb(107, 114, 128); transition: opacity 0.2s; cursor: pointer;">#</a></h2>
+      
+<p>For comprehensive technical details, explore my <a href="https://thisiskushal31.github.io/dochub/#/databases/relational/mysql/README.md" target="_blank" rel="noopener noreferrer">MySQL Technical Deep Dive</a> and <a href="https://thisiskushal31.github.io/dochub/#/databases/relational/README.md" target="_blank" rel="noopener noreferrer">Relational Databases Overview</a>.</p>
+<hr>
+<p><strong>Fact-Checking &amp; Verification:</strong> This blog post contains pricing estimates, technical specifications, and best practices based on publicly available documentation and industry research. All pricing information should be verified with official cloud provider pricing calculators and documentation. Technical capabilities and features may vary by region and provider. For the most current and accurate information, please consult:</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html" target="_blank" rel="noopener noreferrer">AWS RDS MySQL Documentation</a></li>
+<li><a href="https://cloud.google.com/sql/docs/mysql" target="_blank" rel="noopener noreferrer">Google Cloud SQL MySQL Documentation</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/mysql/" target="_blank" rel="noopener noreferrer">Azure Database for MySQL Documentation</a></li>
+<li><a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener noreferrer">MySQL Official Documentation</a></li>
+</ul>
+<hr>
+<p><em>This post is part of the MySQL Deployment Guide Series. Return to the <a href="https://thisiskushal31.github.io/blog/#/blog/mysql-deployment-guide" target="_blank" rel="noopener noreferrer">series hub</a> to explore all posts.</em></p>
+</div></div></div></div></article><section class="py-12 px-4 bg-muted/30"><div class="max-w-7xl mx-auto"><h2 class="text-3xl font-bold text-foreground mb-8 text-center">More Articles</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="blog-card fade-in-up" style="animation-delay: 0ms;"><div class="space-y-4"><div class="flex flex-wrap gap-2"><span class="tag text-xs">MySQL</span><span class="tag text-xs">Decision Framework</span></div><h3 class="text-xl font-semibold text-foreground hover:text-primary transition-colors duration-200 line-clamp-2"><a href="#/blog/mysql-deployment-decision-matrix-complete-comparison-guide">The Ultimate MySQL Deployment Decision Matrix</a></h3><p class="text-muted-foreground line-clamp-3">Complete decision framework for MySQL deployment strategies with scoring algorithms, ROI calculations, cost modeling, migration planning, and real-world case studies. Make data-driven decisions for your MySQL deployment.</p><div class="flex items-center justify-between text-sm text-muted-foreground"><span>January 15, 2025</span><span>6 min read</span></div></div></div><div class="blog-card fade-in-up" style="animation-delay: 100ms;"><div class="space-y-4"><div class="flex flex-wrap gap-2"><span class="tag text-xs">MongoDB</span><span class="tag text-xs">Strategy</span></div><h3 class="text-xl font-semibold text-foreground hover:text-primary transition-colors duration-200 line-clamp-2"><a href="#/blog/mongodb-cloud-vs-self-managed-strategic-decision-framework">Cloud-Managed vs Self-Managed MongoDB - Strategic Decision Framework</a></h3><p class="text-muted-foreground line-clamp-3">Strategic framework for choosing between MongoDB Atlas and self-managed MongoDB. Complete TCO analysis, risk assessment, performance comparison, and decision framework to make the right choice for your organization.</p><div class="flex items-center justify-between text-sm text-muted-foreground"><span>January 28, 2025</span><span>12 min read</span></div></div></div><div class="blog-card fade-in-up" style="animation-delay: 200ms;"><div class="space-y-4"><div class="flex flex-wrap gap-2"><span class="tag text-xs">MongoDB</span><span class="tag text-xs">Decision Framework</span></div><h3 class="text-xl font-semibold text-foreground hover:text-primary transition-colors duration-200 line-clamp-2"><a href="#/blog/mongodb-deployment-decision-matrix-complete-comparison-guide">MongoDB Deployment Decision Matrix - Complete Comparison Guide</a></h3><p class="text-muted-foreground line-clamp-3">Complete decision framework for MongoDB deployment strategies. Quantitative scoring matrix, ROI calculations, real-world case studies, and migration strategies to make data-driven decisions.</p><div class="flex items-center justify-between text-sm text-muted-foreground"><span>February 4, 2025</span><span>5 min read</span></div></div></div></div></div></section></div></main></div></div>
     <script>
       // GitHub Pages SPA redirect for clean URLs
       // This script converts clean URLs like /blog/post-name to hash URLs like /#/blog/post-name
