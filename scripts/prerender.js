@@ -151,12 +151,12 @@ async function prerenderRoute(browser, route) {
       hashRoute = `/blog/${route.replace(/^\//, '')}`;
     }
     
-    // Navigate to base URL first, then set hash programmatically
-    const baseUrl = `${BASE_URL}${BASE_PATH}/`;
-    console.log(`📄 Pre-rendering: ${route} (hash: #${hashRoute})`);
+    // Navigate directly to the hash URL
+    const url = `${BASE_URL}${BASE_PATH}/#${hashRoute}`;
+    console.log(`📄 Pre-rendering: ${route} (visiting: ${url})`);
     
-    // First, load the base page
-    await page.goto(baseUrl, {
+    // Navigate to the hash URL directly
+    await page.goto(url, {
       waitUntil: 'networkidle0',
       timeout: 30000,
     });
@@ -164,54 +164,99 @@ async function prerenderRoute(browser, route) {
     // Wait for React to mount
     await page.waitForSelector('#root', { timeout: 10000 });
     
-    // Wait for React Router to initialize
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    // Now navigate to the hash route programmatically
-    await page.evaluate((hash) => {
-      window.location.hash = hash;
-    }, hashRoute);
-    
-    // Wait for hash change to be processed by React Router
-    await page.waitForFunction(
-      (expectedHash) => {
-        return window.location.hash === expectedHash || 
-               window.location.hash === `#${expectedHash}`;
-      },
-      { timeout: 5000 },
-      hashRoute
-    );
-    
-    // Wait for React Router to render the new route
+    // Wait for React Router to initialize and process the hash
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Wait for React to fully hydrate and render content
-    // For blog posts, wait for article tag or blog listing
+    // Verify the hash is set correctly
+    const currentHash = await page.evaluate(() => window.location.hash);
+    if (!currentHash.includes(hashRoute.replace(/^#?/, ''))) {
+      console.log(`⚠️  Hash mismatch: expected ${hashRoute}, got ${currentHash}`);
+    }
+    
+    // Wait for React Router to process the hash change and render
+    // For blog posts, wait specifically for the post content, not 404
     if (route.startsWith('/blog/') && route !== '/blog') {
-      // This is a blog post - wait for article content
+      // This is a blog post - wait for actual post content
+      const slug = route.replace('/blog/', '');
       try {
-        await page.waitForSelector('article', { timeout: 15000 });
-        // Wait for actual content inside article (not 404 page)
+        // First, wait for loading to complete (no spinner)
         await page.waitForFunction(
           () => {
-            const article = document.querySelector('article');
-            const h1 = document.querySelector('h1');
-            // Check if we have article with content, not 404 page
-            return article && h1 && !h1.textContent.includes('404') && !h1.textContent.includes('Page Not Found');
+            const spinner = document.querySelector('.animate-spin');
+            const loadingText = document.body.textContent?.includes('Loading article...');
+            return !spinner && !loadingText;
           },
-          { timeout: 15000 }
+          { timeout: 10000 }
+        );
+        
+        // Wait for the article to appear
+        await page.waitForSelector('article', { timeout: 10000 });
+        
+        // Wait for actual blog post content (not 404)
+        // Check for specific indicators that it's a real post
+        await page.waitForFunction(
+          (postSlug) => {
+            const article = document.querySelector('article');
+            const bodyText = document.body.textContent || '';
+            const h1 = document.querySelector('h1');
+            
+            // Check if it's a 404 page - look for specific 404 indicators
+            const is404 = bodyText.includes('Article not found') || 
+                         bodyText.includes("doesn't exist") ||
+                         bodyText.includes('Page Not Found') ||
+                         bodyText.includes('The article you\'re looking for doesn\'t exist') ||
+                         (h1 && (
+                           h1.textContent.includes('404') || 
+                           h1.textContent.toLowerCase().includes('article not found') ||
+                           h1.textContent.toLowerCase().includes('not found')
+                         ));
+            
+            if (is404) {
+              return false; // Still 404, keep waiting
+            }
+            
+            // Check if we have actual blog post content
+            // Blog posts have article with markdown content (usually > 1000 chars)
+            const hasContent = article && 
+                              article.textContent && 
+                              article.textContent.length > 1000;
+            
+            // Also check for markdown content indicators
+            const hasMarkdownContent = article && (
+              article.querySelector('p') ||
+              article.querySelector('h2') ||
+              article.querySelector('code') ||
+              article.querySelector('pre') ||
+              article.querySelector('ul') ||
+              article.querySelector('ol')
+            );
+            
+            // Check for blog post specific elements (date, read time, etc.)
+            const hasPostMeta = document.querySelector('[class*="Calendar"]') || 
+                               document.querySelector('[class*="Clock"]') ||
+                               bodyText.includes('min read');
+            
+            return hasContent && hasMarkdownContent && hasPostMeta;
+          },
+          { timeout: 20000, polling: 500 },
+          slug
         );
       } catch (e) {
         console.log(`⚠️  Blog post content not found for ${route}, might be 404...`);
+        // Wait a bit more anyway
+        await new Promise(resolve => setTimeout(resolve, 2000));
       }
     } else {
       // This is homepage or blog listing - wait for blog cards
       try {
-        await page.waitForSelector('.blog-card, article, h1', { timeout: 15000 });
+        await page.waitForSelector('.blog-card, article, h1', { timeout: 10000 });
       } catch (e) {
         console.log(`⚠️  Content selector not found for ${route}, continuing...`);
       }
     }
+    
+    // Additional wait for React to fully hydrate
+    await new Promise(resolve => setTimeout(resolve, 1500));
 
     // Wait a bit more for any lazy-loaded content and React hydration
     // Note: page.waitForTimeout() was removed in Puppeteer v24+
