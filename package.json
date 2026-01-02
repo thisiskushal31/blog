@@ -8,6 +8,8 @@
     "build": "vite build",
     "postbuild": "cp 404.html dist/404.html && cp sitemap.xml dist/sitemap.xml",
     "build:dev": "vite build --mode development",
+    "build:prerender": "vite build && npm run generate-sitemap && npm run prerender",
+    "prerender": "node scripts/prerender.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js"
@@ -87,6 +89,7 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
-    "vite-plugin-compression": "^0.5.1"
+    "vite-plugin-compression": "^0.5.1",
+    "puppeteer": "^23.0.0"
   }
 }

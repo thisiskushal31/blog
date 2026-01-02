@@ -21,6 +21,80 @@ const BlogPost: React.FC = () => {
     const foundPost = blogPosts.find(p => p.slug === slug);
     if (foundPost) {
       setPost(foundPost);
+      
+      // Update document title and meta tags for SEO
+      const cleanUrl = `https://thisiskushal31.github.io/blog/${slug}`;
+      document.title = `${foundPost.title} | Kushal Gupta Tech Blog`;
+      
+      // Update meta description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute('content', foundPost.excerpt || foundPost.title);
+      
+      // Update canonical URL
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', cleanUrl);
+      
+      // Update Open Graph tags
+      const updateOGTag = (property: string, content: string) => {
+        let ogTag = document.querySelector(`meta[property="${property}"]`);
+        if (!ogTag) {
+          ogTag = document.createElement('meta');
+          ogTag.setAttribute('property', property);
+          document.head.appendChild(ogTag);
+        }
+        ogTag.setAttribute('content', content);
+      };
+      
+      updateOGTag('og:title', foundPost.title);
+      updateOGTag('og:description', foundPost.excerpt || foundPost.title);
+      updateOGTag('og:url', cleanUrl);
+      updateOGTag('og:type', 'article');
+      if (foundPost.coverImage) {
+        updateOGTag('og:image', foundPost.coverImage.startsWith('http') 
+          ? foundPost.coverImage 
+          : `https://thisiskushal31.github.io/blog${foundPost.coverImage}`);
+      }
+      
+      // Add structured data (JSON-LD) for better SEO
+      let structuredData = document.querySelector('script[type="application/ld+json"][data-blog-post]');
+      if (structuredData) {
+        structuredData.remove();
+      }
+      structuredData = document.createElement('script');
+      structuredData.setAttribute('type', 'application/ld+json');
+      structuredData.setAttribute('data-blog-post', 'true');
+      structuredData.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": foundPost.title,
+        "description": foundPost.excerpt || foundPost.title,
+        "url": cleanUrl,
+        "datePublished": foundPost.publishDate,
+        "author": {
+          "@type": "Person",
+          "name": "Kushal Gupta",
+          "url": "https://thisiskushal31.github.io"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Kushal Gupta"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": cleanUrl
+        }
+      });
+      document.head.appendChild(structuredData);
     }
     setIsLoading(false);
   }, [slug]);

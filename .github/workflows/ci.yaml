@@ -54,8 +54,19 @@ jobs:
           echo "=== Checking vite-rollup integration ==="
           node -e "try { const vite = require('vite'); console.log('Vite require: SUCCESS'); } catch(e) { console.log('Vite require: FAILED -', e.message); }" || true
 
+      - name: Generate sitemap
+        run: |
+          node scripts/generate-sitemap.js
+
       - name: Build
         run: yarn build
+
+      - name: Pre-render for SEO
+        run: |
+          # Install Puppeteer dependencies
+          yarn add -D puppeteer || true
+          # Run pre-rendering
+          node scripts/prerender.js || echo "Pre-rendering failed, continuing with regular build"
 
       - name: Copy sitemap and robots.txt to dist
         run: |
