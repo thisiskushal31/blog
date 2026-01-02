@@ -311,16 +311,22 @@ async function prerenderRoute(browser, route) {
     // Note: page.waitForTimeout() was removed in Puppeteer v24+
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    // Verify we didn't get a 404 page
-    const pageContent = await page.content();
-    const has404 = pageContent.includes('Page Not Found') || pageContent.includes('404');
-    
-    if (has404 && route !== '/' && route !== '/blog') {
-      console.log(`⚠️  Warning: ${route} appears to be a 404 page, but continuing...`);
-    }
-
     // Get the rendered HTML
-    const html = pageContent;
+    const html = await page.content();
+    
+    // Verify we didn't get a 404 page (only for blog posts)
+    // The debug output above already checked this accurately, so we trust that
+    // But do a final check to be safe - only warn if we have 404 text AND no blog content
+    if (route.startsWith('/blog/') && route !== '/blog' && !route.endsWith('/')) {
+      const has404Text = html.includes('Article not found') || html.includes("doesn't exist");
+      const hasBlogContent = html.includes('min read') || 
+                            (html.match(/<article[^>]*>[\s\S]{1000,}/) !== null); // Article with substantial content
+      
+      // Only warn if we have 404 text AND no blog content
+      if (has404Text && !hasBlogContent) {
+        console.log(`⚠️  Warning: ${route} appears to be a 404 page, but continuing...`);
+      }
+    }
 
     // Determine output path
     // For GitHub Pages, we need to create directories for each route
