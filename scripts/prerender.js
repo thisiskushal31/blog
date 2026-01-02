@@ -137,14 +137,26 @@ async function prerenderRoute(browser, route) {
   const page = await browser.newPage();
   
   try {
-    // Construct the hash URL for HashRouter
-    // Routes should be: /blog/post-name (from sitemap)
-    // HashRouter expects: /blog/#/blog/post-name
-    const hashRoute = route.startsWith('/blog/') ? route : `/blog${route}`;
-    const url = `${BASE_URL}${BASE_PATH}/#${hashRoute}`;
-    console.log(`📄 Pre-rendering: ${route} (visiting: ${url})`);
+    // Construct the hash route for HashRouter
+    // Routes from sitemap: /blog/post-name
+    // HashRouter expects: #/blog/post-name (where slug = post-name)
+    let hashRoute;
+    if (route === '/' || route === '/blog') {
+      hashRoute = '/blog'; // Blog listing
+    } else if (route.startsWith('/blog/')) {
+      // Extract slug from /blog/post-name -> post-name
+      const slug = route.replace('/blog/', '');
+      hashRoute = `/blog/${slug}`; // HashRouter route: /blog/:slug
+    } else {
+      hashRoute = `/blog/${route.replace(/^\//, '')}`;
+    }
     
-    await page.goto(url, {
+    // Navigate to base URL first, then set hash programmatically
+    const baseUrl = `${BASE_URL}${BASE_PATH}/`;
+    console.log(`📄 Pre-rendering: ${route} (hash: #${hashRoute})`);
+    
+    // First, load the base page
+    await page.goto(baseUrl, {
       waitUntil: 'networkidle0',
       timeout: 30000,
     });
@@ -152,12 +164,26 @@ async function prerenderRoute(browser, route) {
     // Wait for React to mount
     await page.waitForSelector('#root', { timeout: 10000 });
     
-    // Wait for React Router to process the hash route
-    // Trigger a small navigation to ensure hash is processed
-    await page.evaluate(() => {
-      // Small delay to let React Router initialize
-      return new Promise(resolve => setTimeout(resolve, 300));
-    });
+    // Wait for React Router to initialize
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Now navigate to the hash route programmatically
+    await page.evaluate((hash) => {
+      window.location.hash = hash;
+    }, hashRoute);
+    
+    // Wait for hash change to be processed by React Router
+    await page.waitForFunction(
+      (expectedHash) => {
+        return window.location.hash === expectedHash || 
+               window.location.hash === `#${expectedHash}`;
+      },
+      { timeout: 5000 },
+      hashRoute
+    );
+    
+    // Wait for React Router to render the new route
+    await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Wait for React to fully hydrate and render content
     // For blog posts, wait for article tag or blog listing
